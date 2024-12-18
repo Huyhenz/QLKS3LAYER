@@ -12,51 +12,40 @@ namespace GUI
 {
     public partial class Form1 : DevExpress.XtraEditors.XtraForm
     {
+        TaiKhoan tk = new TaiKhoan();
+        TKBLL tkbll = new TKBLL();
         public Form1()
         {
             InitializeComponent();
         }
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            if (emptyFields())
+            tk.USERNAME = txt_User.Text;
+            tk.PASSWD = txt_Pass.Text;
+
+            string getuser = tkbll.CheckLogin(tk);
+            //TRả lại kết quả nếu BLL ko đúng
+            switch (getuser)
             {
-                MessageBox.Show("Tài khoản , mật khẩu không được để trống ", "Thông Báo !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                case "Username required":
+                    MessageBox.Show("Username không để trống");
+                    return;
+
+                case "Password required":
+                    MessageBox.Show("Password không để trống");
+                    return;
+
+                case "Tài khoản hoặc mật khẩu không chính xác":
+                    MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác");
+                    return;
             }
-            else
-            {
-                taikhoanbus taikhoanbus = new taikhoanbus();
-                bool isValid = taikhoanbus.Login(txt_User.Text, txt_Pass.Text);
 
-                if (isValid)
-                {
-                    MessageBox.Show("Đăng nhập thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    Form3 f = new Form3();
-                    f.Show();
-
-                    // Ẩn form đăng nhập (Form1)
-                    this.Hide();
-
-                }
-                else
-                {
-                    MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
+            MessageBox.Show("Login Successfull");
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
-        }
-
-        public bool emptyFields()
-        {
-            if (txt_User.Text == "" || txt_Pass.Text == "")
-            {
-                return true;
-            }
-            return false;
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)

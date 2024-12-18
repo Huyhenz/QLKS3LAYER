@@ -125,7 +125,7 @@
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(818, 434);
+            this.tabControl1.Size = new System.Drawing.Size(818, 456);
             this.tabControl1.TabIndex = 9;
             // 
             // tabPage1
@@ -146,7 +146,7 @@
             this.tabPage1.Location = new System.Drawing.Point(25, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(789, 426);
+            this.tabPage1.Size = new System.Drawing.Size(789, 448);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Thông Tin";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -161,10 +161,11 @@
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.label8);
+            this.tabPage2.ForeColor = System.Drawing.Color.Black;
             this.tabPage2.Location = new System.Drawing.Point(25, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(789, 426);
+            this.tabPage2.Size = new System.Drawing.Size(789, 448);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Đăng Ký";
             this.tabPage2.UseVisualStyleBackColor = true;
