@@ -17,9 +17,7 @@ namespace GUI
         public Form1()
         {
             InitializeComponent();
-
         }
-
         private void btn_Login_Click(object sender, EventArgs e)
         {
             tk.USERNAME = txt_User.Text;
@@ -46,6 +44,11 @@ namespace GUI
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Exit_Click(object sender, EventArgs e)
         {
 
         }

@@ -5,16 +5,16 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class hethong : DevExpress.XtraEditors.XtraForm
+    public partial class Form3 : Form
     {
-        public hethong()
+        public Form3()
         {
             InitializeComponent();
-
         }
     }
 }
