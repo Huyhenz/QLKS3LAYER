@@ -11,50 +11,41 @@ namespace DAL
     public class ConnectionDB
     {
         //Tạo chuỗi kết nối database
-        public static SqlConnection Connect()
+        private SqlConnection connection;
+
+        private string connectionstring = @"Data Source=HUYCATMOI;Initial Catalog=QLKS;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
+
+        public ConnectionDB()
         {
-            string strcon = @"Data Source=HUYCATMOI;Initial Catalog=QLKS;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
-            SqlConnection cn = new SqlConnection(strcon); //Khởi tạo connect
-            return cn;
+            connection = new SqlConnection(connectionstring);
+        }
+
+        public void OpenConnection()
+        {
+            if (connection.State == System.Data.ConnectionState.Closed)
+            {
+                try
+                {
+                    connection.Open();
+                    Console.WriteLine("Kết nối thành công!");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Lỗi kết nối: " + ex.Message);
+                }
+            }
+        }
+        public void CloseConnection()
+        {
+            if (connection.State == System.Data.ConnectionState.Open)
+            {
+                connection.Close();
+            }
+        }
+
+        public SqlConnection GetConnection()
+        {
+            return connection;
         }
     }
-    public class ConnectDB
-    {
-        public static string CheckLoginDTO(TaiKhoan tk)
-        {
-            string user = null;
-            //Hàm connect tới CSDL
-            SqlConnection conn = ConnectionDB.Connect();
-            conn.Open();
-            SqlCommand command = new SqlCommand("proc_login", conn);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@user", tk.USERNAME);
-            command.Parameters.AddWithValue("@pass", tk.PASSWD);
-            //Kiểm tra quyền khi thêm 1 parameter..
-            command.Connection = conn;
-            SqlDataReader reader = command.ExecuteReader();
-            if (reader.HasRows)
-            {
-                while (reader.Read())
-                {
-                    if (reader.GetFieldType(0) == typeof(string)) 
-                    { 
-                        user = reader.GetString(0);
-                    } 
-                    else 
-                    { 
-                        user = Convert.ToString(reader.GetValue(0)); 
-                    }
-                }
-                reader.Close();
-                conn.Close();
-
-            }
-            else
-            {
-                return "Tài khoản hoặc mật khẩu không chính xác";
-            }
-            return user;
-        }
-    }       
 }

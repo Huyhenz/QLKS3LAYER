@@ -38,7 +38,8 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(145, 36);
+            this.labelControl1.Location = new System.Drawing.Point(181, 45);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(67, 16);
             this.labelControl1.TabIndex = 0;
@@ -46,7 +47,8 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(145, 89);
+            this.labelControl2.Location = new System.Drawing.Point(181, 111);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(64, 16);
             this.labelControl2.TabIndex = 1;
@@ -54,32 +56,34 @@
             // 
             // txt_User
             // 
-            this.txt_User.Location = new System.Drawing.Point(226, 33);
+            this.txt_User.Location = new System.Drawing.Point(255, 42);
             this.txt_User.Name = "txt_User";
             this.txt_User.Size = new System.Drawing.Size(100, 23);
             this.txt_User.TabIndex = 2;
             // 
             // txt_Pass
             // 
-            this.txt_Pass.Location = new System.Drawing.Point(226, 86);
+            this.txt_Pass.Location = new System.Drawing.Point(252, 108);
             this.txt_Pass.Name = "txt_Pass";
             this.txt_Pass.Size = new System.Drawing.Size(100, 23);
             this.txt_Pass.TabIndex = 3;
             // 
             // btn_Login
             // 
-            this.btn_Login.Location = new System.Drawing.Point(126, 153);
+            this.btn_Login.Location = new System.Drawing.Point(158, 191);
+            this.btn_Login.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_Login.Name = "btn_Login";
-            this.btn_Login.Size = new System.Drawing.Size(94, 29);
+            this.btn_Login.Size = new System.Drawing.Size(118, 36);
             this.btn_Login.TabIndex = 4;
             this.btn_Login.Text = "Login";
             this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
             // 
             // btn_Exit
             // 
-            this.btn_Exit.Location = new System.Drawing.Point(313, 153);
+            this.btn_Exit.Location = new System.Drawing.Point(352, 191);
+            this.btn_Exit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(94, 29);
+            this.btn_Exit.Size = new System.Drawing.Size(118, 36);
             this.btn_Exit.TabIndex = 5;
             this.btn_Exit.Text = "Exit";
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
