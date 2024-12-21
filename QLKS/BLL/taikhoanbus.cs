@@ -86,7 +86,7 @@ namespace BLL
             }
         }
 
-        public bool Login(string tenNguoiDung, string matKhau)
+        public TaiKhoanDTO Login(string tenNguoiDung, string matKhau)
         {
             try
             {

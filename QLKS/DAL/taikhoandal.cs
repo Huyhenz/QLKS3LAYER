@@ -35,8 +35,13 @@ namespace DAL
                         Convert.ToInt32(reader["UID"]),
                         reader["FULLNAME"].ToString(),
                         reader["USERNAME"].ToString(),
+                        Convert.ToDateTime(reader["NGAYSINH"]),
+                        reader["EMAIL"].ToString(),
+                        Convert.ToInt32(reader["SDT"]),
+                        Convert.ToInt32(reader["CCCD"]),
+                        reader["DIACHI"].ToString(),
                         reader["PASSWD"].ToString(),
-                        reader["IDQUYEN"].ToString()
+                        Convert.ToInt32(reader["IDQUYEN"])
                     );
                     taiKhoanList.Add(taiKhoan);
                 }
@@ -59,17 +64,22 @@ namespace DAL
             {
                 // Mở kết nối
                 conn.OpenConnection();  // Nếu conn là đối tượng kết nối của bạn
-                string query = "INSERT INTO tb_User (FULLNAME, USERNAME, PASSWD, IDQUYEN) " +
-                               "VALUES ( @FULLNAME, @USERNAME, @PASSWD, @IDQUYEN)";
+                string query = "INSERT INTO tb_User (FULLNAME, NGAYSINH, EMAIL, SDT, CCCD, DIACHI, USERNAME, PASSWD, IDQUYEN) " +
+                               "VALUES ( @FULLNAME,@NGAYSINH, @EMAIL, @SDT, @CCCD, @DIACHI, @USERNAME, @PASSWD, @IDQUYEN)";
 
                 // Tạo SqlCommand và truyền query vào
                 SqlCommand command = new SqlCommand(query, conn.GetConnection());
 
                 // Thêm tham số vào command với kiểu dữ liệu rõ ràng
                 command.Parameters.Add("@FULLNAME", SqlDbType.NVarChar).Value = taiKhoan.FULLNAME;
+                command.Parameters.Add("@NGAYSINH", SqlDbType.NVarChar).Value = taiKhoan.NGAYSINH;
+                command.Parameters.Add("@EMAIL", SqlDbType.NVarChar).Value = taiKhoan.EMAIL;
+                command.Parameters.Add("@SDT", SqlDbType.NVarChar).Value = taiKhoan.SDT;
+                command.Parameters.Add("@CCCD", SqlDbType.NVarChar).Value = taiKhoan.CCCD;
+                command.Parameters.Add("@DIACHI", SqlDbType.NVarChar).Value = taiKhoan.DIACHI;
                 command.Parameters.Add("@USERNAME", SqlDbType.NVarChar).Value = taiKhoan.USERNAME;
                 command.Parameters.Add("@PASSWD", SqlDbType.NVarChar).Value = taiKhoan.PASSWD;
-                command.Parameters.Add("@IDQUYEN", SqlDbType.NVarChar).Value = taiKhoan.IDQUYEN;
+                command.Parameters.Add("@IDQUYEN", SqlDbType.Int).Value = taiKhoan.IDQUYEN;
 
 
                 // Thực thi câu lệnh INSERT và kiểm tra xem có bản ghi nào được thêm không
@@ -152,11 +162,16 @@ namespace DAL
                 if (reader.Read())
                 {
                     taiKhoan = new TaiKhoanDTO(
-                         Convert.ToInt32(reader["UID"]),
+                        Convert.ToInt32(reader["UID"]),
                         reader["FULLNAME"].ToString(),
                         reader["USERNAME"].ToString(),
+                        Convert.ToDateTime(reader["NGAYSINH"]),
+                        reader["EMAIL"].ToString(),
+                        Convert.ToChar(reader["SDT"]),
+                        Convert.ToChar(reader["CCCD"]),
+                        reader["DIACHI"].ToString(),
                         reader["PASSWD"].ToString(),
-                        reader["IDQUYEN"].ToString()
+                        Convert.ToInt32(reader["IDQUYEN"])
                     );
                 }
                 reader.Close();
@@ -172,19 +187,40 @@ namespace DAL
             return taiKhoan;
         }
 
-        public bool Login(string USERNAME, string PASSWD)
+        public TaiKhoanDTO Login(string USERNAME, string PASSWD)
         {
             try
             {
                 conn.OpenConnection();
-                string query = "SELECT COUNT(*) FROM tb_User WHERE USERNAME = @USERNAME AND PASSWD = @PASSWD";// AND IDQUYEN = @IDQUYEN
+                string query = "SELECT * FROM tb_User WHERE USERNAME = @USERNAME AND PASSWD = @PASSWD";
                 SqlCommand command = new SqlCommand(query, conn.GetConnection());
                 command.Parameters.AddWithValue("@USERNAME", USERNAME);
                 command.Parameters.AddWithValue("@PASSWD", PASSWD);
+                SqlDataReader reader = command.ExecuteReader();
 
-                int count = (int)command.ExecuteScalar();  // Kiểm tra số lượng tài khoản khớp
-
-                return count > 0;  // Nếu có tài khoản khớp thì trả về true
+                if (reader.Read())
+                {
+                    TaiKhoanDTO taiKhoan = new TaiKhoanDTO
+                    {
+                        UID = Convert.ToInt32(reader["UID"]),
+                        FULLNAME = reader["FULLNAME"].ToString(),
+                        USERNAME = reader["USERNAME"].ToString(),
+                        NGAYSINH = Convert.ToDateTime(reader["NGAYSINH"]),
+                        EMAIL = reader["EMAIL"].ToString(),
+                        SDT = Convert.ToInt64(reader["SDT"]),
+                        CCCD = Convert.ToInt64(reader["CCCD"]),
+                        DIACHI = reader["DIACHI"].ToString(),
+                        PASSWD = reader["PASSWD"].ToString(),
+                        IDQUYEN = Convert.ToInt32(reader["IDQUYEN"])
+                    };
+                    reader.Close();
+                    return taiKhoan;
+                }
+                else
+                {
+                    reader.Close();
+                    return null;
+                }
             }
             catch (Exception ex)
             {
@@ -195,6 +231,7 @@ namespace DAL
                 conn.CloseConnection();
             }
         }
+
 
 
     }

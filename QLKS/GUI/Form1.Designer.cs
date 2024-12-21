@@ -36,6 +36,7 @@
             this.btn_Login = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Exit = new DevExpress.XtraEditors.SimpleButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,8 +44,8 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(407, 106);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl1.Location = new System.Drawing.Point(500, 145);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(103, 24);
             this.labelControl1.TabIndex = 0;
@@ -54,8 +55,8 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(407, 176);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl2.Location = new System.Drawing.Point(500, 233);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(97, 24);
             this.labelControl2.TabIndex = 1;
@@ -64,7 +65,7 @@
             // txt_User
             // 
             this.txt_User.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_User.Location = new System.Drawing.Point(517, 103);
+            this.txt_User.Location = new System.Drawing.Point(605, 142);
             this.txt_User.Name = "txt_User";
             this.txt_User.Size = new System.Drawing.Size(244, 32);
             this.txt_User.TabIndex = 2;
@@ -72,7 +73,7 @@
             // txt_Pass
             // 
             this.txt_Pass.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Pass.Location = new System.Drawing.Point(517, 176);
+            this.txt_Pass.Location = new System.Drawing.Point(605, 233);
             this.txt_Pass.Name = "txt_Pass";
             this.txt_Pass.Size = new System.Drawing.Size(244, 32);
             this.txt_Pass.TabIndex = 3;
@@ -81,10 +82,10 @@
             // 
             this.btn_Login.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Login.Appearance.Options.UseFont = true;
-            this.btn_Login.Location = new System.Drawing.Point(429, 267);
-            this.btn_Login.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Login.Location = new System.Drawing.Point(464, 300);
+            this.btn_Login.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btn_Login.Name = "btn_Login";
-            this.btn_Login.Size = new System.Drawing.Size(118, 36);
+            this.btn_Login.Size = new System.Drawing.Size(148, 45);
             this.btn_Login.TabIndex = 4;
             this.btn_Login.Text = "Login";
             this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
@@ -93,10 +94,10 @@
             // 
             this.btn_Exit.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Exit.Appearance.Options.UseFont = true;
-            this.btn_Exit.Location = new System.Drawing.Point(619, 267);
-            this.btn_Exit.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Exit.Location = new System.Drawing.Point(782, 300);
+            this.btn_Exit.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(118, 36);
+            this.btn_Exit.Size = new System.Drawing.Size(148, 45);
             this.btn_Exit.TabIndex = 5;
             this.btn_Exit.Text = "Exit";
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
@@ -110,13 +111,26 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Location = new System.Drawing.Point(623, 300);
+            this.simpleButton1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(148, 45);
+            this.simpleButton1.TabIndex = 7;
+            this.simpleButton1.Text = "Register";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // Form1
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(806, 438);
+            this.ClientSize = new System.Drawing.Size(995, 438);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_Login);
@@ -143,6 +157,7 @@
         private DevExpress.XtraEditors.SimpleButton btn_Login;
         private DevExpress.XtraEditors.SimpleButton btn_Exit;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }
 

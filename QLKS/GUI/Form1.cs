@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using DTO;
 using BLL;
+using System.Web.Security;
 namespace GUI
 {
     public partial class Form1 : DevExpress.XtraEditors.XtraForm
@@ -20,23 +21,35 @@ namespace GUI
         {
             if (emptyFields())
             {
-                MessageBox.Show("Tài khoản , mật khẩu không được để trống ", "Thông Báo !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Tài khoản, mật khẩu không được để trống", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 taikhoanbus taikhoanbus = new taikhoanbus();
-                bool isValid = taikhoanbus.Login(txt_User.Text, txt_Pass.Text);
+                TaiKhoanDTO user = taikhoanbus.Login(txt_User.Text, txt_Pass.Text);
 
-                if (isValid)
+                if (user != null)
                 {
                     MessageBox.Show("Đăng nhập thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    Form3 f = new Form3();
-                    f.Show();
-
-                    // Ẩn form đăng nhập (Form1)
-                    this.Hide();
-
+                    // Kiểm tra quyền hạn và điều hướng đến form tương ứng
+                    int roleValue = user.IDQUYEN; // IDQUYEN đã là int, không cần chuyển đổi
+                    if (roleValue == 1)
+                    {
+                        Form4 form4 = new Form4();
+                        form4.Show();
+                        this.Hide();
+                    }
+                    else if (roleValue == 2)
+                    {
+                        Form5 form5 = new Form5();
+                        form5.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Quyền hạn không hợp lệ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
@@ -52,16 +65,20 @@ namespace GUI
 
         public bool emptyFields()
         {
-            if (txt_User.Text == "" || txt_Pass.Text == "")
-            {
-                return true;
-            }
-            return false;
+            return string.IsNullOrEmpty(txt_User.Text) || string.IsNullOrEmpty(txt_Pass.Text);
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            Form3 f = new Form3();
+            f.Show();
+            Hide();
+        }
+
     }
 }
