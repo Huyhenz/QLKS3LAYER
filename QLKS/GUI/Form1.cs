@@ -80,5 +80,9 @@ namespace GUI
             Hide();
         }
 
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
