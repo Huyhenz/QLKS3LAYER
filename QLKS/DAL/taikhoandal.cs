@@ -202,16 +202,16 @@ namespace DAL
                 {
                     TaiKhoanDTO taiKhoan = new TaiKhoanDTO
                     {
-                        UID = Convert.ToInt32(reader["UID"]),
-                        FULLNAME = reader["FULLNAME"].ToString(),
-                        USERNAME = reader["USERNAME"].ToString(),
-                        NGAYSINH = Convert.ToDateTime(reader["NGAYSINH"]),
-                        EMAIL = reader["EMAIL"].ToString(),
-                        SDT = Convert.ToInt64(reader["SDT"]),
-                        CCCD = Convert.ToInt64(reader["CCCD"]),
-                        DIACHI = reader["DIACHI"].ToString(),
-                        PASSWD = reader["PASSWD"].ToString(),
-                        IDQUYEN = Convert.ToInt32(reader["IDQUYEN"])
+                        UID = reader["UID"] != DBNull.Value ? Convert.ToInt32(reader["UID"]) : 0,
+                        FULLNAME = reader["FULLNAME"] != DBNull.Value ? reader["FULLNAME"].ToString() : string.Empty,
+                        USERNAME = reader["USERNAME"] != DBNull.Value ? reader["USERNAME"].ToString() : string.Empty,
+                        NGAYSINH = reader["NGAYSINH"] != DBNull.Value ? Convert.ToDateTime(reader["NGAYSINH"]) : DateTime.MinValue,
+                        EMAIL = reader["EMAIL"] != DBNull.Value ? reader["EMAIL"].ToString() : string.Empty,
+                        SDT = reader["SDT"] != DBNull.Value ? Convert.ToInt64(reader["SDT"]) : 0,
+                        CCCD = reader["CCCD"] != DBNull.Value ? Convert.ToInt64(reader["CCCD"]) : 0,
+                        DIACHI = reader["DIACHI"] != DBNull.Value ? reader["DIACHI"].ToString() : string.Empty,
+                        PASSWD = reader["PASSWD"] != DBNull.Value ? reader["PASSWD"].ToString() : string.Empty,
+                        IDQUYEN = reader["IDQUYEN"] != DBNull.Value ? Convert.ToInt32(reader["IDQUYEN"]) : 0
                     };
                     reader.Close();
                     return taiKhoan;
@@ -231,6 +231,7 @@ namespace DAL
                 conn.CloseConnection();
             }
         }
+
 
 
 

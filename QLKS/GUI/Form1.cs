@@ -26,7 +26,7 @@ namespace GUI
             else
             {
                 taikhoanbus taikhoanbus = new taikhoanbus();
-                TaiKhoanDTO user = taikhoanbus.Login(txt_User.Text, txt_Pass.Text);
+                TaiKhoanDTO user = taikhoanbus.Login(txt_User.Text, txt_User.Text);
 
                 if (user != null)
                 {
@@ -83,6 +83,54 @@ namespace GUI
         private void txtUsername_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (emptyFields())
+            {
+                MessageBox.Show("Tài khoản, mật khẩu không được để trống", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                taikhoanbus taikhoanbus = new taikhoanbus();
+                TaiKhoanDTO user = taikhoanbus.Login(txt_User.Text, txt_Pass.Text);
+
+                if (user != null)
+                {
+                    labelError.Visible = false;
+                    // Kiểm tra quyền hạn và điều hướng đến form tương ứng
+                    int roleValue = user.IDQUYEN; // IDQUYEN đã là int, không cần chuyển đổi
+                    if (roleValue == 1)
+                    {
+                        Form4 form4 = new Form4();
+                        form4.Show();
+                        this.Hide();
+                    }
+                    else if (roleValue == 2)
+                    {
+                        Form5 form5 = new Form5();
+                        form5.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Quyền hạn không hợp lệ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    labelError.Visible = true;
+                    txt_Pass.Clear();
+                }
+            }
+        }
+
+        private void btnSingup_Click(object sender, EventArgs e)
+        {
+            Form3 f = new Form3();
+            f.Show();
+            Hide();
         }
     }
 }
