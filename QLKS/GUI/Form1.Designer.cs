@@ -45,7 +45,7 @@
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Location = new System.Drawing.Point(500, 145);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(5);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(103, 24);
             this.labelControl1.TabIndex = 0;
@@ -56,7 +56,7 @@
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Location = new System.Drawing.Point(500, 233);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(5);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(97, 24);
             this.labelControl2.TabIndex = 1;
@@ -83,7 +83,7 @@
             this.btn_Login.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Login.Appearance.Options.UseFont = true;
             this.btn_Login.Location = new System.Drawing.Point(464, 300);
-            this.btn_Login.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btn_Login.Margin = new System.Windows.Forms.Padding(5);
             this.btn_Login.Name = "btn_Login";
             this.btn_Login.Size = new System.Drawing.Size(148, 45);
             this.btn_Login.TabIndex = 4;
@@ -95,7 +95,7 @@
             this.btn_Exit.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Exit.Appearance.Options.UseFont = true;
             this.btn_Exit.Location = new System.Drawing.Point(782, 300);
-            this.btn_Exit.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btn_Exit.Margin = new System.Windows.Forms.Padding(5);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Size = new System.Drawing.Size(148, 45);
             this.btn_Exit.TabIndex = 5;
@@ -116,7 +116,7 @@
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.Location = new System.Drawing.Point(623, 300);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.simpleButton1.Margin = new System.Windows.Forms.Padding(6);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(148, 45);
             this.simpleButton1.TabIndex = 7;
