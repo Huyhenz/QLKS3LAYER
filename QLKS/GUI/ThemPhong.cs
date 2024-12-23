@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class Form4 : Form
+    public partial class ThemPhong : Form
     {
-        public Form4()
+        public ThemPhong()
         {
             InitializeComponent();
         }

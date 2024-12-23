@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class Form5
+    partial class ThanhToan
     {
         /// <summary>
         /// Required designer variable.
