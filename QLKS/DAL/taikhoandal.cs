@@ -231,9 +231,5 @@ namespace DAL
                 conn.CloseConnection();
             }
         }
-
-
-
-
     }
 }
