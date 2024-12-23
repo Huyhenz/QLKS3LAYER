@@ -89,5 +89,10 @@ namespace GUI
             cmb_QH.Items.Add("User");
             cmb_QH.Items.Add("Manager");
         }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

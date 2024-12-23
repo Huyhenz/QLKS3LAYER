@@ -37,6 +37,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.cmb_QH = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.txt_DIaChi = new System.Windows.Forms.TextBox();
             this.txt_CCCD = new System.Windows.Forms.TextBox();
             this.txt_SDT = new System.Windows.Forms.TextBox();
@@ -44,6 +46,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.txt_Passx2 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -52,9 +55,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.cmb_QH = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -156,6 +156,26 @@
             this.tabPage1.Text = "Thông Tin";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // cmb_QH
+            // 
+            this.cmb_QH.FormattingEnabled = true;
+            this.cmb_QH.Items.AddRange(new object[] {
+            "User",
+            "Manager"});
+            this.cmb_QH.Location = new System.Drawing.Point(114, 430);
+            this.cmb_QH.Name = "cmb_QH";
+            this.cmb_QH.Size = new System.Drawing.Size(156, 24);
+            this.cmb_QH.TabIndex = 15;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(24, 433);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(77, 16);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "Quyền hạn: ";
+            // 
             // txt_DIaChi
             // 
             this.txt_DIaChi.Location = new System.Drawing.Point(114, 378);
@@ -219,10 +239,22 @@
             this.tabPage2.Location = new System.Drawing.Point(25, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(789, 448);
+            this.tabPage2.Size = new System.Drawing.Size(789, 475);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Đăng Ký";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button2.Location = new System.Drawing.Point(612, 296);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(112, 40);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Đăng Nhập";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // txt_Passx2
             // 
@@ -295,37 +327,6 @@
             this.label8.Size = new System.Drawing.Size(196, 51);
             this.label8.TabIndex = 0;
             this.label8.Text = "Đăng Ký";
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button2.Location = new System.Drawing.Point(612, 296);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 40);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Đăng Nhập";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(24, 433);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(77, 16);
-            this.label12.TabIndex = 14;
-            this.label12.Text = "Quyền hạn: ";
-            // 
-            // cmb_QH
-            // 
-            this.cmb_QH.FormattingEnabled = true;
-            this.cmb_QH.Items.AddRange(new object[] {
-            "User",
-            "Manager"});
-            this.cmb_QH.Location = new System.Drawing.Point(114, 430);
-            this.cmb_QH.Name = "cmb_QH";
-            this.cmb_QH.Size = new System.Drawing.Size(156, 24);
-            this.cmb_QH.TabIndex = 15;
             // 
             // Form3
             // 
