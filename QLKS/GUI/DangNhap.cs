@@ -11,9 +11,9 @@ using BLL;
 using System.Web.Security;
 namespace GUI
 {
-    public partial class Form1 : DevExpress.XtraEditors.XtraForm
+    public partial class DangNhap : DevExpress.XtraEditors.XtraForm
     {
-        public Form1()
+        public DangNhap()
         {
             InitializeComponent();
         }
@@ -36,13 +36,13 @@ namespace GUI
                     int roleValue = user.IDQUYEN; // IDQUYEN đã là int, không cần chuyển đổi
                     if (roleValue == 1)
                     {
-                        Form4 form4 = new Form4();
+                        ThemPhong form4 = new ThemPhong();
                         form4.Show();
                         this.Hide();
                     }
                     else if (roleValue == 2)
                     {
-                        Form5 form5 = new Form5();
+                        ThanhToan form5 = new ThanhToan();
                         form5.Show();
                         this.Hide();
                     }
@@ -103,13 +103,13 @@ namespace GUI
                     int roleValue = user.IDQUYEN; // IDQUYEN đã là int, không cần chuyển đổi
                     if (roleValue == 1)
                     {
-                        Form4 form4 = new Form4();
+                        ThemPhong form4 = new ThemPhong();
                         form4.Show();
                         this.Hide();
                     }
                     else if (roleValue == 2)
                     {
-                        Form5 form5 = new Form5();
+                        ThanhToan form5 = new ThanhToan();
                         form5.Show();
                         this.Hide();
                     }
@@ -128,7 +128,7 @@ namespace GUI
 
         private void btnSingup_Click(object sender, EventArgs e)
         {
-            Form3 f = new Form3();
+            Form6 f = new Form6();
             f.Show();
             Hide();
         }
