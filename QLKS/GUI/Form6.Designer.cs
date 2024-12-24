@@ -58,6 +58,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.guna2TabControl1.SuspendLayout();
@@ -550,7 +551,7 @@
             this.guna2TabControl1.Controls.Add(this.tabPage1);
             this.guna2TabControl1.Controls.Add(this.tabPage2);
             this.guna2TabControl1.ItemSize = new System.Drawing.Size(180, 40);
-            this.guna2TabControl1.Location = new System.Drawing.Point(33, 41);
+            this.guna2TabControl1.Location = new System.Drawing.Point(33, 85);
             this.guna2TabControl1.Name = "guna2TabControl1";
             this.guna2TabControl1.SelectedIndex = 0;
             this.guna2TabControl1.Size = new System.Drawing.Size(906, 501);
@@ -573,11 +574,20 @@
             this.guna2TabControl1.TabIndex = 0;
             this.guna2TabControl1.TabMenuBackColor = System.Drawing.Color.Teal;
             // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.BackColor = System.Drawing.Color.Teal;
+            this.guna2Panel1.Location = new System.Drawing.Point(0, -1);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(973, 68);
+            this.guna2Panel1.TabIndex = 1;
+            // 
             // Form6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(973, 569);
+            this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2TabControl1);
             this.Name = "Form6";
             this.Text = "Form6";
@@ -623,5 +633,6 @@
         private System.Windows.Forms.Label labelFullinfo;
         private System.Windows.Forms.Label labelX2;
         private System.Windows.Forms.Label labelSuccess;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
     }
 }
