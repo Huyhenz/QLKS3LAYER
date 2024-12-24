@@ -63,7 +63,7 @@
             this.label1.Font = new System.Drawing.Font("Arial", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.Location = new System.Drawing.Point(455, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 40);
+            this.label1.Size = new System.Drawing.Size(154, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "Hóa Đơn";
             // 
@@ -255,12 +255,12 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label7.Location = new System.Drawing.Point(660, 70);
+            this.label7.Font = new System.Drawing.Font("Arial", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label7.Location = new System.Drawing.Point(564, 97);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(283, 70);
+            this.label7.Size = new System.Drawing.Size(443, 51);
             this.label7.TabIndex = 13;
-            this.label7.Text = "Hóa Đơn";
+            this.label7.Text = "Lịch Sử Thanh Toán";
             // 
             // Form1
             // 
