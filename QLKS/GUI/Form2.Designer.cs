@@ -31,21 +31,22 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
+            this.navMain = new DevExpress.XtraNavBar.NavBarControl();
             this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).BeginInit();
             this.splitContainerControl1.Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel2)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.navMain)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -73,6 +74,11 @@
             this.toolStripButton1.Text = "Hệ Thống";
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 47);
+            // 
             // toolStripButton2
             // 
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
@@ -81,6 +87,11 @@
             this.toolStripButton2.Size = new System.Drawing.Size(69, 44);
             this.toolStripButton2.Text = "Báo Cáo";
             this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 47);
             // 
             // toolStripButton3
             // 
@@ -101,51 +112,50 @@
             this.toolStripButton4.Size = new System.Drawing.Size(29, 44);
             this.toolStripButton4.Text = "toolStripButton4";
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 47);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 47);
-            // 
             // splitContainerControl1
             // 
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl1.Location = new System.Drawing.Point(0, 47);
+            this.splitContainerControl1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.splitContainerControl1.Name = "splitContainerControl1";
             // 
             // splitContainerControl1.Panel1
             // 
-            this.splitContainerControl1.Panel1.Controls.Add(this.navBarControl1);
+            this.splitContainerControl1.Panel1.Controls.Add(this.navMain);
             this.splitContainerControl1.Panel1.Text = "Panel1";
             // 
             // splitContainerControl1.Panel2
             // 
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.Size = new System.Drawing.Size(930, 544);
-            this.splitContainerControl1.SplitterPosition = 232;
+            this.splitContainerControl1.SplitterPosition = 362;
             this.splitContainerControl1.TabIndex = 1;
             // 
-            // navBarControl1
+            // navMain
             // 
-            this.navBarControl1.ActiveGroup = this.navBarGroup1;
-            this.navBarControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.navBarControl1.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
-            this.navBarGroup1});
-            this.navBarControl1.Location = new System.Drawing.Point(0, 0);
-            this.navBarControl1.Name = "navBarControl1";
-            this.navBarControl1.Size = new System.Drawing.Size(232, 544);
-            this.navBarControl1.TabIndex = 0;
-            this.navBarControl1.Text = "navBarControl1";
+            this.navMain.ActiveGroup = this.navBarGroup1;
+            this.navMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.navMain.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
+            this.navBarGroup1,
+            this.navBarGroup2});
+            this.navMain.Location = new System.Drawing.Point(0, 0);
+            this.navMain.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.navMain.Name = "navMain";
+            this.navMain.OptionsNavPane.ExpandedWidth = 362;
+            this.navMain.Size = new System.Drawing.Size(362, 544);
+            this.navMain.TabIndex = 0;
+            this.navMain.Text = "navBarControl1";
             // 
             // navBarGroup1
             // 
             this.navBarGroup1.Caption = "navBarGroup1";
             this.navBarGroup1.Expanded = true;
             this.navBarGroup1.Name = "navBarGroup1";
+            // 
+            // navBarGroup2
+            // 
+            this.navBarGroup2.Caption = "navBarGroup2";
+            this.navBarGroup2.Name = "navBarGroup2";
             // 
             // Form2
             // 
@@ -156,6 +166,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Name = "Form2";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).EndInit();
@@ -163,7 +174,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.navMain)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,7 +190,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
-        private DevExpress.XtraNavBar.NavBarControl navBarControl1;
+        private DevExpress.XtraNavBar.NavBarControl navMain;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup1;
+        private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
     }
 }

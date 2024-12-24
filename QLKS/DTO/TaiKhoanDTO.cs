@@ -24,8 +24,8 @@ namespace DTO
         public string PASSWD { get; set; }
         public string MACTY { get; set; }
         public string MADVI { get; set; }
-        public string ISGROUP { get; set; }
-        public string DISABLED { get; set; }
+        public bool ISGROUP { get; set; }
+        public bool DISABLED { get; set; }
         public int IDQUYEN { get; set; }
 
         public TaiKhoanDTO() { }

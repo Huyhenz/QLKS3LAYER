@@ -231,5 +231,36 @@ namespace DAL
                 conn.CloseConnection();
             }
         }
+            public List<FuncDTO> GetFuncItems(string parents)
+            {
+                List<FuncDTO> items = new List<FuncDTO>();
+                try
+                {
+                    string query = "SELECT FUNC_CODE, DESCRIPTION FROM tb_Func WHERE PARENT = @PARENT AND ISGROUP = 0 AND MENU = 1";
+                    conn.OpenConnection();
+                    SqlCommand command = new SqlCommand(query, conn.GetConnection());
+                    command.Parameters.AddWithValue("@PARENT", parents);
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        FuncDTO item = new FuncDTO
+                    {
+                            FUNC_CODE = reader["FUNC_CODE"].ToString(),
+                            DESCRIPTION = reader["DESCRIPTION"].ToString()
+                        };
+                        items.Add(item);
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Lỗi khi lấy dữ liệu: " + ex.Message);
+                }
+                finally
+                {
+                    conn.CloseConnection();
+                }
+                return items;
+            }
+        }
     }
-}

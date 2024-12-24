@@ -55,6 +55,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
+            this.labelFullinfo = new System.Windows.Forms.Label();
+            this.labelX2 = new System.Windows.Forms.Label();
+            this.labelSuccess = new System.Windows.Forms.Label();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.guna2TabControl1.SuspendLayout();
@@ -62,6 +65,9 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.labelSuccess);
+            this.tabPage2.Controls.Add(this.labelX2);
+            this.tabPage2.Controls.Add(this.labelFullinfo);
             this.tabPage2.Controls.Add(this.guna2Button2);
             this.tabPage2.Controls.Add(this.guna2Button1);
             this.tabPage2.Controls.Add(this.txtComfirmPass);
@@ -89,7 +95,7 @@
             this.guna2Button2.FillColor = System.Drawing.Color.Teal;
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(501, 341);
+            this.guna2Button2.Location = new System.Drawing.Point(501, 403);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(140, 52);
             this.guna2Button2.TabIndex = 15;
@@ -105,7 +111,7 @@
             this.guna2Button1.FillColor = System.Drawing.Color.Teal;
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(302, 341);
+            this.guna2Button1.Location = new System.Drawing.Point(308, 403);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(139, 52);
             this.guna2Button1.TabIndex = 14;
@@ -531,6 +537,42 @@
             this.guna2TabControl1.TabIndex = 0;
             this.guna2TabControl1.TabMenuBackColor = System.Drawing.Color.Teal;
             // 
+            // labelFullinfo
+            // 
+            this.labelFullinfo.AutoSize = true;
+            this.labelFullinfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFullinfo.ForeColor = System.Drawing.Color.Red;
+            this.labelFullinfo.Location = new System.Drawing.Point(351, 334);
+            this.labelFullinfo.Name = "labelFullinfo";
+            this.labelFullinfo.Size = new System.Drawing.Size(233, 20);
+            this.labelFullinfo.TabIndex = 16;
+            this.labelFullinfo.Text = "Vui lòng nhập đầy đủ thông tin";
+            this.labelFullinfo.Visible = false;
+            // 
+            // labelX2
+            // 
+            this.labelX2.AutoSize = true;
+            this.labelX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX2.ForeColor = System.Drawing.Color.Red;
+            this.labelX2.Location = new System.Drawing.Point(351, 334);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(238, 20);
+            this.labelX2.TabIndex = 17;
+            this.labelX2.Text = "Mật khẩu xác nhận không khớp";
+            this.labelX2.Visible = false;
+            // 
+            // labelSuccess
+            // 
+            this.labelSuccess.AutoSize = true;
+            this.labelSuccess.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSuccess.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.labelSuccess.Location = new System.Drawing.Point(396, 334);
+            this.labelSuccess.Name = "labelSuccess";
+            this.labelSuccess.Size = new System.Drawing.Size(156, 20);
+            this.labelSuccess.TabIndex = 18;
+            this.labelSuccess.Text = "Đăng ký thành công";
+            this.labelSuccess.Visible = false;
+            // 
             // Form6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -578,5 +620,8 @@
         private Guna.UI2.WinForms.Guna2TextBox txtDC;
         private Guna.UI2.WinForms.Guna2TextBox txtCCCD;
         private Guna.UI2.WinForms.Guna2ComboBox comboQH;
+        private System.Windows.Forms.Label labelFullinfo;
+        private System.Windows.Forms.Label labelX2;
+        private System.Windows.Forms.Label labelSuccess;
     }
 }

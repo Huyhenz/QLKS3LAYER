@@ -98,5 +98,18 @@ namespace BLL
             }
         }
 
+        public List<FuncDTO> GetFuncItems(string parents)
+        {
+            try
+            {
+                return tkd.GetFuncItems(parents);
+            }
+            catch (Exception ex)
+            {
+                // Xử lý lỗi
+                throw new Exception("Lỗi khi lấy danh sách tài khoản: " + ex.Message);
+            }
+        }
+
     }
 }

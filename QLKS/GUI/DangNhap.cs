@@ -17,52 +17,6 @@ namespace GUI
         {
             InitializeComponent();
         }
-        private void btn_Login_Click(object sender, EventArgs e)
-        {
-            if (emptyFields())
-            {
-                MessageBox.Show("Tài khoản, mật khẩu không được để trống", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                taikhoanbus taikhoanbus = new taikhoanbus();
-                TaiKhoanDTO user = taikhoanbus.Login(txt_User.Text, txt_User.Text);
-
-                if (user != null)
-                {
-                    MessageBox.Show("Đăng nhập thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    // Kiểm tra quyền hạn và điều hướng đến form tương ứng
-                    int roleValue = user.IDQUYEN; // IDQUYEN đã là int, không cần chuyển đổi
-                    if (roleValue == 1)
-                    {
-                        ThemPhong form4 = new ThemPhong();
-                        form4.Show();
-                        this.Hide();
-                    }
-                    else if (roleValue == 2)
-                    {
-                        ThanhToan form5 = new ThanhToan();
-                        form5.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Quyền hạn không hợp lệ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         public bool emptyFields()
         {
             return string.IsNullOrEmpty(txt_User.Text) || string.IsNullOrEmpty(txt_Pass.Text);
@@ -75,9 +29,7 @@ namespace GUI
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            Form3 f = new Form3();
-            f.Show();
-            Hide();
+            
         }
 
         private void txtUsername_TextChanged(object sender, EventArgs e)
@@ -103,9 +55,10 @@ namespace GUI
                     int roleValue = user.IDQUYEN; // IDQUYEN đã là int, không cần chuyển đổi
                     if (roleValue == 1)
                     {
-                        ThemPhong form4 = new ThemPhong();
-                        form4.Show();
+                        Form2 f = new Form2();
+                        f.Show();
                         this.Hide();
+
                     }
                     else if (roleValue == 2)
                     {

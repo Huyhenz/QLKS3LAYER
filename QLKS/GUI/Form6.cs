@@ -37,13 +37,16 @@ namespace GUI
                 string.IsNullOrEmpty(confirmPassword) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(address) ||
                 string.IsNullOrEmpty(phoneNumber) || string.IsNullOrEmpty(cccd) || string.IsNullOrEmpty(role))
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
+                labelFullinfo.Visible = true;
                 return;
             }
 
             if (password != confirmPassword)
             {
-                MessageBox.Show("Mật khẩu xác nhận không khớp!");
+                labelFullinfo.Visible = false;
+                labelX2.Visible = true;
+                txtPass.Clear();
+                txtComfirmPass.Clear();
                 return;
             }
 
@@ -65,8 +68,17 @@ namespace GUI
 
             if (result)
             {
-                MessageBox.Show("Đăng ký thành công!");
-                this.Hide();
+                labelX2.Visible = false;
+                labelSuccess.Visible = true;
+                Task.Delay(2000).ContinueWith(t =>
+                {
+                    this.Invoke((MethodInvoker)delegate
+                    {
+                        DangNhap dangNhap = new DangNhap();
+                        dangNhap.Show();
+                        this.Hide();
+                    });
+                });
             }
             else
             {
