@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class Form7 : Form
+    public partial class Form9 : Form
     {
-        public Form7()
+        public Form9()
         {
             InitializeComponent();
-        }
-
-        private void guna2HtmlLabel12_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
