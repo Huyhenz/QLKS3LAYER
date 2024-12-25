@@ -541,9 +541,9 @@
             this.label5.Font = new System.Drawing.Font("Arial Narrow", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(235, 14);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(249, 40);
+            this.label5.Size = new System.Drawing.Size(272, 40);
             this.label5.TabIndex = 1;
-            this.label5.Text = "Đăng Ký Đăng Ký";
+            this.label5.Text = "Thông Tin Đăng Ký";
             // 
             // guna2TabControl1
             // 
