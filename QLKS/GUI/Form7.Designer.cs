@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form7));
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.navMain = new DevExpress.XtraNavBar.NavBarControl();
@@ -41,6 +42,7 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).BeginInit();
             this.splitContainerControl1.Panel1.SuspendLayout();
@@ -84,6 +86,7 @@
             this.navMain.Size = new System.Drawing.Size(285, 419);
             this.navMain.TabIndex = 0;
             this.navMain.Text = "navBarControl1";
+            this.navMain.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navMain_LinkClicked);
             // 
             // navBarGroup1
             // 
@@ -164,6 +167,12 @@
             this.toolStripButton4.Size = new System.Drawing.Size(29, 44);
             this.toolStripButton4.Text = "toolStripButton4";
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "9710991.png");
+            // 
             // Form7
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -173,6 +182,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Name = "Form7";
             this.Text = "Form7";
+            this.Load += new System.EventHandler(this.Form7_Load);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).EndInit();
             this.splitContainerControl1.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel2)).EndInit();
@@ -200,5 +210,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
