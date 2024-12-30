@@ -31,18 +31,23 @@ namespace DAL
 
                 while (reader.Read())
                 {
-                    TaiKhoanDTO taiKhoan = new TaiKhoanDTO(
-                        Convert.ToInt32(reader["UID"]),
-                        reader["FULLNAME"].ToString(),
-                        reader["USERNAME"].ToString(),
-                        Convert.ToDateTime(reader["NGAYSINH"]),
-                        reader["EMAIL"].ToString(),
-                        Convert.ToInt32(reader["SDT"]),
-                        Convert.ToInt32(reader["CCCD"]),
-                        reader["DIACHI"].ToString(),
-                        reader["PASSWD"].ToString(),
-                        Convert.ToInt32(reader["IDQUYEN"])
-                    );
+                    TaiKhoanDTO taiKhoan = new TaiKhoanDTO
+                    {
+                        UID = reader["UID"] != DBNull.Value ? Convert.ToInt32(reader["UID"]) : 0,
+                        FULLNAME = reader["FULLNAME"] != DBNull.Value ? reader["FULLNAME"].ToString() : string.Empty,
+                        USERNAME = reader["USERNAME"] != DBNull.Value ? reader["USERNAME"].ToString() : string.Empty,
+                        NGAYSINH = reader["NGAYSINH"] != DBNull.Value ? Convert.ToDateTime(reader["NGAYSINH"]) : DateTime.MinValue,
+                        EMAIL = reader["EMAIL"] != DBNull.Value ? reader["EMAIL"].ToString() : string.Empty,
+                        SDT = reader["SDT"] != DBNull.Value ? Convert.ToInt64(reader["SDT"]) : 0,
+                        CCCD = reader["CCCD"] != DBNull.Value ? Convert.ToInt64(reader["CCCD"]) : 0,
+                        DIACHI = reader["DIACHI"] != DBNull.Value ? reader["DIACHI"].ToString() : string.Empty,
+                        PASSWD = reader["PASSWD"] != DBNull.Value ? reader["PASSWD"].ToString() : string.Empty,
+                        MACTY = reader["MACTY"] != DBNull.Value ? reader["MACTY"].ToString() : string.Empty,
+                        MADVI = reader["MADVI"] != DBNull.Value ? reader["MADVI"].ToString() : string.Empty,
+                        ISGROUP = reader["ISGROUP"] != DBNull.Value && Convert.ToBoolean(reader["ISGROUP"]),
+                        DISABLED = reader["DISABLED"] != DBNull.Value && Convert.ToBoolean(reader["DISABLED"]),
+                        IDQUYEN = reader["IDQUYEN"] != DBNull.Value ? Convert.ToInt32(reader["IDQUYEN"]) : 0
+                    };
                     taiKhoanList.Add(taiKhoan);
                 }
                 reader.Close();
@@ -57,8 +62,11 @@ namespace DAL
             }
             return taiKhoanList;
         }
+    
 
-        public bool AddTaiKhoan(TaiKhoanDTO taiKhoan)
+
+
+public bool AddTaiKhoan(TaiKhoanDTO taiKhoan)
         {
             try
             {
@@ -192,8 +200,7 @@ namespace DAL
             try
             {
                 conn.OpenConnection();
-                string query = "SELECT * FROM tb_User WHERE USERNAME = @USERNAME AND PASSWD = @PASSWD";
-                SqlCommand command = new SqlCommand(query, conn.GetConnection());
+                string query = "SELECT * FROM tb_User WHERE USERNAME COLLATE Latin1_General_CS_AS = @USERNAME AND PASSWD COLLATE Latin1_General_CS_AS = @PASSWD"; SqlCommand command = new SqlCommand(query, conn.GetConnection());
                 command.Parameters.AddWithValue("@USERNAME", USERNAME);
                 command.Parameters.AddWithValue("@PASSWD", PASSWD);
                 SqlDataReader reader = command.ExecuteReader();

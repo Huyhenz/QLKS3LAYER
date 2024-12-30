@@ -62,8 +62,8 @@ namespace GUI
                     }
                     else if (roleValue == 2)
                     {
-                        ThanhToan form5 = new ThanhToan();
-                        form5.Show();
+                        Form9 form9 = new Form9();
+                        form9.Show();
                         this.Hide();
                     }
                     else

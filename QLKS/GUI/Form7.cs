@@ -31,9 +31,11 @@ namespace GUI
             AddItemsToNavBar(navBarGroup1, "DANHMUC");
             AddItemsToNavBar(navBarGroup2, "HETHONG");
 
-            navBarGroup1.SmallImageIndex = 0;
-            navBarGroup2.SmallImageIndex = 0;
-            navBarGroup3.SmallImageIndex = 0;
+            
+                navBarGroup1.SmallImageIndex = 0;
+                navBarGroup2.SmallImageIndex = 0;
+                navBarGroup3.SmallImageIndex = 0;
+            
         }
 
 
