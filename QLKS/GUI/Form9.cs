@@ -212,6 +212,16 @@ namespace GUI
             // Tải danh sách tài khoản khi form load
             LoadTaiKhoanToGrid();
         }
+
+        private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
     

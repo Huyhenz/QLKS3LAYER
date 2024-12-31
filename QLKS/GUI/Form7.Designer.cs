@@ -56,7 +56,7 @@
             // 
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl1.Location = new System.Drawing.Point(0, 47);
-            this.splitContainerControl1.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.splitContainerControl1.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
             this.splitContainerControl1.Name = "splitContainerControl1";
             // 
             // splitContainerControl1.Panel1
@@ -68,7 +68,7 @@
             // 
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.Size = new System.Drawing.Size(908, 419);
-            this.splitContainerControl1.SplitterPosition = 356;
+            this.splitContainerControl1.SplitterPosition = 445;
             this.splitContainerControl1.TabIndex = 3;
             // 
             // navMain
@@ -80,10 +80,10 @@
             this.navBarGroup2,
             this.navBarGroup3});
             this.navMain.Location = new System.Drawing.Point(0, 0);
-            this.navMain.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.navMain.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
             this.navMain.Name = "navMain";
-            this.navMain.OptionsNavPane.ExpandedWidth = 356;
-            this.navMain.Size = new System.Drawing.Size(356, 419);
+            this.navMain.OptionsNavPane.ExpandedWidth = 445;
+            this.navMain.Size = new System.Drawing.Size(445, 419);
             this.navMain.TabIndex = 0;
             this.navMain.Text = "navBarControl1";
             this.navMain.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navMain_LinkClicked);
@@ -91,6 +91,7 @@
             // navBarGroup1
             // 
             this.navBarGroup1.Caption = "navBarGroup1";
+            this.navBarGroup1.Expanded = true;
             this.navBarGroup1.Name = "navBarGroup1";
             // 
             // navBarGroup2
