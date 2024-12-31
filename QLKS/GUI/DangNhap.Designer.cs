@@ -50,16 +50,16 @@
             this.label3.ForeColor = System.Drawing.Color.Silver;
             this.label3.Location = new System.Drawing.Point(286, 481);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(447, 21);
+            this.label3.Size = new System.Drawing.Size(456, 21);
             this.label3.TabIndex = 10;
-            this.label3.Text = "Bạn sẽ chấp nhập các điều khoản và các điều kiệ của chúng tôi";
+            this.label3.Text = "Bạn sẽ chấp nhập các điều khoản và các điều kiện của chúng tôi";
             // 
             // labelError
             // 
             this.labelError.AutoSize = true;
             this.labelError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelError.ForeColor = System.Drawing.Color.Red;
-            this.labelError.Location = new System.Drawing.Point(627, 368);
+            this.labelError.Location = new System.Drawing.Point(129, 401);
             this.labelError.Name = "labelError";
             this.labelError.Size = new System.Drawing.Size(260, 20);
             this.labelError.TabIndex = 9;
@@ -70,7 +70,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(667, 34);
+            this.label1.Location = new System.Drawing.Point(169, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(179, 41);
             this.label1.TabIndex = 8;
@@ -91,7 +91,7 @@
             this.txt_User.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_User.IconLeft = ((System.Drawing.Image)(resources.GetObject("txt_User.IconLeft")));
             this.txt_User.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txt_User.Location = new System.Drawing.Point(547, 102);
+            this.txt_User.Location = new System.Drawing.Point(49, 135);
             this.txt_User.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_User.Name = "txt_User";
             this.txt_User.PasswordChar = '\0';
@@ -117,7 +117,7 @@
             this.txt_Pass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_Pass.IconLeft = ((System.Drawing.Image)(resources.GetObject("txt_Pass.IconLeft")));
             this.txt_Pass.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txt_Pass.Location = new System.Drawing.Point(547, 207);
+            this.txt_Pass.Location = new System.Drawing.Point(49, 240);
             this.txt_Pass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_Pass.Name = "txt_Pass";
             this.txt_Pass.PasswordChar = '*';
@@ -137,7 +137,7 @@
             this.btnSingup.FillColor = System.Drawing.Color.Teal;
             this.btnSingup.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSingup.ForeColor = System.Drawing.Color.White;
-            this.btnSingup.Location = new System.Drawing.Point(787, 298);
+            this.btnSingup.Location = new System.Drawing.Point(289, 331);
             this.btnSingup.Name = "btnSingup";
             this.btnSingup.Size = new System.Drawing.Size(142, 53);
             this.btnSingup.TabIndex = 13;
@@ -148,7 +148,7 @@
             // 
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(52, 67);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(566, 67);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(489, 411);
             this.guna2PictureBox1.TabIndex = 14;
@@ -165,7 +165,7 @@
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnExit.Location = new System.Drawing.Point(1, 3);
+            this.btnExit.Location = new System.Drawing.Point(945, 0);
             this.btnExit.Name = "btnExit";
             this.btnExit.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnExit.Size = new System.Drawing.Size(47, 44);
@@ -181,7 +181,7 @@
             this.btnLogin.FillColor = System.Drawing.Color.Teal;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(586, 298);
+            this.btnLogin.Location = new System.Drawing.Point(88, 331);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(147, 53);
             this.btnLogin.TabIndex = 16;

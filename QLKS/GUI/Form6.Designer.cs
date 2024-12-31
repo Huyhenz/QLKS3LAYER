@@ -42,6 +42,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.comboQH = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtDC = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtCCCD = new Guna.UI2.WinForms.Guna2TextBox();
@@ -58,12 +59,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.guna2TabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
+            this.guna2TabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage2
@@ -302,6 +302,18 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Thông Tin";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // dateEdit1
+            // 
+            this.dateEdit1.EditValue = null;
+            this.dateEdit1.Location = new System.Drawing.Point(161, 131);
+            this.dateEdit1.Name = "dateEdit1";
+            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit1.Size = new System.Drawing.Size(125, 22);
+            this.dateEdit1.TabIndex = 18;
             // 
             // comboQH
             // 
@@ -570,18 +582,6 @@
             this.guna2Panel1.Size = new System.Drawing.Size(973, 68);
             this.guna2Panel1.TabIndex = 1;
             // 
-            // dateEdit1
-            // 
-            this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(161, 131);
-            this.dateEdit1.Name = "dateEdit1";
-            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Size = new System.Drawing.Size(125, 22);
-            this.dateEdit1.TabIndex = 18;
-            // 
             // Form6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -596,9 +596,9 @@
             this.tabPage2.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.guna2TabControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
+            this.guna2TabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

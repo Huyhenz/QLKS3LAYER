@@ -60,7 +60,6 @@
             this.gvDanhSach = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TextBox9 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -84,6 +83,7 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.toolStrip1.SuspendLayout();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -92,10 +92,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSach)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.guna2GroupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -116,7 +116,7 @@
             this.toolStripButton6});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(973, 47);
+            this.toolStrip1.Size = new System.Drawing.Size(1924, 47);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -202,10 +202,10 @@
             this.guna2TabControl1.Controls.Add(this.tabPage2);
             this.guna2TabControl1.Controls.Add(this.tabPage3);
             this.guna2TabControl1.ItemSize = new System.Drawing.Size(180, 40);
-            this.guna2TabControl1.Location = new System.Drawing.Point(12, 65);
+            this.guna2TabControl1.Location = new System.Drawing.Point(12, 50);
             this.guna2TabControl1.Name = "guna2TabControl1";
             this.guna2TabControl1.SelectedIndex = 0;
-            this.guna2TabControl1.Size = new System.Drawing.Size(959, 530);
+            this.guna2TabControl1.Size = new System.Drawing.Size(1942, 1102);
             this.guna2TabControl1.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.guna2TabControl1.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
             this.guna2TabControl1.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
@@ -232,7 +232,7 @@
             this.tabPage1.Location = new System.Drawing.Point(184, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(771, 522);
+            this.tabPage1.Size = new System.Drawing.Size(1754, 1094);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Thêm Phòng";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -256,9 +256,9 @@
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.Teal;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.White;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(3, 242);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(6, 440);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(772, 284);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(1653, 549);
             this.guna2GroupBox1.TabIndex = 4;
             this.guna2GroupBox1.Text = "Thông Tin";
             // 
@@ -500,7 +500,7 @@
             this.gcDanhSach.Location = new System.Drawing.Point(6, 6);
             this.gcDanhSach.MainView = this.gvDanhSach;
             this.gcDanhSach.Name = "gcDanhSach";
-            this.gcDanhSach.Size = new System.Drawing.Size(757, 230);
+            this.gcDanhSach.Size = new System.Drawing.Size(1653, 428);
             this.gcDanhSach.TabIndex = 2;
             this.gcDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhSach});
@@ -516,7 +516,7 @@
             this.tabPage2.Location = new System.Drawing.Point(184, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(771, 522);
+            this.tabPage2.Size = new System.Drawing.Size(1754, 1094);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Tìm Phòng";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -536,16 +536,6 @@
             this.guna2GroupBox2.Size = new System.Drawing.Size(760, 365);
             this.guna2GroupBox2.TabIndex = 5;
             this.guna2GroupBox2.Text = "Danh sách đặt phòng";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 43);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(754, 252);
-            this.dataGridView2.TabIndex = 16;
             // 
             // guna2Button2
             // 
@@ -611,7 +601,7 @@
             this.tabPage3.Location = new System.Drawing.Point(184, 4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(771, 522);
+            this.tabPage3.Size = new System.Drawing.Size(1754, 1094);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Thông Tin Khách ";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -632,9 +622,9 @@
             this.guna2GroupBox3.CustomBorderColor = System.Drawing.Color.Teal;
             this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox3.ForeColor = System.Drawing.Color.White;
-            this.guna2GroupBox3.Location = new System.Drawing.Point(3, 237);
+            this.guna2GroupBox3.Location = new System.Drawing.Point(6, 482);
             this.guna2GroupBox3.Name = "guna2GroupBox3";
-            this.guna2GroupBox3.Size = new System.Drawing.Size(760, 257);
+            this.guna2GroupBox3.Size = new System.Drawing.Size(1710, 507);
             this.guna2GroupBox3.TabIndex = 19;
             this.guna2GroupBox3.Text = "Thông Tin";
             // 
@@ -825,7 +815,7 @@
             this.guna2Button3.FillColor = System.Drawing.Color.Teal;
             this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.Location = new System.Drawing.Point(445, 195);
+            this.guna2Button3.Location = new System.Drawing.Point(831, 388);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.Size = new System.Drawing.Size(133, 34);
             this.guna2Button3.TabIndex = 18;
@@ -847,14 +837,14 @@
             this.guna2TextBox5.ForeColor = System.Drawing.Color.Black;
             this.guna2TextBox5.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox5.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.guna2TextBox5.Location = new System.Drawing.Point(151, 195);
+            this.guna2TextBox5.Location = new System.Drawing.Point(257, 388);
             this.guna2TextBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2TextBox5.Name = "guna2TextBox5";
             this.guna2TextBox5.PasswordChar = '\0';
             this.guna2TextBox5.PlaceholderForeColor = System.Drawing.Color.Black;
             this.guna2TextBox5.PlaceholderText = "";
             this.guna2TextBox5.SelectedText = "";
-            this.guna2TextBox5.Size = new System.Drawing.Size(271, 34);
+            this.guna2TextBox5.Size = new System.Drawing.Size(546, 34);
             this.guna2TextBox5.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.guna2TextBox5.TabIndex = 17;
             // 
@@ -863,7 +853,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(3, 210);
+            this.label7.Location = new System.Drawing.Point(88, 403);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(141, 19);
             this.label7.TabIndex = 16;
@@ -881,7 +871,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(759, 171);
+            this.dataGridView1.Size = new System.Drawing.Size(1710, 369);
             this.dataGridView1.TabIndex = 2;
             // 
             // Column1
@@ -912,11 +902,21 @@
             this.Column4.Name = "Column4";
             this.Column4.Width = 125;
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 43);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(754, 252);
+            this.dataGridView2.TabIndex = 16;
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(973, 598);
+            this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.guna2TabControl1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "Form4";
@@ -932,12 +932,12 @@
             this.tabPage2.ResumeLayout(false);
             this.guna2GroupBox2.ResumeLayout(false);
             this.guna2GroupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.guna2GroupBox3.ResumeLayout(false);
             this.guna2GroupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -979,7 +979,6 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox9;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
@@ -1000,5 +999,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label13;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }
