@@ -1,4 +1,5 @@
 ﻿using BLL;
+using DevExpress.Internal.WinApi.Windows.UI.Notifications;
 using DTO;
 using System;
 using System.Collections.Generic;
@@ -24,29 +25,45 @@ namespace GUI
 
         private void guna2Button7_Click(object sender, EventArgs e)
         {
-            TaiKhoanDTO newTaiKhoan = new TaiKhoanDTO
-            {
-                FULLNAME = txtHoTenNV.Text,
-                NGAYSINH = timeNV.Value,
-                EMAIL = txtEMAILNV.Text,
-                SDT = Convert.ToInt64(txtSDTNV.Text),
-                CCCD = Convert.ToInt64(txtCCCDNV.Text),
-                DIACHI = txtDCNV.Text,
-                //USERNAME = txtHoTenNV.Text,
-                //PASSWD = txtPassword.Text,
-                //IDQUYEN = Convert.ToInt32(txtIDQuyen.Text)
-            };
+                // Xác định giá trị IDQUYEN từ ComboBox
+                int idQuyen = comboCVNV.SelectedItem.ToString() == "User" ? 1 : 2;
 
-            taikhoanbus.AddTaiKhoan(newTaiKhoan);
-            // Tải lại danh sách tài khoản sau khi thêm mới
-            ClearInputFields(); // Xóa nội dung các ô nhập liệu sau khi thêm tài khoản
+                // Tạo đối tượng tài khoản mới và điền dữ liệu từ form
+                TaiKhoanDTO newTaiKhoan = new TaiKhoanDTO
+                {
+                    FULLNAME = txtHoTenNV.Text,
+                    NGAYSINH = dateEdit1.DateTime.ToString("yyyy-MM-dd"), // Chuyển đổi DateTime sang string
+                    EMAIL = txtEMAILNV.Text,
+                    SDT = Convert.ToInt64(txtSDTNV.Text),
+                    CCCD = Convert.ToInt64(txtCCCDNV.Text),
+                    DIACHI = txtDCNV.Text,
+                    USERNAME = txtUSERNV.Text,
+                    PASSWD = txtPASSNV.Text,
+                    IDQUYEN = idQuyen
+                };
+
+                // Gọi phương thức BLL để thêm tài khoản
+                taikhoanbus tkBus = new taikhoanbus();
+                bool result = tkBus.AddTaiKhoan(newTaiKhoan);
+
+                // Hiển thị thông báo dựa trên kết quả
+                if (result)
+                {
+                    MessageBox.Show("Thêm tài khoản mới thành công!");
+                    LoadTaiKhoanToGrid(); // Tải lại danh sách nhân viên sau khi thêm mới
+                    ClearInputFields(); // Xóa nội dung các ô nhập liệu sau khi thêm tài khoản
+                }
+                else
+                {
+                    MessageBox.Show("Thêm tài khoản mới thất bại!");
+                }
         }
 
         // Hàm ClearInputFields để xóa nội dung các ô nhập liệu
         private void ClearInputFields()
         {
             txtHoTenNV.Text = "";
-            timeNV.Value = DateTime.Now;
+            //timeNV.Value = DateTime.Now;
             txtHoTenNV.Text = "";
             txtSDTNV.Text = "";
             txtCCCDNV.Text = "";
@@ -69,57 +86,73 @@ namespace GUI
 
         private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = dgvNhanVien.Rows[e.RowIndex];
+                    txtMANV.Text = row.Cells["UID"].Value.ToString();
+                    txtHoTenNV.Text = row.Cells["FULLNAME"].Value.ToString();
 
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dgvNhanVien.Rows[e.RowIndex];
+                    // Chuyển đổi từ string sang DateTime khi hiển thị lên DateEdit
+                    DateTime ngaySinh;
+                    if (DateTime.TryParse(row.Cells["NGAYSINH"].Value.ToString(), out ngaySinh))
+                    {
+                        dateEdit1.DateTime = ngaySinh;
+                    }
+                    else
+                    {
+                        dateEdit1.DateTime = DateTime.Now;
+                    }
 
-                txtMANV.Text = row.Cells["UID"].Value.ToString();
-                txtHoTenNV.Text = row.Cells["FULLNAME"].Value.ToString();
-                //timeNV.Value = Convert.ToDateTime(row.Cells["NGAYSINH"].Value);
-                txtEMAILNV.Text = row.Cells["EMAIL"].Value.ToString();
-                txtSDTNV.Text = row.Cells["SDT"].Value.ToString();
-                txtCCCDNV.Text = row.Cells["CCCD"].Value.ToString();
-                txtDCNV.Text = row.Cells["DIACHI"].Value.ToString();
-                //txtuse.Text = row.Cells["USERNAME"].Value.ToString();
-                //txtMatKhau.Text = row.Cells["PASSWD"].Value.ToString();
-                // Add more fields as necessary
-            }
+                    txtEMAILNV.Text = row.Cells["EMAIL"].Value.ToString();
+                    txtSDTNV.Text = row.Cells["SDT"].Value.ToString();
+                    txtCCCDNV.Text = row.Cells["CCCD"].Value.ToString();
+                    txtDCNV.Text = row.Cells["DIACHI"].Value.ToString();
+                    txtUSERNV.Text = row.Cells["USERNAME"].Value.ToString();
+                    txtPASSNV.Text = row.Cells["PASSWD"].Value.ToString();
+
+                    // Hiển thị giá trị IDQUYEN trong ComboBox
+                    int idQuyen = Convert.ToInt32(row.Cells["IDQUYEN"].Value);
+                    if (idQuyen == 1)
+                    {
+                        comboCVNV.SelectedItem = "User";
+                    }
+                    else if (idQuyen == 2)
+                    {
+                    comboCVNV.SelectedItem = "Manager";
+                    }
+                }
         }
-
-
-
         private void guna2Button8_Click(object sender, EventArgs e)
         {
-            // Tạo đối tượng tài khoản mới và điền dữ liệu từ form
-            TaiKhoanDTO taiKhoan = new TaiKhoanDTO();
-            taiKhoan.UID = int.Parse(txtMANV.Text);
-            taiKhoan.FULLNAME = txtHoTenNV.Text;
-            //taiKhoan.NGAYSINH = timeNV.Value;
-            taiKhoan.EMAIL = txtEMAILNV.Text;
-            taiKhoan.SDT = long.Parse(txtSDTNV.Text);
-            taiKhoan.CCCD = long.Parse(txtCCCDNV.Text);
-            taiKhoan.DIACHI = txtDCNV.Text;
-            //taiKhoan.USERNAME = txt.Text;
-            //taiKhoan.PASSWD = txtMatKhau.Text;
-            // Add more fields as necessary
+                // Xác định giá trị IDQUYEN từ ComboBox
+                int idQuyen = comboCVNV.SelectedItem.ToString() == "User" ? 1 : 2;
 
-            // Gọi phương thức BLL để cập nhật thông tin tài khoản
-            taikhoanbus tkBus = new taikhoanbus();
-            bool result = tkBus.UpdateTaiKhoan(taiKhoan);
+                TaiKhoanDTO taiKhoan = new TaiKhoanDTO
+                {
+                    UID = int.Parse(txtMANV.Text),
+                    FULLNAME = txtHoTenNV.Text,
+                    NGAYSINH = dateEdit1.DateTime.ToString("yyyy-MM-dd"), // Chuyển đổi DateTime sang string
+                    EMAIL = txtEMAILNV.Text,
+                    SDT = long.Parse(txtSDTNV.Text),
+                    CCCD = long.Parse(txtCCCDNV.Text),
+                    DIACHI = txtDCNV.Text,
+                    USERNAME = txtUSERNV.Text,
+                    PASSWD = txtPASSNV.Text,
+                    IDQUYEN = idQuyen
+                };
 
-            // Hiển thị thông báo dựa trên kết quả
-            if (result)
-            {
-                MessageBox.Show("Cập nhật thông tin tài khoản thành công!");
-            }
-            else
-            {
-                MessageBox.Show("Cập nhật thông tin tài khoản thất bại!");
-            }
+                taikhoanbus tkBus = new taikhoanbus();
+                bool result = tkBus.UpdateTaiKhoan(taiKhoan);
 
-            // Tải lại danh sách tài khoản sau khi cập nhật
-            LoadTaiKhoanToGrid();
+                if (result)
+                {
+                    MessageBox.Show("Cập nhật thông tin tài khoản thành công!");
+                    LoadTaiKhoanToGrid(); // Tải lại danh sách nhân viên sau khi cập nhật
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật thông tin tài khoản thất bại!");
+                }
         }
 
 
@@ -168,6 +201,9 @@ namespace GUI
 
         private void Form9_Load(object sender, EventArgs e)
         {
+            comboCVNV.Items.Add("User");
+            comboCVNV.Items.Add("Manager");
+            comboCVNV.DropDownStyle = ComboBoxStyle.DropDownList;
             // Đảm bảo DataGridView được gán sự kiện
             dgvNhanVien.CellClick += dgvNhanVien_CellClick;
             dgvNhanVien.MultiSelect = true;

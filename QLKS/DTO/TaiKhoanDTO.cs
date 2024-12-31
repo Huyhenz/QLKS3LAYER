@@ -11,7 +11,7 @@ namespace DTO
         public int UID { get; set; }
         public string FULLNAME { get; set; }
 
-        public DateTime NGAYSINH { get; set; }
+        public string NGAYSINH { get; set; }
 
         public string EMAIL { get; set; }
 
@@ -31,7 +31,7 @@ namespace DTO
         public TaiKhoanDTO() { }
 
 
-        public TaiKhoanDTO(int UID, string FULLNAME, string USERNAME,DateTime NGAYSINH, string EMAIL, int SDT, int CCCD, string DIACHI, string PASSWD, int IDQUYEN)
+        public TaiKhoanDTO(int UID, string FULLNAME, string USERNAME,string NGAYSINH, string EMAIL, int SDT, int CCCD, string DIACHI, string PASSWD, int IDQUYEN)
         {
             UID = UID;
             FULLNAME = FULLNAME;

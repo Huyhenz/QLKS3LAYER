@@ -23,67 +23,71 @@ namespace GUI
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            string fullname = txtFullname.Text;
-            string username = txtUser.Text;
-            string password = txtPass.Text;
-            string confirmPassword = txtComfirmPass.Text;
-            string email = txtEmail.Text;
-            string address = txtDC.Text;
-            string phoneNumber = txtSDT.Text;
-            string cccd = txtCCCD.Text;
-            string role = comboQH.SelectedItem?.ToString();
+                string fullname = txtFullname.Text;
+                string username = txtUser.Text;
+                string password = txtPass.Text;
+                string confirmPassword = txtComfirmPass.Text;
+                string email = txtEmail.Text;
+                string address = txtDC.Text;
+                string phoneNumber = txtSDT.Text;
+                string cccd = txtCCCD.Text;
+                string role = comboQH.SelectedItem?.ToString();
 
-            if (string.IsNullOrEmpty(fullname) || string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password) ||
-                string.IsNullOrEmpty(confirmPassword) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(address) ||
-                string.IsNullOrEmpty(phoneNumber) || string.IsNullOrEmpty(cccd) || string.IsNullOrEmpty(role))
-            {
-                labelFullinfo.Visible = true;
-                return;
-            }
-
-            if (password != confirmPassword)
-            {
-                labelFullinfo.Visible = false;
-                labelX2.Visible = true;
-                txtPass.Clear();
-                txtComfirmPass.Clear();
-                return;
-            }
-
-            int roleValue = role == "User" ? 1 : 2;
-
-            TaiKhoanDTO newTaiKhoan = new TaiKhoanDTO
-            {
-                FULLNAME = fullname,
-                USERNAME = username,
-                PASSWD = password,
-                EMAIL = email,
-                DIACHI = address,
-                SDT = long.Parse(phoneNumber),
-                CCCD = long.Parse(cccd),
-                IDQUYEN = roleValue // Gán giá trị số cho IDQUYEN
-            };
-
-            bool result = taiKhoanBus.AddTaiKhoan(newTaiKhoan);
-
-            if (result)
-            {
-                labelX2.Visible = false;
-                labelSuccess.Visible = true;
-                Task.Delay(2000).ContinueWith(t =>
+                if (string.IsNullOrEmpty(fullname) || string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password) ||
+                    string.IsNullOrEmpty(confirmPassword) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(address) ||
+                    string.IsNullOrEmpty(phoneNumber) || string.IsNullOrEmpty(cccd) || string.IsNullOrEmpty(role))
                 {
-                    this.Invoke((MethodInvoker)delegate
+                    labelFullinfo.Visible = true;
+                    return;
+                }
+
+                if (password != confirmPassword)
+                {
+                    labelFullinfo.Visible = false;
+                    labelX2.Visible = true;
+                    txtPass.Clear();
+                    txtComfirmPass.Clear();
+                    return;
+                }
+
+                int roleValue = role == "User" ? 1 : 2;
+
+                // Lấy giá trị ngày sinh từ DateEdit
+                string ngaySinh = dateEdit1.DateTime.ToString("yyyy-MM-dd");
+
+                TaiKhoanDTO newTaiKhoan = new TaiKhoanDTO
+                {
+                    FULLNAME = fullname,
+                    USERNAME = username,
+                    PASSWD = password,
+                    EMAIL = email,
+                    DIACHI = address,
+                    SDT = long.Parse(phoneNumber),
+                    CCCD = long.Parse(cccd),
+                    NGAYSINH = ngaySinh, // Gán giá trị ngày sinh
+                    IDQUYEN = roleValue // Gán giá trị số cho IDQUYEN
+                };
+
+                bool result = taiKhoanBus.AddTaiKhoan(newTaiKhoan);
+
+                if (result)
+                {
+                    labelX2.Visible = false;
+                    labelSuccess.Visible = true;
+                    Task.Delay(2000).ContinueWith(t =>
                     {
-                        DangNhap dangNhap = new DangNhap();
-                        dangNhap.Show();
-                        this.Hide();
+                        this.Invoke((MethodInvoker)delegate
+                        {
+                            DangNhap dangNhap = new DangNhap();
+                            dangNhap.Show();
+                            this.Hide();
+                        });
                     });
-                });
-            }
-            else
-            {
-                MessageBox.Show("Đăng ký thất bại!");
-            }
+                }
+                else
+                {
+                    MessageBox.Show("Đăng ký thất bại!");
+                }
         }
 
         private void Form6_Load(object sender, EventArgs e)

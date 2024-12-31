@@ -29,15 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form9));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -50,14 +49,11 @@
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.txtEMAILNV = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
-            this.txtHOCVANNV = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtSDTNV = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtCCCDNV = new Guna.UI2.WinForms.Guna2TextBox();
-            this.time2NV = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2RadioButton2 = new Guna.UI2.WinForms.Guna2RadioButton();
             this.guna2RadioButton1 = new Guna.UI2.WinForms.Guna2RadioButton();
             this.comboCVNV = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.timeNV = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.txtDCNV = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtHoTenNV = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtMANV = new Guna.UI2.WinForms.Guna2TextBox();
@@ -84,12 +80,22 @@
             this.label12 = new System.Windows.Forms.Label();
             this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
+            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
+            this.dateEdit2 = new DevExpress.XtraEditors.DateEdit();
+            this.labell = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtUSERNV = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtPASSNV = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel2.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel2
@@ -128,8 +134,13 @@
             // 
             // guna2GroupBox1
             // 
+            this.guna2GroupBox1.Controls.Add(this.txtPASSNV);
+            this.guna2GroupBox1.Controls.Add(this.txtUSERNV);
+            this.guna2GroupBox1.Controls.Add(this.label13);
+            this.guna2GroupBox1.Controls.Add(this.labell);
+            this.guna2GroupBox1.Controls.Add(this.dateEdit2);
+            this.guna2GroupBox1.Controls.Add(this.dateEdit1);
             this.guna2GroupBox1.Controls.Add(this.label11);
-            this.guna2GroupBox1.Controls.Add(this.label10);
             this.guna2GroupBox1.Controls.Add(this.label9);
             this.guna2GroupBox1.Controls.Add(this.label8);
             this.guna2GroupBox1.Controls.Add(this.label7);
@@ -142,14 +153,11 @@
             this.guna2GroupBox1.Controls.Add(this.guna2PictureBox1);
             this.guna2GroupBox1.Controls.Add(this.txtEMAILNV);
             this.guna2GroupBox1.Controls.Add(this.guna2Button5);
-            this.guna2GroupBox1.Controls.Add(this.txtHOCVANNV);
             this.guna2GroupBox1.Controls.Add(this.txtSDTNV);
             this.guna2GroupBox1.Controls.Add(this.txtCCCDNV);
-            this.guna2GroupBox1.Controls.Add(this.time2NV);
             this.guna2GroupBox1.Controls.Add(this.guna2RadioButton2);
             this.guna2GroupBox1.Controls.Add(this.guna2RadioButton1);
             this.guna2GroupBox1.Controls.Add(this.comboCVNV);
-            this.guna2GroupBox1.Controls.Add(this.timeNV);
             this.guna2GroupBox1.Controls.Add(this.txtDCNV);
             this.guna2GroupBox1.Controls.Add(this.txtHoTenNV);
             this.guna2GroupBox1.Controls.Add(this.txtMANV);
@@ -167,22 +175,11 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(733, 296);
+            this.label11.Location = new System.Drawing.Point(733, 235);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(54, 19);
             this.label11.TabIndex = 48;
             this.label11.Text = "Email:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(733, 235);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(137, 19);
-            this.label10.TabIndex = 47;
-            this.label10.Text = "Trình độ học vấn:";
             // 
             // label9
             // 
@@ -305,7 +302,7 @@
             this.txtEMAILNV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEMAILNV.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtEMAILNV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEMAILNV.Location = new System.Drawing.Point(878, 279);
+            this.txtEMAILNV.Location = new System.Drawing.Point(878, 222);
             this.txtEMAILNV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEMAILNV.Name = "txtEMAILNV";
             this.txtEMAILNV.PasswordChar = '\0';
@@ -328,26 +325,6 @@
             this.guna2Button5.Size = new System.Drawing.Size(180, 45);
             this.guna2Button5.TabIndex = 35;
             this.guna2Button5.Text = "Thay Ảnh";
-            // 
-            // txtHOCVANNV
-            // 
-            this.txtHOCVANNV.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtHOCVANNV.DefaultText = "";
-            this.txtHOCVANNV.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtHOCVANNV.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtHOCVANNV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtHOCVANNV.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtHOCVANNV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtHOCVANNV.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtHOCVANNV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtHOCVANNV.Location = new System.Drawing.Point(878, 222);
-            this.txtHOCVANNV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtHOCVANNV.Name = "txtHOCVANNV";
-            this.txtHOCVANNV.PasswordChar = '\0';
-            this.txtHOCVANNV.PlaceholderText = "";
-            this.txtHOCVANNV.SelectedText = "";
-            this.txtHOCVANNV.Size = new System.Drawing.Size(274, 36);
-            this.txtHOCVANNV.TabIndex = 34;
             // 
             // txtSDTNV
             // 
@@ -388,20 +365,6 @@
             this.txtCCCDNV.SelectedText = "";
             this.txtCCCDNV.Size = new System.Drawing.Size(274, 36);
             this.txtCCCDNV.TabIndex = 30;
-            // 
-            // time2NV
-            // 
-            this.time2NV.Checked = true;
-            this.time2NV.FillColor = System.Drawing.Color.White;
-            this.time2NV.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.time2NV.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.time2NV.Location = new System.Drawing.Point(128, 325);
-            this.time2NV.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.time2NV.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.time2NV.Name = "time2NV";
-            this.time2NV.Size = new System.Drawing.Size(274, 36);
-            this.time2NV.TabIndex = 24;
-            this.time2NV.Value = new System.DateTime(2024, 12, 25, 0, 18, 4, 777);
             // 
             // guna2RadioButton2
             // 
@@ -455,20 +418,6 @@
             this.comboCVNV.Name = "comboCVNV";
             this.comboCVNV.Size = new System.Drawing.Size(274, 36);
             this.comboCVNV.TabIndex = 18;
-            // 
-            // timeNV
-            // 
-            this.timeNV.Checked = true;
-            this.timeNV.FillColor = System.Drawing.Color.White;
-            this.timeNV.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.timeNV.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.timeNV.Location = new System.Drawing.Point(128, 162);
-            this.timeNV.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.timeNV.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.timeNV.Name = "timeNV";
-            this.timeNV.Size = new System.Drawing.Size(274, 36);
-            this.timeNV.TabIndex = 16;
-            this.timeNV.Value = new System.DateTime(2024, 12, 25, 0, 18, 4, 777);
             // 
             // txtDCNV
             // 
@@ -532,28 +481,28 @@
             // 
             // dgvNhanVien
             // 
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.White;
-            this.dgvNhanVien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvNhanVien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvNhanVien.ColumnHeadersHeight = 18;
             this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1});
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvNhanVien.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvNhanVien.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvNhanVien.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvNhanVien.Location = new System.Drawing.Point(371, 642);
             this.dgvNhanVien.Name = "dgvNhanVien";
@@ -911,6 +860,92 @@
             this.guna2Button8.Text = "Xóa";
             this.guna2Button8.Click += new System.EventHandler(this.guna2Button8_Click_1);
             // 
+            // dateEdit1
+            // 
+            this.dateEdit1.EditValue = null;
+            this.dateEdit1.Location = new System.Drawing.Point(128, 174);
+            this.dateEdit1.Name = "dateEdit1";
+            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit1.Size = new System.Drawing.Size(125, 22);
+            this.dateEdit1.TabIndex = 49;
+            // 
+            // dateEdit2
+            // 
+            this.dateEdit2.EditValue = null;
+            this.dateEdit2.Location = new System.Drawing.Point(131, 336);
+            this.dateEdit2.Name = "dateEdit2";
+            this.dateEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit2.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit2.Size = new System.Drawing.Size(125, 22);
+            this.dateEdit2.TabIndex = 50;
+            // 
+            // labell
+            // 
+            this.labell.AutoSize = true;
+            this.labell.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labell.ForeColor = System.Drawing.Color.Black;
+            this.labell.Location = new System.Drawing.Point(733, 296);
+            this.labell.Name = "labell";
+            this.labell.Size = new System.Drawing.Size(83, 19);
+            this.labell.TabIndex = 51;
+            this.labell.Text = "Username";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(733, 342);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(85, 19);
+            this.label13.TabIndex = 52;
+            this.label13.Text = "Password:";
+            // 
+            // txtUSERNV
+            // 
+            this.txtUSERNV.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtUSERNV.DefaultText = "";
+            this.txtUSERNV.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtUSERNV.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtUSERNV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtUSERNV.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtUSERNV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtUSERNV.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtUSERNV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtUSERNV.Location = new System.Drawing.Point(878, 279);
+            this.txtUSERNV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtUSERNV.Name = "txtUSERNV";
+            this.txtUSERNV.PasswordChar = '\0';
+            this.txtUSERNV.PlaceholderText = "";
+            this.txtUSERNV.SelectedText = "";
+            this.txtUSERNV.Size = new System.Drawing.Size(274, 36);
+            this.txtUSERNV.TabIndex = 53;
+            // 
+            // txtPASSNV
+            // 
+            this.txtPASSNV.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPASSNV.DefaultText = "";
+            this.txtPASSNV.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtPASSNV.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtPASSNV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPASSNV.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPASSNV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPASSNV.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtPASSNV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPASSNV.Location = new System.Drawing.Point(878, 334);
+            this.txtPASSNV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPASSNV.Name = "txtPASSNV";
+            this.txtPASSNV.PasswordChar = '\0';
+            this.txtPASSNV.PlaceholderText = "";
+            this.txtPASSNV.SelectedText = "";
+            this.txtPASSNV.Size = new System.Drawing.Size(274, 36);
+            this.txtPASSNV.TabIndex = 54;
+            // 
             // Form9
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -941,6 +976,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -953,14 +992,11 @@
         private Guna.UI2.WinForms.Guna2TextBox txtMANV;
         private Guna.UI2.WinForms.Guna2TextBox txtDCNV;
         private Guna.UI2.WinForms.Guna2TextBox txtHoTenNV;
-        private Guna.UI2.WinForms.Guna2DateTimePicker timeNV;
         private Guna.UI2.WinForms.Guna2ComboBox comboCVNV;
         private Guna.UI2.WinForms.Guna2RadioButton guna2RadioButton2;
         private Guna.UI2.WinForms.Guna2RadioButton guna2RadioButton1;
-        private Guna.UI2.WinForms.Guna2DateTimePicker time2NV;
         private Guna.UI2.WinForms.Guna2TextBox txtCCCDNV;
         private Guna.UI2.WinForms.Guna2TextBox txtSDTNV;
-        private Guna.UI2.WinForms.Guna2TextBox txtHOCVANNV;
         private Guna.UI2.WinForms.Guna2Button guna2Button5;
         private Guna.UI2.WinForms.Guna2DataGridView dgvNhanVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
@@ -994,10 +1030,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label14;
         private Guna.UI2.WinForms.Guna2Button guna2Button9;
         private Guna.UI2.WinForms.Guna2Button guna2Button8;
+        private DevExpress.XtraEditors.DateEdit dateEdit2;
+        private DevExpress.XtraEditors.DateEdit dateEdit1;
+        private Guna.UI2.WinForms.Guna2TextBox txtPASSNV;
+        private Guna.UI2.WinForms.Guna2TextBox txtUSERNV;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label labell;
     }
 }

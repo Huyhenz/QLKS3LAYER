@@ -48,7 +48,6 @@
             this.txtSDT = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtFullname = new Guna.UI2.WinForms.Guna2TextBox();
-            this.datetimeYEAR = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -59,9 +58,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.guna2TabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage2
@@ -278,13 +280,13 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.dateEdit1);
             this.tabPage1.Controls.Add(this.comboQH);
             this.tabPage1.Controls.Add(this.txtDC);
             this.tabPage1.Controls.Add(this.txtCCCD);
             this.tabPage1.Controls.Add(this.txtSDT);
             this.tabPage1.Controls.Add(this.txtEmail);
             this.tabPage1.Controls.Add(this.txtFullname);
-            this.tabPage1.Controls.Add(this.datetimeYEAR);
             this.tabPage1.Controls.Add(this.label12);
             this.tabPage1.Controls.Add(this.label11);
             this.tabPage1.Controls.Add(this.label10);
@@ -451,20 +453,6 @@
             this.txtFullname.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtFullname.TabIndex = 12;
             // 
-            // datetimeYEAR
-            // 
-            this.datetimeYEAR.Checked = true;
-            this.datetimeYEAR.FillColor = System.Drawing.Color.Teal;
-            this.datetimeYEAR.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.datetimeYEAR.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.datetimeYEAR.Location = new System.Drawing.Point(161, 121);
-            this.datetimeYEAR.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.datetimeYEAR.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.datetimeYEAR.Name = "datetimeYEAR";
-            this.datetimeYEAR.Size = new System.Drawing.Size(397, 36);
-            this.datetimeYEAR.TabIndex = 9;
-            this.datetimeYEAR.Value = new System.DateTime(2024, 12, 23, 22, 58, 38, 841);
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -582,6 +570,18 @@
             this.guna2Panel1.Size = new System.Drawing.Size(973, 68);
             this.guna2Panel1.TabIndex = 1;
             // 
+            // dateEdit1
+            // 
+            this.dateEdit1.EditValue = null;
+            this.dateEdit1.Location = new System.Drawing.Point(161, 131);
+            this.dateEdit1.Name = "dateEdit1";
+            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit1.Size = new System.Drawing.Size(125, 22);
+            this.dateEdit1.TabIndex = 18;
+            // 
             // Form6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -597,6 +597,8 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.guna2TabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -623,7 +625,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private Guna.UI2.WinForms.Guna2DateTimePicker datetimeYEAR;
         private Guna.UI2.WinForms.Guna2TextBox txtSDT;
         private Guna.UI2.WinForms.Guna2TextBox txtEmail;
         private Guna.UI2.WinForms.Guna2TextBox txtFullname;
@@ -634,5 +635,6 @@
         private System.Windows.Forms.Label labelX2;
         private System.Windows.Forms.Label labelSuccess;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private DevExpress.XtraEditors.DateEdit dateEdit1;
     }
 }
