@@ -112,27 +112,41 @@ public bool AddTaiKhoan(TaiKhoanDTO taiKhoan)
 
         public bool UpdateTaiKhoan(TaiKhoanDTO taiKhoan)
         {
-            try
-            {
-                conn.OpenConnection();
-                string query = "UPDATE tb_User SET FULLNAME = @FULLNAME, USERNAME = @USERNAME, PASSWD = @PASSWD , IDQUYEN = @IDQUYEN WHERE UID = @UID";
-                SqlCommand command = new SqlCommand(query, conn.GetConnection());
-                command.Parameters.AddWithValue("@TenNguoiDung", taiKhoan.FULLNAME);
-                command.Parameters.AddWithValue("@MatKhau", taiKhoan.USERNAME);
-                command.Parameters.AddWithValue("@TrangThai", taiKhoan.PASSWD);
-                command.Parameters.AddWithValue("@Quyen", taiKhoan.IDQUYEN);
+                try
+                {
+                    conn.OpenConnection();
 
-                int result = command.ExecuteNonQuery();
-                return result > 0;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Lỗi khi cập nhật tài khoản: " + ex.Message);
-            }
-            finally
-            {
-                conn.CloseConnection();
-            }
+                    // Kiểm tra giá trị NGAYSINH hợp lệ
+                    if (taiKhoan.NGAYSINH < (DateTime)System.Data.SqlTypes.SqlDateTime.MinValue || taiKhoan.NGAYSINH > (DateTime)System.Data.SqlTypes.SqlDateTime.MaxValue)
+                    {
+                        throw new Exception("Giá trị NGAYSINH không hợp lệ");
+                    }
+
+                    string query = "UPDATE tb_User SET FULLNAME = @FULLNAME, NGAYSINH = @NGAYSINH, EMAIL = @EMAIL, SDT = @SDT, CCCD = @CCCD, DIACHI = @DIACHI, USERNAME = @USERNAME, PASSWD = @PASSWD, IDQUYEN = @IDQUYEN WHERE UID = @UID";
+                    SqlCommand command = new SqlCommand(query, conn.GetConnection());
+
+                    command.Parameters.Add("@FULLNAME", SqlDbType.NVarChar).Value = taiKhoan.FULLNAME;
+                    command.Parameters.Add("@NGAYSINH", SqlDbType.DateTime).Value = taiKhoan.NGAYSINH;
+                    command.Parameters.Add("@EMAIL", SqlDbType.NVarChar).Value = taiKhoan.EMAIL;
+                    command.Parameters.Add("@SDT", SqlDbType.BigInt).Value = taiKhoan.SDT;
+                    command.Parameters.Add("@CCCD", SqlDbType.BigInt).Value = taiKhoan.CCCD;
+                    command.Parameters.Add("@DIACHI", SqlDbType.NVarChar).Value = taiKhoan.DIACHI;
+                    command.Parameters.Add("@USERNAME", SqlDbType.NVarChar).Value = taiKhoan.USERNAME;
+                    command.Parameters.Add("@PASSWD", SqlDbType.NVarChar).Value = taiKhoan.PASSWD;
+                    command.Parameters.Add("@IDQUYEN", SqlDbType.Int).Value = taiKhoan.IDQUYEN;
+                    command.Parameters.Add("@UID", SqlDbType.Int).Value = taiKhoan.UID;
+
+                    int result = command.ExecuteNonQuery();
+                    return result > 0;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Lỗi khi cập nhật tài khoản: " + ex.Message);
+                }
+                finally
+                {
+                    conn.CloseConnection();
+                }
         }
 
         // Xóa tài khoản theo ID
