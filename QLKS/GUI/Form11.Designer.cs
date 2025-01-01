@@ -45,7 +45,13 @@
             this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
+            this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.toolStrip1.SuspendLayout();
+            this.guna2TabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -194,16 +200,79 @@
             this.toolStripButton11.Text = "Lưu";
             this.toolStripButton11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
+            // guna2GroupBox1
+            // 
+            this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2GroupBox1.Location = new System.Drawing.Point(6, 6);
+            this.guna2GroupBox1.Name = "guna2GroupBox1";
+            this.guna2GroupBox1.Size = new System.Drawing.Size(1718, 980);
+            this.guna2GroupBox1.TabIndex = 47;
+            this.guna2GroupBox1.Text = "Dịch Vụ";
+            // 
+            // guna2TabControl1
+            // 
+            this.guna2TabControl1.Alignment = System.Windows.Forms.TabAlignment.Left;
+            this.guna2TabControl1.Controls.Add(this.tabPage1);
+            this.guna2TabControl1.Controls.Add(this.tabPage2);
+            this.guna2TabControl1.ItemSize = new System.Drawing.Size(180, 40);
+            this.guna2TabControl1.Location = new System.Drawing.Point(4, 50);
+            this.guna2TabControl1.Name = "guna2TabControl1";
+            this.guna2TabControl1.SelectedIndex = 0;
+            this.guna2TabControl1.Size = new System.Drawing.Size(1920, 1000);
+            this.guna2TabControl1.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
+            this.guna2TabControl1.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
+            this.guna2TabControl1.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.guna2TabControl1.TabButtonHoverState.ForeColor = System.Drawing.Color.White;
+            this.guna2TabControl1.TabButtonHoverState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
+            this.guna2TabControl1.TabButtonIdleState.BorderColor = System.Drawing.Color.Empty;
+            this.guna2TabControl1.TabButtonIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.guna2TabControl1.TabButtonIdleState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.guna2TabControl1.TabButtonIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(160)))), ((int)(((byte)(167)))));
+            this.guna2TabControl1.TabButtonIdleState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.guna2TabControl1.TabButtonSelectedState.BorderColor = System.Drawing.Color.Empty;
+            this.guna2TabControl1.TabButtonSelectedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(49)))));
+            this.guna2TabControl1.TabButtonSelectedState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.guna2TabControl1.TabButtonSelectedState.ForeColor = System.Drawing.Color.White;
+            this.guna2TabControl1.TabButtonSelectedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(132)))), ((int)(((byte)(255)))));
+            this.guna2TabControl1.TabButtonSize = new System.Drawing.Size(180, 40);
+            this.guna2TabControl1.TabIndex = 48;
+            this.guna2TabControl1.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.guna2GroupBox1);
+            this.tabPage1.Location = new System.Drawing.Point(184, 4);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1732, 992);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Dịch Vụ";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(184, 4);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1732, 992);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Kho";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // Form11
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.guna2TabControl1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "Form11";
             this.Text = "Dịch Vụ";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.guna2TabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,5 +296,9 @@
         private System.Windows.Forms.ToolStripButton toolStripButton10;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripButton toolStripButton11;
+        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
+        private Guna.UI2.WinForms.Guna2TabControl guna2TabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
     }
 }
