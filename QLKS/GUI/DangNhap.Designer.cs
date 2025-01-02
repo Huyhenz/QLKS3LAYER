@@ -36,11 +36,11 @@
             this.txt_User = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_Pass = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnSingup = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnExit = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnLogin = new Guna.UI2.WinForms.Guna2Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -144,16 +144,6 @@
             this.btnSingup.Text = "Sign Up";
             this.btnSingup.Click += new System.EventHandler(this.btnSingup_Click);
             // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(566, 67);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(489, 411);
-            this.guna2PictureBox1.TabIndex = 14;
-            this.guna2PictureBox1.TabStop = false;
-            // 
             // btnExit
             // 
             this.btnExit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -194,6 +184,15 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(499, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(458, 435);
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            // 
             // DangNhap
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -201,9 +200,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1004, 520);
-            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.guna2PictureBox1);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btnSingup);
             this.Controls.Add(this.txt_Pass);
             this.Controls.Add(this.txt_User);
@@ -213,7 +212,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DangNhap";
             this.Text = "Login";
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,10 +226,10 @@
         private Guna.UI2.WinForms.Guna2TextBox txt_User;
         private Guna.UI2.WinForms.Guna2TextBox txt_Pass;
         private Guna.UI2.WinForms.Guna2Button btnSingup;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2CircleButton btnExit;
         private Guna.UI2.WinForms.Guna2Button btnLogin;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
