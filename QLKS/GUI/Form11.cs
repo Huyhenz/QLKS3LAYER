@@ -21,5 +21,20 @@ namespace GUI
         {
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GroupBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GroupBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
