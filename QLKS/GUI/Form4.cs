@@ -16,5 +16,20 @@ namespace GUI
         {
             InitializeComponent();
         }
+
+        private void guna2GroupBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GroupBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form4_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
