@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form9));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.txtPASSNV = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtUSERNV = new Guna.UI2.WinForms.Guna2TextBox();
@@ -61,13 +61,12 @@
             this.txtHoTenNV = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtMANV = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvNhanVien = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2ComboBox2 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2RadioButton3 = new Guna.UI2.WinForms.Guna2RadioButton();
             this.guna2RadioButton4 = new Guna.UI2.WinForms.Guna2RadioButton();
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button10 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2TextBox8 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txt_TIMCCCD = new Guna.UI2.WinForms.Guna2TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
@@ -543,28 +542,26 @@
             // 
             // dgvNhanVien
             // 
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
-            this.dgvNhanVien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvNhanVien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvNhanVien.ColumnHeadersHeight = 18;
             this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1});
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvNhanVien.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvNhanVien.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvNhanVien.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvNhanVien.Location = new System.Drawing.Point(386, 642);
             this.dgvNhanVien.Name = "dgvNhanVien";
@@ -597,13 +594,6 @@
             this.dgvNhanVien.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellClick);
             this.dgvNhanVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellContentClick);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Mã Nhân Viên";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
             // 
             // guna2ComboBox2
             // 
@@ -687,26 +677,28 @@
             this.guna2Button10.Size = new System.Drawing.Size(73, 45);
             this.guna2Button10.TabIndex = 41;
             this.guna2Button10.Text = "Tìm";
+            this.guna2Button10.Click += new System.EventHandler(this.guna2Button10_Click);
             // 
-            // guna2TextBox8
+            // txt_TIMCCCD
             // 
-            this.guna2TextBox8.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox8.DefaultText = "CCCD/CMND";
-            this.guna2TextBox8.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox8.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox8.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox8.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox8.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox8.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox8.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox8.Location = new System.Drawing.Point(421, 51);
-            this.guna2TextBox8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox8.Name = "guna2TextBox8";
-            this.guna2TextBox8.PasswordChar = '\0';
-            this.guna2TextBox8.PlaceholderText = "";
-            this.guna2TextBox8.SelectedText = "";
-            this.guna2TextBox8.Size = new System.Drawing.Size(274, 45);
-            this.guna2TextBox8.TabIndex = 42;
+            this.txt_TIMCCCD.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_TIMCCCD.DefaultText = "CCCD/CMND";
+            this.txt_TIMCCCD.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_TIMCCCD.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_TIMCCCD.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_TIMCCCD.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_TIMCCCD.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_TIMCCCD.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_TIMCCCD.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_TIMCCCD.Location = new System.Drawing.Point(421, 51);
+            this.txt_TIMCCCD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_TIMCCCD.Name = "txt_TIMCCCD";
+            this.txt_TIMCCCD.PasswordChar = '\0';
+            this.txt_TIMCCCD.PlaceholderText = "";
+            this.txt_TIMCCCD.SelectedText = "";
+            this.txt_TIMCCCD.Size = new System.Drawing.Size(274, 45);
+            this.txt_TIMCCCD.TabIndex = 42;
+            this.txt_TIMCCCD.TextChanged += new System.EventHandler(this.txt_TIMCCCD_TextChanged);
             // 
             // label12
             // 
@@ -962,7 +954,7 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.guna2Button10);
             this.Controls.Add(this.guna2Button6);
-            this.Controls.Add(this.guna2TextBox8);
+            this.Controls.Add(this.txt_TIMCCCD);
             this.Controls.Add(this.guna2RadioButton4);
             this.Controls.Add(this.guna2RadioButton3);
             this.Controls.Add(this.guna2ComboBox2);
@@ -1000,14 +992,13 @@
         private Guna.UI2.WinForms.Guna2TextBox txtSDTNV;
         private Guna.UI2.WinForms.Guna2Button guna2Button5;
         private Guna.UI2.WinForms.Guna2DataGridView dgvNhanVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox2;
         private Guna.UI2.WinForms.Guna2RadioButton guna2RadioButton3;
         private Guna.UI2.WinForms.Guna2RadioButton guna2RadioButton4;
         private Guna.UI2.WinForms.Guna2TextBox txtEMAILNV;
         private Guna.UI2.WinForms.Guna2Button guna2Button6;
         private Guna.UI2.WinForms.Guna2Button guna2Button10;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox8;
+        private Guna.UI2.WinForms.Guna2TextBox txt_TIMCCCD;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;

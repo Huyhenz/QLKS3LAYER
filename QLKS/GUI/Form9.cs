@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using TheArtOfDevHtmlRenderer.Adapters;
 
 namespace GUI
 {
@@ -274,6 +275,53 @@ namespace GUI
                 conn.Open();
                 cmd.ExecuteNonQuery();
             }
+        }
+
+        private void guna2Button10_Click(object sender, EventArgs e)
+        {
+                string searchCCCD = txt_TIMCCCD.Text.Trim();
+                bool found = false;
+
+                foreach (DataGridViewRow row in dgvNhanVien.Rows)
+                {
+                    if (row.Cells["CCCD"].Value != null && row.Cells["CCCD"].Value.ToString().Equals(searchCCCD))
+                    {
+                        // Hiển thị thông tin nhân viên
+                        txtMANV.Text = row.Cells["UID"].Value.ToString();
+                        txtHoTenNV.Text = row.Cells["FULLNAME"].Value.ToString();
+                        dateEdit1.EditValue = Convert.ToDateTime(row.Cells["NGAYSINH"].Value);
+                        comboCVNV.SelectedItem = row.Cells["IDQUYEN"].Value.ToString();
+                        if (row.Cells["GIOITINH"].Value.ToString() == "Nam")
+                        {
+                            guna2RadioButton1.Checked = true;
+                        }
+                        else
+                        {
+                        guna2RadioButton2.Checked = true;
+                        }
+                        dateEdit2.EditValue = Convert.ToDateTime(row.Cells["NGAYVAOLAM"].Value);
+                        txtDCNV.Text = row.Cells["DIACHI"].Value.ToString();
+                        txtSDTNV.Text = row.Cells["SDT"].Value.ToString();
+                        txtEMAILNV.Text = row.Cells["EMAIL"].Value.ToString();
+                        txtUSERNV.Text = row.Cells["USERNAME"].Value.ToString();
+                        txtPASSNV.Text = row.Cells["PASSWD"].Value.ToString();
+                        // Giả sử ảnh được lưu dưới dạng đường dẫn tệp
+                        guna2PictureBox1.Image = Image.FromFile(row.Cells["PHOTO"].Value.ToString());
+
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (!found)
+                {
+                    MessageBox.Show("Không tìm thấy nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+        }
+
+        private void txt_TIMCCCD_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
 
