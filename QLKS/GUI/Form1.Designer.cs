@@ -466,7 +466,7 @@
             this.guna2Button21.Name = "guna2Button21";
             this.guna2Button21.Size = new System.Drawing.Size(170, 160);
             this.guna2Button21.TabIndex = 20;
-            this.guna2Button21.Text = "102";
+            this.guna2Button21.Text = "116";
             // 
             // guna2Button20
             // 
@@ -481,7 +481,7 @@
             this.guna2Button20.Name = "guna2Button20";
             this.guna2Button20.Size = new System.Drawing.Size(170, 160);
             this.guna2Button20.TabIndex = 19;
-            this.guna2Button20.Text = "102";
+            this.guna2Button20.Text = "117";
             // 
             // guna2Button19
             // 
@@ -496,7 +496,7 @@
             this.guna2Button19.Name = "guna2Button19";
             this.guna2Button19.Size = new System.Drawing.Size(170, 160);
             this.guna2Button19.TabIndex = 18;
-            this.guna2Button19.Text = "102";
+            this.guna2Button19.Text = "118";
             // 
             // guna2Button18
             // 
@@ -511,7 +511,7 @@
             this.guna2Button18.Name = "guna2Button18";
             this.guna2Button18.Size = new System.Drawing.Size(170, 160);
             this.guna2Button18.TabIndex = 17;
-            this.guna2Button18.Text = "102";
+            this.guna2Button18.Text = "119";
             // 
             // guna2Button17
             // 
@@ -526,7 +526,7 @@
             this.guna2Button17.Name = "guna2Button17";
             this.guna2Button17.Size = new System.Drawing.Size(170, 160);
             this.guna2Button17.TabIndex = 16;
-            this.guna2Button17.Text = "102";
+            this.guna2Button17.Text = "120";
             // 
             // guna2Button16
             // 
@@ -541,7 +541,7 @@
             this.guna2Button16.Name = "guna2Button16";
             this.guna2Button16.Size = new System.Drawing.Size(170, 160);
             this.guna2Button16.TabIndex = 15;
-            this.guna2Button16.Text = "102";
+            this.guna2Button16.Text = "115";
             // 
             // guna2Button15
             // 
@@ -556,7 +556,7 @@
             this.guna2Button15.Name = "guna2Button15";
             this.guna2Button15.Size = new System.Drawing.Size(170, 160);
             this.guna2Button15.TabIndex = 14;
-            this.guna2Button15.Text = "102";
+            this.guna2Button15.Text = "114";
             // 
             // guna2Button14
             // 
@@ -571,7 +571,7 @@
             this.guna2Button14.Name = "guna2Button14";
             this.guna2Button14.Size = new System.Drawing.Size(170, 160);
             this.guna2Button14.TabIndex = 13;
-            this.guna2Button14.Text = "102";
+            this.guna2Button14.Text = "113";
             // 
             // guna2Button13
             // 
@@ -586,7 +586,7 @@
             this.guna2Button13.Name = "guna2Button13";
             this.guna2Button13.Size = new System.Drawing.Size(170, 160);
             this.guna2Button13.TabIndex = 12;
-            this.guna2Button13.Text = "102";
+            this.guna2Button13.Text = "112";
             // 
             // guna2Button12
             // 
@@ -601,7 +601,7 @@
             this.guna2Button12.Name = "guna2Button12";
             this.guna2Button12.Size = new System.Drawing.Size(170, 160);
             this.guna2Button12.TabIndex = 11;
-            this.guna2Button12.Text = "102";
+            this.guna2Button12.Text = "111";
             // 
             // guna2Button11
             // 
@@ -616,7 +616,7 @@
             this.guna2Button11.Name = "guna2Button11";
             this.guna2Button11.Size = new System.Drawing.Size(170, 160);
             this.guna2Button11.TabIndex = 10;
-            this.guna2Button11.Text = "102";
+            this.guna2Button11.Text = "110";
             // 
             // guna2Button10
             // 
@@ -631,7 +631,7 @@
             this.guna2Button10.Name = "guna2Button10";
             this.guna2Button10.Size = new System.Drawing.Size(170, 160);
             this.guna2Button10.TabIndex = 9;
-            this.guna2Button10.Text = "102";
+            this.guna2Button10.Text = "109";
             // 
             // guna2Button9
             // 
@@ -646,7 +646,7 @@
             this.guna2Button9.Name = "guna2Button9";
             this.guna2Button9.Size = new System.Drawing.Size(170, 160);
             this.guna2Button9.TabIndex = 8;
-            this.guna2Button9.Text = "102";
+            this.guna2Button9.Text = "108";
             // 
             // guna2Button8
             // 
@@ -661,7 +661,7 @@
             this.guna2Button8.Name = "guna2Button8";
             this.guna2Button8.Size = new System.Drawing.Size(170, 160);
             this.guna2Button8.TabIndex = 7;
-            this.guna2Button8.Text = "102";
+            this.guna2Button8.Text = "107";
             // 
             // guna2Button7
             // 
@@ -676,7 +676,7 @@
             this.guna2Button7.Name = "guna2Button7";
             this.guna2Button7.Size = new System.Drawing.Size(170, 160);
             this.guna2Button7.TabIndex = 6;
-            this.guna2Button7.Text = "102";
+            this.guna2Button7.Text = "106";
             // 
             // guna2Button6
             // 
@@ -691,7 +691,7 @@
             this.guna2Button6.Name = "guna2Button6";
             this.guna2Button6.Size = new System.Drawing.Size(170, 160);
             this.guna2Button6.TabIndex = 5;
-            this.guna2Button6.Text = "102";
+            this.guna2Button6.Text = "105";
             // 
             // guna2Button5
             // 
@@ -706,7 +706,7 @@
             this.guna2Button5.Name = "guna2Button5";
             this.guna2Button5.Size = new System.Drawing.Size(170, 160);
             this.guna2Button5.TabIndex = 4;
-            this.guna2Button5.Text = "102";
+            this.guna2Button5.Text = "104";
             // 
             // guna2Button4
             // 
@@ -721,7 +721,7 @@
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.Size = new System.Drawing.Size(170, 160);
             this.guna2Button4.TabIndex = 3;
-            this.guna2Button4.Text = "102";
+            this.guna2Button4.Text = "103";
             // 
             // guna2Button3
             // 
@@ -796,7 +796,7 @@
             this.guna2Button38.Name = "guna2Button38";
             this.guna2Button38.Size = new System.Drawing.Size(170, 160);
             this.guna2Button38.TabIndex = 40;
-            this.guna2Button38.Text = "102";
+            this.guna2Button38.Text = "140";
             // 
             // guna2Button39
             // 
@@ -811,7 +811,7 @@
             this.guna2Button39.Name = "guna2Button39";
             this.guna2Button39.Size = new System.Drawing.Size(170, 160);
             this.guna2Button39.TabIndex = 39;
-            this.guna2Button39.Text = "102";
+            this.guna2Button39.Text = "135";
             // 
             // guna2Button40
             // 
@@ -826,7 +826,7 @@
             this.guna2Button40.Name = "guna2Button40";
             this.guna2Button40.Size = new System.Drawing.Size(170, 160);
             this.guna2Button40.TabIndex = 38;
-            this.guna2Button40.Text = "102";
+            this.guna2Button40.Text = "130";
             // 
             // guna2Button41
             // 
@@ -841,7 +841,7 @@
             this.guna2Button41.Name = "guna2Button41";
             this.guna2Button41.Size = new System.Drawing.Size(170, 160);
             this.guna2Button41.TabIndex = 37;
-            this.guna2Button41.Text = "102";
+            this.guna2Button41.Text = "125";
             // 
             // guna2Button22
             // 
@@ -856,7 +856,7 @@
             this.guna2Button22.Name = "guna2Button22";
             this.guna2Button22.Size = new System.Drawing.Size(170, 160);
             this.guna2Button22.TabIndex = 36;
-            this.guna2Button22.Text = "102";
+            this.guna2Button22.Text = "136";
             // 
             // guna2Button23
             // 
@@ -871,7 +871,7 @@
             this.guna2Button23.Name = "guna2Button23";
             this.guna2Button23.Size = new System.Drawing.Size(170, 160);
             this.guna2Button23.TabIndex = 35;
-            this.guna2Button23.Text = "102";
+            this.guna2Button23.Text = "137";
             // 
             // guna2Button24
             // 
@@ -886,7 +886,7 @@
             this.guna2Button24.Name = "guna2Button24";
             this.guna2Button24.Size = new System.Drawing.Size(170, 160);
             this.guna2Button24.TabIndex = 34;
-            this.guna2Button24.Text = "102";
+            this.guna2Button24.Text = "138";
             // 
             // guna2Button25
             // 
@@ -901,7 +901,7 @@
             this.guna2Button25.Name = "guna2Button25";
             this.guna2Button25.Size = new System.Drawing.Size(170, 160);
             this.guna2Button25.TabIndex = 33;
-            this.guna2Button25.Text = "102";
+            this.guna2Button25.Text = "139";
             // 
             // guna2Button26
             // 
@@ -916,7 +916,7 @@
             this.guna2Button26.Name = "guna2Button26";
             this.guna2Button26.Size = new System.Drawing.Size(170, 160);
             this.guna2Button26.TabIndex = 32;
-            this.guna2Button26.Text = "102";
+            this.guna2Button26.Text = "134";
             // 
             // guna2Button27
             // 
@@ -931,7 +931,7 @@
             this.guna2Button27.Name = "guna2Button27";
             this.guna2Button27.Size = new System.Drawing.Size(170, 160);
             this.guna2Button27.TabIndex = 31;
-            this.guna2Button27.Text = "102";
+            this.guna2Button27.Text = "133";
             // 
             // guna2Button28
             // 
@@ -946,7 +946,7 @@
             this.guna2Button28.Name = "guna2Button28";
             this.guna2Button28.Size = new System.Drawing.Size(170, 160);
             this.guna2Button28.TabIndex = 30;
-            this.guna2Button28.Text = "102";
+            this.guna2Button28.Text = "132";
             // 
             // guna2Button29
             // 
@@ -961,7 +961,7 @@
             this.guna2Button29.Name = "guna2Button29";
             this.guna2Button29.Size = new System.Drawing.Size(170, 160);
             this.guna2Button29.TabIndex = 29;
-            this.guna2Button29.Text = "102";
+            this.guna2Button29.Text = "131";
             // 
             // guna2Button30
             // 
@@ -976,7 +976,7 @@
             this.guna2Button30.Name = "guna2Button30";
             this.guna2Button30.Size = new System.Drawing.Size(170, 160);
             this.guna2Button30.TabIndex = 28;
-            this.guna2Button30.Text = "102";
+            this.guna2Button30.Text = "129";
             // 
             // guna2Button31
             // 
@@ -991,7 +991,7 @@
             this.guna2Button31.Name = "guna2Button31";
             this.guna2Button31.Size = new System.Drawing.Size(170, 160);
             this.guna2Button31.TabIndex = 27;
-            this.guna2Button31.Text = "102";
+            this.guna2Button31.Text = "128";
             // 
             // guna2Button32
             // 
@@ -1006,7 +1006,7 @@
             this.guna2Button32.Name = "guna2Button32";
             this.guna2Button32.Size = new System.Drawing.Size(170, 160);
             this.guna2Button32.TabIndex = 26;
-            this.guna2Button32.Text = "102";
+            this.guna2Button32.Text = "127";
             // 
             // guna2Button33
             // 
@@ -1021,7 +1021,7 @@
             this.guna2Button33.Name = "guna2Button33";
             this.guna2Button33.Size = new System.Drawing.Size(170, 160);
             this.guna2Button33.TabIndex = 25;
-            this.guna2Button33.Text = "102";
+            this.guna2Button33.Text = "126";
             // 
             // guna2Button34
             // 
@@ -1036,7 +1036,7 @@
             this.guna2Button34.Name = "guna2Button34";
             this.guna2Button34.Size = new System.Drawing.Size(170, 160);
             this.guna2Button34.TabIndex = 24;
-            this.guna2Button34.Text = "102";
+            this.guna2Button34.Text = "124";
             // 
             // guna2Button35
             // 
@@ -1051,7 +1051,7 @@
             this.guna2Button35.Name = "guna2Button35";
             this.guna2Button35.Size = new System.Drawing.Size(170, 160);
             this.guna2Button35.TabIndex = 23;
-            this.guna2Button35.Text = "102";
+            this.guna2Button35.Text = "123";
             // 
             // guna2Button36
             // 
@@ -1066,7 +1066,7 @@
             this.guna2Button36.Name = "guna2Button36";
             this.guna2Button36.Size = new System.Drawing.Size(170, 160);
             this.guna2Button36.TabIndex = 22;
-            this.guna2Button36.Text = "102";
+            this.guna2Button36.Text = "122";
             // 
             // guna2Button37
             // 
@@ -1081,7 +1081,7 @@
             this.guna2Button37.Name = "guna2Button37";
             this.guna2Button37.Size = new System.Drawing.Size(170, 160);
             this.guna2Button37.TabIndex = 21;
-            this.guna2Button37.Text = "101";
+            this.guna2Button37.Text = "121";
             // 
             // tabPage3
             // 
@@ -1126,7 +1126,7 @@
             this.guna2Button58.Name = "guna2Button58";
             this.guna2Button58.Size = new System.Drawing.Size(170, 160);
             this.guna2Button58.TabIndex = 53;
-            this.guna2Button58.Text = "102";
+            this.guna2Button58.Text = "160";
             // 
             // guna2Button59
             // 
@@ -1141,7 +1141,7 @@
             this.guna2Button59.Name = "guna2Button59";
             this.guna2Button59.Size = new System.Drawing.Size(170, 160);
             this.guna2Button59.TabIndex = 52;
-            this.guna2Button59.Text = "102";
+            this.guna2Button59.Text = "155";
             // 
             // guna2Button60
             // 
@@ -1156,7 +1156,7 @@
             this.guna2Button60.Name = "guna2Button60";
             this.guna2Button60.Size = new System.Drawing.Size(170, 160);
             this.guna2Button60.TabIndex = 51;
-            this.guna2Button60.Text = "102";
+            this.guna2Button60.Text = "150";
             // 
             // guna2Button61
             // 
@@ -1171,7 +1171,7 @@
             this.guna2Button61.Name = "guna2Button61";
             this.guna2Button61.Size = new System.Drawing.Size(170, 160);
             this.guna2Button61.TabIndex = 50;
-            this.guna2Button61.Text = "102";
+            this.guna2Button61.Text = "145";
             // 
             // guna2Button54
             // 
@@ -1186,7 +1186,7 @@
             this.guna2Button54.Name = "guna2Button54";
             this.guna2Button54.Size = new System.Drawing.Size(170, 160);
             this.guna2Button54.TabIndex = 49;
-            this.guna2Button54.Text = "102";
+            this.guna2Button54.Text = "159";
             // 
             // guna2Button55
             // 
@@ -1201,7 +1201,7 @@
             this.guna2Button55.Name = "guna2Button55";
             this.guna2Button55.Size = new System.Drawing.Size(170, 160);
             this.guna2Button55.TabIndex = 48;
-            this.guna2Button55.Text = "102";
+            this.guna2Button55.Text = "154";
             // 
             // guna2Button56
             // 
@@ -1216,7 +1216,7 @@
             this.guna2Button56.Name = "guna2Button56";
             this.guna2Button56.Size = new System.Drawing.Size(170, 160);
             this.guna2Button56.TabIndex = 47;
-            this.guna2Button56.Text = "102";
+            this.guna2Button56.Text = "149";
             // 
             // guna2Button57
             // 
@@ -1231,7 +1231,7 @@
             this.guna2Button57.Name = "guna2Button57";
             this.guna2Button57.Size = new System.Drawing.Size(170, 160);
             this.guna2Button57.TabIndex = 46;
-            this.guna2Button57.Text = "102";
+            this.guna2Button57.Text = "144";
             // 
             // guna2Button50
             // 
@@ -1246,7 +1246,7 @@
             this.guna2Button50.Name = "guna2Button50";
             this.guna2Button50.Size = new System.Drawing.Size(170, 160);
             this.guna2Button50.TabIndex = 45;
-            this.guna2Button50.Text = "102";
+            this.guna2Button50.Text = "158";
             // 
             // guna2Button51
             // 
@@ -1261,7 +1261,7 @@
             this.guna2Button51.Name = "guna2Button51";
             this.guna2Button51.Size = new System.Drawing.Size(170, 160);
             this.guna2Button51.TabIndex = 44;
-            this.guna2Button51.Text = "102";
+            this.guna2Button51.Text = "153";
             // 
             // guna2Button52
             // 
@@ -1276,7 +1276,7 @@
             this.guna2Button52.Name = "guna2Button52";
             this.guna2Button52.Size = new System.Drawing.Size(170, 160);
             this.guna2Button52.TabIndex = 43;
-            this.guna2Button52.Text = "102";
+            this.guna2Button52.Text = "148";
             // 
             // guna2Button53
             // 
@@ -1291,7 +1291,7 @@
             this.guna2Button53.Name = "guna2Button53";
             this.guna2Button53.Size = new System.Drawing.Size(170, 160);
             this.guna2Button53.TabIndex = 42;
-            this.guna2Button53.Text = "102";
+            this.guna2Button53.Text = "143";
             // 
             // guna2Button46
             // 
@@ -1306,7 +1306,7 @@
             this.guna2Button46.Name = "guna2Button46";
             this.guna2Button46.Size = new System.Drawing.Size(170, 160);
             this.guna2Button46.TabIndex = 41;
-            this.guna2Button46.Text = "102";
+            this.guna2Button46.Text = "157";
             // 
             // guna2Button47
             // 
@@ -1321,7 +1321,7 @@
             this.guna2Button47.Name = "guna2Button47";
             this.guna2Button47.Size = new System.Drawing.Size(170, 160);
             this.guna2Button47.TabIndex = 40;
-            this.guna2Button47.Text = "102";
+            this.guna2Button47.Text = "152";
             // 
             // guna2Button48
             // 
@@ -1336,7 +1336,7 @@
             this.guna2Button48.Name = "guna2Button48";
             this.guna2Button48.Size = new System.Drawing.Size(170, 160);
             this.guna2Button48.TabIndex = 39;
-            this.guna2Button48.Text = "102";
+            this.guna2Button48.Text = "147";
             // 
             // guna2Button49
             // 
@@ -1351,7 +1351,7 @@
             this.guna2Button49.Name = "guna2Button49";
             this.guna2Button49.Size = new System.Drawing.Size(170, 160);
             this.guna2Button49.TabIndex = 38;
-            this.guna2Button49.Text = "102";
+            this.guna2Button49.Text = "142";
             // 
             // guna2Button42
             // 
@@ -1366,7 +1366,7 @@
             this.guna2Button42.Name = "guna2Button42";
             this.guna2Button42.Size = new System.Drawing.Size(170, 160);
             this.guna2Button42.TabIndex = 37;
-            this.guna2Button42.Text = "102";
+            this.guna2Button42.Text = "156";
             // 
             // guna2Button43
             // 
@@ -1381,7 +1381,7 @@
             this.guna2Button43.Name = "guna2Button43";
             this.guna2Button43.Size = new System.Drawing.Size(170, 160);
             this.guna2Button43.TabIndex = 36;
-            this.guna2Button43.Text = "102";
+            this.guna2Button43.Text = "151";
             // 
             // guna2Button44
             // 
@@ -1396,7 +1396,7 @@
             this.guna2Button44.Name = "guna2Button44";
             this.guna2Button44.Size = new System.Drawing.Size(170, 160);
             this.guna2Button44.TabIndex = 35;
-            this.guna2Button44.Text = "102";
+            this.guna2Button44.Text = "146";
             // 
             // guna2Button45
             // 
@@ -1411,7 +1411,7 @@
             this.guna2Button45.Name = "guna2Button45";
             this.guna2Button45.Size = new System.Drawing.Size(170, 160);
             this.guna2Button45.TabIndex = 34;
-            this.guna2Button45.Text = "102";
+            this.guna2Button45.Text = "141";
             // 
             // tabPage4
             // 
@@ -1457,7 +1457,7 @@
             this.guna2Button78.Name = "guna2Button78";
             this.guna2Button78.Size = new System.Drawing.Size(170, 160);
             this.guna2Button78.TabIndex = 53;
-            this.guna2Button78.Text = "102";
+            this.guna2Button78.Text = "180";
             // 
             // guna2Button79
             // 
@@ -1472,7 +1472,7 @@
             this.guna2Button79.Name = "guna2Button79";
             this.guna2Button79.Size = new System.Drawing.Size(170, 160);
             this.guna2Button79.TabIndex = 52;
-            this.guna2Button79.Text = "102";
+            this.guna2Button79.Text = "175";
             // 
             // guna2Button80
             // 
@@ -1487,7 +1487,7 @@
             this.guna2Button80.Name = "guna2Button80";
             this.guna2Button80.Size = new System.Drawing.Size(170, 160);
             this.guna2Button80.TabIndex = 51;
-            this.guna2Button80.Text = "102";
+            this.guna2Button80.Text = "170";
             // 
             // guna2Button81
             // 
@@ -1502,7 +1502,7 @@
             this.guna2Button81.Name = "guna2Button81";
             this.guna2Button81.Size = new System.Drawing.Size(170, 160);
             this.guna2Button81.TabIndex = 50;
-            this.guna2Button81.Text = "102";
+            this.guna2Button81.Text = "165";
             // 
             // guna2Button74
             // 
@@ -1517,7 +1517,7 @@
             this.guna2Button74.Name = "guna2Button74";
             this.guna2Button74.Size = new System.Drawing.Size(170, 160);
             this.guna2Button74.TabIndex = 49;
-            this.guna2Button74.Text = "102";
+            this.guna2Button74.Text = "179";
             // 
             // guna2Button75
             // 
@@ -1532,7 +1532,7 @@
             this.guna2Button75.Name = "guna2Button75";
             this.guna2Button75.Size = new System.Drawing.Size(170, 160);
             this.guna2Button75.TabIndex = 48;
-            this.guna2Button75.Text = "102";
+            this.guna2Button75.Text = "174";
             // 
             // guna2Button76
             // 
@@ -1547,7 +1547,7 @@
             this.guna2Button76.Name = "guna2Button76";
             this.guna2Button76.Size = new System.Drawing.Size(170, 160);
             this.guna2Button76.TabIndex = 47;
-            this.guna2Button76.Text = "102";
+            this.guna2Button76.Text = "169";
             // 
             // guna2Button77
             // 
@@ -1562,7 +1562,7 @@
             this.guna2Button77.Name = "guna2Button77";
             this.guna2Button77.Size = new System.Drawing.Size(170, 160);
             this.guna2Button77.TabIndex = 46;
-            this.guna2Button77.Text = "102";
+            this.guna2Button77.Text = "164";
             // 
             // guna2Button70
             // 
@@ -1577,7 +1577,7 @@
             this.guna2Button70.Name = "guna2Button70";
             this.guna2Button70.Size = new System.Drawing.Size(170, 160);
             this.guna2Button70.TabIndex = 45;
-            this.guna2Button70.Text = "102";
+            this.guna2Button70.Text = "178";
             // 
             // guna2Button71
             // 
@@ -1592,7 +1592,7 @@
             this.guna2Button71.Name = "guna2Button71";
             this.guna2Button71.Size = new System.Drawing.Size(170, 160);
             this.guna2Button71.TabIndex = 44;
-            this.guna2Button71.Text = "102";
+            this.guna2Button71.Text = "173";
             // 
             // guna2Button72
             // 
@@ -1607,7 +1607,7 @@
             this.guna2Button72.Name = "guna2Button72";
             this.guna2Button72.Size = new System.Drawing.Size(170, 160);
             this.guna2Button72.TabIndex = 43;
-            this.guna2Button72.Text = "102";
+            this.guna2Button72.Text = "168";
             // 
             // guna2Button73
             // 
@@ -1622,7 +1622,7 @@
             this.guna2Button73.Name = "guna2Button73";
             this.guna2Button73.Size = new System.Drawing.Size(170, 160);
             this.guna2Button73.TabIndex = 42;
-            this.guna2Button73.Text = "102";
+            this.guna2Button73.Text = "163";
             // 
             // guna2Button66
             // 
@@ -1637,7 +1637,7 @@
             this.guna2Button66.Name = "guna2Button66";
             this.guna2Button66.Size = new System.Drawing.Size(170, 160);
             this.guna2Button66.TabIndex = 41;
-            this.guna2Button66.Text = "102";
+            this.guna2Button66.Text = "177";
             // 
             // guna2Button67
             // 
@@ -1652,7 +1652,7 @@
             this.guna2Button67.Name = "guna2Button67";
             this.guna2Button67.Size = new System.Drawing.Size(170, 160);
             this.guna2Button67.TabIndex = 40;
-            this.guna2Button67.Text = "102";
+            this.guna2Button67.Text = "172";
             // 
             // guna2Button68
             // 
@@ -1667,7 +1667,7 @@
             this.guna2Button68.Name = "guna2Button68";
             this.guna2Button68.Size = new System.Drawing.Size(170, 160);
             this.guna2Button68.TabIndex = 39;
-            this.guna2Button68.Text = "102";
+            this.guna2Button68.Text = "167";
             // 
             // guna2Button69
             // 
@@ -1682,7 +1682,7 @@
             this.guna2Button69.Name = "guna2Button69";
             this.guna2Button69.Size = new System.Drawing.Size(170, 160);
             this.guna2Button69.TabIndex = 38;
-            this.guna2Button69.Text = "102";
+            this.guna2Button69.Text = "162";
             // 
             // guna2Button62
             // 
@@ -1697,7 +1697,7 @@
             this.guna2Button62.Name = "guna2Button62";
             this.guna2Button62.Size = new System.Drawing.Size(170, 160);
             this.guna2Button62.TabIndex = 37;
-            this.guna2Button62.Text = "102";
+            this.guna2Button62.Text = "176";
             // 
             // guna2Button63
             // 
@@ -1712,7 +1712,7 @@
             this.guna2Button63.Name = "guna2Button63";
             this.guna2Button63.Size = new System.Drawing.Size(170, 160);
             this.guna2Button63.TabIndex = 36;
-            this.guna2Button63.Text = "102";
+            this.guna2Button63.Text = "171";
             // 
             // guna2Button64
             // 
@@ -1727,7 +1727,7 @@
             this.guna2Button64.Name = "guna2Button64";
             this.guna2Button64.Size = new System.Drawing.Size(170, 160);
             this.guna2Button64.TabIndex = 35;
-            this.guna2Button64.Text = "102";
+            this.guna2Button64.Text = "166";
             // 
             // guna2Button65
             // 
@@ -1742,7 +1742,7 @@
             this.guna2Button65.Name = "guna2Button65";
             this.guna2Button65.Size = new System.Drawing.Size(170, 160);
             this.guna2Button65.TabIndex = 34;
-            this.guna2Button65.Text = "102";
+            this.guna2Button65.Text = "161";
             // 
             // guna2Panel1
             // 
