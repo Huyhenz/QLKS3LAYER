@@ -19,19 +19,22 @@ namespace DTO
 
         public long CCCD { get; set; }
 
+        public string GIOITINH { get; set; }
+
         public string DIACHI { get; set; }
         public string USERNAME { get; set; }
         public string PASSWD { get; set; }
-        public string MACTY { get; set; }
-        public string MADVI { get; set; }
-        public bool ISGROUP { get; set; }
-        public bool DISABLED { get; set; }
         public int IDQUYEN { get; set; }
 
+        public string NGAYVAOLAM { get; set; }
+
+        public string PHOTO { get; set; }
+
+        
         public TaiKhoanDTO() { }
 
 
-        public TaiKhoanDTO(int UID, string FULLNAME, string USERNAME,string NGAYSINH, string EMAIL, int SDT, int CCCD, string DIACHI, string PASSWD, int IDQUYEN)
+        public TaiKhoanDTO(int UID, string FULLNAME, string USERNAME,string NGAYSINH, string EMAIL, int SDT, int CCCD, string DIACHI, string PASSWD, int IDQUYEN, string NGAYVAOLAM, string GIOITINH, string PHOTO)
         {
             UID = UID;
             FULLNAME = FULLNAME;
@@ -43,6 +46,9 @@ namespace DTO
             USERNAME = USERNAME;
             PASSWD = PASSWD;
             IDQUYEN = IDQUYEN;
+            NGAYVAOLAM = NGAYVAOLAM;
+            GIOITINH = GIOITINH;
+            PHOTO = PHOTO;
         }
 
 
