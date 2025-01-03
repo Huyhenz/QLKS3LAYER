@@ -40,9 +40,12 @@ namespace DAL
                         EMAIL = reader["EMAIL"] != DBNull.Value ? reader["EMAIL"].ToString() : string.Empty,
                         SDT = reader["SDT"] != DBNull.Value ? Convert.ToInt64(reader["SDT"]) : 0,
                         CCCD = reader["CCCD"] != DBNull.Value ? Convert.ToInt64(reader["CCCD"]) : 0,
+                        NGAYVAOLAM = reader["NGAYVAOLAM"] != DBNull.Value ? reader["NGAYVAOLAM"].ToString() : string.Empty,
                         DIACHI = reader["DIACHI"] != DBNull.Value ? reader["DIACHI"].ToString() : string.Empty,
                         PASSWD = reader["PASSWD"] != DBNull.Value ? reader["PASSWD"].ToString() : string.Empty,
-                        IDQUYEN = reader["IDQUYEN"] != DBNull.Value ? Convert.ToInt32(reader["IDQUYEN"]) : 0
+                        IDQUYEN = reader["IDQUYEN"] != DBNull.Value ? Convert.ToInt32(reader["IDQUYEN"]) : 0,
+                        GIOITINH = reader["GIOITINH"] != DBNull.Value ? reader["GIOITINH"].ToString() : string.Empty,
+                        PHOTO = reader["PHOTO"] != DBNull.Value ? reader["PHOTO"].ToString() : string.Empty // Thêm đường dẫn ảnh
                     };
                     taiKhoanList.Add(taiKhoan);
                 }
@@ -63,20 +66,21 @@ namespace DAL
 
 
 
+
         public bool AddTaiKhoan(TaiKhoanDTO taiKhoan)
         {
                 try
                 {
                     // Kiểm tra giá trị SDT và CCCD hợp lệ
-                    if (taiKhoan.SDT > Int64.MaxValue || taiKhoan.CCCD > Int64.MaxValue)
+                    if (taiKhoan.SDT < 0 || taiKhoan.SDT > Int64.MaxValue || taiKhoan.CCCD < 0 || taiKhoan.CCCD > Int64.MaxValue)
                     {
                         throw new Exception("Giá trị SDT hoặc CCCD vượt quá giới hạn cho phép");
                     }
 
                     // Mở kết nối
                     conn.OpenConnection();  // Nếu conn là đối tượng kết nối của bạn
-                    string query = "INSERT INTO tb_User (FULLNAME, NGAYSINH, EMAIL, SDT, CCCD, DIACHI, USERNAME, PASSWD, IDQUYEN) " +
-                                   "VALUES (@FULLNAME, @NGAYSINH, @EMAIL, @SDT, @CCCD, @DIACHI, @USERNAME, @PASSWD, @IDQUYEN)";
+                    string query = "INSERT INTO tb_User (FULLNAME, NGAYSINH, EMAIL, SDT, CCCD, DIACHI, USERNAME, PASSWD, IDQUYEN, GIOITINH, NGAYVAOLAM) " +
+                                   "VALUES (@FULLNAME, @NGAYSINH, @EMAIL, @SDT, @CCCD, @DIACHI, @USERNAME, @PASSWD, @IDQUYEN, @GIOITINH, @NGAYVAOLAM)";
 
                     // Tạo SqlCommand và truyền query vào
                     SqlCommand command = new SqlCommand(query, conn.GetConnection());
@@ -86,6 +90,12 @@ namespace DAL
                     if (!DateTime.TryParseExact(taiKhoan.NGAYSINH, "yyyy-MM-dd", null, System.Globalization.DateTimeStyles.None, out ngaySinh))
                     {
                         throw new Exception("Ngày sinh không hợp lệ");
+                    }
+
+                    DateTime ngayVaoLam;
+                    if (!DateTime.TryParseExact(taiKhoan.NGAYVAOLAM, "yyyy-MM-dd", null, System.Globalization.DateTimeStyles.None, out ngayVaoLam))
+                    {
+                        throw new Exception("Ngày vào làm không hợp lệ");
                     }
 
                     // Thêm tham số vào command với kiểu dữ liệu rõ ràng
@@ -98,6 +108,8 @@ namespace DAL
                     command.Parameters.Add("@USERNAME", SqlDbType.NVarChar).Value = taiKhoan.USERNAME ?? string.Empty;
                     command.Parameters.Add("@PASSWD", SqlDbType.NVarChar).Value = taiKhoan.PASSWD ?? string.Empty;
                     command.Parameters.Add("@IDQUYEN", SqlDbType.Int).Value = taiKhoan.IDQUYEN;
+                    command.Parameters.Add("@GIOITINH", SqlDbType.NVarChar).Value = taiKhoan.GIOITINH ?? string.Empty; // Thêm giới tính
+                    command.Parameters.Add("@NGAYVAOLAM", SqlDbType.Date).Value = ngayVaoLam; // Thêm ngày vào làm
 
                     // Thực thi câu lệnh INSERT và kiểm tra xem có bản ghi nào được thêm không
                     int result = command.ExecuteNonQuery();
@@ -119,44 +131,53 @@ namespace DAL
         }
         public bool UpdateTaiKhoan(TaiKhoanDTO taiKhoan)
         {
-                try
+            try
+            {
+                conn.OpenConnection();
+
+                // Chuyển đổi từ string sang DateTime và kiểm tra giá trị hợp lệ
+                DateTime ngaySinh;
+                if (!DateTime.TryParseExact(taiKhoan.NGAYSINH, "yyyy-MM-dd", null, System.Globalization.DateTimeStyles.None, out ngaySinh))
                 {
-                    conn.OpenConnection();
-
-                    // Chuyển đổi từ string sang DateTime và kiểm tra giá trị hợp lệ
-                    DateTime ngaySinh;
-                    if (!DateTime.TryParseExact(taiKhoan.NGAYSINH, "yyyy-MM-dd", null, System.Globalization.DateTimeStyles.None, out ngaySinh))
-                    {
-                        throw new Exception("Ngày sinh không hợp lệ");
-                    }
-
-                    string query = "UPDATE tb_User SET FULLNAME = @FULLNAME, NGAYSINH = @NGAYSINH, EMAIL = @EMAIL, SDT = @SDT, CCCD = @CCCD, DIACHI = @DIACHI, USERNAME = @USERNAME, PASSWD = @PASSWD, IDQUYEN = @IDQUYEN WHERE UID = @UID";
-                    SqlCommand command = new SqlCommand(query, conn.GetConnection());
-
-                    // Thêm tất cả các tham số vào lệnh SQL
-                    command.Parameters.Add("@FULLNAME", SqlDbType.NVarChar).Value = taiKhoan.FULLNAME ?? string.Empty;
-                    command.Parameters.Add("@NGAYSINH", SqlDbType.Date).Value = ngaySinh; // Chuyển đổi string sang DateTime và sử dụng kiểu date
-                    command.Parameters.Add("@EMAIL", SqlDbType.NVarChar).Value = taiKhoan.EMAIL ?? string.Empty;
-                    command.Parameters.Add("@SDT", SqlDbType.BigInt).Value = taiKhoan.SDT;
-                    command.Parameters.Add("@CCCD", SqlDbType.BigInt).Value = taiKhoan.CCCD;
-                    command.Parameters.Add("@DIACHI", SqlDbType.NVarChar).Value = taiKhoan.DIACHI ?? string.Empty;
-                    command.Parameters.Add("@USERNAME", SqlDbType.NVarChar).Value = taiKhoan.USERNAME ?? string.Empty;
-                    command.Parameters.Add("@PASSWD", SqlDbType.NVarChar).Value = taiKhoan.PASSWD ?? string.Empty;
-                    command.Parameters.Add("@IDQUYEN", SqlDbType.Int).Value = taiKhoan.IDQUYEN;
-                    command.Parameters.Add("@UID", SqlDbType.Int).Value = taiKhoan.UID;
-
-                    int result = command.ExecuteNonQuery();
-                    return result > 0;
+                    throw new Exception("Ngày sinh không hợp lệ");
                 }
-                catch (Exception ex)
+
+                DateTime ngayVaoLam;
+                if (!DateTime.TryParseExact(taiKhoan.NGAYVAOLAM, "yyyy-MM-dd", null, System.Globalization.DateTimeStyles.None, out ngayVaoLam))
                 {
-                    throw new Exception("Lỗi khi cập nhật tài khoản: " + ex.Message);
+                    throw new Exception("Ngày vào làm không hợp lệ");
                 }
-                finally
-                {
-                    conn.CloseConnection();
-                }
+
+                string query = "UPDATE tb_User SET FULLNAME = @FULLNAME, NGAYSINH = @NGAYSINH, EMAIL = @EMAIL, SDT = @SDT, CCCD = @CCCD, DIACHI = @DIACHI, USERNAME = @USERNAME, PASSWD = @PASSWD, IDQUYEN = @IDQUYEN, GIOITINH = @GIOITINH, NGAYVAOLAM = @NGAYVAOLAM WHERE UID = @UID";
+                SqlCommand command = new SqlCommand(query, conn.GetConnection());
+
+                // Thêm tất cả các tham số vào lệnh SQL
+                command.Parameters.Add("@FULLNAME", SqlDbType.NVarChar).Value = taiKhoan.FULLNAME ?? string.Empty;
+                command.Parameters.Add("@NGAYSINH", SqlDbType.Date).Value = ngaySinh;
+                command.Parameters.Add("@EMAIL", SqlDbType.NVarChar).Value = taiKhoan.EMAIL ?? string.Empty;
+                command.Parameters.Add("@SDT", SqlDbType.BigInt).Value = taiKhoan.SDT;
+                command.Parameters.Add("@CCCD", SqlDbType.BigInt).Value = taiKhoan.CCCD;
+                command.Parameters.Add("@DIACHI", SqlDbType.NVarChar).Value = taiKhoan.DIACHI ?? string.Empty;
+                command.Parameters.Add("@USERNAME", SqlDbType.NVarChar).Value = taiKhoan.USERNAME ?? string.Empty;
+                command.Parameters.Add("@PASSWD", SqlDbType.NVarChar).Value = taiKhoan.PASSWD ?? string.Empty;
+                command.Parameters.Add("@IDQUYEN", SqlDbType.Int).Value = taiKhoan.IDQUYEN;
+                command.Parameters.Add("@GIOITINH", SqlDbType.NVarChar).Value = taiKhoan.GIOITINH ?? string.Empty; // Thêm giới tính
+                command.Parameters.Add("@NGAYVAOLAM", SqlDbType.Date).Value = ngayVaoLam; // Thêm ngày vào làm
+                command.Parameters.Add("@UID", SqlDbType.Int).Value = taiKhoan.UID;
+
+                int result = command.ExecuteNonQuery();
+                return result > 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi cập nhật tài khoản: " + ex.Message);
+            }
+            finally
+            {
+                conn.CloseConnection();
+            }
         }
+
 
 
 
@@ -196,18 +217,22 @@ namespace DAL
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
-                    taiKhoan = new TaiKhoanDTO(
-                        Convert.ToInt32(reader["UID"]),
-                        reader["FULLNAME"].ToString(),
-                        reader["USERNAME"].ToString(),
-                        reader["NGAYSINH"] != DBNull.Value ? reader["NGAYSINH"].ToString() : string.Empty, // Xử lý dưới dạng chuỗi
-                        reader["EMAIL"].ToString(),
-                        Convert.ToChar(reader["SDT"]),
-                        Convert.ToChar(reader["CCCD"]),
-                        reader["DIACHI"].ToString(),
-                        reader["PASSWD"].ToString(),
-                        Convert.ToInt32(reader["IDQUYEN"])
-                    );
+                    taiKhoan = new TaiKhoanDTO
+                    {
+                        UID = Convert.ToInt32(reader["UID"]),
+                        FULLNAME = reader["FULLNAME"].ToString(),
+                        USERNAME = reader["USERNAME"].ToString(),
+                        NGAYSINH = reader["NGAYSINH"] != DBNull.Value ? reader["NGAYSINH"].ToString() : string.Empty, // Xử lý dưới dạng chuỗi
+                        EMAIL = reader["EMAIL"].ToString(),
+                        SDT = reader["SDT"] != DBNull.Value ? Convert.ToInt64(reader["SDT"]) : 0,
+                        CCCD = reader["CCCD"] != DBNull.Value ? Convert.ToInt64(reader["CCCD"]) : 0,
+                        NGAYVAOLAM = reader["NGAYVAOLAM"] != DBNull.Value ? reader["NGAYVAOLAM"].ToString() : string.Empty,
+                        DIACHI = reader["DIACHI"].ToString(),
+                        PASSWD = reader["PASSWD"].ToString(),
+                        IDQUYEN = reader["IDQUYEN"] != DBNull.Value ? Convert.ToInt32(reader["IDQUYEN"]) : 0,
+                        GIOITINH = reader["GIOITINH"].ToString(), // Lấy giá trị giới tính
+                        PHOTO = reader["PHOTO"].ToString() // Lấy đường dẫn ảnh
+                    };
                 }
                 reader.Close();
             }
@@ -221,6 +246,10 @@ namespace DAL
             }
             return taiKhoan;
         }
+
+
+
+
 
         public TaiKhoanDTO Login(string USERNAME, string PASSWD)
         {
