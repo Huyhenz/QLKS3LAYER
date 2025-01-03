@@ -917,7 +917,7 @@
             this.Controls.Add(this.guna2TabControl1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "Form4";
-            this.Text = " ";
+            this.Text = "+";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
