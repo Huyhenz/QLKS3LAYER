@@ -51,6 +51,7 @@ namespace GUI
                 if (user != null)
                 {
                     labelError.Visible = false;
+                    Session.Login = user;
                     // Kiểm tra quyền hạn và điều hướng đến form tương ứng
                     int roleValue = user.IDQUYEN; // IDQUYEN đã là int, không cần chuyển đổi
                     if (roleValue == 1)
@@ -84,6 +85,11 @@ namespace GUI
             Form6 f = new Form6();
             f.Show();
             Hide();
+        }
+
+        private void DangNhap_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

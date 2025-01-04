@@ -16,6 +16,7 @@ namespace GUI
         private string connectionString = "Data Source=HUYCATMOI;Initial Catalog=QLKS;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
 
         private taikhoanbus taikhoanbus = new taikhoanbus();
+        public static TaiKhoanDTO loggedInUser = null;
         public Form9()
         {
             InitializeComponent();
@@ -98,13 +99,18 @@ namespace GUI
 
         private void Form9_Load(object sender, EventArgs e)
         {
+            if (Session.Login != null)
+            {
+                txtAccount.Text = Session.Login.FULLNAME;
+                //txtFullName.ReadOnly = true; // Đặt TextBox thành không thể chỉnh sửa
+            }
             comboCVNV.Items.Add("User");
             comboCVNV.Items.Add("Manager");
             comboCVNV.DropDownStyle = ComboBoxStyle.DropDownList;
             dgvNhanVien.CellClick += dgvNhanVien_CellClick;
             dgvNhanVien.MultiSelect = true;
             dgvNhanVien.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            LoadTaiKhoanToGrid();
+
             dateEdit1.Properties.ReadOnly = true;
             dateEdit2.Properties.ReadOnly = true;
 
@@ -112,6 +118,8 @@ namespace GUI
             {
                 dgvNhanVien.Columns["PHOTO"].Visible = false;
             }
+
+            LoadTaiKhoanToGrid();
         }
 
         private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
@@ -279,44 +287,44 @@ namespace GUI
 
         private void guna2Button10_Click(object sender, EventArgs e)
         {
-                string searchCCCD = txt_TIMCCCD.Text.Trim();
-                bool found = false;
+            string searchCCCD = txt_TIMCCCD.Text.Trim();
+            bool found = false;
 
-                foreach (DataGridViewRow row in dgvNhanVien.Rows)
+            foreach (DataGridViewRow row in dgvNhanVien.Rows)
+            {
+                if (row.Cells["CCCD"].Value != null && row.Cells["CCCD"].Value.ToString().Equals(searchCCCD))
                 {
-                    if (row.Cells["CCCD"].Value != null && row.Cells["CCCD"].Value.ToString().Equals(searchCCCD))
+                    // Hiển thị thông tin nhân viên
+                    txtMANV.Text = row.Cells["UID"].Value.ToString();
+                    txtHoTenNV.Text = row.Cells["FULLNAME"].Value.ToString();
+                    dateEdit1.EditValue = Convert.ToDateTime(row.Cells["NGAYSINH"].Value);
+                    comboCVNV.SelectedItem = row.Cells["IDQUYEN"].Value.ToString();
+                    if (row.Cells["GIOITINH"].Value.ToString() == "Nam")
                     {
-                        // Hiển thị thông tin nhân viên
-                        txtMANV.Text = row.Cells["UID"].Value.ToString();
-                        txtHoTenNV.Text = row.Cells["FULLNAME"].Value.ToString();
-                        dateEdit1.EditValue = Convert.ToDateTime(row.Cells["NGAYSINH"].Value);
-                        comboCVNV.SelectedItem = row.Cells["IDQUYEN"].Value.ToString();
-                        if (row.Cells["GIOITINH"].Value.ToString() == "Nam")
-                        {
-                            guna2RadioButton1.Checked = true;
-                        }
-                        else
-                        {
-                        guna2RadioButton2.Checked = true;
-                        }
-                        dateEdit2.EditValue = Convert.ToDateTime(row.Cells["NGAYVAOLAM"].Value);
-                        txtDCNV.Text = row.Cells["DIACHI"].Value.ToString();
-                        txtSDTNV.Text = row.Cells["SDT"].Value.ToString();
-                        txtEMAILNV.Text = row.Cells["EMAIL"].Value.ToString();
-                        txtUSERNV.Text = row.Cells["USERNAME"].Value.ToString();
-                        txtPASSNV.Text = row.Cells["PASSWD"].Value.ToString();
-                        // Giả sử ảnh được lưu dưới dạng đường dẫn tệp
-                        guna2PictureBox1.Image = Image.FromFile(row.Cells["PHOTO"].Value.ToString());
-
-                        found = true;
-                        break;
+                        guna2RadioButton1.Checked = true;
                     }
-                }
+                    else
+                    {
+                        guna2RadioButton2.Checked = true;
+                    }
+                    dateEdit2.EditValue = Convert.ToDateTime(row.Cells["NGAYVAOLAM"].Value);
+                    txtDCNV.Text = row.Cells["DIACHI"].Value.ToString();
+                    txtSDTNV.Text = row.Cells["SDT"].Value.ToString();
+                    txtEMAILNV.Text = row.Cells["EMAIL"].Value.ToString();
+                    txtUSERNV.Text = row.Cells["USERNAME"].Value.ToString();
+                    txtPASSNV.Text = row.Cells["PASSWD"].Value.ToString();
+                    // Giả sử ảnh được lưu dưới dạng đường dẫn tệp
+                    guna2PictureBox1.Image = Image.FromFile(row.Cells["PHOTO"].Value.ToString());
 
-                if (!found)
-                {
-                    MessageBox.Show("Không tìm thấy nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    found = true;
+                    break;
                 }
+            }
+
+            if (!found)
+            {
+                MessageBox.Show("Không tìm thấy nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void txt_TIMCCCD_TextChanged(object sender, EventArgs e)
@@ -329,12 +337,34 @@ namespace GUI
             Application.Exit();
         }
 
+        private void comboboxSorted_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
 
-        // Phương thức cập nhật đường dẫn hình ảnh trong cơ sở dữ liệu
+        private void guna2Button6_Click(object sender, EventArgs e)
+        {
+            string filterText = txtLoc.Text.ToLower();
+            List<TaiKhoanDTO> filteredList = taikhoanbus.GetAllTaiKhoan();
 
+            if (!string.IsNullOrEmpty(filterText))
+            {
+                filteredList = filteredList.Where(tk =>
+                    tk.UID.ToString().Contains(filterText) ||
+                    tk.FULLNAME.ToLower().Contains(filterText) ||
+                    tk.USERNAME.ToLower().Contains(filterText) ||
+                    tk.NGAYSINH.ToLower().Contains(filterText) ||
+                    tk.EMAIL.ToLower().Contains(filterText) ||
+                    tk.SDT.ToString().Contains(filterText) ||
+                    tk.CCCD.ToString().Contains(filterText) ||
+                    tk.DIACHI.ToLower().Contains(filterText) ||
+                    tk.GIOITINH.ToLower().Contains(filterText) ||
+                    tk.NGAYVAOLAM.ToLower().Contains(filterText) ||
+                    tk.IDQUYEN.ToString().Contains(filterText)).ToList();
+            }
 
-        // Ví dụ về phương thức lấy đường dẫn hình ảnh dựa trên ID nhân viê
+            dgvNhanVien.DataSource = filteredList;
+        }
     }
 }
 
