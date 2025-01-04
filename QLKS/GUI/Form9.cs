@@ -324,6 +324,11 @@ namespace GUI
 
         }
 
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
 
 
         // Phương thức cập nhật đường dẫn hình ảnh trong cơ sở dữ liệu
