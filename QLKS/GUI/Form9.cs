@@ -40,8 +40,21 @@ namespace GUI
         private void LoadTaiKhoanToGrid()
         {
             List<TaiKhoanDTO> taiKhoanList = taikhoanbus.GetAllTaiKhoan();
-            dgvNhanVien.DataSource = taiKhoanList;
 
+            // Định dạng lại ngày cho từng tài khoản
+            foreach (var taiKhoan in taiKhoanList)
+            {
+                if (DateTime.TryParse(taiKhoan.NGAYSINH, out DateTime ngaysinh))
+                {
+                    taiKhoan.NGAYSINH = ngaysinh.ToString("dd-MM-yyyy");
+                }
+
+                if (DateTime.TryParse(taiKhoan.NGAYVAOLAM, out DateTime ngayvaolam))
+                {
+                    taiKhoan.NGAYVAOLAM = ngayvaolam.ToString("dd-MM-yyyy");
+                }
+            }
+            dgvNhanVien.DataSource = taiKhoanList;
             // Ẩn cột PHOTO
             if (dgvNhanVien.Columns["PHOTO"] != null)
             {
