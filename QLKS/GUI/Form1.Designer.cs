@@ -395,6 +395,7 @@
             this.guna2TabControl1.TabButtonSize = new System.Drawing.Size(180, 40);
             this.guna2TabControl1.TabIndex = 4;
             this.guna2TabControl1.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.guna2TabControl1.Click += new System.EventHandler(this.guna2Button37_Click);
             // 
             // tabPage1
             // 
@@ -440,6 +441,7 @@
             this.guna2Button21.Size = new System.Drawing.Size(170, 160);
             this.guna2Button21.TabIndex = 20;
             this.guna2Button21.Text = "116";
+            this.guna2Button21.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button20
             // 
@@ -455,6 +457,7 @@
             this.guna2Button20.Size = new System.Drawing.Size(170, 160);
             this.guna2Button20.TabIndex = 19;
             this.guna2Button20.Text = "117";
+            this.guna2Button20.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button19
             // 
@@ -470,6 +473,7 @@
             this.guna2Button19.Size = new System.Drawing.Size(170, 160);
             this.guna2Button19.TabIndex = 18;
             this.guna2Button19.Text = "118";
+            this.guna2Button19.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button18
             // 
@@ -485,6 +489,7 @@
             this.guna2Button18.Size = new System.Drawing.Size(170, 160);
             this.guna2Button18.TabIndex = 17;
             this.guna2Button18.Text = "119";
+            this.guna2Button18.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button17
             // 
@@ -500,6 +505,7 @@
             this.guna2Button17.Size = new System.Drawing.Size(170, 160);
             this.guna2Button17.TabIndex = 16;
             this.guna2Button17.Text = "120";
+            this.guna2Button17.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button16
             // 
@@ -515,6 +521,7 @@
             this.guna2Button16.Size = new System.Drawing.Size(170, 160);
             this.guna2Button16.TabIndex = 15;
             this.guna2Button16.Text = "115";
+            this.guna2Button16.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button15
             // 
@@ -530,6 +537,7 @@
             this.guna2Button15.Size = new System.Drawing.Size(170, 160);
             this.guna2Button15.TabIndex = 14;
             this.guna2Button15.Text = "114";
+            this.guna2Button15.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button14
             // 
@@ -545,6 +553,7 @@
             this.guna2Button14.Size = new System.Drawing.Size(170, 160);
             this.guna2Button14.TabIndex = 13;
             this.guna2Button14.Text = "113";
+            this.guna2Button14.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button13
             // 
@@ -560,6 +569,7 @@
             this.guna2Button13.Size = new System.Drawing.Size(170, 160);
             this.guna2Button13.TabIndex = 12;
             this.guna2Button13.Text = "112";
+            this.guna2Button13.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button12
             // 
@@ -575,6 +585,7 @@
             this.guna2Button12.Size = new System.Drawing.Size(170, 160);
             this.guna2Button12.TabIndex = 11;
             this.guna2Button12.Text = "111";
+            this.guna2Button12.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button11
             // 
@@ -590,6 +601,7 @@
             this.guna2Button11.Size = new System.Drawing.Size(170, 160);
             this.guna2Button11.TabIndex = 10;
             this.guna2Button11.Text = "110";
+            this.guna2Button11.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button10
             // 
@@ -605,6 +617,7 @@
             this.guna2Button10.Size = new System.Drawing.Size(170, 160);
             this.guna2Button10.TabIndex = 9;
             this.guna2Button10.Text = "109";
+            this.guna2Button10.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button9
             // 
@@ -620,6 +633,7 @@
             this.guna2Button9.Size = new System.Drawing.Size(170, 160);
             this.guna2Button9.TabIndex = 8;
             this.guna2Button9.Text = "108";
+            this.guna2Button9.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button8
             // 
@@ -635,6 +649,7 @@
             this.guna2Button8.Size = new System.Drawing.Size(170, 160);
             this.guna2Button8.TabIndex = 7;
             this.guna2Button8.Text = "107";
+            this.guna2Button8.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button7
             // 
@@ -650,6 +665,7 @@
             this.guna2Button7.Size = new System.Drawing.Size(170, 160);
             this.guna2Button7.TabIndex = 6;
             this.guna2Button7.Text = "106";
+            this.guna2Button7.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button6
             // 
@@ -665,6 +681,7 @@
             this.guna2Button6.Size = new System.Drawing.Size(170, 160);
             this.guna2Button6.TabIndex = 5;
             this.guna2Button6.Text = "105";
+            this.guna2Button6.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button5
             // 
@@ -680,6 +697,7 @@
             this.guna2Button5.Size = new System.Drawing.Size(170, 160);
             this.guna2Button5.TabIndex = 4;
             this.guna2Button5.Text = "104";
+            this.guna2Button5.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button4
             // 
@@ -695,6 +713,7 @@
             this.guna2Button4.Size = new System.Drawing.Size(170, 160);
             this.guna2Button4.TabIndex = 3;
             this.guna2Button4.Text = "103";
+            this.guna2Button4.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button3
             // 
@@ -710,6 +729,7 @@
             this.guna2Button3.Size = new System.Drawing.Size(170, 160);
             this.guna2Button3.TabIndex = 2;
             this.guna2Button3.Text = "102";
+            this.guna2Button3.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button2
             // 
@@ -725,6 +745,7 @@
             this.guna2Button2.Size = new System.Drawing.Size(170, 160);
             this.guna2Button2.TabIndex = 1;
             this.guna2Button2.Text = "101";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // tabPage2
             // 
@@ -770,6 +791,7 @@
             this.guna2Button38.Size = new System.Drawing.Size(170, 160);
             this.guna2Button38.TabIndex = 40;
             this.guna2Button38.Text = "220";
+            this.guna2Button38.Click += new System.EventHandler(this.guna2Button37_Click);
             // 
             // guna2Button39
             // 
@@ -785,6 +807,7 @@
             this.guna2Button39.Size = new System.Drawing.Size(170, 160);
             this.guna2Button39.TabIndex = 39;
             this.guna2Button39.Text = "215";
+            this.guna2Button39.Click += new System.EventHandler(this.guna2Button37_Click);
             // 
             // guna2Button40
             // 
@@ -800,6 +823,7 @@
             this.guna2Button40.Size = new System.Drawing.Size(170, 160);
             this.guna2Button40.TabIndex = 38;
             this.guna2Button40.Text = "210";
+            this.guna2Button40.Click += new System.EventHandler(this.guna2Button37_Click);
             // 
             // guna2Button41
             // 
@@ -815,6 +839,7 @@
             this.guna2Button41.Size = new System.Drawing.Size(170, 160);
             this.guna2Button41.TabIndex = 37;
             this.guna2Button41.Text = "205";
+            this.guna2Button41.Click += new System.EventHandler(this.guna2Button37_Click);
             // 
             // guna2Button22
             // 
@@ -830,6 +855,7 @@
             this.guna2Button22.Size = new System.Drawing.Size(170, 160);
             this.guna2Button22.TabIndex = 36;
             this.guna2Button22.Text = "216";
+            this.guna2Button22.Click += new System.EventHandler(this.guna2Button37_Click);
             // 
             // guna2Button23
             // 
@@ -845,6 +871,7 @@
             this.guna2Button23.Size = new System.Drawing.Size(170, 160);
             this.guna2Button23.TabIndex = 35;
             this.guna2Button23.Text = "217";
+            this.guna2Button23.Click += new System.EventHandler(this.guna2Button37_Click);
             // 
             // guna2Button24
             // 
@@ -860,6 +887,7 @@
             this.guna2Button24.Size = new System.Drawing.Size(170, 160);
             this.guna2Button24.TabIndex = 34;
             this.guna2Button24.Text = "218";
+            this.guna2Button24.Click += new System.EventHandler(this.guna2Button37_Click);
             // 
             // guna2Button25
             // 
@@ -875,6 +903,7 @@
             this.guna2Button25.Size = new System.Drawing.Size(170, 160);
             this.guna2Button25.TabIndex = 33;
             this.guna2Button25.Text = "219";
+            this.guna2Button25.Click += new System.EventHandler(this.guna2Button37_Click);
             // 
             // guna2Button26
             // 
@@ -890,6 +919,7 @@
             this.guna2Button26.Size = new System.Drawing.Size(170, 160);
             this.guna2Button26.TabIndex = 32;
             this.guna2Button26.Text = "214";
+            this.guna2Button26.Click += new System.EventHandler(this.guna2Button37_Click);
             // 
             // guna2Button27
             // 
@@ -905,6 +935,7 @@
             this.guna2Button27.Size = new System.Drawing.Size(170, 160);
             this.guna2Button27.TabIndex = 31;
             this.guna2Button27.Text = "213";
+            this.guna2Button27.Click += new System.EventHandler(this.guna2Button37_Click);
             // 
             // guna2Button28
             // 
@@ -920,6 +951,7 @@
             this.guna2Button28.Size = new System.Drawing.Size(170, 160);
             this.guna2Button28.TabIndex = 30;
             this.guna2Button28.Text = "212";
+            this.guna2Button28.Click += new System.EventHandler(this.guna2Button37_Click);
             // 
             // guna2Button29
             // 
@@ -935,6 +967,7 @@
             this.guna2Button29.Size = new System.Drawing.Size(170, 160);
             this.guna2Button29.TabIndex = 29;
             this.guna2Button29.Text = "211";
+            this.guna2Button29.Click += new System.EventHandler(this.guna2Button37_Click);
             // 
             // guna2Button30
             // 
@@ -950,6 +983,7 @@
             this.guna2Button30.Size = new System.Drawing.Size(170, 160);
             this.guna2Button30.TabIndex = 28;
             this.guna2Button30.Text = "209";
+            this.guna2Button30.Click += new System.EventHandler(this.guna2Button37_Click);
             // 
             // guna2Button31
             // 
@@ -965,6 +999,7 @@
             this.guna2Button31.Size = new System.Drawing.Size(170, 160);
             this.guna2Button31.TabIndex = 27;
             this.guna2Button31.Text = "208";
+            this.guna2Button31.Click += new System.EventHandler(this.guna2Button37_Click);
             // 
             // guna2Button32
             // 
@@ -980,6 +1015,7 @@
             this.guna2Button32.Size = new System.Drawing.Size(170, 160);
             this.guna2Button32.TabIndex = 26;
             this.guna2Button32.Text = "207";
+            this.guna2Button32.Click += new System.EventHandler(this.guna2Button37_Click);
             // 
             // guna2Button33
             // 
@@ -995,6 +1031,7 @@
             this.guna2Button33.Size = new System.Drawing.Size(170, 160);
             this.guna2Button33.TabIndex = 25;
             this.guna2Button33.Text = "206";
+            this.guna2Button33.Click += new System.EventHandler(this.guna2Button37_Click);
             // 
             // guna2Button34
             // 
@@ -1010,6 +1047,7 @@
             this.guna2Button34.Size = new System.Drawing.Size(170, 160);
             this.guna2Button34.TabIndex = 24;
             this.guna2Button34.Text = "204";
+            this.guna2Button34.Click += new System.EventHandler(this.guna2Button37_Click);
             // 
             // guna2Button35
             // 
@@ -1025,6 +1063,7 @@
             this.guna2Button35.Size = new System.Drawing.Size(170, 160);
             this.guna2Button35.TabIndex = 23;
             this.guna2Button35.Text = "203";
+            this.guna2Button35.Click += new System.EventHandler(this.guna2Button37_Click);
             // 
             // guna2Button36
             // 
@@ -1040,6 +1079,7 @@
             this.guna2Button36.Size = new System.Drawing.Size(170, 160);
             this.guna2Button36.TabIndex = 22;
             this.guna2Button36.Text = "202";
+            this.guna2Button36.Click += new System.EventHandler(this.guna2Button37_Click);
             // 
             // guna2Button37
             // 
@@ -1086,6 +1126,7 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Tầng 3";
             this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Click += new System.EventHandler(this.guna2Button45_Click);
             // 
             // guna2Button58
             // 
@@ -1101,6 +1142,7 @@
             this.guna2Button58.Size = new System.Drawing.Size(170, 160);
             this.guna2Button58.TabIndex = 53;
             this.guna2Button58.Text = "320";
+            this.guna2Button58.Click += new System.EventHandler(this.guna2Button45_Click);
             // 
             // guna2Button59
             // 
@@ -1116,6 +1158,7 @@
             this.guna2Button59.Size = new System.Drawing.Size(170, 160);
             this.guna2Button59.TabIndex = 52;
             this.guna2Button59.Text = "315";
+            this.guna2Button59.Click += new System.EventHandler(this.guna2Button45_Click);
             // 
             // guna2Button60
             // 
@@ -1131,6 +1174,7 @@
             this.guna2Button60.Size = new System.Drawing.Size(170, 160);
             this.guna2Button60.TabIndex = 51;
             this.guna2Button60.Text = "310";
+            this.guna2Button60.Click += new System.EventHandler(this.guna2Button45_Click);
             // 
             // guna2Button61
             // 
@@ -1146,6 +1190,7 @@
             this.guna2Button61.Size = new System.Drawing.Size(170, 160);
             this.guna2Button61.TabIndex = 50;
             this.guna2Button61.Text = "305";
+            this.guna2Button61.Click += new System.EventHandler(this.guna2Button45_Click);
             // 
             // guna2Button54
             // 
@@ -1161,6 +1206,7 @@
             this.guna2Button54.Size = new System.Drawing.Size(170, 160);
             this.guna2Button54.TabIndex = 49;
             this.guna2Button54.Text = "319";
+            this.guna2Button54.Click += new System.EventHandler(this.guna2Button45_Click);
             // 
             // guna2Button55
             // 
@@ -1176,6 +1222,7 @@
             this.guna2Button55.Size = new System.Drawing.Size(170, 160);
             this.guna2Button55.TabIndex = 48;
             this.guna2Button55.Text = "314";
+            this.guna2Button55.Click += new System.EventHandler(this.guna2Button45_Click);
             // 
             // guna2Button56
             // 
@@ -1191,6 +1238,7 @@
             this.guna2Button56.Size = new System.Drawing.Size(170, 160);
             this.guna2Button56.TabIndex = 47;
             this.guna2Button56.Text = "309";
+            this.guna2Button56.Click += new System.EventHandler(this.guna2Button45_Click);
             // 
             // guna2Button57
             // 
@@ -1206,6 +1254,7 @@
             this.guna2Button57.Size = new System.Drawing.Size(170, 160);
             this.guna2Button57.TabIndex = 46;
             this.guna2Button57.Text = "304";
+            this.guna2Button57.Click += new System.EventHandler(this.guna2Button45_Click);
             // 
             // guna2Button50
             // 
@@ -1221,6 +1270,7 @@
             this.guna2Button50.Size = new System.Drawing.Size(170, 160);
             this.guna2Button50.TabIndex = 45;
             this.guna2Button50.Text = "318";
+            this.guna2Button50.Click += new System.EventHandler(this.guna2Button45_Click);
             // 
             // guna2Button51
             // 
@@ -1236,6 +1286,7 @@
             this.guna2Button51.Size = new System.Drawing.Size(170, 160);
             this.guna2Button51.TabIndex = 44;
             this.guna2Button51.Text = "313";
+            this.guna2Button51.Click += new System.EventHandler(this.guna2Button45_Click);
             // 
             // guna2Button52
             // 
@@ -1251,6 +1302,7 @@
             this.guna2Button52.Size = new System.Drawing.Size(170, 160);
             this.guna2Button52.TabIndex = 43;
             this.guna2Button52.Text = "308";
+            this.guna2Button52.Click += new System.EventHandler(this.guna2Button45_Click);
             // 
             // guna2Button53
             // 
@@ -1266,6 +1318,7 @@
             this.guna2Button53.Size = new System.Drawing.Size(170, 160);
             this.guna2Button53.TabIndex = 42;
             this.guna2Button53.Text = "303";
+            this.guna2Button53.Click += new System.EventHandler(this.guna2Button45_Click);
             // 
             // guna2Button46
             // 
@@ -1281,6 +1334,7 @@
             this.guna2Button46.Size = new System.Drawing.Size(170, 160);
             this.guna2Button46.TabIndex = 41;
             this.guna2Button46.Text = "317";
+            this.guna2Button46.Click += new System.EventHandler(this.guna2Button45_Click);
             // 
             // guna2Button47
             // 
@@ -1296,6 +1350,7 @@
             this.guna2Button47.Size = new System.Drawing.Size(170, 160);
             this.guna2Button47.TabIndex = 40;
             this.guna2Button47.Text = "312";
+            this.guna2Button47.Click += new System.EventHandler(this.guna2Button45_Click);
             // 
             // guna2Button48
             // 
@@ -1311,6 +1366,7 @@
             this.guna2Button48.Size = new System.Drawing.Size(170, 160);
             this.guna2Button48.TabIndex = 39;
             this.guna2Button48.Text = "307";
+            this.guna2Button48.Click += new System.EventHandler(this.guna2Button45_Click);
             // 
             // guna2Button49
             // 
@@ -1326,6 +1382,7 @@
             this.guna2Button49.Size = new System.Drawing.Size(170, 160);
             this.guna2Button49.TabIndex = 38;
             this.guna2Button49.Text = "302";
+            this.guna2Button49.Click += new System.EventHandler(this.guna2Button45_Click);
             // 
             // guna2Button42
             // 
@@ -1341,6 +1398,7 @@
             this.guna2Button42.Size = new System.Drawing.Size(170, 160);
             this.guna2Button42.TabIndex = 37;
             this.guna2Button42.Text = "316";
+            this.guna2Button42.Click += new System.EventHandler(this.guna2Button45_Click);
             // 
             // guna2Button43
             // 
@@ -1356,6 +1414,7 @@
             this.guna2Button43.Size = new System.Drawing.Size(170, 160);
             this.guna2Button43.TabIndex = 36;
             this.guna2Button43.Text = "311";
+            this.guna2Button43.Click += new System.EventHandler(this.guna2Button45_Click);
             // 
             // guna2Button44
             // 
@@ -1371,6 +1430,7 @@
             this.guna2Button44.Size = new System.Drawing.Size(170, 160);
             this.guna2Button44.TabIndex = 35;
             this.guna2Button44.Text = "306";
+            this.guna2Button44.Click += new System.EventHandler(this.guna2Button45_Click);
             // 
             // guna2Button45
             // 
@@ -1386,6 +1446,7 @@
             this.guna2Button45.Size = new System.Drawing.Size(170, 160);
             this.guna2Button45.TabIndex = 34;
             this.guna2Button45.Text = "301";
+            this.guna2Button45.Click += new System.EventHandler(this.guna2Button45_Click);
             // 
             // guna2Panel1
             // 

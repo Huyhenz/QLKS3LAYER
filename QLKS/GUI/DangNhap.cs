@@ -56,7 +56,7 @@ namespace GUI
                     int roleValue = user.IDQUYEN; // IDQUYEN đã là int, không cần chuyển đổi
                     if (roleValue == 1)
                     {
-                        Form7 f = new Form7();
+                        Form1 f = new Form1();
                         f.Show();
                         this.Hide();
 

@@ -12,9 +12,13 @@ namespace GUI
 {
     public partial class Form4 : Form
     {
-        public Form4()
+        private int roomId;
+        public Form4(int roomId)
         {
+
             InitializeComponent();
+            this.roomId = roomId;
+            LoadRoomDetails();
         }
 
         private void guna2GroupBox1_Click(object sender, EventArgs e)
@@ -30,6 +34,11 @@ namespace GUI
         private void Form4_Load(object sender, EventArgs e)
         {
 
+        }
+        private void LoadRoomDetails()
+        {
+            // Hiển thị chi tiết phòng dựa trên roomId
+            comboboxSP.SelectedItem = roomId.ToString();
         }
     }
 }

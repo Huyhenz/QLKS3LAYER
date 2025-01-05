@@ -61,7 +61,7 @@
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.guna2ComboBox4 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.comboboxSP = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -522,7 +522,7 @@
             // guna2GroupBox1
             // 
             this.guna2GroupBox1.BorderColor = System.Drawing.Color.Teal;
-            this.guna2GroupBox1.Controls.Add(this.guna2ComboBox4);
+            this.guna2GroupBox1.Controls.Add(this.comboboxSP);
             this.guna2GroupBox1.Controls.Add(this.guna2DateTimePicker2);
             this.guna2GroupBox1.Controls.Add(this.guna2DateTimePicker1);
             this.guna2GroupBox1.Controls.Add(this.guna2ComboBox1);
@@ -542,21 +542,21 @@
             this.guna2GroupBox1.Text = "Thông Tin Đăng Ký";
             this.guna2GroupBox1.Click += new System.EventHandler(this.guna2GroupBox1_Click);
             // 
-            // guna2ComboBox4
+            // comboboxSP
             // 
-            this.guna2ComboBox4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox4.BorderRadius = 18;
-            this.guna2ComboBox4.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox4.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox4.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox4.ForeColor = System.Drawing.Color.Black;
-            this.guna2ComboBox4.ItemHeight = 30;
-            this.guna2ComboBox4.Location = new System.Drawing.Point(142, 53);
-            this.guna2ComboBox4.Name = "guna2ComboBox4";
-            this.guna2ComboBox4.Size = new System.Drawing.Size(271, 36);
-            this.guna2ComboBox4.TabIndex = 39;
+            this.comboboxSP.BackColor = System.Drawing.Color.Transparent;
+            this.comboboxSP.BorderRadius = 18;
+            this.comboboxSP.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboboxSP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboboxSP.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboboxSP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboboxSP.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.comboboxSP.ForeColor = System.Drawing.Color.Black;
+            this.comboboxSP.ItemHeight = 30;
+            this.comboboxSP.Location = new System.Drawing.Point(142, 53);
+            this.comboboxSP.Name = "comboboxSP";
+            this.comboboxSP.Size = new System.Drawing.Size(271, 36);
+            this.comboboxSP.TabIndex = 39;
             // 
             // guna2DateTimePicker2
             // 
@@ -814,7 +814,7 @@
         private System.Windows.Forms.Label label17;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker3;
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox3;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox4;
+        private Guna.UI2.WinForms.Guna2ComboBox comboboxSP;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
     }
 }
