@@ -38,7 +38,7 @@ namespace GUI
         private void LoadRoomDetails()
         {
             // Hiển thị chi tiết phòng dựa trên roomId
-            comboboxSP.SelectedItem = roomId.ToString();
+            txtSP.Text = roomId.ToString();
         }
     }
 }

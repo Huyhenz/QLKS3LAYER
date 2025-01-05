@@ -21,21 +21,6 @@ namespace GUI
             LoadPhongButtons();
         }
 
-        private void guna2HtmlToolTip1_Popup(object sender, PopupEventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStrip2_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
         private void LoadPhongButtons()
         {
             Phongbus phongBLL = new Phongbus();
@@ -49,18 +34,12 @@ namespace GUI
 
                 // Gán sự kiện Click cho button
                 btn.Click += new EventHandler(guna2Button2_Click);
-
+                btn.Click += new EventHandler(guna2Button37_Click);
+                btn.Click += new EventHandler(guna2Button45_Click);
                 // Thêm Guna2Button vào form
                 this.Controls.Add(btn);
             }
         }
-
-        private void toolStripSplitButton1_ButtonClick(object sender, EventArgs e)
-        {
-
-        }
-
-
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {

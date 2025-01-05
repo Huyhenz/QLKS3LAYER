@@ -317,7 +317,6 @@
             this.toolStrip2.Size = new System.Drawing.Size(385, 1008);
             this.toolStrip2.TabIndex = 3;
             this.toolStrip2.Text = "toolStrip2";
-            this.toolStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip2_ItemClicked);
             // 
             // toolStripSplitButton1
             // 
@@ -331,7 +330,6 @@
             this.toolStripSplitButton1.Name = "toolStripSplitButton1";
             this.toolStripSplitButton1.Size = new System.Drawing.Size(382, 39);
             this.toolStripSplitButton1.Text = "THANH TOÁN";
-            this.toolStripSplitButton1.ButtonClick += new System.EventHandler(this.toolStripSplitButton1_ButtonClick);
             // 
             // dANHSÁCHHÓAĐƠNToolStripMenuItem
             // 
@@ -395,7 +393,6 @@
             this.guna2TabControl1.TabButtonSize = new System.Drawing.Size(180, 40);
             this.guna2TabControl1.TabIndex = 4;
             this.guna2TabControl1.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
-            this.guna2TabControl1.Click += new System.EventHandler(this.guna2Button37_Click);
             // 
             // tabPage1
             // 
@@ -1126,7 +1123,6 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Tầng 3";
             this.tabPage3.UseVisualStyleBackColor = true;
-            this.tabPage3.Click += new System.EventHandler(this.guna2Button45_Click);
             // 
             // guna2Button58
             // 
@@ -1660,7 +1656,6 @@
             this.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
