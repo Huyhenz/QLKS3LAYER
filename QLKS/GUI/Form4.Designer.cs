@@ -61,7 +61,6 @@
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.comboboxSP = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -76,6 +75,7 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.txtSP = new Guna.UI2.WinForms.Guna2TextBox();
             this.toolStrip1.SuspendLayout();
             this.guna2GroupBox3.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
@@ -522,7 +522,7 @@
             // guna2GroupBox1
             // 
             this.guna2GroupBox1.BorderColor = System.Drawing.Color.Teal;
-            this.guna2GroupBox1.Controls.Add(this.comboboxSP);
+            this.guna2GroupBox1.Controls.Add(this.txtSP);
             this.guna2GroupBox1.Controls.Add(this.guna2DateTimePicker2);
             this.guna2GroupBox1.Controls.Add(this.guna2DateTimePicker1);
             this.guna2GroupBox1.Controls.Add(this.guna2ComboBox1);
@@ -541,22 +541,6 @@
             this.guna2GroupBox1.TabIndex = 4;
             this.guna2GroupBox1.Text = "Thông Tin Đăng Ký";
             this.guna2GroupBox1.Click += new System.EventHandler(this.guna2GroupBox1_Click);
-            // 
-            // comboboxSP
-            // 
-            this.comboboxSP.BackColor = System.Drawing.Color.Transparent;
-            this.comboboxSP.BorderRadius = 18;
-            this.comboboxSP.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboboxSP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboboxSP.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboboxSP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboboxSP.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.comboboxSP.ForeColor = System.Drawing.Color.Black;
-            this.comboboxSP.ItemHeight = 30;
-            this.comboboxSP.Location = new System.Drawing.Point(142, 53);
-            this.comboboxSP.Name = "comboboxSP";
-            this.comboboxSP.Size = new System.Drawing.Size(271, 36);
-            this.comboboxSP.TabIndex = 39;
             // 
             // guna2DateTimePicker2
             // 
@@ -737,6 +721,34 @@
             this.guna2Button2.TabIndex = 36;
             this.guna2Button2.Text = "Hủy Phòng";
             // 
+            // txtSP
+            // 
+            this.txtSP.BorderColor = System.Drawing.Color.Black;
+            this.txtSP.BorderRadius = 18;
+            this.txtSP.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.txtSP.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSP.DefaultText = "";
+            this.txtSP.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSP.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSP.Enabled = false;
+            this.txtSP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSP.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
+            this.txtSP.ForeColor = System.Drawing.Color.Black;
+            this.txtSP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSP.IconLeftSize = new System.Drawing.Size(30, 30);
+            this.txtSP.Location = new System.Drawing.Point(142, 55);
+            this.txtSP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtSP.Name = "txtSP";
+            this.txtSP.PasswordChar = '\0';
+            this.txtSP.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.txtSP.PlaceholderText = "";
+            this.txtSP.SelectedText = "";
+            this.txtSP.Size = new System.Drawing.Size(271, 34);
+            this.txtSP.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txtSP.TabIndex = 29;
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -814,7 +826,7 @@
         private System.Windows.Forms.Label label17;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker3;
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox3;
-        private Guna.UI2.WinForms.Guna2ComboBox comboboxSP;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2TextBox txtSP;
     }
 }
