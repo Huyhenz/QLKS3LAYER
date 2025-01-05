@@ -247,53 +247,53 @@ namespace DAL
             return taiKhoan;
         }
 
-
-
-
-
-        public TaiKhoanDTO Login(string USERNAME, string PASSWD)
-        {
-            try
+            public TaiKhoanDTO Login(string USERNAME, string PASSWD)
             {
-                conn.OpenConnection();
-                string query = "SELECT * FROM tb_User WHERE USERNAME COLLATE Latin1_General_CS_AS = @USERNAME AND PASSWD COLLATE Latin1_General_CS_AS = @PASSWD"; SqlCommand command = new SqlCommand(query, conn.GetConnection());
-                command.Parameters.AddWithValue("@USERNAME", USERNAME);
-                command.Parameters.AddWithValue("@PASSWD", PASSWD);
-                SqlDataReader reader = command.ExecuteReader();
-
-                if (reader.Read())
+                try
                 {
-                    TaiKhoanDTO taiKhoan = new TaiKhoanDTO
+                    conn.OpenConnection(); // Mở kết nối với cơ sở dữ liệu
+                    string query = "SELECT * FROM tb_User WHERE USERNAME COLLATE Latin1_General_CS_AS = @USERNAME AND PASSWD COLLATE Latin1_General_CS_AS = @PASSWD";
+                    SqlCommand command = new SqlCommand(query, conn.GetConnection());
+                    command.Parameters.AddWithValue("@USERNAME", USERNAME);
+                    command.Parameters.AddWithValue("@PASSWD", PASSWD);
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.Read())
                     {
-                        UID = reader["UID"] != DBNull.Value ? Convert.ToInt32(reader["UID"]) : 0,
-                        FULLNAME = reader["FULLNAME"] != DBNull.Value ? reader["FULLNAME"].ToString() : string.Empty,
-                        USERNAME = reader["USERNAME"] != DBNull.Value ? reader["USERNAME"].ToString() : string.Empty,
-                        NGAYSINH = reader["NGAYSINH"] != DBNull.Value ? reader["NGAYSINH"].ToString() : string.Empty, // Xử lý dưới dạng chuỗi                        EMAIL = reader["EMAIL"] != DBNull.Value ? reader["EMAIL"].ToString() : string.Empty,
-                        SDT = reader["SDT"] != DBNull.Value ? Convert.ToInt64(reader["SDT"]) : 0,
-                        CCCD = reader["CCCD"] != DBNull.Value ? Convert.ToInt64(reader["CCCD"]) : 0,
-                        DIACHI = reader["DIACHI"] != DBNull.Value ? reader["DIACHI"].ToString() : string.Empty,
-                        PASSWD = reader["PASSWD"] != DBNull.Value ? reader["PASSWD"].ToString() : string.Empty,
-                        IDQUYEN = reader["IDQUYEN"] != DBNull.Value ? Convert.ToInt32(reader["IDQUYEN"]) : 0
-                    };
-                    reader.Close();
-                    return taiKhoan;
+                        TaiKhoanDTO taiKhoan = new TaiKhoanDTO
+                        {
+                            UID = reader["UID"] != DBNull.Value ? Convert.ToInt32(reader["UID"]) : 0,
+                            FULLNAME = reader["FULLNAME"] != DBNull.Value ? reader["FULLNAME"].ToString() : string.Empty,
+                            USERNAME = reader["USERNAME"] != DBNull.Value ? reader["USERNAME"].ToString() : string.Empty,
+                            NGAYSINH = reader["NGAYSINH"] != DBNull.Value ? reader["NGAYSINH"].ToString() : string.Empty,
+                            EMAIL = reader["EMAIL"] != DBNull.Value ? reader["EMAIL"].ToString() : string.Empty,
+                            SDT = reader["SDT"] != DBNull.Value ? Convert.ToInt64(reader["SDT"]) : 0,
+                            CCCD = reader["CCCD"] != DBNull.Value ? Convert.ToInt64(reader["CCCD"]) : 0,
+                            DIACHI = reader["DIACHI"] != DBNull.Value ? reader["DIACHI"].ToString() : string.Empty,
+                            PASSWD = reader["PASSWD"] != DBNull.Value ? reader["PASSWD"].ToString() : string.Empty,
+                            IDQUYEN = reader["IDQUYEN"] != DBNull.Value ? Convert.ToInt32(reader["IDQUYEN"]) : 0
+                        };
+                        reader.Close();
+                        return taiKhoan;
+                    }
+                    else
+                    {
+                        reader.Close();
+                        return null;
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    reader.Close();
-                    return null;
+                    throw new Exception("Lỗi khi đăng nhập: " + ex.Message);
+                }
+                finally
+                {
+                    conn.CloseConnection(); // Đóng kết nối sau khi hoàn tất
                 }
             }
-            catch (Exception ex)
-            {
-                throw new Exception("Lỗi khi đăng nhập: " + ex.Message);
-            }
-            finally
-            {
-                conn.CloseConnection();
-            }
-        }
-            public List<FuncDTO> GetFuncItems(string parents)
+        
+
+    public List<FuncDTO> GetFuncItems(string parents)
             {
                 List<FuncDTO> items = new List<FuncDTO>();
                 try
