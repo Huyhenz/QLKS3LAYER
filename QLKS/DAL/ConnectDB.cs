@@ -13,7 +13,7 @@ namespace DAL
         //Tạo chuỗi kết nối database
         private SqlConnection connection;
 
-        private string connectionstring = @"Data Source=HUYCATMOI;Initial Catalog=QLKS;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
+        private string connectionstring = @"Data Source=MSI;Initial Catalog=QLKS;Integrated Security=True;TrustServerCertificate=True;";
         public ConnectionDB()
         {
             connection = new SqlConnection(connectionstring);
