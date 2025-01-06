@@ -178,6 +178,7 @@
             this.toolStripButton1.Size = new System.Drawing.Size(58, 44);
             this.toolStripButton1.Text = "Thoát";
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripSeparator1
             // 

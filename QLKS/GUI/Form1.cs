@@ -23,6 +23,8 @@ namespace GUI
             //LoadPhongButtons();
             Guna2Button btn = new Guna2Button();
             btn.Click += new EventHandler(guna2Button2_Click);
+            btn.Click += new EventHandler(guna2Button37_Click);
+            btn.Click += new EventHandler(guna2Button45_Click);
         }
 
         /*private void LoadPhongButtons()
@@ -54,17 +56,28 @@ namespace GUI
 
         private void guna2Button37_Click(object sender, EventArgs e)
         {
-           
+            Guna2Button btn = sender as Guna2Button;
+            int roomId = int.Parse(btn.Text);
+            Form4 form4 = new Form4(roomId);
+            form4.Show();
         }
 
         private void guna2Button45_Click(object sender, EventArgs e)
         {
-           
+            Guna2Button btn = sender as Guna2Button;
+            int roomId = int.Parse(btn.Text);
+            Form4 form4 = new Form4(roomId);
+            form4.Show();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
                 
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

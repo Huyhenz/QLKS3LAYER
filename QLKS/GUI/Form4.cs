@@ -47,14 +47,16 @@ namespace GUI
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "SELECT IDPHONG FROM tb_Phong WHERE IDPHONG = @IDPHONG";
+                string query = "SELECT IDPHONG, TENLOAIPHONG, DONGIA FROM tb_Phong p join tb_LoaiPhong l on p.IDLOAIPHONG = l.IDLOAIPHONG WHERE IDPHONG = @IDPHONG";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@IDPHONG", roomId);
 
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    txtSP.Text = reader["IDPHONG"].ToString(); // Gán giá trị cho textbox
+                    txtSP.Text = reader["IDPHONG"].ToString();
+                    txtLP.Text = reader["TENLOAIPHONG"].ToString();
+                    txtGIA.Text = reader["DONGIA"].ToString();// Gán giá trị cho textbox
                 }
             }
         }
