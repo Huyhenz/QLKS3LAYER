@@ -238,7 +238,7 @@ public class BookingDAL
                 conn.Open();
                 string query = "INSERT INTO tb_DatPhong (ID, IDKH, IDPHONG, NGAYDAT, NGAYTRA, SONGAYO) VALUES (@ID, @IDKH, @IDPHONG, @NGAYDAT, @NGAYTRA, @SONGAYO)";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@ID", booking.ID);
+                cmd.Parameters.AddWithValue("@ID", booking.IDDP);
                 cmd.Parameters.AddWithValue("@IDKH", booking.IDKH);
                 cmd.Parameters.AddWithValue("@IDPHONG", booking.IDPHONG);
                 cmd.Parameters.AddWithValue("@NGAYDAT", booking.NGAYDAT);

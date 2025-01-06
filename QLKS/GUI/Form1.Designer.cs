@@ -269,6 +269,7 @@
             this.toolStripButton6.Size = new System.Drawing.Size(382, 39);
             this.toolStripButton6.Text = "DỊCH VỤ";
             this.toolStripButton6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
             // 
             // toolStripSeparator7
             // 

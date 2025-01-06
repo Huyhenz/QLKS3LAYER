@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Management;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -78,6 +79,12 @@ namespace GUI
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void toolStripButton6_Click(object sender, EventArgs e)
+        {
+            Form11 f = new Form11();
+            f.Show();
         }
     }
 }

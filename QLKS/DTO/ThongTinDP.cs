@@ -8,7 +8,7 @@ namespace DTO
 {
     public class ThongTinDP
     {
-        public int ID { get; set; }
+        public int IDDP { get; set; }
 
         public int IDKH { get; set; }
         public int IDPHONG { get; set; }
@@ -25,9 +25,9 @@ namespace DTO
 
         }
 
-        public ThongTinDP(int ID, int IDKH, int IDPHONG, string NGAYDAT, string NGAYTRA, int SONGAYO)
+        public ThongTinDP(int IDDP, int IDKH, int IDPHONG, string NGAYDAT, string NGAYTRA, int SONGAYO)
         {
-            ID = ID;
+            IDDP = IDDP;
             IDKH = IDKH;
             IDPHONG = IDPHONG;
             NGAYDAT = NGAYDAT;
