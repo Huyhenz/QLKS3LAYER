@@ -1,7 +1,11 @@
-﻿using System;
+﻿using BLL;
+using DTO;
+using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,13 +16,14 @@ namespace GUI
 {
     public partial class Form4 : Form
     {
-        private int roomId;
+
+        private Phongbus phongbus = new Phongbus();
         public Form4(int roomId)
         {
 
             InitializeComponent();
-            this.roomId = roomId;
-            LoadRoomDetails();
+            SetRoomID(roomId);
+
         }
 
         private void guna2GroupBox1_Click(object sender, EventArgs e)
@@ -35,10 +40,23 @@ namespace GUI
         {
 
         }
-        private void LoadRoomDetails()
+
+        public void SetRoomID(int roomId)
         {
-            // Hiển thị chi tiết phòng dựa trên roomId
-            txtSP.Text = roomId.ToString();
+            string connectionString = "Data Source=HUYCATMOI;Initial Catalog=QLKS;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "SELECT IDPHONG FROM tb_Phong WHERE IDPHONG = @IDPHONG";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@IDPHONG", roomId);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    txtSP.Text = reader["IDPHONG"].ToString(); // Gán giá trị cho textbox
+                }
+            }
         }
     }
 }

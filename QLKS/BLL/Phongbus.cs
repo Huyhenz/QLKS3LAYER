@@ -26,7 +26,20 @@ namespace BLL
             {
                 phongDAL.UpdatePhong(phong);
             }
+
+            public Phong GetPhongByID(int ID)
+        {
+            return phongDAL.GetPhongById(ID);
         }
+            public LoaiPhongDTO GetRoomDetails(int IDPhong)
+            {
+            return phongDAL.GetRoomDetails(IDPhong);
+            }
+            public List<Phong> GetRooms()
+            {
+                return phongDAL.GetRooms();
+        }
+    }
 
         public class BookingBLL
         {
@@ -37,4 +50,5 @@ namespace BLL
                 bookingDAL.SaveBooking(booking);
             }
         }
+
     }

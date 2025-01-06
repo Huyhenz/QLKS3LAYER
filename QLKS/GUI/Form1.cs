@@ -15,60 +15,56 @@ namespace GUI
 {
     public partial class Form1 : Form
     {
+        private Phongbus phongbus = new Phongbus();
+
         public Form1()
         {
             InitializeComponent();
-            LoadPhongButtons();
+            //LoadPhongButtons();
+            Guna2Button btn = new Guna2Button();
+            btn.Click += new EventHandler(guna2Button2_Click);
         }
 
-        private void LoadPhongButtons()
+        /*private void LoadPhongButtons()
         {
-            Phongbus phongBLL = new Phongbus();
-            List<Phong> phongList = phongBLL.GetAllPhong();
+            var rooms = phongbus.GetRooms();
 
-            foreach (Phong phong in phongList)
+            foreach (var room in rooms)
             {
-                // Tạo Guna2Button mới
                 Guna2Button btn = new Guna2Button();
-                btn.Text = phong.IDPHONG.ToString(); // Hiển thị ID phòng trên button
-
-                // Gán sự kiện Click cho button
-                btn.Click += new EventHandler(guna2Button2_Click);
-                btn.Click += new EventHandler(guna2Button37_Click);
-                btn.Click += new EventHandler(guna2Button45_Click);
-                // Thêm Guna2Button vào form
+                btn.Text = room.IDPHONG.ToString();
+                btn.Name = $"btnRoom{room.IDPHONG}";
+                
                 this.Controls.Add(btn);
             }
-        }
+        }*/
+
+
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            Guna2Button btn = (Guna2Button)sender; // Lấy button đã được nhấn
-            int roomId = int.Parse(btn.Text); // Lấy ID phòng từ text của button
-
-            // Mở form đặt phòng với số phòng tương ứng
-            Form4 f = new Form4(roomId);
-            f.Show();
+            Guna2Button btn = sender as Guna2Button;
+            int roomId = int.Parse(btn.Text);
+            Form4 form4 = new Form4(roomId);
+            form4.Show();
         }
+
+
+
 
         private void guna2Button37_Click(object sender, EventArgs e)
         {
-            Guna2Button btn = (Guna2Button)sender; // Lấy button đã được nhấn
-            int roomId = int.Parse(btn.Text); // Lấy ID phòng từ text của button
-
-            // Mở form đặt phòng với số phòng tương ứng
-            Form4 f = new Form4(roomId);
-            f.Show();
+           
         }
 
         private void guna2Button45_Click(object sender, EventArgs e)
         {
-            Guna2Button btn = (Guna2Button)sender; // Lấy button đã được nhấn
-            int roomId = int.Parse(btn.Text); // Lấy ID phòng từ text của button
+           
+        }
 
-            // Mở form đặt phòng với số phòng tương ứng
-            Form4 f = new Form4(roomId);
-            f.Show();
+        private void Form1_Load(object sender, EventArgs e)
+        {
+                
         }
     }
 }

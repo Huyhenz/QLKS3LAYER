@@ -61,10 +61,11 @@
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.txtLP = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtSP = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtGIA = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -75,7 +76,6 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.txtSP = new Guna.UI2.WinForms.Guna2TextBox();
             this.toolStrip1.SuspendLayout();
             this.guna2GroupBox3.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
@@ -522,11 +522,11 @@
             // guna2GroupBox1
             // 
             this.guna2GroupBox1.BorderColor = System.Drawing.Color.Teal;
+            this.guna2GroupBox1.Controls.Add(this.txtLP);
             this.guna2GroupBox1.Controls.Add(this.txtSP);
             this.guna2GroupBox1.Controls.Add(this.guna2DateTimePicker2);
             this.guna2GroupBox1.Controls.Add(this.guna2DateTimePicker1);
-            this.guna2GroupBox1.Controls.Add(this.guna2ComboBox1);
-            this.guna2GroupBox1.Controls.Add(this.guna2TextBox1);
+            this.guna2GroupBox1.Controls.Add(this.txtGIA);
             this.guna2GroupBox1.Controls.Add(this.label5);
             this.guna2GroupBox1.Controls.Add(this.label4);
             this.guna2GroupBox1.Controls.Add(this.label3);
@@ -541,6 +541,62 @@
             this.guna2GroupBox1.TabIndex = 4;
             this.guna2GroupBox1.Text = "Thông Tin Đăng Ký";
             this.guna2GroupBox1.Click += new System.EventHandler(this.guna2GroupBox1_Click);
+            // 
+            // txtLP
+            // 
+            this.txtLP.BorderColor = System.Drawing.Color.Black;
+            this.txtLP.BorderRadius = 18;
+            this.txtLP.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.txtLP.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtLP.DefaultText = "";
+            this.txtLP.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtLP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtLP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtLP.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtLP.Enabled = false;
+            this.txtLP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtLP.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
+            this.txtLP.ForeColor = System.Drawing.Color.Black;
+            this.txtLP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtLP.IconLeftSize = new System.Drawing.Size(30, 30);
+            this.txtLP.Location = new System.Drawing.Point(142, 215);
+            this.txtLP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtLP.Name = "txtLP";
+            this.txtLP.PasswordChar = '\0';
+            this.txtLP.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.txtLP.PlaceholderText = "";
+            this.txtLP.SelectedText = "";
+            this.txtLP.Size = new System.Drawing.Size(271, 34);
+            this.txtLP.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txtLP.TabIndex = 30;
+            // 
+            // txtSP
+            // 
+            this.txtSP.BorderColor = System.Drawing.Color.Black;
+            this.txtSP.BorderRadius = 18;
+            this.txtSP.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.txtSP.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSP.DefaultText = "";
+            this.txtSP.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSP.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSP.Enabled = false;
+            this.txtSP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSP.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
+            this.txtSP.ForeColor = System.Drawing.Color.Black;
+            this.txtSP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSP.IconLeftSize = new System.Drawing.Size(30, 30);
+            this.txtSP.Location = new System.Drawing.Point(142, 55);
+            this.txtSP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtSP.Name = "txtSP";
+            this.txtSP.PasswordChar = '\0';
+            this.txtSP.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.txtSP.PlaceholderText = "";
+            this.txtSP.SelectedText = "";
+            this.txtSP.Size = new System.Drawing.Size(271, 34);
+            this.txtSP.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txtSP.TabIndex = 29;
             // 
             // guna2DateTimePicker2
             // 
@@ -570,48 +626,33 @@
             this.guna2DateTimePicker1.TabIndex = 27;
             this.guna2DateTimePicker1.Value = new System.DateTime(2025, 1, 2, 0, 9, 21, 806);
             // 
-            // guna2ComboBox1
+            // txtGIA
             // 
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.BorderRadius = 18;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.Location = new System.Drawing.Point(142, 213);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.Size = new System.Drawing.Size(271, 36);
-            this.guna2ComboBox1.TabIndex = 25;
-            // 
-            // guna2TextBox1
-            // 
-            this.guna2TextBox1.BorderColor = System.Drawing.Color.Black;
-            this.guna2TextBox1.BorderRadius = 18;
-            this.guna2TextBox1.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
-            this.guna2TextBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.guna2TextBox1.Location = new System.Drawing.Point(533, 55);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(179, 34);
-            this.guna2TextBox1.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.guna2TextBox1.TabIndex = 21;
+            this.txtGIA.BorderColor = System.Drawing.Color.Black;
+            this.txtGIA.BorderRadius = 18;
+            this.txtGIA.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.txtGIA.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtGIA.DefaultText = "";
+            this.txtGIA.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtGIA.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtGIA.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtGIA.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtGIA.Enabled = false;
+            this.txtGIA.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtGIA.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
+            this.txtGIA.ForeColor = System.Drawing.Color.Black;
+            this.txtGIA.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtGIA.IconLeftSize = new System.Drawing.Size(30, 30);
+            this.txtGIA.Location = new System.Drawing.Point(533, 55);
+            this.txtGIA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtGIA.Name = "txtGIA";
+            this.txtGIA.PasswordChar = '\0';
+            this.txtGIA.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.txtGIA.PlaceholderText = "";
+            this.txtGIA.SelectedText = "";
+            this.txtGIA.Size = new System.Drawing.Size(179, 34);
+            this.txtGIA.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txtGIA.TabIndex = 21;
             // 
             // label5
             // 
@@ -721,34 +762,6 @@
             this.guna2Button2.TabIndex = 36;
             this.guna2Button2.Text = "Hủy Phòng";
             // 
-            // txtSP
-            // 
-            this.txtSP.BorderColor = System.Drawing.Color.Black;
-            this.txtSP.BorderRadius = 18;
-            this.txtSP.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
-            this.txtSP.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSP.DefaultText = "";
-            this.txtSP.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSP.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSP.Enabled = false;
-            this.txtSP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSP.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
-            this.txtSP.ForeColor = System.Drawing.Color.Black;
-            this.txtSP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSP.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txtSP.Location = new System.Drawing.Point(142, 55);
-            this.txtSP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtSP.Name = "txtSP";
-            this.txtSP.PasswordChar = '\0';
-            this.txtSP.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txtSP.PlaceholderText = "";
-            this.txtSP.SelectedText = "";
-            this.txtSP.Size = new System.Drawing.Size(271, 34);
-            this.txtSP.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.txtSP.TabIndex = 29;
-            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -793,8 +806,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.ToolStripButton toolStripButton6;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox txtGIA;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -828,5 +840,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox3;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2TextBox txtSP;
+        private Guna.UI2.WinForms.Guna2TextBox txtLP;
     }
 }

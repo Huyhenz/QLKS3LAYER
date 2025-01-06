@@ -12,7 +12,7 @@ namespace DTO
 
         public string TENLOAIPHONG { get; set; }
 
-        public float    DONGIA { get; set; }
+        public int DONGIA { get; set; }
         
         public int SONGUOI { get; set; }
 
