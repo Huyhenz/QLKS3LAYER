@@ -50,5 +50,20 @@ namespace GUI
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
                     }
+
+        private void Form11_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GroupBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GroupBox7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
