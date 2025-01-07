@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form11));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -311,6 +311,8 @@
             this.guna2CheckBox14.UncheckedState.BorderRadius = 0;
             this.guna2CheckBox14.UncheckedState.BorderThickness = 0;
             this.guna2CheckBox14.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox14.CheckedChanged += new System.EventHandler(this.guna2CheckBox4_CheckedChanged);
+            this.guna2CheckBox14.TextChanged += new System.EventHandler(this.guna2CheckBox4_TextChanged);
             // 
             // guna2CheckBox13
             // 
@@ -330,6 +332,8 @@
             this.guna2CheckBox13.UncheckedState.BorderRadius = 0;
             this.guna2CheckBox13.UncheckedState.BorderThickness = 0;
             this.guna2CheckBox13.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox13.CheckedChanged += new System.EventHandler(this.guna2CheckBox4_CheckedChanged);
+            this.guna2CheckBox13.TextChanged += new System.EventHandler(this.guna2CheckBox4_TextChanged);
             // 
             // label21
             // 
@@ -435,6 +439,8 @@
             this.guna2CheckBox9.UncheckedState.BorderRadius = 0;
             this.guna2CheckBox9.UncheckedState.BorderThickness = 0;
             this.guna2CheckBox9.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox9.CheckedChanged += new System.EventHandler(this.guna2CheckBox4_CheckedChanged);
+            this.guna2CheckBox9.TextChanged += new System.EventHandler(this.guna2CheckBox4_TextChanged);
             // 
             // guna2GroupBox4
             // 
@@ -528,6 +534,8 @@
             this.guna2CheckBox12.UncheckedState.BorderRadius = 0;
             this.guna2CheckBox12.UncheckedState.BorderThickness = 0;
             this.guna2CheckBox12.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox12.CheckedChanged += new System.EventHandler(this.guna2CheckBox4_CheckedChanged);
+            this.guna2CheckBox12.TextChanged += new System.EventHandler(this.guna2CheckBox4_TextChanged);
             // 
             // guna2CheckBox11
             // 
@@ -547,6 +555,8 @@
             this.guna2CheckBox11.UncheckedState.BorderRadius = 0;
             this.guna2CheckBox11.UncheckedState.BorderThickness = 0;
             this.guna2CheckBox11.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox11.CheckedChanged += new System.EventHandler(this.guna2CheckBox4_CheckedChanged);
+            this.guna2CheckBox11.TextChanged += new System.EventHandler(this.guna2CheckBox4_TextChanged);
             // 
             // guna2CheckBox10
             // 
@@ -566,6 +576,8 @@
             this.guna2CheckBox10.UncheckedState.BorderRadius = 0;
             this.guna2CheckBox10.UncheckedState.BorderThickness = 0;
             this.guna2CheckBox10.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox10.CheckedChanged += new System.EventHandler(this.guna2CheckBox4_CheckedChanged);
+            this.guna2CheckBox10.TextChanged += new System.EventHandler(this.guna2CheckBox4_TextChanged);
             // 
             // guna2CheckBox5
             // 
@@ -585,6 +597,8 @@
             this.guna2CheckBox5.UncheckedState.BorderRadius = 0;
             this.guna2CheckBox5.UncheckedState.BorderThickness = 0;
             this.guna2CheckBox5.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox5.CheckedChanged += new System.EventHandler(this.guna2CheckBox4_CheckedChanged);
+            this.guna2CheckBox5.TextChanged += new System.EventHandler(this.guna2CheckBox4_TextChanged);
             // 
             // label13
             // 
@@ -659,6 +673,8 @@
             this.guna2CheckBox7.UncheckedState.BorderRadius = 0;
             this.guna2CheckBox7.UncheckedState.BorderThickness = 0;
             this.guna2CheckBox7.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox7.CheckedChanged += new System.EventHandler(this.guna2CheckBox4_CheckedChanged);
+            this.guna2CheckBox7.TextChanged += new System.EventHandler(this.guna2CheckBox4_TextChanged);
             // 
             // guna2CheckBox8
             // 
@@ -678,6 +694,8 @@
             this.guna2CheckBox8.UncheckedState.BorderRadius = 0;
             this.guna2CheckBox8.UncheckedState.BorderThickness = 0;
             this.guna2CheckBox8.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox8.CheckedChanged += new System.EventHandler(this.guna2CheckBox4_CheckedChanged);
+            this.guna2CheckBox8.TextChanged += new System.EventHandler(this.guna2CheckBox4_TextChanged);
             // 
             // guna2CheckBox2
             // 
@@ -697,6 +715,8 @@
             this.guna2CheckBox2.UncheckedState.BorderRadius = 0;
             this.guna2CheckBox2.UncheckedState.BorderThickness = 0;
             this.guna2CheckBox2.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox2.CheckedChanged += new System.EventHandler(this.guna2CheckBox4_CheckedChanged);
+            this.guna2CheckBox2.TextChanged += new System.EventHandler(this.guna2CheckBox4_TextChanged);
             // 
             // guna2CheckBox4
             // 
@@ -716,6 +736,8 @@
             this.guna2CheckBox4.UncheckedState.BorderRadius = 0;
             this.guna2CheckBox4.UncheckedState.BorderThickness = 0;
             this.guna2CheckBox4.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox4.CheckedChanged += new System.EventHandler(this.guna2CheckBox4_CheckedChanged);
+            this.guna2CheckBox4.TextChanged += new System.EventHandler(this.guna2CheckBox4_TextChanged);
             // 
             // guna2CheckBox6
             // 
@@ -735,6 +757,8 @@
             this.guna2CheckBox6.UncheckedState.BorderRadius = 0;
             this.guna2CheckBox6.UncheckedState.BorderThickness = 0;
             this.guna2CheckBox6.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox6.CheckedChanged += new System.EventHandler(this.guna2CheckBox4_CheckedChanged);
+            this.guna2CheckBox6.TextChanged += new System.EventHandler(this.guna2CheckBox4_TextChanged);
             // 
             // guna2CheckBox3
             // 
@@ -754,6 +778,8 @@
             this.guna2CheckBox3.UncheckedState.BorderRadius = 0;
             this.guna2CheckBox3.UncheckedState.BorderThickness = 0;
             this.guna2CheckBox3.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox3.CheckedChanged += new System.EventHandler(this.guna2CheckBox4_CheckedChanged);
+            this.guna2CheckBox3.TextChanged += new System.EventHandler(this.guna2CheckBox4_TextChanged);
             // 
             // label12
             // 
@@ -827,6 +853,7 @@
             this.guna2Button3.Size = new System.Drawing.Size(180, 45);
             this.guna2Button3.TabIndex = 35;
             this.guna2Button3.Text = "Thêm Dịch Vụ";
+            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
             // guna2Button1
             // 
@@ -842,6 +869,7 @@
             this.guna2Button1.Size = new System.Drawing.Size(180, 45);
             this.guna2Button1.TabIndex = 11;
             this.guna2Button1.Text = "Thêm Vào Hóa Đơn";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // dataGridView1
             // 
@@ -904,6 +932,7 @@
             this.guna2GroupBox2.Size = new System.Drawing.Size(768, 621);
             this.guna2GroupBox2.TabIndex = 0;
             this.guna2GroupBox2.Text = "Phòng - Khách Hàng";
+            this.guna2GroupBox2.Click += new System.EventHandler(this.guna2GroupBox2_Click);
             // 
             // guna2TextBox6
             // 
@@ -1076,27 +1105,27 @@
             // 
             // guna2DataGridView1
             // 
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.guna2DataGridView1.BackgroundColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.guna2DataGridView1.ColumnHeadersHeight = 4;
             this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.Location = new System.Drawing.Point(36, 104);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
@@ -1126,6 +1155,7 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 24;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.guna2DataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellClick);
             // 
             // Form11
             // 

@@ -86,5 +86,10 @@ namespace GUI
             Form11 f = new Form11();
             f.Show();
         }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
