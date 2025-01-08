@@ -28,17 +28,18 @@ namespace BLL
             }
 
             public Phong GetPhongByID(int ID)
-        {
+            {
             return phongDAL.GetPhongById(ID);
-        }
-            public LoaiPhongDTO GetRoomDetails(int IDPhong)
-            {
-            return phongDAL.GetRoomDetails(IDPhong);
             }
-            public List<Phong> GetRooms()
+            public Phong SetRoomIDD(int roomId)
             {
-                return phongDAL.GetRooms();
-        }
+            return phongDAL.SetRoomIDD(roomId);
+            }
+            public void AddBooking(ThongTinDP booking)
+            {
+            phongDAL.AddBooking(booking);
+            }
+
     }
 
         public class BookingBLL

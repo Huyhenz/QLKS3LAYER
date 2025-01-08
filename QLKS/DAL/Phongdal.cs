@@ -10,6 +10,8 @@ namespace DAL
 {
     public class PhongDAL
     {
+        private string connectionString = "Data Source=HUYCATMOI;Initial Catalog=QLKS;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
+
         public List<Phong> GetPhongList()
         {
             List<Phong> phongList = new List<Phong>();
@@ -131,87 +133,56 @@ namespace DAL
             }
             return phong;
         }
-
-        public LoaiPhongDTO GetRoomDetails(int idPhong)
+        public Phong SetRoomIDD(int roomId)
         {
-            LoaiPhongDTO loaiPhong = null;
-            string connectionString = "your_connection_string"; // Replace with your actual connection string
+            Phong phong = null;
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                string query = @"SELECT p.IDPHONG, lp.TENLOAIPHONG, lp.DONGIA
-                         FROM tb_Phong p
-                         JOIN tb_LoaiPhong lp ON p.IDLOAIPHONG = lp.IDLOAIPHONG
-                         WHERE p.IDPHONG = @IDPHONG";
+                string query = "SELECT IDPHONG, TENLOAIPHONG, TENPHONG, DONGIA FROM tb_Phong p " +
+                               "JOIN tb_LoaiPhong l ON p.IDLOAIPHONG = l.IDLOAIPHONG WHERE IDPHONG = @IDPHONG";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@IDPHONG", roomId);
 
-                using (SqlCommand cmd = new SqlCommand(query, conn))
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
                 {
-                    cmd.Parameters.AddWithValue("@IDPHONG", idPhong);
-
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    LoaiPhongDTO loaiPhong = new LoaiPhongDTO
                     {
-                        if (reader.Read())
-                        {
-                            loaiPhong = new LoaiPhongDTO
-                            {
-                                IDLOAIPHONG = reader.GetInt32(0),
-                                TENLOAIPHONG = reader.GetString(1),
-                                DONGIA = reader.GetInt32(2)
-                            };
-                        }
-                    }
+                        IDLOAIPHONG = reader.GetInt32(reader.GetOrdinal("IDPHONG")),
+                        TENLOAIPHONG = reader["TENLOAIPHONG"].ToString(),
+                        DONGIA = Convert.ToInt32(reader["DONGIA"])
+                    };
+
+                    phong = new Phong
+                    {
+                        IDPHONG = Convert.ToInt32(reader["IDPHONG"]),
+                        TENPHONG = reader["TENPHONG"].ToString(),
+                        LoaiPhong = loaiPhong
+                    };
                 }
             }
 
-            return loaiPhong;
-        }
-            private string connectionString = "Data Source=HUYCATMOI;Initial Catalog=QLKS;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
+            return phong;      
+    }
 
-        public List<Phong> GetRooms()
+        public void AddBooking(ThongTinDP booking)
         {
-            List<Phong> rooms = new List<Phong>();
-
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                using (SqlCommand cmd = new SqlCommand("SELECT IDPHONG, TENPHONG, IDTANG, l.IDLOAIPHONG, TENLOAIPHONG, DONGIA, SONGUOI, SOGIUONG " +
-                    "                                   FROM tb_Phong p, tb_LoaiPhong l " +
-                    "                                   where l.IDLOAIPHONG = p.IDLOAIPHONG ", conn))
-                {
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        try
-                        {
-                            Phong room = new Phong
-                            {
-                                IDPHONG = reader.IsDBNull(0) ? 0 : reader.GetInt32(0),
-                                TENPHONG = reader.IsDBNull(1) ? string.Empty : reader.GetString(1),
-                                IDTANG = reader.IsDBNull(2) ? 0 : reader.GetInt32(2),
-                                IDLOAIPHONG = reader.IsDBNull(3) ? 0 : reader.GetInt32(3),
-                                LoaiPhong = new LoaiPhongDTO
-                                {
-                                    IDLOAIPHONG = reader.IsDBNull(3) ? 0 : reader.GetInt32(3),
-                                    TENLOAIPHONG = reader.IsDBNull(4) ? string.Empty : reader.GetString(4),
-                                    DONGIA = reader.IsDBNull(5) ? 0 : reader.GetInt32(5),
-                                    SONGUOI = reader.IsDBNull(6) ? 0 : reader.GetInt32(6),
-                                    SOGIUONG = reader.IsDBNull(7) ? 0 : reader.GetInt32(7)
-                                }
-                            };
-                            rooms.Add(room);
-                        }
-                        catch (IndexOutOfRangeException ex)
-                        {
-                            // Log or handle the exception as needed
-                            Console.WriteLine($"Index out of range: {ex.Message}");
-                        }
-                    }
-                }
+                string query = "INSERT INTO tb_DatPhong (IDKH, IDPHONG, NGAYDAT, NGAYTRA, SONGAYO) VALUES (@IDKH, @IDPHONG, @NGAYDAT, @NGAYTRA, @SONGAYO)";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@IDKH", booking.IDKH);
+                cmd.Parameters.AddWithValue("@IDPHONG", booking.IDPHONG);
+                cmd.Parameters.AddWithValue("@NGAYDAT", booking.NGAYDAT);
+                cmd.Parameters.AddWithValue("@NGAYTRA", booking.NGAYTRA);
+                cmd.Parameters.AddWithValue("@SONGAYO", booking.SONGAYO);
+                cmd.ExecuteNonQuery();
             }
-
-            return rooms;
         }
+
 
 
 
