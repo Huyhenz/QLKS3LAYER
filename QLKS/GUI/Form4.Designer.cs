@@ -42,6 +42,7 @@
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.txtLKH = new Guna.UI2.WinForms.Guna2TextBox();
             this.datetime3 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.txtTEN = new Guna.UI2.WinForms.Guna2TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -79,7 +80,6 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.txtLKH = new Guna.UI2.WinForms.Guna2TextBox();
             this.toolStrip1.SuspendLayout();
             this.guna2GroupBox3.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
@@ -222,6 +222,33 @@
             this.guna2GroupBox3.TabIndex = 35;
             this.guna2GroupBox3.Text = "Thông Tin Khách Hàng";
             this.guna2GroupBox3.Click += new System.EventHandler(this.guna2GroupBox3_Click);
+            // 
+            // txtLKH
+            // 
+            this.txtLKH.BorderColor = System.Drawing.Color.Black;
+            this.txtLKH.BorderRadius = 18;
+            this.txtLKH.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.txtLKH.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtLKH.DefaultText = "";
+            this.txtLKH.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtLKH.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtLKH.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtLKH.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtLKH.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtLKH.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
+            this.txtLKH.ForeColor = System.Drawing.Color.Black;
+            this.txtLKH.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtLKH.IconLeftSize = new System.Drawing.Size(30, 30);
+            this.txtLKH.Location = new System.Drawing.Point(539, 160);
+            this.txtLKH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtLKH.Name = "txtLKH";
+            this.txtLKH.PasswordChar = '\0';
+            this.txtLKH.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.txtLKH.PlaceholderText = "";
+            this.txtLKH.SelectedText = "";
+            this.txtLKH.Size = new System.Drawing.Size(173, 34);
+            this.txtLKH.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txtLKH.TabIndex = 37;
             // 
             // datetime3
             // 
@@ -782,12 +809,12 @@
             // 
             // gcDanhSach
             // 
-            this.gcDanhSach.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.gcDanhSach.Location = new System.Drawing.Point(0, 52);
+            this.gcDanhSach.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gcDanhSach.Location = new System.Drawing.Point(7, 53);
             this.gcDanhSach.MainView = this.gvDanhSach;
-            this.gcDanhSach.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.gcDanhSach.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.gcDanhSach.Name = "gcDanhSach";
-            this.gcDanhSach.Size = new System.Drawing.Size(1924, 619);
+            this.gcDanhSach.Size = new System.Drawing.Size(1917, 617);
             this.gcDanhSach.TabIndex = 2;
             this.gcDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhSach,
@@ -795,17 +822,17 @@
             // 
             // gvDanhSach
             // 
-            this.gvDanhSach.DetailHeight = 546;
+            this.gvDanhSach.DetailHeight = 682;
             this.gvDanhSach.GridControl = this.gcDanhSach;
             this.gvDanhSach.Name = "gvDanhSach";
-            this.gvDanhSach.OptionsEditForm.PopupEditFormWidth = 1250;
+            this.gvDanhSach.OptionsEditForm.PopupEditFormWidth = 1562;
             // 
             // gridView1
             // 
-            this.gridView1.DetailHeight = 546;
+            this.gridView1.DetailHeight = 682;
             this.gridView1.GridControl = this.gcDanhSach;
             this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsEditForm.PopupEditFormWidth = 1250;
+            this.gridView1.OptionsEditForm.PopupEditFormWidth = 1562;
             // 
             // guna2Button1
             // 
@@ -838,33 +865,6 @@
             this.guna2Button2.Size = new System.Drawing.Size(142, 51);
             this.guna2Button2.TabIndex = 36;
             this.guna2Button2.Text = "Hủy Phòng";
-            // 
-            // txtLKH
-            // 
-            this.txtLKH.BorderColor = System.Drawing.Color.Black;
-            this.txtLKH.BorderRadius = 18;
-            this.txtLKH.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
-            this.txtLKH.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtLKH.DefaultText = "";
-            this.txtLKH.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtLKH.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtLKH.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtLKH.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtLKH.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtLKH.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
-            this.txtLKH.ForeColor = System.Drawing.Color.Black;
-            this.txtLKH.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtLKH.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txtLKH.Location = new System.Drawing.Point(539, 160);
-            this.txtLKH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtLKH.Name = "txtLKH";
-            this.txtLKH.PasswordChar = '\0';
-            this.txtLKH.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txtLKH.PlaceholderText = "";
-            this.txtLKH.SelectedText = "";
-            this.txtLKH.Size = new System.Drawing.Size(173, 34);
-            this.txtLKH.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.txtLKH.TabIndex = 37;
             // 
             // Form4
             // 

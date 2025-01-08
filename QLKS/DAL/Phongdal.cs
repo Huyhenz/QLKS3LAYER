@@ -172,15 +172,43 @@ namespace DAL
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "INSERT INTO tb_DatPhong (IDKH, IDPHONG, NGAYDAT, NGAYTRA, SONGAYO) VALUES (@IDKH, @IDPHONG, @NGAYDAT, @NGAYTRA, @SONGAYO)";
+                string query = "INSERT INTO tb_DatPhong (IDPHONG, NGAYDAT, NGAYTRA, SONGAYO) VALUES (@IDPHONG, @NGAYDAT, @NGAYTRA, @SONGAYO)";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@IDKH", booking.IDKH);
+                //cmd.Parameters.AddWithValue("@IDKH", booking.IDKH);
                 cmd.Parameters.AddWithValue("@IDPHONG", booking.IDPHONG);
                 cmd.Parameters.AddWithValue("@NGAYDAT", booking.NGAYDAT);
                 cmd.Parameters.AddWithValue("@NGAYTRA", booking.NGAYTRA);
                 cmd.Parameters.AddWithValue("@SONGAYO", booking.SONGAYO);
                 cmd.ExecuteNonQuery();
             }
+        }
+
+        public List<ThongTinDP> GetBookings()
+        {
+            List<ThongTinDP> bookings = new List<ThongTinDP>();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "SELECT * FROM tb_DatPhong";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    ThongTinDP booking = new ThongTinDP
+                    {
+                        IDDP = Convert.ToInt32(reader["IDDP"]),
+                        IDKH = Convert.ToInt32(reader["IDKH"]),
+                        IDPHONG = Convert.ToInt32(reader["IDPHONG"]),
+                        NGAYDAT = reader["NGAYDAT"].ToString(),
+                        NGAYTRA = reader["NGAYTRA"].ToString(),
+                        SONGAYO = Convert.ToInt32(reader["SONGAYO"])
+                    };
+                    bookings.Add(booking);
+                }
+            }
+
+            return bookings;
         }
 
 

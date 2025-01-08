@@ -29,5 +29,35 @@ namespace DAL
                 cmd.ExecuteNonQuery();
             }
         }
+        public List<KhachHangDTO> GetCustomers()
+        {
+            List<KhachHangDTO> customers = new List<KhachHangDTO>();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "SELECT * FROM tb_KhachHang";
+                SqlCommand cmd = new SqlCommand(query, conn);   
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    KhachHangDTO customer = new KhachHangDTO
+                    {
+                        IDKH = Convert.ToInt32(reader["IDKH"]),
+                        CCCD = Convert.ToInt64(reader["CCCD"]),
+                        HOTEN = reader["HOTEN"].ToString(),
+                        NGAYSINH = reader["NGAYSINH"].ToString(),
+                        GIOITINH = reader["GIOITINH"].ToString(),
+                        DIENTHOAI = Convert.ToInt64(reader["DIENTHOAI"]),
+                        EMAIL = reader["EMAIL"].ToString(),
+                        LOAIKH = reader["LOAIKH"].ToString(),
+                        GHICHU = reader["GHICHU"].ToString()
+                    };
+                    customers.Add(customer);
+                }
+            }
+
+            return customers;
+        }
     }
 }

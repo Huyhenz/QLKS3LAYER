@@ -22,10 +22,57 @@ namespace GUI
         private khachhangbus khachhangbus = new khachhangbus();
         public Form4(int roomId)
         {
-
             InitializeComponent();
             setRoomNumber(roomId);
+            LoadDataToGridControl();
+        }
 
+        private void LoadDataToGridControl()
+        {
+            var bookings = phongbus.GetBookings();
+            var customers = khachhangbus.GetCustomers();
+
+            var table = new DataTable();
+            table.Columns.Add("IDKH");
+            table.Columns.Add("IDPHONG");
+            table.Columns.Add("NGAYDAT");
+            table.Columns.Add("NGAYTRA");
+            table.Columns.Add("SONGAYO");
+            table.Columns.Add("CCCD");
+            table.Columns.Add("TENKH");
+            table.Columns.Add("NGAYSINH");
+            table.Columns.Add("GIOITINH");
+            table.Columns.Add("DIENTHOAI");
+            table.Columns.Add("EMAIL");
+            table.Columns.Add("LOAIKH");
+            table.Columns.Add("GHICHU");
+
+            foreach (var booking in bookings)
+            {
+                var row = table.NewRow();
+                row["IDKH"] = booking.IDKH;
+                row["IDPHONG"] = booking.IDPHONG;
+                row["NGAYDAT"] = booking.NGAYDAT;
+                row["NGAYTRA"] = booking.NGAYTRA;
+                row["SONGAYO"] = booking.SONGAYO;
+
+                var customer = customers.Find(c => c.IDKH == booking.IDKH);
+                if (customer != null)
+                {
+                    row["CCCD"] = customer.CCCD;
+                    row["TENKH"] = customer.HOTEN;
+                    row["NGAYSINH"] = customer.NGAYSINH;
+                    row["GIOITINH"] = customer.GIOITINH;
+                    row["DIENTHOAI"] = customer.DIENTHOAI;
+                    row["EMAIL"] = customer.EMAIL;
+                    row["LOAIKH"] = customer.LOAIKH;
+                    row["GHICHU"] = customer.GHICHU;
+                }
+
+                table.Rows.Add(row);
+            }
+
+            gcDanhSach.DataSource = table;
         }
 
         private void guna2GroupBox1_Click(object sender, EventArgs e)
@@ -85,6 +132,7 @@ namespace GUI
                 GHICHU = txtGHICHU.Text
             };
 
+            // Thêm thông tin đặt phòng vào GridControl
             var table = gcDanhSach.DataSource as DataTable;
             if (table == null)
             {
@@ -120,12 +168,13 @@ namespace GUI
             row["LOAIKH"] = customer.LOAIKH;
             row["GHICHU"] = customer.GHICHU;
             table.Rows.Add(row);
-            // Thêm thông tin đặt phòng vào GridControl
-            // code thêm vào GridControl
 
-            // Thêm thông tin đặt phòng vào cơ sở dữ liệu
+            // Thêm thông tin đặt phòng và khách hàng vào cơ sở dữ liệu
             phongbus.AddBooking(booking);
             khachhangbus.AddCustomer(customer);
+
+            // Tải lại dữ liệu lên GridControl để đảm bảo dữ liệu mới thêm được hiển thị
+            LoadDataToGridControl();
         }
     }
 }

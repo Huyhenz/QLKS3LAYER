@@ -15,5 +15,10 @@ namespace BLL
         {
             khachHangDAL.AddCustomer(customer);
         }
+
+        public List<KhachHangDTO> GetCustomers()
+        {
+            return khachHangDAL.GetCustomers();
+        }
     }
 }

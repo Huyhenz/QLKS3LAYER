@@ -78,8 +78,6 @@ namespace GUI
             guna2CheckBox7.CheckedChanged += guna2CheckBox4_CheckedChanged;
             guna2CheckBox11.CheckedChanged += guna2CheckBox4_CheckedChanged;
             guna2CheckBox12.CheckedChanged += guna2CheckBox4_CheckedChanged;
-            guna2CheckBox13.CheckedChanged += guna2CheckBox4_CheckedChanged;
-            guna2CheckBox14.CheckedChanged += guna2CheckBox4_CheckedChanged;
             guna2CheckBox2.CheckedChanged += guna2CheckBox4_CheckedChanged;
             guna2CheckBox9.CheckedChanged += guna2CheckBox4_CheckedChanged;
         }

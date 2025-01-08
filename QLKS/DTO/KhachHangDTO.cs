@@ -8,6 +8,7 @@ namespace DTO
 {
     public class KhachHangDTO
     {
+        public int IDKH { get; set; }
         public string HOTEN { get; set; }   
 
         public long CCCD { get; set; }
@@ -29,8 +30,9 @@ namespace DTO
 
         public KhachHangDTO() { }
 
-        public KhachHangDTO(string HOTEN, long CCCD, long DIENTHOAI, string EMAIL, string DIACHI, string NGAYSINH, string GIOITINH, string LOAIKH, string GHICHU)
+        public KhachHangDTO(int IDKH, string HOTEN, long CCCD, long DIENTHOAI, string EMAIL, string DIACHI, string NGAYSINH, string GIOITINH, string LOAIKH, string GHICHU)
         {
+            IDKH = IDKH;
             HOTEN = HOTEN;
             CCCD = CCCD;
             DIENTHOAI = DIENTHOAI;

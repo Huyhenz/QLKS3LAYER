@@ -9,38 +9,40 @@ using System.Threading.Tasks;
 namespace BLL
 {
     public class Phongbus
-    { 
-            private PhongDAL phongDAL = new PhongDAL();
+    {
+        private PhongDAL phongDAL = new PhongDAL();
 
-            public List<Phong> GetAllPhong()
-            {
-                return phongDAL.GetPhongList();
-            }
+        public List<Phong> GetAllPhong()
+        {
+            return phongDAL.GetPhongList();
+        }
 
-            public void AddPhong(Phong phong)
-            {
-                phongDAL.AddPhong(phong);
-            }
+        public void AddPhong(Phong phong)
+        {
+            phongDAL.AddPhong(phong);
+        }
 
-            public void UpdatePhong(Phong phong)
-            {
-                phongDAL.UpdatePhong(phong);
-            }
+        public void UpdatePhong(Phong phong)
+        {
+            phongDAL.UpdatePhong(phong);
+        }
 
-            public Phong GetPhongByID(int ID)
-            {
+        public Phong GetPhongByID(int ID)
+        {
             return phongDAL.GetPhongById(ID);
-            }
-            public Phong SetRoomIDD(int roomId)
-            {
+        }
+        public Phong SetRoomIDD(int roomId)
+        {
             return phongDAL.SetRoomIDD(roomId);
-            }
-            public void AddBooking(ThongTinDP booking)
-            {
+        }
+        public void AddBooking(ThongTinDP booking)
+        {
             phongDAL.AddBooking(booking);
-            }
-
-    }
+        }
+        public List<ThongTinDP> GetBookings()
+        {
+            return phongDAL.GetBookings();
+        }
 
         public class BookingBLL
         {
@@ -53,3 +55,4 @@ namespace BLL
         }
 
     }
+}
