@@ -79,6 +79,8 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtSoGIUONG = new Guna.UI2.WinForms.Guna2TextBox();
             this.toolStrip1.SuspendLayout();
             this.guna2GroupBox3.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
@@ -218,7 +220,7 @@
             this.guna2GroupBox3.CustomBorderColor = System.Drawing.Color.Teal;
             this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox3.ForeColor = System.Drawing.Color.White;
-            this.guna2GroupBox3.Location = new System.Drawing.Point(983, 565);
+            this.guna2GroupBox3.Location = new System.Drawing.Point(990, 605);
             this.guna2GroupBox3.Name = "guna2GroupBox3";
             this.guna2GroupBox3.Size = new System.Drawing.Size(941, 277);
             this.guna2GroupBox3.TabIndex = 35;
@@ -515,7 +517,7 @@
             this.guna2Button4.FillColor = System.Drawing.Color.Teal;
             this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.guna2Button4.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.Location = new System.Drawing.Point(904, 848);
+            this.guna2Button4.Location = new System.Drawing.Point(904, 888);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.Size = new System.Drawing.Size(142, 51);
             this.guna2Button4.TabIndex = 34;
@@ -524,6 +526,8 @@
             // guna2GroupBox1
             // 
             this.guna2GroupBox1.BorderColor = System.Drawing.Color.Teal;
+            this.guna2GroupBox1.Controls.Add(this.txtSoGIUONG);
+            this.guna2GroupBox1.Controls.Add(this.label7);
             this.guna2GroupBox1.Controls.Add(this.txt_TSNO);
             this.guna2GroupBox1.Controls.Add(this.label);
             this.guna2GroupBox1.Controls.Add(this.txtPhong);
@@ -541,7 +545,7 @@
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.Teal;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.White;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(0, 565);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(7, 605);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(977, 277);
             this.guna2GroupBox1.TabIndex = 4;
@@ -800,7 +804,7 @@
             this.gcDanhSach.MainView = this.gvDanhSach;
             this.gcDanhSach.Margin = new System.Windows.Forms.Padding(6);
             this.gcDanhSach.Name = "gcDanhSach";
-            this.gcDanhSach.Size = new System.Drawing.Size(1917, 503);
+            this.gcDanhSach.Size = new System.Drawing.Size(1917, 543);
             this.gcDanhSach.TabIndex = 2;
             this.gcDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhSach,
@@ -830,7 +834,7 @@
             this.guna2Button1.FillColor = System.Drawing.Color.Teal;
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(709, 848);
+            this.guna2Button1.Location = new System.Drawing.Point(709, 888);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(142, 51);
             this.guna2Button1.TabIndex = 15;
@@ -846,17 +850,56 @@
             this.guna2Button2.FillColor = System.Drawing.Color.Teal;
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(1099, 848);
+            this.guna2Button2.Location = new System.Drawing.Point(1099, 888);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(142, 51);
             this.guna2Button2.TabIndex = 36;
             this.guna2Button2.Text = "Hủy Phòng";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(437, 173);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(92, 19);
+            this.label7.TabIndex = 35;
+            this.label7.Text = "Số giường:";
+            // 
+            // txtSoGIUONG
+            // 
+            this.txtSoGIUONG.BorderColor = System.Drawing.Color.Black;
+            this.txtSoGIUONG.BorderRadius = 18;
+            this.txtSoGIUONG.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.txtSoGIUONG.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSoGIUONG.DefaultText = "";
+            this.txtSoGIUONG.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSoGIUONG.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSoGIUONG.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSoGIUONG.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSoGIUONG.Enabled = false;
+            this.txtSoGIUONG.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSoGIUONG.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
+            this.txtSoGIUONG.ForeColor = System.Drawing.Color.Black;
+            this.txtSoGIUONG.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSoGIUONG.IconLeftSize = new System.Drawing.Size(30, 30);
+            this.txtSoGIUONG.Location = new System.Drawing.Point(573, 160);
+            this.txtSoGIUONG.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtSoGIUONG.Name = "txtSoGIUONG";
+            this.txtSoGIUONG.PasswordChar = '\0';
+            this.txtSoGIUONG.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.txtSoGIUONG.PlaceholderText = "";
+            this.txtSoGIUONG.SelectedText = "";
+            this.txtSoGIUONG.Size = new System.Drawing.Size(179, 34);
+            this.txtSoGIUONG.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txtSoGIUONG.TabIndex = 36;
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 906);
+            this.ClientSize = new System.Drawing.Size(1924, 951);
             this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.guna2Button4);
             this.Controls.Add(this.guna2Button1);
@@ -933,5 +976,7 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2TextBox txt_TSNO;
         private Guna.UI2.WinForms.Guna2TextBox txtLKH;
+        private Guna.UI2.WinForms.Guna2TextBox txtSoGIUONG;
+        private System.Windows.Forms.Label label7;
     }
 }

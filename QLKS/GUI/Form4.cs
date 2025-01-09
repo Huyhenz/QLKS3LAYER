@@ -65,6 +65,7 @@ namespace GUI
                 txtPhong.Text = roomDetails.TENPHONG;
                 txtLP.Text = roomDetails.LoaiPhong.TENLOAIPHONG;
                 txtGIA.Text = roomDetails.LoaiPhong.DONGIA.ToString();
+                txtSoGIUONG.Text = roomDetails.LoaiPhong.SOGIUONG.ToString();
                 datetime1.Value = ngayDat;
                 datetime2.Value = ngayTra;
                 txt_TSNO.Text = soNgayO;
@@ -91,6 +92,7 @@ namespace GUI
             table.Columns.Add("NGAYDAT");
             table.Columns.Add("NGAYTRA");
             table.Columns.Add("SONGAYO");
+            table.Columns.Add("SOGIUONG");
             table.Columns.Add("CCCD");
             table.Columns.Add("TENKH");
             table.Columns.Add("NGAYSINH");
@@ -108,7 +110,7 @@ namespace GUI
                 row["NGAYDAT"] = booking.NGAYDAT;
                 row["NGAYTRA"] = booking.NGAYTRA;
                 row["SONGAYO"] = booking.SONGAYO;
-
+ 
                 var customer = customers.Find(c => c.IDKH == booking.IDKH);
                 if (customer != null)
                 {
@@ -122,7 +124,12 @@ namespace GUI
                     row["GHICHU"] = customer.GHICHU;
                 }
 
-                table.Rows.Add(row);
+                var roomDetails = phongbus.SetRoomIDD(booking.IDPHONG);
+                if (roomDetails != null)
+                {
+                    row["SOGIUONG"] = roomDetails.LoaiPhong.SOGIUONG;
+                }
+                    table.Rows.Add(row);
             }
 
             gcDanhSach.DataSource = table;
@@ -163,7 +170,7 @@ namespace GUI
                 txtPhong.Text = room.TENPHONG;
                 txtLP.Text = room.LoaiPhong.TENLOAIPHONG;
                 txtGIA.Text = room.LoaiPhong.DONGIA.ToString();
-
+                txtSoGIUONG.Text = room.LoaiPhong.SOGIUONG.ToString();
             }
         }
 

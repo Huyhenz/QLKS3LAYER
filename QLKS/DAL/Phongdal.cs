@@ -143,7 +143,7 @@ namespace DAL
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "SELECT IDPHONG, TENLOAIPHONG, TENPHONG, DONGIA FROM tb_Phong p " +
+                string query = "SELECT IDPHONG, TENLOAIPHONG, TENPHONG, DONGIA, SOGIUONG FROM tb_Phong p " +
                                "JOIN tb_LoaiPhong l ON p.IDLOAIPHONG = l.IDLOAIPHONG WHERE IDPHONG = @IDPHONG";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@IDPHONG", roomId);
@@ -155,7 +155,8 @@ namespace DAL
                     {
                         IDLOAIPHONG = reader.GetInt32(reader.GetOrdinal("IDPHONG")),
                         TENLOAIPHONG = reader["TENLOAIPHONG"].ToString(),
-                        DONGIA = Convert.ToInt32(reader["DONGIA"])
+                        DONGIA = Convert.ToInt32(reader["DONGIA"]),
+                        SOGIUONG = Convert.ToInt32(reader["SOGIUONG"])
                     };
 
                     phong = new Phong
