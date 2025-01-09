@@ -20,5 +20,15 @@ namespace BLL
         {
             return khachHangDAL.GetCustomers();
         }
+
+        public void UpdateCustomer(KhachHangDTO customer)
+        {
+            khachHangDAL.UpdateCustomer(customer);
+        }
+        
+        public void DeleteCustomer(int id)
+        {
+            khachHangDAL.DeleteCustomer(id);
+        }
     }
 }

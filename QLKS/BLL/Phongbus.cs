@@ -43,6 +43,14 @@ namespace BLL
         {
             return phongDAL.GetBookings();
         }
+        public void UpdateBooking(ThongTinDP booking)
+        {
+            phongDAL.UpdateBooking(booking);
+        }
+        public void DeleteBooking(int idPhong, int idKhachHang)
+        {
+            phongDAL.DeleteBooking(idPhong, idKhachHang);
+        }
 
         public class BookingBLL
         {

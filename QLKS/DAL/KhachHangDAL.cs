@@ -59,5 +59,38 @@ namespace DAL
 
             return customers;
         }
+
+        public void UpdateCustomer(KhachHangDTO customer)
+        {
+            // Thực hiện truy vấn SQL để cập nhật thông tin customer
+            string query = "UPDATE tb_KhachHang SET HOTEN = @HOTEN, NGAYSINH = @NGAYSINH, GIOITINH = @GIOITINH, DIENTHOAI = @DIENTHOAI, EMAIL = @EMAIL, LOAIKH = @LOAIKH, GHICHU = @GHICHU WHERE CCCD = @CCCD";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@CCCD", customer.CCCD);
+                cmd.Parameters.AddWithValue("@HOTEN", customer.HOTEN);
+                cmd.Parameters.AddWithValue("@NGAYSINH", customer.NGAYSINH);
+                cmd.Parameters.AddWithValue("@GIOITINH", customer.GIOITINH);
+                cmd.Parameters.AddWithValue("@DIENTHOAI", customer.DIENTHOAI);
+                cmd.Parameters.AddWithValue("@EMAIL", customer.EMAIL);
+                cmd.Parameters.AddWithValue("@LOAIKH", customer.LOAIKH);
+                cmd.Parameters.AddWithValue("@GHICHU", customer.GHICHU);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void DeleteCustomer(int idKhachHang)
+        {
+            // Thực hiện truy vấn SQL để xóa thông tin khách hàng
+            string query = "DELETE FROM tb_KhachHang WHERE IDKH = @IDKH";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@IDKH", idKhachHang);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
     }
 }

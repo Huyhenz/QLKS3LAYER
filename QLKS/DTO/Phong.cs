@@ -18,12 +18,15 @@ namespace DTO
 
         public LoaiPhongDTO LoaiPhong { get; set; }
 
+        public int IDTT { get; set; }
+
         public Phong() { }
 
-        public Phong(int IDPHONG, string TENPHONG, string IDTANG, string IDLOAIPHONG, LoaiPhongDTO LOAIPHONG)
+        public Phong(int IDPHONG, string TENPHONG, string IDTANG, string IDLOAIPHONG, LoaiPhongDTO LOAIPHONG, int IDTT)
         {
             IDPHONG = IDPHONG;
             TENPHONG = TENPHONG;
+            IDTT = IDTT;
             IDTANG = IDTANG;
             IDLOAIPHONG = IDLOAIPHONG;
             LOAIPHONG = LOAIPHONG;

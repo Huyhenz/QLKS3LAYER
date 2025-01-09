@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -41,7 +42,8 @@ namespace DAL
                             reader["TENPHONG"].ToString(),
                             reader["IDTANG"].ToString(),
                             reader["IDLOAIPHONG"].ToString(), // Thêm IDLOAIPHONG vào constructor
-                            loaiPhong
+                            loaiPhong,
+                            int.Parse(reader["IDTT"].ToString()) // Sử dụng int.Parse
                         );
                         phongList.Add(phong);
                     }
@@ -125,7 +127,8 @@ namespace DAL
                                 "", // Không cần TENPHONG
                                 "", // Không cần IDTANG
                                 reader["IDLOAIPHONG"].ToString(),
-                                loaiPhong
+                                loaiPhong,
+                                0  // Không cần IDTT
                             );
                         }
                     }
@@ -164,8 +167,8 @@ namespace DAL
                 }
             }
 
-            return phong;      
-    }
+            return phong;
+        }
 
         public void AddBooking(ThongTinDP booking)
         {
@@ -210,6 +213,37 @@ namespace DAL
 
             return bookings;
         }
+        public void UpdateBooking(ThongTinDP booking)
+        {
+            // Thực hiện truy vấn SQL để cập nhật thông tin booking
+            string query = "UPDATE tb_DatPhong SET NGAYDAT = @NGAYDAT, NGAYTRA = @NGAYTRA, SONGAYO = @SONGAYO WHERE IDPHONG = @IDPHONG";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@IDPHONG", booking.IDPHONG);
+                cmd.Parameters.AddWithValue("@NGAYDAT", booking.NGAYDAT);
+                cmd.Parameters.AddWithValue("@NGAYTRA", booking.NGAYTRA);
+                cmd.Parameters.AddWithValue("@SONGAYO", booking.SONGAYO);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+        public void DeleteBooking(int idPhong, int idKhachHang)
+        {
+            // Thực hiện truy vấn SQL để xóa thông tin đặt phòng
+            string query = "DELETE FROM tb_DatPhong WHERE IDPHONG = @IDPHONG AND IDKH = @IDKH";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@IDPHONG", idPhong);
+                cmd.Parameters.AddWithValue("@IDKH", idKhachHang);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+
+
 
 
 
@@ -217,17 +251,7 @@ namespace DAL
 
     }
 
-
-
-
-
-
-
-
-
-}
-
-public class BookingDAL
+    public class BookingDAL
     {
         public void SaveBooking(ThongTinDP booking)
         {
@@ -247,3 +271,4 @@ public class BookingDAL
             }
         }
     }
+}
