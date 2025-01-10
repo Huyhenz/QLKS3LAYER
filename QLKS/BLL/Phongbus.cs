@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Data;
 namespace BLL
 {
     public class Phongbus
@@ -52,15 +52,18 @@ namespace BLL
             phongDAL.DeleteBooking(idPhong, idKhachHang);
         }
 
-        public class BookingBLL
+        public void UpdateTinhTrangPhong(int idPhong, string tinhTrang)
         {
-            private BookingDAL bookingDAL = new BookingDAL();
-
-            public void BookRoom(ThongTinDP booking)
-            {
-                bookingDAL.SaveBooking(booking);
-            }
+            phongDAL.UpdateTinhTrangPhong(idPhong, tinhTrang);
         }
 
+        public List<Phong> GetRooms()
+        {
+            return phongDAL.GetRooms();
+        }
+        public List<Phong> GetAllRooms()
+        {
+            return phongDAL.GetAllRooms();
+        }
     }
 }

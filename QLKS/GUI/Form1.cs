@@ -11,36 +11,66 @@ using System.Management;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Drawing;
+using System.Data.SqlClient;
 namespace GUI
 {
     public partial class Form1 : Form
     {
-        private Phongbus phongbus = new Phongbus();
 
+        private Phongbus phongbus = new Phongbus();
+        private List<Phong> rooms;
         public Form1()
         {
             InitializeComponent();
-            //LoadPhongButtons();
-            Guna2Button btn = new Guna2Button();
-            btn.Click += new EventHandler(guna2Button2_Click);
-            btn.Click += new EventHandler(guna2Button37_Click);
-            btn.Click += new EventHandler(guna2Button45_Click);
+            //Guna2Button btn = new Guna2Button();
+            //btn.Click += new EventHandler(guna2Button2_Click);
+            //btn.Click += new EventHandler(guna2Button37_Click);
+            //btn.Click += new EventHandler(guna2Button45_Click);
         }
 
-        /*private void LoadPhongButtons()
+        private void LoadRooms()
         {
-            var rooms = phongbus.GetRooms();
+            // Lấy danh sách phòng từ BLL
+            rooms = phongbus.GetAllRooms();
 
+            // Kiểm tra danh sách phòng
             foreach (var room in rooms)
             {
-                Guna2Button btn = new Guna2Button();
-                btn.Text = room.IDPHONG.ToString();
-                btn.Name = $"btnRoom{room.IDPHONG}";
-                
-                this.Controls.Add(btn);
+                Console.WriteLine($"IDPHONG: {room.IDPHONG}, TENPHONG: {room.TENPHONG}, TINHTRANG: {room.TINHTRANG}");
+
+                // Tìm nút tương ứng với ID phòng
+                Guna.UI2.WinForms.Guna2Button btn = this.Controls.Find($"guna2Button{room.IDPHONG}", true).FirstOrDefault() as Guna.UI2.WinForms.Guna2Button;
+
+                if (btn != null)
+                {
+                    // Cập nhật màu nút theo trạng thái
+                    if (room.TINHTRANG.ToLower() == "đã đặt")
+                    {
+                        btn.FillColor = System.Drawing.Color.Red;       // Màu nền chính
+                        btn.HoverState.FillColor = System.Drawing.Color.Red; // Màu khi di chuột
+                        btn.PressedColor = System.Drawing.Color.Red;   // Màu khi nhấn
+                        btn.ForeColor = System.Drawing.Color.White;
+                    }
+                    else
+                    {
+                        btn.FillColor = System.Drawing.Color.Green;
+                        btn.HoverState.FillColor = System.Drawing.Color.Green;
+                        btn.PressedColor = System.Drawing.Color.Green;
+                        btn.ForeColor = System.Drawing.Color.Black;
+                    }
+
+                    // Đặt tên phòng làm Text hoặc Tooltip
+                    btn.Text = room.TENPHONG;
+                    btn.Tag = room.IDPHONG; // Lưu ID phòng vào Tag nếu cần
+                }
+                else
+                {
+                    Console.WriteLine($"Không tìm thấy nút với IDPHONG: {room.IDPHONG}");
+                }
             }
-        }*/
+        }
+
 
 
 
@@ -71,11 +101,25 @@ namespace GUI
             form4.Show();
         }
 
+
+
         private void Form1_Load(object sender, EventArgs e)
         {
-                
+            SetupRoomButtons();
+            LoadRooms();
         }
+         private void SetupRoomButtons()
+    {
+        for (int i = 1; i <= 20; i++)
+        {
+            Guna.UI2.WinForms.Guna2Button btn = this.Controls.Find($"guna2Button{i}", true).FirstOrDefault() as Guna.UI2.WinForms.Guna2Button;
 
+            if (btn != null)
+            {
+                btn.Click += new EventHandler(guna2Button2_Click); // Gắn sự kiện chung
+            }
+        }
+    }
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -87,9 +131,6 @@ namespace GUI
             f.Show();
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }

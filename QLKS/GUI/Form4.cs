@@ -16,6 +16,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace GUI
 {
@@ -24,15 +25,19 @@ namespace GUI
 
         private Phongbus phongbus = new Phongbus();
         private khachhangbus khachhangbus = new khachhangbus();
+        private Form1 form1;
         public Form4(int roomId)
         {
+            
             InitializeComponent();
             setRoomNumber(roomId);
             LoadDataToGridControl();
             var gridView = gcDanhSach.MainView as DevExpress.XtraGrid.Views.Grid.GridView;
             gridView.FocusedRowChanged += GridView_FocusedRowChanged;
-        }
+            
 
+        }
+      
 
         private void GridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
@@ -110,7 +115,7 @@ namespace GUI
                 row["NGAYDAT"] = booking.NGAYDAT;
                 row["NGAYTRA"] = booking.NGAYTRA;
                 row["SONGAYO"] = booking.SONGAYO;
- 
+
                 var customer = customers.Find(c => c.IDKH == booking.IDKH);
                 if (customer != null)
                 {
@@ -129,7 +134,7 @@ namespace GUI
                 {
                     row["SOGIUONG"] = roomDetails.LoaiPhong.SOGIUONG;
                 }
-                    table.Rows.Add(row);
+                table.Rows.Add(row);
             }
 
             gcDanhSach.DataSource = table;
@@ -343,5 +348,25 @@ namespace GUI
                 LoadDataToGridControl();
             }
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            var gridView = gcDanhSach.MainView as DevExpress.XtraGrid.Views.Grid.GridView;
+            int selectedRowHandle = gridView.FocusedRowHandle;
+            if (selectedRowHandle >= 0)
+            {
+                int idPhong = int.Parse(gridView.GetRowCellValue(selectedRowHandle, "IDPHONG").ToString());
+
+                // Cập nhật trạng thái phòng trong cơ sở dữ liệu
+                phongbus.UpdateTinhTrangPhong(idPhong, "Đã đặt");
+
+                // Thông báo đặt phòng thành công
+                MessageBox.Show("Đặt phòng thành công!");
+
+                this.Close();
+            }
+        }
+        
     }
 }
+

@@ -60,6 +60,8 @@
             this.label17 = new System.Windows.Forms.Label();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.txtSoGIUONG = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.txt_TSNO = new Guna.UI2.WinForms.Guna2TextBox();
             this.label = new System.Windows.Forms.Label();
             this.txtPhong = new Guna.UI2.WinForms.Guna2TextBox();
@@ -79,8 +81,6 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtSoGIUONG = new Guna.UI2.WinForms.Guna2TextBox();
             this.toolStrip1.SuspendLayout();
             this.guna2GroupBox3.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
@@ -552,6 +552,45 @@
             this.guna2GroupBox1.Text = "Thông Tin Đăng Ký";
             this.guna2GroupBox1.Click += new System.EventHandler(this.guna2GroupBox1_Click);
             // 
+            // txtSoGIUONG
+            // 
+            this.txtSoGIUONG.BorderColor = System.Drawing.Color.Black;
+            this.txtSoGIUONG.BorderRadius = 18;
+            this.txtSoGIUONG.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.txtSoGIUONG.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSoGIUONG.DefaultText = "";
+            this.txtSoGIUONG.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSoGIUONG.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSoGIUONG.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSoGIUONG.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSoGIUONG.Enabled = false;
+            this.txtSoGIUONG.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSoGIUONG.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
+            this.txtSoGIUONG.ForeColor = System.Drawing.Color.Black;
+            this.txtSoGIUONG.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSoGIUONG.IconLeftSize = new System.Drawing.Size(30, 30);
+            this.txtSoGIUONG.Location = new System.Drawing.Point(573, 160);
+            this.txtSoGIUONG.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtSoGIUONG.Name = "txtSoGIUONG";
+            this.txtSoGIUONG.PasswordChar = '\0';
+            this.txtSoGIUONG.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.txtSoGIUONG.PlaceholderText = "";
+            this.txtSoGIUONG.SelectedText = "";
+            this.txtSoGIUONG.Size = new System.Drawing.Size(179, 34);
+            this.txtSoGIUONG.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txtSoGIUONG.TabIndex = 36;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(437, 173);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(92, 19);
+            this.label7.TabIndex = 35;
+            this.label7.Text = "Số giường:";
+            // 
             // txt_TSNO
             // 
             this.txt_TSNO.BorderColor = System.Drawing.Color.Black;
@@ -839,6 +878,7 @@
             this.guna2Button1.Size = new System.Drawing.Size(142, 51);
             this.guna2Button1.TabIndex = 15;
             this.guna2Button1.Text = "Đặt phòng";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // guna2Button2
             // 
@@ -855,45 +895,6 @@
             this.guna2Button2.Size = new System.Drawing.Size(142, 51);
             this.guna2Button2.TabIndex = 36;
             this.guna2Button2.Text = "Hủy Phòng";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(437, 173);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 19);
-            this.label7.TabIndex = 35;
-            this.label7.Text = "Số giường:";
-            // 
-            // txtSoGIUONG
-            // 
-            this.txtSoGIUONG.BorderColor = System.Drawing.Color.Black;
-            this.txtSoGIUONG.BorderRadius = 18;
-            this.txtSoGIUONG.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
-            this.txtSoGIUONG.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSoGIUONG.DefaultText = "";
-            this.txtSoGIUONG.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSoGIUONG.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSoGIUONG.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSoGIUONG.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSoGIUONG.Enabled = false;
-            this.txtSoGIUONG.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSoGIUONG.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
-            this.txtSoGIUONG.ForeColor = System.Drawing.Color.Black;
-            this.txtSoGIUONG.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSoGIUONG.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txtSoGIUONG.Location = new System.Drawing.Point(573, 160);
-            this.txtSoGIUONG.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtSoGIUONG.Name = "txtSoGIUONG";
-            this.txtSoGIUONG.PasswordChar = '\0';
-            this.txtSoGIUONG.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txtSoGIUONG.PlaceholderText = "";
-            this.txtSoGIUONG.SelectedText = "";
-            this.txtSoGIUONG.Size = new System.Drawing.Size(179, 34);
-            this.txtSoGIUONG.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.txtSoGIUONG.TabIndex = 36;
             // 
             // Form4
             // 

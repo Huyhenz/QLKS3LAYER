@@ -1,6 +1,7 @@
 ﻿using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -36,6 +37,10 @@ namespace DAL
                             (int)reader["SONGUOI"],
                             (int)reader["SOGIUONG"]
                         );
+                        TrangThaiDTO trangThai = new TrangThaiDTO(
+                                Convert.ToInt32(reader["IDTT"]),
+                                reader["TRANGTHAI"].ToString()
+                                );
 
                         Phong phong = new Phong(
                             (int)reader["IDPHONG"],
@@ -43,7 +48,7 @@ namespace DAL
                             reader["IDTANG"].ToString(),
                             reader["IDLOAIPHONG"].ToString(), // Thêm IDLOAIPHONG vào constructor
                             loaiPhong,
-                            int.Parse(reader["IDTT"].ToString()) // Sử dụng int.Parse
+                            reader["TRANGTHAI"].ToString() // Sử dụng int.Parse
                         );
                         phongList.Add(phong);
                     }
@@ -128,8 +133,9 @@ namespace DAL
                                 "", // Không cần IDTANG
                                 reader["IDLOAIPHONG"].ToString(),
                                 loaiPhong,
-                                0  // Không cần IDTT
+                                reader["TRANGTHAI"].ToString()  // Không cần IDTT,
                             );
+
                         }
                     }
                 }
@@ -243,33 +249,97 @@ namespace DAL
             }
         }
 
-
-
-
-
-
-
-
-    }
-
-    public class BookingDAL
-    {
-        public void SaveBooking(ThongTinDP booking)
+        public void UpdateTinhTrangPhong(int idPhong, string tinhTrang)
         {
-            string connectionString = "Data Source=HUYCATMOI;Initial Catalog=QLKS;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                conn.Open();
-                string query = "INSERT INTO tb_DatPhong (ID, IDKH, IDPHONG, NGAYDAT, NGAYTRA, SONGAYO) VALUES (@ID, @IDKH, @IDPHONG, @NGAYDAT, @NGAYTRA, @SONGAYO)";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@ID", booking.IDDP);
-                cmd.Parameters.AddWithValue("@IDKH", booking.IDKH);
-                cmd.Parameters.AddWithValue("@IDPHONG", booking.IDPHONG);
-                cmd.Parameters.AddWithValue("@NGAYDAT", booking.NGAYDAT);
-                cmd.Parameters.AddWithValue("@NGAYTRA", booking.NGAYTRA);
-                cmd.Parameters.AddWithValue("@SONGAYO", booking.SONGAYO);
-                cmd.ExecuteNonQuery();
+                connection.Open();
+                SqlCommand command = new SqlCommand("UPDATE tb_Phong SET TINHTRANG = @tinhTrang WHERE IDPHONG = @idPhong", connection);
+                command.Parameters.AddWithValue("@tinhTrang", tinhTrang);
+                command.Parameters.AddWithValue("@idPhong", idPhong);
+                command.ExecuteNonQuery();
             }
         }
+
+        public List<Phong> GetRooms()
+        {
+            List<Phong> rooms = new List<Phong>();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand("SELECT * FROM tb_Phong", connection);
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Phong room = new Phong
+                    {
+                        IDPHONG = reader.GetInt32(reader.GetOrdinal("IDPHONG")),
+                        TENPHONG = reader.GetString(reader.GetOrdinal("TENPHONG")),
+                        IDTANG = reader.GetInt32(reader.GetOrdinal("IDTANG")),
+                        IDLOAIPHONG = reader.GetInt32(reader.GetOrdinal("IDLOAIPHONG")),
+                        TINHTRANG = reader.GetString(reader.GetOrdinal("TINHTRANG"))
+                    };
+
+                    rooms.Add(room);
+                }
+            }
+
+            return rooms;
+        }
+
+        public List<Phong> GetAllRooms()
+        {
+            List<Phong> rooms = new List<Phong>();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT * FROM tb_Phong"; // Câu truy vấn
+                SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Phong room = new Phong
+                        {
+                            IDPHONG = Convert.ToInt32(reader["IDPHONG"]),
+                            TENPHONG = reader["TENPHONG"].ToString(),
+                            IDTANG = Convert.ToInt32(reader["IDTANG"]),
+                            IDLOAIPHONG = Convert.ToInt32(reader["IDLOAIPHONG"]),
+                            TINHTRANG = reader["TINHTRANG"].ToString()
+                        };
+
+                        rooms.Add(room);
+                    }
+                }
+            }
+
+            return rooms;
+        }
+
+        public class BookingDAL
+        {
+            public void SaveBooking(ThongTinDP booking)
+            {
+                string connectionString = "Data Source=HUYCATMOI;Initial Catalog=QLKS;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "INSERT INTO tb_DatPhong (ID, IDKH, IDPHONG, NGAYDAT, NGAYTRA, SONGAYO) VALUES (@ID, @IDKH, @IDPHONG, @NGAYDAT, @NGAYTRA, @SONGAYO)";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@ID", booking.IDDP);
+                    cmd.Parameters.AddWithValue("@IDKH", booking.IDKH);
+                    cmd.Parameters.AddWithValue("@IDPHONG", booking.IDPHONG);
+                    cmd.Parameters.AddWithValue("@NGAYDAT", booking.NGAYDAT);
+                    cmd.Parameters.AddWithValue("@NGAYTRA", booking.NGAYTRA);
+                    cmd.Parameters.AddWithValue("@SONGAYO", booking.SONGAYO);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
     }
 }
