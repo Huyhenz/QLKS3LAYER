@@ -23,13 +23,14 @@ namespace GUI
         public Form1()
         {
             InitializeComponent();
-            //Guna2Button btn = new Guna2Button();
-            //btn.Click += new EventHandler(guna2Button2_Click);
-            //btn.Click += new EventHandler(guna2Button37_Click);
-            //btn.Click += new EventHandler(guna2Button45_Click);
+            Guna2Button btn = new Guna2Button();
+            btn.Click += new EventHandler(guna2Button2_Click);
+            btn.Click += new EventHandler(guna2Button37_Click);
+            btn.Click += new EventHandler(guna2Button45_Click);
+            LoadRooms();
         }
-
-        private void LoadRooms()
+         
+        public void LoadRooms()
         {
             // Lấy danh sách phòng từ BLL
             rooms = phongbus.GetAllRooms();
@@ -40,8 +41,7 @@ namespace GUI
                 Console.WriteLine($"IDPHONG: {room.IDPHONG}, TENPHONG: {room.TENPHONG}, TINHTRANG: {room.TINHTRANG}");
 
                 // Tìm nút tương ứng với ID phòng
-                Guna.UI2.WinForms.Guna2Button btn = this.Controls.Find($"guna2Button{room.IDPHONG}", true).FirstOrDefault() as Guna.UI2.WinForms.Guna2Button;
-
+                Guna2Button btn = this.Controls.Find($"guna2Button{room.IDPHONG}", true).FirstOrDefault() as Guna2Button;
                 if (btn != null)
                 {
                     // Cập nhật màu nút theo trạng thái
@@ -51,17 +51,27 @@ namespace GUI
                         btn.HoverState.FillColor = System.Drawing.Color.Red; // Màu khi di chuột
                         btn.PressedColor = System.Drawing.Color.Red;   // Màu khi nhấn
                         btn.ForeColor = System.Drawing.Color.White;
+                        btn.Text = room.TINHTRANG;
+                    }
+                    else if(room.TINHTRANG.ToLower() == "Đang ở")
+                    {
+                        btn.FillColor = System.Drawing.Color.Yellow;
+                        btn.HoverState.FillColor = System.Drawing.Color.Yellow;
+                        btn.PressedColor = System.Drawing.Color.Yellow;
+                        btn.ForeColor = System.Drawing.Color.Black;
+                        btn.Text = room.TINHTRANG;
                     }
                     else
                     {
-                        btn.FillColor = System.Drawing.Color.Green;
-                        btn.HoverState.FillColor = System.Drawing.Color.Green;
-                        btn.PressedColor = System.Drawing.Color.Green;
+                        btn.FillColor = System.Drawing.Color.SeaGreen;
+                        btn.HoverState.FillColor = System.Drawing.Color.SeaGreen;
+                        btn.PressedColor = System.Drawing.Color.SeaGreen;
                         btn.ForeColor = System.Drawing.Color.Black;
+
                     }
 
                     // Đặt tên phòng làm Text hoặc Tooltip
-                    btn.Text = room.TENPHONG;
+                    //btn.Text = room.TINHTRANG;
                     btn.Tag = room.IDPHONG; // Lưu ID phòng vào Tag nếu cần
                 }
                 else
@@ -105,21 +115,21 @@ namespace GUI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            SetupRoomButtons();
-            LoadRooms();
+            //SetupRoomButtons();
+            
         }
-         private void SetupRoomButtons()
-    {
-        for (int i = 1; i <= 20; i++)
-        {
-            Guna.UI2.WinForms.Guna2Button btn = this.Controls.Find($"guna2Button{i}", true).FirstOrDefault() as Guna.UI2.WinForms.Guna2Button;
+    //     private void SetupRoomButtons()
+    //{
+    //    for (int i = 1; i <= 20; i++)
+    //    {
+    //        Guna.UI2.WinForms.Guna2Button btn = this.Controls.Find($"guna2Button{i}", true).FirstOrDefault() as Guna.UI2.WinForms.Guna2Button;
 
-            if (btn != null)
-            {
-                btn.Click += new EventHandler(guna2Button2_Click); // Gắn sự kiện chung
-            }
-        }
-    }
+    //        if (btn != null)
+    //        {
+    //            btn.Click += new EventHandler(guna2Button2_Click); // Gắn sự kiện chung
+    //        }
+    //    }
+    //}
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             Application.Exit();

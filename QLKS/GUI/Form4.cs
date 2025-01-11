@@ -363,6 +363,11 @@ namespace GUI
                 // Thông báo đặt phòng thành công
                 MessageBox.Show("Đặt phòng thành công!");
 
+                Form1 formHeThong = (Form1)Application.OpenForms["Form1"];
+                if(formHeThong != null)
+                {
+                    formHeThong.LoadRooms();
+                }
                 this.Close();
             }
         }
