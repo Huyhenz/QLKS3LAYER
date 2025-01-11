@@ -6,44 +6,35 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class ThanhToanDTO
-    {
-        public int IDTT { get; set; }
-
-        public int IDKH { get; set; }
-
-        public int IDPHONG { get; set; }
-
-        public int IDLOAIPHONG { get; set; }
-
-        public int IDDP { get; set; }
-        public int IDDV { get; set; }
-
-        public KhachHangDTO khachHang { get; set; }
-
-        public Phong phong { get; set; }
-
-        public LoaiPhongDTO loaiPhong { get; set; }
-
-        public ThongTinDP datphong { get; set; }
-
-        public DichvuDTO dichvu { get; set; }
+        public class ThanhToanDTO
+        {
+            public int IDPHONG { get; set; }
+            public int IDKH { get; set; }
+            public string HOTEN { get; set; }
+            public string TENLOAIPHONG { get; set; }
+            public int DONGIA { get; set; }
+            public DateTime NGAYDEN { get; set; }
+            public DateTime NGAYDI { get; set; }
+            public int TONGSONGAYO { get; set; }
+            public int TONGSODVDASUDUNG { get; set; }
+            public int TONGSOTIENDV { get; set; }
 
         public ThanhToanDTO() { }
 
-        public ThanhToanDTO(int IDTT, int IDKH, int IDPHONG, int IDLOAIPHONG, int IDDP, int IDDV, KhachHangDTO KHACHHANG, Phong PHONG, LoaiPhongDTO LOAIPHONG, ThongTinDP DATPHONG, DichvuDTO DICHVU)
+        public ThanhToanDTO(int IDPHONG, int IDKH, string HOTEN, string TENLOAIPHONG, int DONGIA, DateTime NGAYDEN, DateTime NGAYDI, int TONGSONGAYO, int TONGSODVDASUDUNG, int TONGSOTIENDV)
         {
-            IDTT = IDTT;
-            IDKH = IDKH;
             IDPHONG = IDPHONG;
-            IDLOAIPHONG = IDLOAIPHONG;
-            IDDP = IDDP;
-            IDDV = IDDV;
-            KHACHHANG = KHACHHANG;
-            PHONG = PHONG;
-            LOAIPHONG = LOAIPHONG;
-            DATPHONG = DATPHONG;
-            DICHVU = DICHVU;
+            IDKH = IDKH;
+            HOTEN = HOTEN;
+            TENLOAIPHONG = TENLOAIPHONG;
+            DONGIA = DONGIA;
+            NGAYDEN = NGAYDEN;
+            NGAYDI = NGAYDI;
+            TONGSONGAYO = TONGSONGAYO;
+            TONGSODVDASUDUNG = TONGSODVDASUDUNG;
+            TONGSOTIENDV = TONGSOTIENDV;
         }
+
     }
-}
+    }
+

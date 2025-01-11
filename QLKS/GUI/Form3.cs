@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,7 @@ namespace GUI
 {
     public partial class Form3 : Form
     {
+        private TTvaHDbus bus = new TTvaHDbus();
         public Form3()
         {
             InitializeComponent();
@@ -19,6 +22,25 @@ namespace GUI
 
         private void label2_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+        private void LoadData()
+        {
+            try
+            {
+                List<Phong> roomDetails = bus.GetRoomDetails();
+                dataGridView2.DataSource = roomDetails;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi tải data");
+            }
+
 
         }
     }

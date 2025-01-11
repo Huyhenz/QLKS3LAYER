@@ -46,6 +46,7 @@
     <Compile Include="Phongbus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="taikhoanbus.cs" />
+    <Compile Include="TTvaHDbus.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">

@@ -44,6 +44,7 @@
     <Compile Include="CTDVDTO.cs" />
     <Compile Include="DichvuDTO.cs" />
     <Compile Include="FuncDTO.cs" />
+    <Compile Include="HoaDonDTO.cs" />
     <Compile Include="KhachHangDTO.cs" />
     <Compile Include="LoaiPhongDTO.cs" />
     <Compile Include="Phong.cs" />
