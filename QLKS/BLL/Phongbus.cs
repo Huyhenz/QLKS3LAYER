@@ -56,6 +56,10 @@ namespace BLL
         {
             phongDAL.UpdateTinhTrangPhong(idPhong, tinhTrang);
         }
+        public void UpdateTinhTrangPhongsaukhidat(string tinhtrang)
+        {
+            phongDAL.UpdateTinhTrangPhongsaukhidat(tinhtrang);
+        }
 
         public List<Phong> GetRooms()
         {

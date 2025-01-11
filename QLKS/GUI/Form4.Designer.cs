@@ -41,6 +41,10 @@
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
+            this.phòngTrốngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.phòngĐãĐặtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.txtLKH = new Guna.UI2.WinForms.Guna2TextBox();
             this.datetime3 = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -48,13 +52,11 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtSDT = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtGender = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtEMAIL = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtGHICHU = new Guna.UI2.WinForms.Guna2TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.txtCCCD = new Guna.UI2.WinForms.Guna2TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -81,6 +83,8 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.phòngĐãNhậnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.guna2GroupBox3.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
@@ -105,7 +109,9 @@
             this.toolStripSeparator4,
             this.toolStripButton5,
             this.toolStripButton6,
-            this.toolStripTextBox1});
+            this.toolStripTextBox1,
+            this.toolStripSeparator5,
+            this.toolStripSplitButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1924, 47);
@@ -198,6 +204,38 @@
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(100, 47);
             // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 47);
+            // 
+            // toolStripSplitButton1
+            // 
+            this.toolStripSplitButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.phòngTrốngToolStripMenuItem,
+            this.phòngĐãĐặtToolStripMenuItem,
+            this.phòngĐãNhậnToolStripMenuItem});
+            this.toolStripSplitButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSplitButton1.Image")));
+            this.toolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripSplitButton1.Name = "toolStripSplitButton1";
+            this.toolStripSplitButton1.Size = new System.Drawing.Size(51, 44);
+            this.toolStripSplitButton1.Text = "Lọc";
+            this.toolStripSplitButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // phòngTrốngToolStripMenuItem
+            // 
+            this.phòngTrốngToolStripMenuItem.Name = "phòngTrốngToolStripMenuItem";
+            this.phòngTrốngToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.phòngTrốngToolStripMenuItem.Text = "Phòng trống";
+            this.phòngTrốngToolStripMenuItem.Click += new System.EventHandler(this.phòngTrốngToolStripMenuItem_Click);
+            // 
+            // phòngĐãĐặtToolStripMenuItem
+            // 
+            this.phòngĐãĐặtToolStripMenuItem.Name = "phòngĐãĐặtToolStripMenuItem";
+            this.phòngĐãĐặtToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.phòngĐãĐặtToolStripMenuItem.Text = "Phòng đã đặt";
+            this.phòngĐãĐặtToolStripMenuItem.Click += new System.EventHandler(this.phòngĐãĐặtToolStripMenuItem_Click);
+            // 
             // guna2GroupBox3
             // 
             this.guna2GroupBox3.BorderColor = System.Drawing.Color.Teal;
@@ -207,13 +245,11 @@
             this.guna2GroupBox3.Controls.Add(this.label9);
             this.guna2GroupBox3.Controls.Add(this.label10);
             this.guna2GroupBox3.Controls.Add(this.txtSDT);
-            this.guna2GroupBox3.Controls.Add(this.txtGender);
             this.guna2GroupBox3.Controls.Add(this.txtEMAIL);
             this.guna2GroupBox3.Controls.Add(this.txtGHICHU);
             this.guna2GroupBox3.Controls.Add(this.label11);
             this.guna2GroupBox3.Controls.Add(this.label13);
             this.guna2GroupBox3.Controls.Add(this.label14);
-            this.guna2GroupBox3.Controls.Add(this.label15);
             this.guna2GroupBox3.Controls.Add(this.label16);
             this.guna2GroupBox3.Controls.Add(this.txtCCCD);
             this.guna2GroupBox3.Controls.Add(this.label17);
@@ -344,22 +380,6 @@
             this.txtSDT.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtSDT.TabIndex = 26;
             // 
-            // txtGender
-            // 
-            this.txtGender.BackColor = System.Drawing.Color.Transparent;
-            this.txtGender.BorderRadius = 18;
-            this.txtGender.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.txtGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txtGender.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtGender.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtGender.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtGender.ForeColor = System.Drawing.Color.Black;
-            this.txtGender.ItemHeight = 30;
-            this.txtGender.Location = new System.Drawing.Point(142, 213);
-            this.txtGender.Name = "txtGender";
-            this.txtGender.Size = new System.Drawing.Size(271, 36);
-            this.txtGender.TabIndex = 25;
-            // 
             // txtEMAIL
             // 
             this.txtEMAIL.BorderColor = System.Drawing.Color.Black;
@@ -403,7 +423,7 @@
             this.txtGHICHU.ForeColor = System.Drawing.Color.Black;
             this.txtGHICHU.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtGHICHU.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txtGHICHU.Location = new System.Drawing.Point(539, 215);
+            this.txtGHICHU.Location = new System.Drawing.Point(142, 215);
             this.txtGHICHU.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtGHICHU.Name = "txtGHICHU";
             this.txtGHICHU.PasswordChar = '\0';
@@ -419,7 +439,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(430, 230);
+            this.label11.Location = new System.Drawing.Point(5, 230);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(74, 19);
             this.label11.TabIndex = 20;
@@ -430,7 +450,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(3, 173);
+            this.label13.Location = new System.Drawing.Point(5, 173);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(87, 19);
             this.label13.TabIndex = 19;
@@ -446,17 +466,6 @@
             this.label14.Size = new System.Drawing.Size(136, 19);
             this.label14.TabIndex = 18;
             this.label14.Text = "Tên Khách Hàng:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(5, 230);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(82, 19);
-            this.label15.TabIndex = 17;
-            this.label15.Text = "Giới Tính:";
             // 
             // label16
             // 
@@ -517,7 +526,7 @@
             this.guna2Button4.FillColor = System.Drawing.Color.Teal;
             this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.guna2Button4.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.Location = new System.Drawing.Point(904, 888);
+            this.guna2Button4.Location = new System.Drawing.Point(842, 888);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.Size = new System.Drawing.Size(142, 51);
             this.guna2Button4.TabIndex = 34;
@@ -576,7 +585,7 @@
             this.txtSoGIUONG.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtSoGIUONG.PlaceholderText = "";
             this.txtSoGIUONG.SelectedText = "";
-            this.txtSoGIUONG.Size = new System.Drawing.Size(179, 34);
+            this.txtSoGIUONG.Size = new System.Drawing.Size(263, 34);
             this.txtSoGIUONG.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtSoGIUONG.TabIndex = 36;
             // 
@@ -615,7 +624,7 @@
             this.txt_TSNO.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txt_TSNO.PlaceholderText = "";
             this.txt_TSNO.SelectedText = "";
-            this.txt_TSNO.Size = new System.Drawing.Size(179, 34);
+            this.txt_TSNO.Size = new System.Drawing.Size(263, 34);
             this.txt_TSNO.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txt_TSNO.TabIndex = 34;
             // 
@@ -770,14 +779,14 @@
             this.txtGIA.ForeColor = System.Drawing.Color.Black;
             this.txtGIA.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtGIA.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txtGIA.Location = new System.Drawing.Point(533, 55);
+            this.txtGIA.Location = new System.Drawing.Point(573, 55);
             this.txtGIA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtGIA.Name = "txtGIA";
             this.txtGIA.PasswordChar = '\0';
             this.txtGIA.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtGIA.PlaceholderText = "";
             this.txtGIA.SelectedText = "";
-            this.txtGIA.Size = new System.Drawing.Size(179, 34);
+            this.txtGIA.Size = new System.Drawing.Size(263, 34);
             this.txtGIA.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtGIA.TabIndex = 21;
             // 
@@ -873,7 +882,7 @@
             this.guna2Button1.FillColor = System.Drawing.Color.Teal;
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(709, 888);
+            this.guna2Button1.Location = new System.Drawing.Point(664, 888);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(142, 51);
             this.guna2Button1.TabIndex = 15;
@@ -890,17 +899,42 @@
             this.guna2Button2.FillColor = System.Drawing.Color.Teal;
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(1099, 888);
+            this.guna2Button2.Location = new System.Drawing.Point(1199, 888);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(142, 51);
             this.guna2Button2.TabIndex = 36;
             this.guna2Button2.Text = "Hủy Phòng";
+            // 
+            // guna2Button3
+            // 
+            this.guna2Button3.BorderRadius = 18;
+            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button3.FillColor = System.Drawing.Color.Teal;
+            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2Button3.ForeColor = System.Drawing.Color.White;
+            this.guna2Button3.Location = new System.Drawing.Point(1017, 888);
+            this.guna2Button3.Name = "guna2Button3";
+            this.guna2Button3.Size = new System.Drawing.Size(150, 51);
+            this.guna2Button3.TabIndex = 37;
+            this.guna2Button3.Text = "Nhận Phòng";
+            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
+            // 
+            // phòngĐãNhậnToolStripMenuItem
+            // 
+            this.phòngĐãNhậnToolStripMenuItem.Name = "phòngĐãNhậnToolStripMenuItem";
+            this.phòngĐãNhậnToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.phòngĐãNhậnToolStripMenuItem.Text = "Phòng đã nhận";
+            this.phòngĐãNhậnToolStripMenuItem.Click += new System.EventHandler(this.phòngĐãNhậnToolStripMenuItem_Click);
             // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 951);
+            this.Controls.Add(this.guna2Button3);
             this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.guna2Button4);
             this.Controls.Add(this.guna2Button1);
@@ -958,13 +992,11 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private Guna.UI2.WinForms.Guna2TextBox txtSDT;
-        private Guna.UI2.WinForms.Guna2ComboBox txtGender;
         private Guna.UI2.WinForms.Guna2TextBox txtEMAIL;
         private Guna.UI2.WinForms.Guna2TextBox txtGHICHU;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private Guna.UI2.WinForms.Guna2TextBox txtCCCD;
         private System.Windows.Forms.Label label17;
@@ -979,5 +1011,11 @@
         private Guna.UI2.WinForms.Guna2TextBox txtLKH;
         private Guna.UI2.WinForms.Guna2TextBox txtSoGIUONG;
         private System.Windows.Forms.Label label7;
+        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton1;
+        private System.Windows.Forms.ToolStripMenuItem phòngTrốngToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem phòngĐãĐặtToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripMenuItem phòngĐãNhậnToolStripMenuItem;
     }
 }

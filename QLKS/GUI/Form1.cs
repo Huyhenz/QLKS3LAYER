@@ -51,15 +51,15 @@ namespace GUI
                         btn.HoverState.FillColor = System.Drawing.Color.Red; // Màu khi di chuột
                         btn.PressedColor = System.Drawing.Color.Red;   // Màu khi nhấn
                         btn.ForeColor = System.Drawing.Color.White;
-                        btn.Text = room.TINHTRANG;
+                        btn.Text = $"{room.IDPHONG} - Đã đặt";
                     }
-                    else if(room.TINHTRANG.ToLower() == "Đang ở")
+                    else if(room.TINHTRANG.ToLower() == "nhận phòng")
                     {
                         btn.FillColor = System.Drawing.Color.Yellow;
                         btn.HoverState.FillColor = System.Drawing.Color.Yellow;
                         btn.PressedColor = System.Drawing.Color.Yellow;
                         btn.ForeColor = System.Drawing.Color.Black;
-                        btn.Text = room.TINHTRANG;
+                        btn.Text = $"{room.IDPHONG} - Đã nhận phòng";
                     }
                     else
                     {
@@ -87,10 +87,23 @@ namespace GUI
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             Guna2Button btn = sender as Guna2Button;
-            int roomId = int.Parse(btn.Text);
-            Form4 form4 = new Form4(roomId);
-            form4.Show();
+            if (btn != null)
+            {
+                // Lấy phần số từ chuỗi văn bản của button
+                string roomIdString = new string(btn.Text.Where(char.IsDigit).ToArray());
+
+                if (int.TryParse(roomIdString, out int roomId))
+                {
+                    Form4 form4 = new Form4(roomId);
+                    form4.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Không thể xác định ID phòng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
+
 
 
 
@@ -98,17 +111,41 @@ namespace GUI
         private void guna2Button37_Click(object sender, EventArgs e)
         {
             Guna2Button btn = sender as Guna2Button;
-            int roomId = int.Parse(btn.Text);
-            Form4 form4 = new Form4(roomId);
-            form4.Show();
+            if (btn != null)
+            {
+                // Lấy phần số từ chuỗi văn bản của button
+                string roomIdString = new string(btn.Text.Where(char.IsDigit).ToArray());
+
+                if (int.TryParse(roomIdString, out int roomId))
+                {
+                    Form4 form4 = new Form4(roomId);
+                    form4.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Không thể xác định ID phòng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void guna2Button45_Click(object sender, EventArgs e)
         {
             Guna2Button btn = sender as Guna2Button;
-            int roomId = int.Parse(btn.Text);
-            Form4 form4 = new Form4(roomId);
-            form4.Show();
+            if (btn != null)
+            {
+                // Lấy phần số từ chuỗi văn bản của button
+                string roomIdString = new string(btn.Text.Where(char.IsDigit).ToArray());
+
+                if (int.TryParse(roomIdString, out int roomId))
+                {
+                    Form4 form4 = new Form4(roomId);
+                    form4.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Không thể xác định ID phòng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
 

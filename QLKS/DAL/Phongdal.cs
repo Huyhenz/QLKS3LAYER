@@ -260,6 +260,16 @@ namespace DAL
                 command.ExecuteNonQuery();
             }
         }
+        public void UpdateTinhTrangPhongsaukhidat(string tinhtrang)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand("UPDATE tb_Phong SET TINHTRANG = @tinhtrang WHERE TINHTRANG = 'đã đặt'", connection);
+                command.Parameters.AddWithValue("@tinhTrang", tinhtrang);
+                command.ExecuteNonQuery();
+            }
+        }
 
         public List<Phong> GetRooms()
         {
