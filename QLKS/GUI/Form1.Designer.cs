@@ -43,8 +43,6 @@
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
             this.dANHSÁCHHÓAĐƠNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -247,20 +245,6 @@
             this.toolStripSeparator9.Name = "toolStripSeparator9";
             this.toolStripSeparator9.Size = new System.Drawing.Size(382, 6);
             // 
-            // toolStripButton10
-            // 
-            this.toolStripButton10.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.toolStripButton10.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton10.Image")));
-            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton10.Name = "toolStripButton10";
-            this.toolStripButton10.Size = new System.Drawing.Size(382, 39);
-            this.toolStripButton10.Text = "BÁO CÁO VÀ PHẢN HỒI";
-            // 
-            // toolStripSeparator11
-            // 
-            this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(382, 6);
-            // 
             // toolStrip2
             // 
             this.toolStrip2.BackColor = System.Drawing.Color.DarkCyan;
@@ -276,13 +260,11 @@
             this.toolStripSeparator7,
             this.toolStripSplitButton1,
             this.toolStripSeparator9,
-            this.toolStripButton10,
-            this.toolStripSeparator11,
             this.toolStripButton8,
             this.toolStripProgressBar2});
             this.toolStrip2.Location = new System.Drawing.Point(0, 47);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(385, 1008);
+            this.toolStrip2.Size = new System.Drawing.Size(383, 1008);
             this.toolStrip2.TabIndex = 3;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -1582,8 +1564,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton6;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
-        private System.Windows.Forms.ToolStripButton toolStripButton10;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton1;
         private System.Windows.Forms.ToolStripMenuItem dANHSÁCHHÓAĐƠNToolStripMenuItem;
