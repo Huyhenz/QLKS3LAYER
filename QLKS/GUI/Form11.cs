@@ -1,4 +1,5 @@
 ﻿using BLL;
+using DTO;
 using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,12 +17,14 @@ namespace GUI
     public partial class Form11 : Form
     {
         private DichVuBus dichvubus;
+        private int selectedRoomID;
 
         public Form11()
         {
             InitializeComponent();
             dichvubus = new DichVuBus();
             LoadPhongData();
+            serviceDictionary = dichvubus.GetAllServices().ToDictionary(s => s.IDDV, s => s.GIADV);
 
         }
         private void LoadPhongData()
@@ -69,7 +73,130 @@ namespace GUI
         private void Form11_Load(object sender, EventArgs e)
         {
             LoadPhongData();
+            if (Session.Login != null)
+            {
+                txtAC.Text = Session.Login.FULLNAME;
+                //txtFullName.ReadOnly = true; // Đặt TextBox thành không thể chỉnh sửa
+            }
+        }
 
+        private void dataGridView2_SelectionChanged(object sender, EventArgs e)
+        {
+
+            if (dataGridView2.SelectedRows.Count > 0)
+            {
+                this.selectedRoomID = (int)dataGridView2.SelectedRows[0].Cells["IDPHONG"].Value;
+
+                // Thêm một hàng mới vào dataGridView1 nếu chưa tồn tại
+                if (!IsRoomIdAlreadyInGrid(selectedRoomID))
+                {
+                    AddNewRoomRowToGrid(selectedRoomID);
+                }
+
+                // Reset trạng thái tất cả checkbox
+                ResetAllCheckboxes();
+                UpdateDataGridView1();
+            }
+        }
+
+        private bool IsRoomIdAlreadyInGrid(int roomId)
+        {
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.Cells["IDPHONG"].Value != null && (int)row.Cells["IDPHONG"].Value == roomId)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void AddNewRoomRowToGrid(int roomId)
+        {
+            DataTable table = dataGridView1.DataSource as DataTable;
+
+            // Nếu dataGridView2 chưa có DataSource, tạo mới DataTable
+            if (table == null)
+            {
+                table = new DataTable();
+                table.Columns.Add("IDPHONG", typeof(int));
+                table.Columns.Add("TONGSODVDASUDUNG", typeof(int));
+                table.Columns.Add("TONGSOTIENDV", typeof(int));
+                dataGridView1.DataSource = table;
+            }
+            else
+            {
+                // Kiểm tra và thêm cột nếu chưa tồn tại
+                if (!table.Columns.Contains("IDPHONG"))
+                {
+                    table.Columns.Add("IDPHONG", typeof(int));
+                }
+                if (!table.Columns.Contains("TONGSODVDASUDUNG"))
+                {
+                    table.Columns.Add("TONGSODVDASUDUNG", typeof(int));
+                }
+                if (!table.Columns.Contains("TONGSOTIENDV"))
+                {
+                    table.Columns.Add("TONGSOTIENDV", typeof(int));
+                }
+            }
+
+            // Thêm hàng mới
+            table.Rows.Add(roomId, 0, 0);
+        }
+
+
+        private void ResetAllCheckboxes()
+        {
+            for (int i = 1; i <= 12; i++)
+            {
+                var checkBox = this.Controls.Find($"guna2CheckBox{i}", true).FirstOrDefault() as Guna2CheckBox;
+                if (checkBox != null)
+                {
+                    checkBox.Checked = false;
+                }
+            }
+        }
+
+        private void UpdateDataGridView1()
+        {
+            DataTable table = dataGridView1.DataSource as DataTable;
+
+            // Nếu dataGridView2 chưa có DataSource, tạo mới DataTable
+            if (table == null)
+            {
+                table = new DataTable();
+                table.Columns.Add("IDPHONG", typeof(int));
+                table.Columns.Add("TONGSODVDASUDUNG", typeof(int));
+                table.Columns.Add("TONGSOTIENDV", typeof(int));
+                dataGridView1.DataSource = table;
+            }
+            else
+            {
+                // Kiểm tra và thêm cột nếu chưa tồn tại
+                if (!table.Columns.Contains("IDPHONG"))
+                {
+                    table.Columns.Add("IDPHONG", typeof(int));
+                }
+                if (!table.Columns.Contains("TONGSODVDASUDUNG"))
+                {
+                    table.Columns.Add("TONGSODVDASUDUNG", typeof(int));
+                }
+                if (!table.Columns.Contains("TONGSOTIENDV"))
+                {
+                    table.Columns.Add("TONGSOTIENDV", typeof(int));
+                }
+            }
+
+            // Tìm hàng tương ứng với selectedRoomID
+            DataRow row = table.Rows.Cast<DataRow>().FirstOrDefault(r => (int)r["IDPHONG"] == selectedRoomID);
+
+            if (row != null)
+            {
+                // Cập nhật hàng hiện có
+                row["TONGSODVDASUDUNG"] = GetSelectedServicesCount();
+                row["TONGSOTIENDV"] = GetTotalCostOfSelectedServices();
+            }
         }
 
         private void guna2TextBox6_TextChanged(object sender, EventArgs e)
@@ -78,188 +205,144 @@ namespace GUI
             {
                 LoadPhongData();
             }
-
         }
 
-        private void guna2Button3_Click(object sender, EventArgs e)
+        private void guna2Button3_Click_1(object sender, EventArgs e)
         {
-            int tongTien = 0; foreach (DataGridViewRow row in dataGridView1.Rows) { 
-                if (row.Cells["Số Lượng"].Value != DBNull.Value && Convert.ToInt32(row.Cells["Số Lượng"].Value) > 0) 
+            //int tongTien = GetTotalCostOfSelectedServices();
+            //guna2TextBox4.Text = tongTien.ToString();
+        }
+
+        private int GetSelectedServicesCount()
+        {
+            int count = 0;
+            if (guna2CheckBox1.Checked) count++;
+            if (guna2CheckBox2.Checked) count++;
+            if (guna2CheckBox3.Checked) count++;
+            if (guna2CheckBox4.Checked) count++;
+            if (guna2CheckBox5.Checked) count++;
+            if (guna2CheckBox6.Checked) count++;
+            if (guna2CheckBox7.Checked) count++;
+            if (guna2CheckBox8.Checked) count++;
+            if (guna2CheckBox9.Checked) count++;
+            if (guna2CheckBox10.Checked) count++;
+            if (guna2CheckBox11.Checked) count++;
+            if (guna2CheckBox12.Checked) count++;
+            return count;
+        }
+        private Dictionary<int, int> serviceDictionary;
+        private int GetTotalCostOfSelectedServices()
+        {
+            int totalCost = 0;
+
+            for (int i = 1; i <= 12; i++)
+            {
+                var checkBox = this.Controls.Find($"guna2CheckBox{i}", true).FirstOrDefault() as Guna2CheckBox;
+                if (checkBox != null && checkBox.Checked && serviceDictionary.ContainsKey(i))
                 {
-                    int soLuong = Convert.ToInt32(row.Cells["Số Lượng"].Value); 
-                    int giaDichVu = Convert.ToInt32(row.Cells["GIADV"].Value); 
-                    tongTien += soLuong * giaDichVu; } 
+                    totalCost += serviceDictionary[i];
+                }
             }
-            guna2TextBox4.Text = tongTien.ToString();
+
+            return totalCost;
         }
 
         private void guna2CheckBox4_CheckedChanged(object sender, EventArgs e)
         {
-            if (guna2CheckBox4.Checked)
-            {
-                guna2TextBox8.Enabled = true;
-                guna2TextBox8.Text = "1";
-            }
-            else
-            {
-                guna2TextBox8.Enabled = false;
-                guna2TextBox8.Text = "0";
-            }
+            UpdateDataGridView1();
         }
 
         private void guna2CheckBox2_CheckedChanged(object sender, EventArgs e)
         {
-            if (guna2CheckBox2.Checked)
-            {
-                guna2TextBox8.Enabled = true;
-                guna2TextBox8.Text = "1";
-            }
-            else
-            {
-                guna2TextBox8.Enabled = false;
-                guna2TextBox8.Text = "0";
-            }
+            UpdateDataGridView1();
         }
 
         private void guna2CheckBox6_CheckedChanged(object sender, EventArgs e)
         {
-            if (guna2CheckBox6.Checked)
-            {
-                guna2TextBox8.Enabled = true;
-                guna2TextBox8.Text = "1";
-            }
-            else
-            {
-                guna2TextBox8.Enabled = false;
-                guna2TextBox8.Text = "0";
-            }
-
-       }
+            UpdateDataGridView1();
+        }
 
         private void guna2CheckBox3_CheckedChanged(object sender, EventArgs e)
         {
-            if (guna2CheckBox3.Checked)
-            {
-                guna2TextBox8.Enabled = true;
-                guna2TextBox8.Text = "1";
-            }
-            else
-            {
-                guna2TextBox8.Enabled = false;
-                guna2TextBox8.Text = "0";
-            }
+            UpdateDataGridView1();
         }
 
         private void guna2CheckBox7_CheckedChanged(object sender, EventArgs e)
         {
-            if (guna2CheckBox7.Checked)
-            {
-                guna2TextBox8.Enabled = true;
-                guna2TextBox8.Text = "1";
-            }
-            else
-            {
-                guna2TextBox8.Enabled = false;
-                guna2TextBox8.Text = "0";
-            }
+            UpdateDataGridView1();
         }
 
         private void guna2CheckBox8_CheckedChanged(object sender, EventArgs e)
         {
-            if (guna2CheckBox8.Checked)
-            {
-                guna2TextBox8.Enabled = true;
-                guna2TextBox8.Text = "1";
-            }
-            else
-            {
-                guna2TextBox8.Enabled = false;
-                guna2TextBox8.Text = "0";
-            }
+            UpdateDataGridView1();
         }
 
         private void guna2CheckBox5_CheckedChanged(object sender, EventArgs e)
         {
-            if (guna2CheckBox5.Checked)
-            {
-                guna2TextBox8.Enabled = true;
-                guna2TextBox8.Text = "1";
-            }
-            else
-            {
-                guna2TextBox8.Enabled = false;
-                guna2TextBox8.Text = "0";
-            }
+            UpdateDataGridView1();
         }
 
         private void guna2CheckBox10_CheckedChanged(object sender, EventArgs e)
         {
-            if (guna2CheckBox10.Checked)
-            {
-                guna2TextBox8.Enabled = true;
-                guna2TextBox8.Text = "1";
-            }
-            else
-            {
-                guna2TextBox8.Enabled = false;
-                guna2TextBox8.Text = "0";
-            }
+            UpdateDataGridView1();
         }
 
         private void guna2CheckBox11_CheckedChanged(object sender, EventArgs e)
         {
-            if (guna2CheckBox11.Checked)
-            {
-                guna2TextBox8.Enabled = true;
-                guna2TextBox8.Text = "1";
-            }
-            else
-            {
-                guna2TextBox8.Enabled = false;
-                guna2TextBox8.Text = "0";
-            }
+            UpdateDataGridView1();
         }
 
         private void guna2CheckBox12_CheckedChanged(object sender, EventArgs e)
         {
-            if (guna2CheckBox12.Checked)
-            {
-                guna2TextBox8.Enabled = true;
-                guna2TextBox8.Text = "1";
-            }
-            else
-            {
-                guna2TextBox8.Enabled = false;
-                guna2TextBox8.Text = "0";
-            }
+            UpdateDataGridView1();
         }
 
         private void guna2CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (guna2CheckBox1.Checked)
-            {
-                guna2TextBox8.Enabled = true;
-                guna2TextBox8.Text = "1";
-            }
-            else
-            {
-                guna2TextBox8.Enabled = false;
-                guna2TextBox8.Text = "0";
-            }
+            UpdateDataGridView1();
         }
 
         private void guna2CheckBox9_CheckedChanged(object sender, EventArgs e)
         {
-            if (guna2CheckBox9.Checked)
+            UpdateDataGridView1();
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            SaveDataGridView1ToDatabase();
+        }
+
+        private void SaveDataGridView1ToDatabase()
+        {
+            try
             {
-                guna2TextBox8.Enabled = true;
-                guna2TextBox8.Text = "1";
+                // Kiểm tra DataSource của dataGridView1
+                DataTable table = dataGridView1.DataSource as DataTable;
+
+                if (table == null || table.Rows.Count == 0)
+                {
+                    MessageBox.Show("Không có dữ liệu để lưu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                foreach (DataRow row in table.Rows)
+                {
+                    // Lấy dữ liệu từ mỗi hàng
+                    int idPhong = Convert.ToInt32(row["IDPHONG"]);
+                    int tongSoDVDaSuDung = Convert.ToInt32(row["TONGSODVDASUDUNG"]);
+                    int tongSoTienDV = Convert.ToInt32(row["TONGSOTIENDV"]);
+
+                    // Gửi dữ liệu đến cơ sở dữ liệu (thông qua BLL)
+                    dichvubus.SaveRoomServiceData(idPhong, tongSoDVDaSuDung, tongSoTienDV);
+                }
+
+                MessageBox.Show("Dữ liệu đã được lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else
+            catch (Exception ex)
             {
-                guna2TextBox8.Enabled = false;
-                guna2TextBox8.Text = "0";
+                MessageBox.Show($"Đã xảy ra lỗi khi lưu dữ liệu: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }

@@ -200,9 +200,10 @@
             // txtTK
             // 
             this.txtTK.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.txtTK.Enabled = false;
             this.txtTK.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTK.Name = "txtTK";
-            this.txtTK.Size = new System.Drawing.Size(100, 47);
+            this.txtTK.Size = new System.Drawing.Size(160, 47);
             // 
             // toolStripSeparator5
             // 

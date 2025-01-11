@@ -30,5 +30,20 @@ namespace BLL
         {
             return dichvuDAL.GetAllDichVu();
         }
+
+        public DataTable GetDichVuById(int maDichVu)
+        {
+            return dichvuDAL.GetGiaDichVuById(maDichVu);
+        }
+
+        public void SaveRoomServiceData(int roomID, int TTS, int TTC)
+        {
+            dichvuDAL.SaveRoomServiceData(roomID, TTS, TTC);
+        }
+
+        public List<DichvuDTO> GetAllServices()
+        {
+            return dichvuDAL.GetAllServices();
+        }
     }
 }

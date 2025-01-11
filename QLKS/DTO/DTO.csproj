@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CTDVDTO.cs" />
     <Compile Include="DichvuDTO.cs" />
     <Compile Include="FuncDTO.cs" />
     <Compile Include="KhachHangDTO.cs" />
@@ -50,6 +51,7 @@
     <Compile Include="QuyenDTO.cs" />
     <Compile Include="session.cs" />
     <Compile Include="TaiKhoanDTO.cs" />
+    <Compile Include="ThanhToanDTO.cs" />
     <Compile Include="ThongTinDP.cs" />
     <Compile Include="TrangThaiDTO.cs" />
   </ItemGroup>

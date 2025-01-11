@@ -176,7 +176,7 @@
             this.txtAccount.Enabled = false;
             this.txtAccount.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtAccount.Name = "txtAccount";
-            this.txtAccount.Size = new System.Drawing.Size(100, 47);
+            this.txtAccount.Size = new System.Drawing.Size(160, 47);
             // 
             // toolStripButton3
             // 

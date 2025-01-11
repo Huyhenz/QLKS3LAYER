@@ -44,8 +44,6 @@
             this.txtFullname = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.guna2TextBox11 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.guna2CheckBox1 = new Guna.UI2.WinForms.Guna2CheckBox();
@@ -140,14 +138,14 @@
             this.guna2TextBox6.ForeColor = System.Drawing.Color.Black;
             this.guna2TextBox6.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox6.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.guna2TextBox6.Location = new System.Drawing.Point(686, 177);
+            this.guna2TextBox6.Location = new System.Drawing.Point(776, 177);
             this.guna2TextBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2TextBox6.Name = "guna2TextBox6";
             this.guna2TextBox6.PasswordChar = '\0';
             this.guna2TextBox6.PlaceholderForeColor = System.Drawing.Color.Black;
             this.guna2TextBox6.PlaceholderText = "";
             this.guna2TextBox6.SelectedText = "";
-            this.guna2TextBox6.Size = new System.Drawing.Size(334, 42);
+            this.guna2TextBox6.Size = new System.Drawing.Size(244, 42);
             this.guna2TextBox6.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.guna2TextBox6.TabIndex = 25;
             // 
@@ -156,7 +154,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(574, 196);
+            this.label7.Location = new System.Drawing.Point(664, 196);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(85, 23);
             this.label7.TabIndex = 24;
@@ -178,14 +176,14 @@
             this.guna2TextBox5.ForeColor = System.Drawing.Color.Black;
             this.guna2TextBox5.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox5.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.guna2TextBox5.Location = new System.Drawing.Point(686, 106);
+            this.guna2TextBox5.Location = new System.Drawing.Point(776, 106);
             this.guna2TextBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2TextBox5.Name = "guna2TextBox5";
             this.guna2TextBox5.PasswordChar = '\0';
             this.guna2TextBox5.PlaceholderForeColor = System.Drawing.Color.Black;
             this.guna2TextBox5.PlaceholderText = "";
             this.guna2TextBox5.SelectedText = "";
-            this.guna2TextBox5.Size = new System.Drawing.Size(334, 42);
+            this.guna2TextBox5.Size = new System.Drawing.Size(244, 42);
             this.guna2TextBox5.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.guna2TextBox5.TabIndex = 23;
             // 
@@ -194,7 +192,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(574, 125);
+            this.label5.Location = new System.Drawing.Point(664, 125);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(102, 23);
             this.label5.TabIndex = 22;
@@ -216,14 +214,14 @@
             this.guna2TextBox4.ForeColor = System.Drawing.Color.Black;
             this.guna2TextBox4.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox4.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.guna2TextBox4.Location = new System.Drawing.Point(427, 177);
+            this.guna2TextBox4.Location = new System.Drawing.Point(472, 177);
             this.guna2TextBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2TextBox4.Name = "guna2TextBox4";
             this.guna2TextBox4.PasswordChar = '\0';
             this.guna2TextBox4.PlaceholderForeColor = System.Drawing.Color.Black;
             this.guna2TextBox4.PlaceholderText = "";
             this.guna2TextBox4.SelectedText = "";
-            this.guna2TextBox4.Size = new System.Drawing.Size(122, 42);
+            this.guna2TextBox4.Size = new System.Drawing.Size(185, 42);
             this.guna2TextBox4.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.guna2TextBox4.TabIndex = 21;
             // 
@@ -232,7 +230,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(278, 196);
+            this.label4.Location = new System.Drawing.Point(349, 196);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(114, 23);
             this.label4.TabIndex = 20;
@@ -261,7 +259,7 @@
             this.guna2TextBox3.PlaceholderForeColor = System.Drawing.Color.Black;
             this.guna2TextBox3.PlaceholderText = "";
             this.guna2TextBox3.SelectedText = "";
-            this.guna2TextBox3.Size = new System.Drawing.Size(86, 42);
+            this.guna2TextBox3.Size = new System.Drawing.Size(178, 42);
             this.guna2TextBox3.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.guna2TextBox3.TabIndex = 19;
             // 
@@ -270,7 +268,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(31, 196);
+            this.label3.Location = new System.Drawing.Point(9, 64);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 23);
             this.label3.TabIndex = 18;
@@ -299,7 +297,7 @@
             this.guna2TextBox2.PlaceholderForeColor = System.Drawing.Color.Black;
             this.guna2TextBox2.PlaceholderText = "";
             this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.Size = new System.Drawing.Size(385, 42);
+            this.guna2TextBox2.Size = new System.Drawing.Size(448, 42);
             this.guna2TextBox2.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.guna2TextBox2.TabIndex = 17;
             // 
@@ -308,7 +306,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(31, 125);
+            this.label2.Location = new System.Drawing.Point(9, 125);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(115, 23);
             this.label2.TabIndex = 16;
@@ -325,7 +323,7 @@
             this.guna2Button1.FillColor = System.Drawing.Color.Teal;
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(684, 47);
+            this.guna2Button1.Location = new System.Drawing.Point(652, 58);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(133, 40);
             this.guna2Button1.TabIndex = 15;
@@ -347,14 +345,14 @@
             this.txtFullname.ForeColor = System.Drawing.Color.Black;
             this.txtFullname.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtFullname.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txtFullname.Location = new System.Drawing.Point(228, 45);
+            this.txtFullname.Location = new System.Drawing.Point(164, 45);
             this.txtFullname.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtFullname.Name = "txtFullname";
             this.txtFullname.PasswordChar = '\0';
             this.txtFullname.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtFullname.PlaceholderText = "";
             this.txtFullname.SelectedText = "";
-            this.txtFullname.Size = new System.Drawing.Size(384, 42);
+            this.txtFullname.Size = new System.Drawing.Size(448, 42);
             this.txtFullname.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtFullname.TabIndex = 13;
             // 
@@ -363,7 +361,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(31, 64);
+            this.label6.Location = new System.Drawing.Point(9, 196);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(154, 23);
             this.label6.TabIndex = 3;
@@ -372,8 +370,6 @@
             // guna2GroupBox2
             // 
             this.guna2GroupBox2.BorderColor = System.Drawing.Color.Teal;
-            this.guna2GroupBox2.Controls.Add(this.guna2ComboBox1);
-            this.guna2GroupBox2.Controls.Add(this.label13);
             this.guna2GroupBox2.Controls.Add(this.guna2TextBox11);
             this.guna2GroupBox2.Controls.Add(this.label12);
             this.guna2GroupBox2.Controls.Add(this.guna2CheckBox1);
@@ -400,32 +396,6 @@
             this.guna2GroupBox2.Size = new System.Drawing.Size(1054, 491);
             this.guna2GroupBox2.TabIndex = 4;
             this.guna2GroupBox2.Text = "Thanh Toán";
-            // 
-            // guna2ComboBox1
-            // 
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.Location = new System.Drawing.Point(652, 254);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.Size = new System.Drawing.Size(245, 36);
-            this.guna2ComboBox1.TabIndex = 39;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(648, 210);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(207, 23);
-            this.label13.TabIndex = 38;
-            this.label13.Text = "Hình Thức Thanh Toán";
             // 
             // guna2TextBox11
             // 
@@ -1077,7 +1047,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.Label label13;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
     }
 }
