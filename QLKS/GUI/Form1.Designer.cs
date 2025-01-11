@@ -33,7 +33,7 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.txtAccount = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
@@ -46,7 +46,6 @@
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
             this.dANHSÁCHHÓAĐƠNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
             this.toolStripProgressBar2 = new System.Windows.Forms.ToolStripProgressBar();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
@@ -136,7 +135,7 @@
             this.toolStripLabel1,
             this.toolStripButton1,
             this.toolStripSeparator1,
-            this.toolStripTextBox1,
+            this.txtAccount,
             this.toolStripButton3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -171,11 +170,13 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 47);
             // 
-            // toolStripTextBox1
+            // txtAccount
             // 
-            this.toolStripTextBox1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 47);
+            this.txtAccount.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.txtAccount.Enabled = false;
+            this.txtAccount.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtAccount.Name = "txtAccount";
+            this.txtAccount.Size = new System.Drawing.Size(100, 47);
             // 
             // toolStripButton3
             // 
@@ -188,7 +189,7 @@
             // toolStripProgressBar1
             // 
             this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(380, 15);
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(378, 15);
             // 
             // toolStripButton4
             // 
@@ -197,13 +198,13 @@
             this.toolStripButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(382, 39);
+            this.toolStripButton4.Size = new System.Drawing.Size(380, 39);
             this.toolStripButton4.Text = "SƠ ĐỒ KHÁCH SẠN";
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(382, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(380, 6);
             // 
             // toolStripButton5
             // 
@@ -212,14 +213,15 @@
             this.toolStripButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(382, 39);
+            this.toolStripButton5.Size = new System.Drawing.Size(380, 39);
             this.toolStripButton5.Text = "ĐẶT PHÒNG";
             this.toolStripButton5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(382, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(380, 6);
             // 
             // toolStripButton6
             // 
@@ -228,7 +230,7 @@
             this.toolStripButton6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(382, 39);
+            this.toolStripButton6.Size = new System.Drawing.Size(380, 39);
             this.toolStripButton6.Text = "DỊCH VỤ";
             this.toolStripButton6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
@@ -236,12 +238,12 @@
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(382, 6);
+            this.toolStripSeparator7.Size = new System.Drawing.Size(380, 6);
             // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(382, 6);
+            this.toolStripSeparator9.Size = new System.Drawing.Size(380, 6);
             // 
             // toolStrip2
             // 
@@ -269,15 +271,15 @@
             // toolStripSplitButton1
             // 
             this.toolStripSplitButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dANHSÁCHHÓAĐƠNToolStripMenuItem,
-            this.toolStripMenuItem1});
+            this.dANHSÁCHHÓAĐƠNToolStripMenuItem});
             this.toolStripSplitButton1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.toolStripSplitButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSplitButton1.Image")));
             this.toolStripSplitButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripSplitButton1.Name = "toolStripSplitButton1";
-            this.toolStripSplitButton1.Size = new System.Drawing.Size(382, 39);
+            this.toolStripSplitButton1.Size = new System.Drawing.Size(380, 39);
             this.toolStripSplitButton1.Text = "THANH TOÁN";
+            this.toolStripSplitButton1.ButtonClick += new System.EventHandler(this.toolStripSplitButton1_ButtonClick);
             // 
             // dANHSÁCHHÓAĐƠNToolStripMenuItem
             // 
@@ -287,14 +289,6 @@
             this.dANHSÁCHHÓAĐƠNToolStripMenuItem.Size = new System.Drawing.Size(297, 26);
             this.dANHSÁCHHÓAĐƠNToolStripMenuItem.Text = "DANH SÁCH HÓA ĐƠN";
             // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(297, 26);
-            this.toolStripMenuItem1.Text = "ĐƠNHÓA ";
-            // 
             // toolStripButton8
             // 
             this.toolStripButton8.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -303,14 +297,14 @@
             this.toolStripButton8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton8.Name = "toolStripButton8";
-            this.toolStripButton8.Size = new System.Drawing.Size(382, 39);
+            this.toolStripButton8.Size = new System.Drawing.Size(380, 39);
             this.toolStripButton8.Text = "ĐĂNG XUẤT";
             // 
             // toolStripProgressBar2
             // 
             this.toolStripProgressBar2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripProgressBar2.Name = "toolStripProgressBar2";
-            this.toolStripProgressBar2.Size = new System.Drawing.Size(380, 15);
+            this.toolStripProgressBar2.Size = new System.Drawing.Size(378, 15);
             // 
             // guna2TabControl1
             // 
@@ -1488,7 +1482,7 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.ToolStripTextBox txtAccount;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
@@ -1501,7 +1495,6 @@
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton1;
         private System.Windows.Forms.ToolStripMenuItem dANHSÁCHHÓAĐƠNToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripButton toolStripButton8;
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar2;
         private Guna.UI2.WinForms.Guna2TabControl guna2TabControl1;

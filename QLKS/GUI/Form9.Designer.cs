@@ -79,6 +79,7 @@
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
@@ -89,7 +90,6 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.txtLoc = new Guna.UI2.WinForms.Guna2TextBox();
-            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).BeginInit();
@@ -706,6 +706,7 @@
             this.txtAccount.Name = "txtAccount";
             this.txtAccount.ReadOnly = true;
             this.txtAccount.Size = new System.Drawing.Size(100, 47);
+            this.txtAccount.Click += new System.EventHandler(this.txtAccount_Click);
             // 
             // toolStripButton3
             // 
@@ -787,6 +788,16 @@
             this.toolStripSeparator7.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripSeparator7.Name = "toolStripSeparator7";
             this.toolStripSeparator7.Size = new System.Drawing.Size(6, 47);
+            // 
+            // toolStripButton12
+            // 
+            this.toolStripButton12.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButton12.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton12.Image")));
+            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton12.Name = "toolStripButton12";
+            this.toolStripButton12.Size = new System.Drawing.Size(37, 44);
+            this.toolStripButton12.Text = "Lưu";
+            this.toolStripButton12.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // toolStrip2
             // 
@@ -889,16 +900,6 @@
             this.txtLoc.SelectedText = "";
             this.txtLoc.Size = new System.Drawing.Size(274, 36);
             this.txtLoc.TabIndex = 56;
-            // 
-            // toolStripButton12
-            // 
-            this.toolStripButton12.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripButton12.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton12.Image")));
-            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton12.Name = "toolStripButton12";
-            this.toolStripButton12.Size = new System.Drawing.Size(37, 44);
-            this.toolStripButton12.Text = "Lưu";
-            this.toolStripButton12.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // Form9
             // 

@@ -18,6 +18,7 @@ using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using System.Drawing;
 using DevExpress.XtraGrid.Views.BandedGrid.Handler;
+using System.Security.Principal;
 
 namespace GUI
 {
@@ -27,21 +28,23 @@ namespace GUI
         private Phongbus phongbus = new Phongbus();
         private khachhangbus khachhangbus = new khachhangbus();
         private Form1 form1;
+
+        public Form4() { InitializeComponent(); }
         public Form4(int roomId)
         {
             
-            InitializeComponent();
-            setRoomNumber(roomId);
-            LoadDataToGridControl("trống");
-            var gridView = gcDanhSach.MainView as DevExpress.XtraGrid.Views.Grid.GridView;
-            gridView.FocusedRowChanged += GridView_FocusedRowChanged;
-            gridView.OptionsSelection.MultiSelect = false;
-            gridView.OptionsSelection.EnableAppearanceFocusedCell = false;
-            gridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.GridView_FocusedRowChanged);
-            gcDanhSach.Click += new EventHandler(this.gcDanhSach_Click);
-
-
+                InitializeComponent();
+                setRoomNumber(roomId);
+                LoadDataToGridControl("trống");
+                var gridView = gcDanhSach.MainView as DevExpress.XtraGrid.Views.Grid.GridView;
+                gridView.FocusedRowChanged += GridView_FocusedRowChanged;
+                gridView.OptionsSelection.MultiSelect = false;
+                gridView.OptionsSelection.EnableAppearanceFocusedCell = false;
+                gridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.GridView_FocusedRowChanged);
+                gcDanhSach.Click += new EventHandler(this.gcDanhSach_Click);        
         }
+
+
 
 
         private void GridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
@@ -191,7 +194,11 @@ namespace GUI
 
         private void Form4_Load(object sender, EventArgs e)
         {
-
+            if (Session.Login != null)
+            {
+                txtTK.Text = Session.Login.FULLNAME;
+                //txtFullName.ReadOnly = true; // Đặt TextBox thành không thể chỉnh sửa
+            }
         }
 
         private void setRoomNumber(int roomId)

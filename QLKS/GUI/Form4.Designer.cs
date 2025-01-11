@@ -40,7 +40,7 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.txtTK = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
             this.phòngTrốngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -109,7 +109,7 @@
             this.toolStripSeparator4,
             this.toolStripButton5,
             this.toolStripButton6,
-            this.toolStripTextBox1,
+            this.txtTK,
             this.toolStripSeparator5,
             this.toolStripSplitButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -197,12 +197,12 @@
             this.toolStripButton6.Size = new System.Drawing.Size(29, 44);
             this.toolStripButton6.Text = "toolStripButton6";
             // 
-            // toolStripTextBox1
+            // txtTK
             // 
-            this.toolStripTextBox1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 47);
+            this.txtTK.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.txtTK.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtTK.Name = "txtTK";
+            this.txtTK.Size = new System.Drawing.Size(100, 47);
             // 
             // toolStripSeparator5
             // 
@@ -986,7 +986,7 @@
         private DevExpress.XtraGrid.GridControl gcDanhSach;
         private DevExpress.XtraGrid.Views.Grid.GridView gvDanhSach;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.ToolStripTextBox txtTK;
         private Guna.UI2.WinForms.Guna2DateTimePicker datetime2;
         private Guna.UI2.WinForms.Guna2DateTimePicker datetime1;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;

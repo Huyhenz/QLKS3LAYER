@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Data.SqlClient;
+using System.Security.Principal;
 namespace GUI
 {
     public partial class Form1 : Form
@@ -298,8 +299,11 @@ namespace GUI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //SetupRoomButtons();
-            
+            if (Session.Login != null)
+            {
+                txtAccount.Text = Session.Login.FULLNAME;
+                //txtFullName.ReadOnly = true; // Đặt TextBox thành không thể chỉnh sửa
+            }
         }
     //     private void SetupRoomButtons()
     //{
@@ -327,6 +331,18 @@ namespace GUI
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            Form4 f = new Form4();
+            f.Show();
+        }
+
+        private void toolStripSplitButton1_ButtonClick(object sender, EventArgs e)
+        {
+            Form3 f = new Form3();
+            f.Show();
         }
     }
 }

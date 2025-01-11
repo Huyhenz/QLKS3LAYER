@@ -378,6 +378,11 @@ namespace GUI
 
             dgvNhanVien.DataSource = filteredList;
         }
+
+        private void txtAccount_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
