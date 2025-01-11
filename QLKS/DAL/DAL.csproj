@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectDB.cs" />
+    <Compile Include="DichVuDal.cs" />
     <Compile Include="KhachHangDAL.cs" />
     <Compile Include="Phongdal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
