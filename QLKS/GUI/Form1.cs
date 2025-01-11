@@ -13,11 +13,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Data.SqlClient;
+using System.Security.Principal;
 namespace GUI
 {
     public partial class Form1 : Form
     {
-
+        private bool isExchangeMode = false;
+        private ThongTinDP tempBooking;
+        private KhachHangDTO tempCustomer;
         private Phongbus phongbus = new Phongbus();
         private List<Phong> rooms;
         public Form1()
@@ -29,7 +32,16 @@ namespace GUI
             btn.Click += new EventHandler(guna2Button45_Click);
             LoadRooms();
         }
-         
+
+        public void SetExchangeMode(ThongTinDP booking, KhachHangDTO customer)
+        {
+            isExchangeMode = true;
+            tempBooking = booking;
+            tempCustomer = customer;
+
+            MessageBox.Show("Chế độ đổi phòng được kích hoạt. Nhấp vào phòng trống để thay đổi.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
         public void LoadRooms()
         {
             // Lấy danh sách phòng từ BLL
@@ -86,22 +98,67 @@ namespace GUI
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            Guna2Button btn = sender as Guna2Button;
-            if (btn != null)
-            {
-                // Lấy phần số từ chuỗi văn bản của button
-                string roomIdString = new string(btn.Text.Where(char.IsDigit).ToArray());
+                Guna2Button btn = sender as Guna2Button;
+                if (btn != null)
+                {
+                    // Lấy phần số từ chuỗi văn bản của button
+                    string roomIdString = new string(btn.Text.Where(char.IsDigit).ToArray());
 
-                if (int.TryParse(roomIdString, out int roomId))
-                {
-                    Form4 form4 = new Form4(roomId);
-                    form4.Show();
+                    if (int.TryParse(roomIdString, out int newRoomId))
+                    {
+                        if (isExchangeMode)
+                        {
+                            // Kiểm tra trạng thái phòng mới từ cơ sở dữ liệu
+                            var room = phongbus.GetAllRooms().FirstOrDefault(r => r.IDPHONG == newRoomId);
+                            if (room != null && room.TINHTRANG.ToLower() == "trống")
+                            {
+                                // Cập nhật thông tin đặt phòng trong cơ sở dữ liệu
+                                phongbus.UpdateRoomBooking(tempBooking.IDPHONG, newRoomId);
+
+                                // Cập nhật trạng thái phòng cũ thành "trống" trong cơ sở dữ liệu
+                                phongbus.UpdateTinhTrangPhong(tempBooking.IDPHONG, "trống");
+
+                                // Cập nhật trạng thái phòng mới thành "đã đặt" trong cơ sở dữ liệu
+                                phongbus.UpdateTinhTrangPhong(newRoomId, "đã đặt");
+
+                                // Cập nhật lại trạng thái của các nút trong Form1
+                                Guna2Button oldButton = this.Controls.Find($"guna2Button{tempBooking.IDPHONG}", true).FirstOrDefault() as Guna2Button;
+                                if (oldButton != null)
+                                {
+                                    oldButton.FillColor = Color.SeaGreen;
+                                    oldButton.HoverState.FillColor = Color.SeaGreen;
+                                    oldButton.PressedColor = Color.SeaGreen;
+                                    oldButton.ForeColor = Color.Black;
+                                    oldButton.Text = tempBooking.IDPHONG.ToString();
+                                }
+
+                                btn.FillColor = Color.Red;
+                                btn.HoverState.FillColor = Color.Red;
+                                btn.PressedColor = Color.Red;
+                                btn.ForeColor = Color.White;
+                                btn.Text = $"{newRoomId} - Đã đặt";
+
+                                // Cập nhật trạng thái đổi phòng
+                                isExchangeMode = false;
+
+                                MessageBox.Show($"Đã đổi phòng thành công từ {tempBooking.IDPHONG} sang {newRoomId}!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Chỉ có thể đổi sang phòng trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else
+                        {
+                            Form4 form4 = new Form4(newRoomId);
+                            form4.Show();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không thể xác định ID phòng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Không thể xác định ID phòng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
         }
 
 
@@ -116,10 +173,55 @@ namespace GUI
                 // Lấy phần số từ chuỗi văn bản của button
                 string roomIdString = new string(btn.Text.Where(char.IsDigit).ToArray());
 
-                if (int.TryParse(roomIdString, out int roomId))
+                if (int.TryParse(roomIdString, out int newRoomId))
                 {
-                    Form4 form4 = new Form4(roomId);
-                    form4.Show();
+                    if (isExchangeMode)
+                    {
+                        // Kiểm tra trạng thái phòng mới từ cơ sở dữ liệu
+                        var room = phongbus.GetAllRooms().FirstOrDefault(r => r.IDPHONG == newRoomId);
+                        if (room != null && room.TINHTRANG.ToLower() == "trống")
+                        {
+                            // Cập nhật thông tin đặt phòng trong cơ sở dữ liệu
+                            phongbus.UpdateRoomBooking(tempBooking.IDPHONG, newRoomId);
+
+                            // Cập nhật trạng thái phòng cũ thành "trống" trong cơ sở dữ liệu
+                            phongbus.UpdateTinhTrangPhong(tempBooking.IDPHONG, "trống");
+
+                            // Cập nhật trạng thái phòng mới thành "đã đặt" trong cơ sở dữ liệu
+                            phongbus.UpdateTinhTrangPhong(newRoomId, "đã đặt");
+
+                            // Cập nhật lại trạng thái của các nút trong Form1
+                            Guna2Button oldButton = this.Controls.Find($"guna2Button{tempBooking.IDPHONG}", true).FirstOrDefault() as Guna2Button;
+                            if (oldButton != null)
+                            {
+                                oldButton.FillColor = Color.SeaGreen;
+                                oldButton.HoverState.FillColor = Color.SeaGreen;
+                                oldButton.PressedColor = Color.SeaGreen;
+                                oldButton.ForeColor = Color.Black;
+                                oldButton.Text = tempBooking.IDPHONG.ToString();
+                            }
+
+                            btn.FillColor = Color.Red;
+                            btn.HoverState.FillColor = Color.Red;
+                            btn.PressedColor = Color.Red;
+                            btn.ForeColor = Color.White;
+                            btn.Text = $"{newRoomId} - Đã đặt";
+
+                            // Cập nhật trạng thái đổi phòng
+                            isExchangeMode = false;
+
+                            MessageBox.Show($"Đã đổi phòng thành công từ {tempBooking.IDPHONG} sang {newRoomId}!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Chỉ có thể đổi sang phòng trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        Form4 form4 = new Form4(newRoomId);
+                        form4.Show();
+                    }
                 }
                 else
                 {
@@ -136,10 +238,55 @@ namespace GUI
                 // Lấy phần số từ chuỗi văn bản của button
                 string roomIdString = new string(btn.Text.Where(char.IsDigit).ToArray());
 
-                if (int.TryParse(roomIdString, out int roomId))
+                if (int.TryParse(roomIdString, out int newRoomId))
                 {
-                    Form4 form4 = new Form4(roomId);
-                    form4.Show();
+                    if (isExchangeMode)
+                    {
+                        // Kiểm tra trạng thái phòng mới từ cơ sở dữ liệu
+                        var room = phongbus.GetAllRooms().FirstOrDefault(r => r.IDPHONG == newRoomId);
+                        if (room != null && room.TINHTRANG.ToLower() == "trống")
+                        {
+                            // Cập nhật thông tin đặt phòng trong cơ sở dữ liệu
+                            phongbus.UpdateRoomBooking(tempBooking.IDPHONG, newRoomId);
+
+                            // Cập nhật trạng thái phòng cũ thành "trống" trong cơ sở dữ liệu
+                            phongbus.UpdateTinhTrangPhong(tempBooking.IDPHONG, "trống");
+
+                            // Cập nhật trạng thái phòng mới thành "đã đặt" trong cơ sở dữ liệu
+                            phongbus.UpdateTinhTrangPhong(newRoomId, "đã đặt");
+
+                            // Cập nhật lại trạng thái của các nút trong Form1
+                            Guna2Button oldButton = this.Controls.Find($"guna2Button{tempBooking.IDPHONG}", true).FirstOrDefault() as Guna2Button;
+                            if (oldButton != null)
+                            {
+                                oldButton.FillColor = Color.SeaGreen;
+                                oldButton.HoverState.FillColor = Color.SeaGreen;
+                                oldButton.PressedColor = Color.SeaGreen;
+                                oldButton.ForeColor = Color.Black;
+                                oldButton.Text = tempBooking.IDPHONG.ToString();
+                            }
+
+                            btn.FillColor = Color.Red;
+                            btn.HoverState.FillColor = Color.Red;
+                            btn.PressedColor = Color.Red;
+                            btn.ForeColor = Color.White;
+                            btn.Text = $"{newRoomId} - Đã đặt";
+
+                            // Cập nhật trạng thái đổi phòng
+                            isExchangeMode = false;
+
+                            MessageBox.Show($"Đã đổi phòng thành công từ {tempBooking.IDPHONG} sang {newRoomId}!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Chỉ có thể đổi sang phòng trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        Form4 form4 = new Form4(newRoomId);
+                        form4.Show();
+                    }
                 }
                 else
                 {
@@ -152,8 +299,11 @@ namespace GUI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //SetupRoomButtons();
-            
+            if (Session.Login != null)
+            {
+                txtAccount.Text = Session.Login.FULLNAME;
+                //txtFullName.ReadOnly = true; // Đặt TextBox thành không thể chỉnh sửa
+            }
         }
     //     private void SetupRoomButtons()
     //{
@@ -178,6 +328,21 @@ namespace GUI
             f.Show();
         }
 
-      
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            Form4 f = new Form4();
+            f.Show();
+        }
+
+        private void toolStripSplitButton1_ButtonClick(object sender, EventArgs e)
+        {
+            Form3 f = new Form3();
+            f.Show();
+        }
     }
 }

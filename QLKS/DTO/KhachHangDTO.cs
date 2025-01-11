@@ -21,8 +21,6 @@ namespace DTO
 
         public string NGAYSINH { get; set; }    
 
-        public string GIOITINH { get; set; }
-
         public string LOAIKH { get; set; }
 
         public string GHICHU { get; set; }
@@ -30,7 +28,7 @@ namespace DTO
 
         public KhachHangDTO() { }
 
-        public KhachHangDTO(int IDKH, string HOTEN, long CCCD, long DIENTHOAI, string EMAIL, string DIACHI, string NGAYSINH, string GIOITINH, string LOAIKH, string GHICHU)
+        public KhachHangDTO(int IDKH, string HOTEN, long CCCD, long DIENTHOAI, string EMAIL, string DIACHI, string NGAYSINH, string LOAIKH, string GHICHU)
         {
             IDKH = IDKH;
             HOTEN = HOTEN;
@@ -39,7 +37,6 @@ namespace DTO
             EMAIL = EMAIL;
             DIACHI = DIACHI;
             NGAYSINH = NGAYSINH;
-            GIOITINH = GIOITINH;
             LOAIKH = LOAIKH;
             GHICHU = GHICHU;
         }

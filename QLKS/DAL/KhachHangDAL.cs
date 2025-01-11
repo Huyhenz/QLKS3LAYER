@@ -16,12 +16,11 @@ namespace DAL
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "INSERT INTO tb_KhachHang (CCCD, HOTEN, NGAYSINH, GIOITINH, DIENTHOAI, EMAIL, LOAIKH, GHICHU) VALUES (@CCCD, @HOTEN, @NGAYSINH, @GIOITINH, @DIENTHOAI, @EMAIL, @LOAIKH, @GHICHU)";
+                string query = "INSERT INTO tb_KhachHang (CCCD, HOTEN, NGAYSINH, DIENTHOAI, EMAIL, LOAIKH, GHICHU) VALUES (@CCCD, @HOTEN, @NGAYSINH, @DIENTHOAI, @EMAIL, @LOAIKH, @GHICHU)";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@CCCD", customer.CCCD);
                 cmd.Parameters.AddWithValue("@HOTEN", customer.HOTEN);
                 cmd.Parameters.AddWithValue("@NGAYSINH", customer.NGAYSINH);
-                cmd.Parameters.AddWithValue("@GIOITINH", customer.GIOITINH);
                 cmd.Parameters.AddWithValue("@DIENTHOAI", customer.DIENTHOAI);
                 cmd.Parameters.AddWithValue("@EMAIL", customer.EMAIL);
                 cmd.Parameters.AddWithValue("@LOAIKH", customer.LOAIKH);
@@ -47,7 +46,6 @@ namespace DAL
                         CCCD = Convert.ToInt64(reader["CCCD"]),
                         HOTEN = reader["HOTEN"].ToString(),
                         NGAYSINH = reader["NGAYSINH"].ToString(),
-                        GIOITINH = reader["GIOITINH"].ToString(),
                         DIENTHOAI = Convert.ToInt64(reader["DIENTHOAI"]),
                         EMAIL = reader["EMAIL"].ToString(),
                         LOAIKH = reader["LOAIKH"].ToString(),
@@ -63,14 +61,13 @@ namespace DAL
         public void UpdateCustomer(KhachHangDTO customer)
         {
             // Thực hiện truy vấn SQL để cập nhật thông tin customer
-            string query = "UPDATE tb_KhachHang SET HOTEN = @HOTEN, NGAYSINH = @NGAYSINH, GIOITINH = @GIOITINH, DIENTHOAI = @DIENTHOAI, EMAIL = @EMAIL, LOAIKH = @LOAIKH, GHICHU = @GHICHU WHERE CCCD = @CCCD";
+            string query = "UPDATE tb_KhachHang SET HOTEN = @HOTEN, NGAYSINH = @NGAYSINH, DIENTHOAI = @DIENTHOAI, EMAIL = @EMAIL, LOAIKH = @LOAIKH, GHICHU = @GHICHU WHERE CCCD = @CCCD";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@CCCD", customer.CCCD);
                 cmd.Parameters.AddWithValue("@HOTEN", customer.HOTEN);
                 cmd.Parameters.AddWithValue("@NGAYSINH", customer.NGAYSINH);
-                cmd.Parameters.AddWithValue("@GIOITINH", customer.GIOITINH);
                 cmd.Parameters.AddWithValue("@DIENTHOAI", customer.DIENTHOAI);
                 cmd.Parameters.AddWithValue("@EMAIL", customer.EMAIL);
                 cmd.Parameters.AddWithValue("@LOAIKH", customer.LOAIKH);
