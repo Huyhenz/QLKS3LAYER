@@ -17,6 +17,7 @@ using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using System.Drawing;
+using DevExpress.XtraGrid.Views.BandedGrid.Handler;
 
 namespace GUI
 {
@@ -34,57 +35,84 @@ namespace GUI
             LoadDataToGridControl("trống");
             var gridView = gcDanhSach.MainView as DevExpress.XtraGrid.Views.Grid.GridView;
             gridView.FocusedRowChanged += GridView_FocusedRowChanged;
-            
+            gridView.OptionsSelection.MultiSelect = false;
+            gridView.OptionsSelection.EnableAppearanceFocusedCell = false;
+            gridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.GridView_FocusedRowChanged);
+            gcDanhSach.Click += new EventHandler(this.gcDanhSach_Click);
+
 
         }
-      
+
 
         private void GridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            var gridView = sender as DevExpress.XtraGrid.Views.Grid.GridView;
-            int selectedRowHandle = e.FocusedRowHandle;
+                var gridView = sender as DevExpress.XtraGrid.Views.Grid.GridView;
+                int selectedRowHandle = e.FocusedRowHandle;
 
+                if (selectedRowHandle >= 0)
+                {
+                    // Lấy dữ liệu từ hàng được chọn
+                    object idPhongValue = gridView.GetRowCellValue(selectedRowHandle, "IDPHONG");
+                    object ngayDatValue = gridView.GetRowCellValue(selectedRowHandle, "NGAYDAT");
+                    object ngayTraValue = gridView.GetRowCellValue(selectedRowHandle, "NGAYTRA");
+                    object soNgayOValue = gridView.GetRowCellValue(selectedRowHandle, "SONGAYO");
+                    object cccdValue = gridView.GetRowCellValue(selectedRowHandle, "CCCD");
+                    object tenKhachHangValue = gridView.GetRowCellValue(selectedRowHandle, "TENKH");
+                    object ngaySinhValue = gridView.GetRowCellValue(selectedRowHandle, "NGAYSINH");
+                    object dienThoaiValue = gridView.GetRowCellValue(selectedRowHandle, "DIENTHOAI");
+                    object emailValue = gridView.GetRowCellValue(selectedRowHandle, "EMAIL");
+                    object loaiKHValue = gridView.GetRowCellValue(selectedRowHandle, "LOAIKH");
+                    object ghiChuValue = gridView.GetRowCellValue(selectedRowHandle, "GHICHU");
 
-            if (selectedRowHandle >= 0)
-            {
-                // Lấy dữ liệu từ hàng được chọn
-                int idPhong = int.Parse(gridView.GetRowCellValue(selectedRowHandle, "IDPHONG").ToString());
-                DateTime ngayDat = Convert.ToDateTime(gridView.GetRowCellValue(selectedRowHandle, "NGAYDAT"));
-                DateTime ngayTra = Convert.ToDateTime(gridView.GetRowCellValue(selectedRowHandle, "NGAYTRA"));
-                string soNgayO = gridView.GetRowCellValue(selectedRowHandle, "SONGAYO").ToString();
+                    if (idPhongValue != DBNull.Value)
+                    {
+                        int idPhong = Convert.ToInt32(idPhongValue);
+                        DateTime ngayDat = ngayDatValue != DBNull.Value ? Convert.ToDateTime(ngayDatValue) : DateTime.MinValue;
+                        DateTime ngayTra = ngayTraValue != DBNull.Value ? Convert.ToDateTime(ngayTraValue) : DateTime.MinValue;
+                        string soNgayO = soNgayOValue != DBNull.Value ? soNgayOValue.ToString() : string.Empty;
+                        string cccd = cccdValue != DBNull.Value ? cccdValue.ToString() : string.Empty;
+                        string tenKhachHang = tenKhachHangValue != DBNull.Value ? tenKhachHangValue.ToString() : string.Empty;
+                        DateTime ngaySinh = ngaySinhValue != DBNull.Value ? Convert.ToDateTime(ngaySinhValue) : DateTime.MinValue;
+                        string dienThoai = dienThoaiValue != DBNull.Value ? dienThoaiValue.ToString() : string.Empty;
+                        string email = emailValue != DBNull.Value ? emailValue.ToString() : string.Empty;
+                        string loaiKH = loaiKHValue != DBNull.Value ? loaiKHValue.ToString() : string.Empty;
+                        string ghiChu = ghiChuValue != DBNull.Value ? ghiChuValue.ToString() : string.Empty;
 
-                string cccd = gridView.GetRowCellValue(selectedRowHandle, "CCCD").ToString();
-                string tenKhachHang = gridView.GetRowCellValue(selectedRowHandle, "TENKH").ToString();
-                DateTime ngaySinh = Convert.ToDateTime(gridView.GetRowCellValue(selectedRowHandle, "NGAYSINH"));
-                //string gioiTinh = gridView.GetRowCellValue(selectedRowHandle, "GIOITINH").ToString();
-                string dienThoai = gridView.GetRowCellValue(selectedRowHandle, "DIENTHOAI").ToString();
-                string email = gridView.GetRowCellValue(selectedRowHandle, "EMAIL").ToString();
-                string loaiKH = gridView.GetRowCellValue(selectedRowHandle, "LOAIKH").ToString();
-                string ghiChu = gridView.GetRowCellValue(selectedRowHandle, "GHICHU").ToString();
+                        // Lấy dữ liệu từ cơ sở dữ liệu với IDPHONG tương ứng
+                        var roomDetails = phongbus.SetRoomIDD(idPhong);
 
-                // Lấy dữ liệu từ cơ sở dữ liệu với IDPHONG tương ứng
-                var roomDetails = phongbus.SetRoomIDD(idPhong);
+                        // Gán giá trị cho các điều khiển tương ứng
+                        if (roomDetails != null)
+                        {
+                            txtSP.Text = roomDetails.IDPHONG.ToString();
+                            txtPhong.Text = roomDetails.TENPHONG;
+                            txtLP.Text = roomDetails.LoaiPhong.TENLOAIPHONG;
+                            txtGIA.Text = roomDetails.LoaiPhong.DONGIA.ToString();
+                            txtSoGIUONG.Text = roomDetails.LoaiPhong.SOGIUONG.ToString();
+                            datetime1.Value = ngayDat != DateTime.MinValue ? ngayDat : DateTime.Now;
+                            datetime2.Value = ngayTra != DateTime.MinValue ? ngayTra : DateTime.Now;
+                            txt_TSNO.Text = soNgayO;
 
-                // Gán giá trị cho các điều khiển tương ứng
-                txtSP.Text = roomDetails.IDPHONG.ToString();
-                txtPhong.Text = roomDetails.TENPHONG;
-                txtLP.Text = roomDetails.LoaiPhong.TENLOAIPHONG;
-                txtGIA.Text = roomDetails.LoaiPhong.DONGIA.ToString();
-                txtSoGIUONG.Text = roomDetails.LoaiPhong.SOGIUONG.ToString();
-                datetime1.Value = ngayDat;
-                datetime2.Value = ngayTra;
-                txt_TSNO.Text = soNgayO;
-
-                txtCCCD.Text = cccd;
-                txtTEN.Text = tenKhachHang;
-                datetime3.Value = ngaySinh;
-                //txtGender.Text = gioiTinh;
-                txtSDT.Text = dienThoai;
-                txtEMAIL.Text = email;
-                txtLKH.Text = loaiKH;
-                txtGHICHU.Text = ghiChu;
-            }
+                            txtCCCD.Text = cccd;
+                            txtTEN.Text = tenKhachHang;
+                            datetime3.Value = ngaySinh != DateTime.MinValue ? ngaySinh : DateTime.Now;
+                            txtSDT.Text = dienThoai;
+                            txtEMAIL.Text = email;
+                            txtLKH.Text = loaiKH;
+                            txtGHICHU.Text = ghiChu;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không thể lấy thông tin phòng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không thể xác định ID phòng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
         }
+
 
         private void LoadDataToGridControl(string status)
         {
@@ -100,7 +128,6 @@ namespace GUI
             table.Columns.Add("CCCD");
             table.Columns.Add("TENKH");
             table.Columns.Add("NGAYSINH");
-            table.Columns.Add("GIOITINH");
             table.Columns.Add("DIENTHOAI");
             table.Columns.Add("EMAIL");
             table.Columns.Add("LOAIKH");
@@ -123,7 +150,6 @@ namespace GUI
                         row["CCCD"] = customer.CCCD;
                         row["TENKH"] = customer.HOTEN;
                         row["NGAYSINH"] = customer.NGAYSINH;
-                        row["GIOITINH"] = customer.GIOITINH;
                         row["DIENTHOAI"] = customer.DIENTHOAI;
                         row["EMAIL"] = customer.EMAIL;
                         row["LOAIKH"] = customer.LOAIKH;
@@ -183,95 +209,93 @@ namespace GUI
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            DateTime ngayDat = datetime1.Value;
-            DateTime ngayTra = datetime2.Value;
-            int soNgayO = (ngayTra - ngayDat).Days;
+                DateTime ngayDat = datetime1.Value;
+                DateTime ngayTra = datetime2.Value;
+                int soNgayO = (ngayTra - ngayDat).Days;
 
-            txt_TSNO.Text = soNgayO.ToString();
+                txt_TSNO.Text = soNgayO.ToString();
 
-            ThongTinDP booking = new ThongTinDP
-            {
-                //IDKH = int.Parse(txtIDKH.Text),
-                IDPHONG = int.Parse(txtSP.Text),
-                NGAYDAT = ngayDat.ToString("yyyy-MM-dd"),
-                NGAYTRA = ngayTra.ToString("yyyy-MM-dd"),
-                SONGAYO = soNgayO
-            };
-
-            KhachHangDTO customer = new KhachHangDTO
-            {
-                CCCD = long.Parse(txtCCCD.Text),
-                HOTEN = txtTEN.Text,
-                NGAYSINH = datetime3.Value.ToString("yyyy-MM-dd"),
-                //GIOITINH = txtGender.Text,
-                DIENTHOAI = long.Parse(txtSDT.Text),
-                EMAIL = txtEMAIL.Text,
-                LOAIKH = txtLKH.Text,
-                GHICHU = txtGHICHU.Text
-            };
-
-            // Kiểm tra nếu IDPHONG đã tồn tại trong GridControl
-            var gridView = gcDanhSach.MainView as DevExpress.XtraGrid.Views.Grid.GridView;
-            bool roomExists = false;
-
-            for (int i = 0; i < gridView.RowCount; i++)
-            {
-                if (gridView.GetRowCellValue(i, "IDPHONG").ToString() == booking.IDPHONG.ToString())
+                ThongTinDP booking = new ThongTinDP
                 {
-                    roomExists = true;
-                    break;
+                    //IDKH = int.Parse(txtIDKH.Text),
+                    IDPHONG = int.Parse(txtSP.Text),
+                    NGAYDAT = ngayDat.ToString("yyyy-MM-dd"),
+                    NGAYTRA = ngayTra.ToString("yyyy-MM-dd"),
+                    SONGAYO = soNgayO
+                };
+
+                KhachHangDTO customer = new KhachHangDTO
+                {
+                    CCCD = long.Parse(txtCCCD.Text),
+                    HOTEN = txtTEN.Text,
+                    NGAYSINH = datetime3.Value.ToString("yyyy-MM-dd"),
+                    DIENTHOAI = long.Parse(txtSDT.Text),
+                    EMAIL = txtEMAIL.Text,
+                    LOAIKH = txtLKH.Text,
+                    GHICHU = txtGHICHU.Text
+                };
+
+                // Kiểm tra nếu IDPHONG đã tồn tại trong GridControl
+                var gridView = gcDanhSach.MainView as DevExpress.XtraGrid.Views.Grid.GridView;
+                bool roomExists = false;
+
+                for (int i = 0; i < gridView.RowCount; i++)
+                {
+                    if (gridView.GetRowCellValue(i, "IDPHONG").ToString() == booking.IDPHONG.ToString())
+                    {
+                        roomExists = true;
+                        break;
+                    }
                 }
-            }
 
-            if (roomExists)
-            {
-                MessageBox.Show("Phòng đã được thêm trước đó!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+                if (roomExists)
+                {
+                    MessageBox.Show("Phòng đã được thêm trước đó!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
-            // Thêm thông tin đặt phòng vào GridControl
-            var table = gcDanhSach.DataSource as DataTable;
-            if (table == null)
-            {
-                table = new DataTable();
-                table.Columns.Add("IDKH");
-                table.Columns.Add("IDPHONG");
-                table.Columns.Add("NGAYDAT");
-                table.Columns.Add("NGAYTRA");
-                table.Columns.Add("SONGAYO");
-                table.Columns.Add("CCCD");
-                table.Columns.Add("TENKH");
-                table.Columns.Add("NGAYSINH");
-                //table.Columns.Add("GIOITINH");
-                table.Columns.Add("DIENTHOAI");
-                table.Columns.Add("EMAIL");
-                table.Columns.Add("LOAIKH");
-                table.Columns.Add("GHICHU");
-                gcDanhSach.DataSource = table;
-            }
+                // Thêm thông tin đặt phòng vào GridControl
+                var table = gcDanhSach.DataSource as DataTable;
+                if (table == null)
+                {
+                    table = new DataTable();
+                    table.Columns.Add("IDKH");
+                    table.Columns.Add("IDPHONG");
+                    table.Columns.Add("NGAYDAT");
+                    table.Columns.Add("NGAYTRA");
+                    table.Columns.Add("SONGAYO");
+                    table.Columns.Add("CCCD");
+                    table.Columns.Add("TENKH");
+                    table.Columns.Add("NGAYSINH");
+                    table.Columns.Add("GIOITINH");
+                    table.Columns.Add("DIENTHOAI");
+                    table.Columns.Add("EMAIL");
+                    table.Columns.Add("LOAIKH");
+                    table.Columns.Add("GHICHU");
+                    gcDanhSach.DataSource = table;
+                }
 
-            var row = table.NewRow();
-            row["IDKH"] = booking.IDKH;
-            row["IDPHONG"] = booking.IDPHONG;
-            row["NGAYDAT"] = booking.NGAYDAT;
-            row["NGAYTRA"] = booking.NGAYTRA;
-            row["SONGAYO"] = booking.SONGAYO;
-            row["CCCD"] = customer.CCCD;
-            row["TENKH"] = customer.HOTEN;
-            row["NGAYSINH"] = customer.NGAYSINH;
-            //row["GIOITINH"] = customer.GIOITINH;
-            row["DIENTHOAI"] = customer.DIENTHOAI;
-            row["EMAIL"] = customer.EMAIL;
-            row["LOAIKH"] = customer.LOAIKH;
-            row["GHICHU"] = customer.GHICHU;
-            table.Rows.Add(row);
+                var row = table.NewRow();
+                row["IDKH"] = booking.IDKH;
+                row["IDPHONG"] = booking.IDPHONG;
+                row["NGAYDAT"] = booking.NGAYDAT;
+                row["NGAYTRA"] = booking.NGAYTRA;
+                row["SONGAYO"] = booking.SONGAYO;
+                row["CCCD"] = customer.CCCD;
+                row["TENKH"] = customer.HOTEN;
+                row["NGAYSINH"] = customer.NGAYSINH;
+                row["DIENTHOAI"] = customer.DIENTHOAI;
+                row["EMAIL"] = customer.EMAIL;
+                row["LOAIKH"] = customer.LOAIKH;
+                row["GHICHU"] = customer.GHICHU;
+                table.Rows.Add(row);
 
-            // Thêm thông tin đặt phòng và khách hàng vào cơ sở dữ liệu
-            phongbus.AddBooking(booking);
-            khachhangbus.AddCustomer(customer);
+                // Thêm thông tin đặt phòng và khách hàng vào cơ sở dữ liệu
+                phongbus.AddBooking(booking);
+                khachhangbus.AddCustomer(customer);
 
-            // Tải lại dữ liệu lên GridControl để đảm bảo dữ liệu mới thêm được hiển thị
-            LoadDataToGridControl("trống");
+                // Tải lại dữ liệu lên GridControl để đảm bảo dữ liệu mới thêm được hiển thị
+                LoadDataToGridControl("trống");
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
@@ -313,7 +337,6 @@ namespace GUI
                 gridView.SetRowCellValue(selectedRowHandle, "CCCD", customer.CCCD);
                 gridView.SetRowCellValue(selectedRowHandle, "TENKH", customer.HOTEN);
                 gridView.SetRowCellValue(selectedRowHandle, "NGAYSINH", customer.NGAYSINH);
-                //gridView.SetRowCellValue(selectedRowHandle, "GIOITINH", customer.GIOITINH);
                 gridView.SetRowCellValue(selectedRowHandle, "DIENTHOAI", customer.DIENTHOAI);
                 gridView.SetRowCellValue(selectedRowHandle, "EMAIL", customer.EMAIL);
                 gridView.SetRowCellValue(selectedRowHandle, "LOAIKH", customer.LOAIKH);
@@ -343,13 +366,50 @@ namespace GUI
                 int idPhong = int.Parse(gridView.GetRowCellValue(selectedRowHandle, "IDPHONG").ToString());
                 int idKhachHang = int.Parse(gridView.GetRowCellValue(selectedRowHandle, "IDKH").ToString());
 
-                phongbus.DeleteBooking(idPhong, idKhachHang);
-                khachhangbus.DeleteCustomer(idKhachHang);
+                // Kiểm tra trạng thái phòng từ cơ sở dữ liệu
+                var room = phongbus.GetAllRooms().FirstOrDefault(r => r.IDPHONG == idPhong);
 
-                gridView.DeleteRow(selectedRowHandle);
-                LoadDataToGridControl("trống");
+                if (room != null)
+                {
+                    if (room.TINHTRANG.ToLower() == "đã đặt")
+                    {
+                        // Xóa đặt phòng và khách hàng
+                        phongbus.DeleteBooking(idPhong, idKhachHang);
+                        khachhangbus.DeleteCustomer(idKhachHang);
+
+                        // Cập nhật trạng thái phòng thành "trống"
+                        phongbus.UpdateTinhTrangPhong(idPhong, "trống");
+
+                        // Xóa hàng từ GridView và tải lại dữ liệu
+                        gridView.DeleteRow(selectedRowHandle);
+                        LoadDataToGridControl("trống");
+
+                        MessageBox.Show("Phòng đã đặt đã được xóa và trạng thái phòng được cập nhật thành 'trống'.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Form1 formHeThong = (Form1)Application.OpenForms["Form1"];
+                        if (formHeThong != null)
+                        {
+                            Guna2Button btn = formHeThong.Controls.Find($"guna2Button{idPhong}", true).FirstOrDefault() as Guna2Button;
+                            if(btn!= null)
+                            {
+                                btn.FillColor = Color.SeaGreen;
+                                btn.HoverState.FillColor = Color.SeaGreen;
+                                btn.PressedColor = Color.SeaGreen;
+                                btn.ForeColor = Color.Black;
+                                btn.Text = idPhong.ToString();
+                            }
+                            formHeThong.LoadRooms();
+                        }
+                        this.Close();
+                    }
+                    else if (room.TINHTRANG.ToLower() == "nhận phòng")
+                    {
+                        MessageBox.Show("Không thể xóa phòng đang ở trạng thái 'nhận phòng'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    
+                }
             }
         }
+
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
@@ -401,6 +461,7 @@ namespace GUI
                     {
                         formHeThong.LoadRooms();
                     }
+                    this.Close();
                 }
                 else
                 {
@@ -423,6 +484,100 @@ namespace GUI
         {
             LoadDataToGridControl("nhận phòng");
         }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            var gridView = gcDanhSach.MainView as DevExpress.XtraGrid.Views.Grid.GridView;
+            int selectedRowHandle = gridView.FocusedRowHandle;
+
+            if (selectedRowHandle >= 0)
+            {
+                int idPhong = int.Parse(gridView.GetRowCellValue(selectedRowHandle, "IDPHONG").ToString());
+                int idKhachHang = int.Parse(gridView.GetRowCellValue(selectedRowHandle, "IDKH").ToString());
+
+                // Kiểm tra trạng thái phòng từ cơ sở dữ liệu
+                var room = phongbus.GetAllRooms().FirstOrDefault(r => r.IDPHONG == idPhong);
+
+                if (room != null)
+                {
+                    if (room.TINHTRANG.ToLower() == "đã đặt")
+                    {
+                        // Xóa đặt phòng và khách hàng
+                        phongbus.DeleteBooking(idPhong, idKhachHang);
+                        khachhangbus.DeleteCustomer(idKhachHang);
+
+                        // Cập nhật trạng thái phòng thành "trống"
+                        phongbus.UpdateTinhTrangPhong(idPhong, "trống");
+
+                        // Xóa hàng từ GridView và tải lại dữ liệu
+                        gridView.DeleteRow(selectedRowHandle);
+                        LoadDataToGridControl("trống");
+
+                        MessageBox.Show("Phòng đã đặt đã được xóa và trạng thái phòng được cập nhật thành 'trống'.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Form1 formHeThong = (Form1)Application.OpenForms["Form1"];
+                        if (formHeThong != null)
+                        {
+                            Guna2Button btn = formHeThong.Controls.Find($"guna2Button{idPhong}", true).FirstOrDefault() as Guna2Button;
+                            if (btn != null)
+                            {
+                                btn.FillColor = Color.SeaGreen;
+                                btn.HoverState.FillColor = Color.SeaGreen;
+                                btn.PressedColor = Color.SeaGreen;
+                                btn.ForeColor = Color.Black;
+                                btn.Text = idPhong.ToString();
+                            }
+                            formHeThong.LoadRooms();
+                        }
+                        this.Close();
+                    }
+                    else if (room.TINHTRANG.ToLower() == "nhận phòng")
+                    {
+                        MessageBox.Show("Không thể xóa phòng đang ở trạng thái 'nhận phòng'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                }
+            }
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            // Lưu thông tin hiện tại vào biến tạm
+            DateTime ngayDat = datetime1.Value;
+            DateTime ngayTra = datetime2.Value;
+            int soNgayO = (ngayTra - ngayDat).Days;
+
+            ThongTinDP booking = new ThongTinDP
+            {
+                IDPHONG = int.Parse(txtSP.Text),
+                NGAYDAT = ngayDat.ToString("yyyy-MM-dd"),
+                NGAYTRA = ngayTra.ToString("yyyy-MM-dd"),
+                SONGAYO = soNgayO
+            };
+
+            KhachHangDTO customer = new KhachHangDTO
+            {
+                CCCD = long.Parse(txtCCCD.Text),
+                HOTEN = txtTEN.Text,
+                NGAYSINH = datetime3.Value.ToString("yyyy-MM-dd"),
+                DIENTHOAI = long.Parse(txtSDT.Text),
+                EMAIL = txtEMAIL.Text,
+                LOAIKH = txtLKH.Text,
+                GHICHU = txtGHICHU.Text
+            };
+
+            // Truyền thông tin sang Form1
+            Form1 formHeThong = (Form1)Application.OpenForms["Form1"];
+            if (formHeThong != null)
+            {
+                formHeThong.SetExchangeMode(booking, customer);
+                this.Close();
+            }
+        }
+
+        private void gcDanhSach_Click(object sender, EventArgs e)
+        {
+            GridView_FocusedRowChanged(sender, new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs(gridView1.FocusedRowHandle, gridView1.FocusedRowHandle));
+        }
     }
-}
+    }
 

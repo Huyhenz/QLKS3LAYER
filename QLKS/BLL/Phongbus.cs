@@ -61,6 +61,12 @@ namespace BLL
             phongDAL.UpdateTinhTrangPhongsaukhidat(tinhtrang);
         }
 
+        public void UpdateRoomBooking(int oldRoomId, int newRoomId)
+        {
+            phongDAL.UpdateRoomBooking(oldRoomId, newRoomId);
+        }
+
+
         public List<Phong> GetRooms()
         {
             return phongDAL.GetRooms();

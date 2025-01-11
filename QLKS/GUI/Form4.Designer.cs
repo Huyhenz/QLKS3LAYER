@@ -45,6 +45,7 @@
             this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
             this.phòngTrốngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.phòngĐãĐặtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.phòngĐãNhậnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.txtLKH = new Guna.UI2.WinForms.Guna2TextBox();
             this.datetime3 = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -84,7 +85,6 @@
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.phòngĐãNhậnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.guna2GroupBox3.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
@@ -225,16 +225,23 @@
             // phòngTrốngToolStripMenuItem
             // 
             this.phòngTrốngToolStripMenuItem.Name = "phòngTrốngToolStripMenuItem";
-            this.phòngTrốngToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.phòngTrốngToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
             this.phòngTrốngToolStripMenuItem.Text = "Phòng trống";
             this.phòngTrốngToolStripMenuItem.Click += new System.EventHandler(this.phòngTrốngToolStripMenuItem_Click);
             // 
             // phòngĐãĐặtToolStripMenuItem
             // 
             this.phòngĐãĐặtToolStripMenuItem.Name = "phòngĐãĐặtToolStripMenuItem";
-            this.phòngĐãĐặtToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.phòngĐãĐặtToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
             this.phòngĐãĐặtToolStripMenuItem.Text = "Phòng đã đặt";
             this.phòngĐãĐặtToolStripMenuItem.Click += new System.EventHandler(this.phòngĐãĐặtToolStripMenuItem_Click);
+            // 
+            // phòngĐãNhậnToolStripMenuItem
+            // 
+            this.phòngĐãNhậnToolStripMenuItem.Name = "phòngĐãNhậnToolStripMenuItem";
+            this.phòngĐãNhậnToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
+            this.phòngĐãNhậnToolStripMenuItem.Text = "Phòng đã nhận";
+            this.phòngĐãNhậnToolStripMenuItem.Click += new System.EventHandler(this.phòngĐãNhậnToolStripMenuItem_Click);
             // 
             // guna2GroupBox3
             // 
@@ -531,6 +538,7 @@
             this.guna2Button4.Size = new System.Drawing.Size(142, 51);
             this.guna2Button4.TabIndex = 34;
             this.guna2Button4.Text = "Đổi Phòng";
+            this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
             // 
             // guna2GroupBox1
             // 
@@ -857,6 +865,7 @@
             this.gcDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhSach,
             this.gridView1});
+            this.gcDanhSach.Click += new System.EventHandler(this.gcDanhSach_Click);
             // 
             // gvDanhSach
             // 
@@ -904,6 +913,7 @@
             this.guna2Button2.Size = new System.Drawing.Size(142, 51);
             this.guna2Button2.TabIndex = 36;
             this.guna2Button2.Text = "Hủy Phòng";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button3
             // 
@@ -921,13 +931,6 @@
             this.guna2Button3.TabIndex = 37;
             this.guna2Button3.Text = "Nhận Phòng";
             this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
-            // 
-            // phòngĐãNhậnToolStripMenuItem
-            // 
-            this.phòngĐãNhậnToolStripMenuItem.Name = "phòngĐãNhậnToolStripMenuItem";
-            this.phòngĐãNhậnToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.phòngĐãNhậnToolStripMenuItem.Text = "Phòng đã nhận";
-            this.phòngĐãNhậnToolStripMenuItem.Click += new System.EventHandler(this.phòngĐãNhậnToolStripMenuItem_Click);
             // 
             // Form4
             // 

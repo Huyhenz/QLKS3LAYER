@@ -330,6 +330,31 @@ namespace DAL
             return rooms;
         }
 
+        public void UpdateRoomBooking(int oldRoomId, int newRoomId)
+        {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Cập nhật trạng thái phòng hiện tại thành "trống"
+                    SqlCommand updateOldRoom = new SqlCommand("UPDATE tb_Phong SET TINHTRANG = 'trống' WHERE IDPHONG = @oldRoomId", connection);
+                    updateOldRoom.Parameters.AddWithValue("@oldRoomId", oldRoomId);
+                    updateOldRoom.ExecuteNonQuery();
+
+                    // Cập nhật trạng thái phòng mới thành "đã đặt"
+                    SqlCommand updateNewRoom = new SqlCommand("UPDATE tb_Phong SET TINHTRANG = 'đã đặt' WHERE IDPHONG = @newRoomId", connection);
+                    updateNewRoom.Parameters.AddWithValue("@newRoomId", newRoomId);
+                    updateNewRoom.ExecuteNonQuery();
+
+                    // Cập nhật thông tin đặt phòng sang phòng mới
+                    SqlCommand command = new SqlCommand("UPDATE tb_DatPhong SET IDPHONG = @newRoomId WHERE IDPHONG = @oldRoomId", connection);
+                    command.Parameters.AddWithValue("@newRoomId", newRoomId);
+                    command.Parameters.AddWithValue("@oldRoomId", oldRoomId);
+                    command.ExecuteNonQuery();
+                }
+        }
+
+
         public class BookingDAL
         {
             public void SaveBooking(ThongTinDP booking)
