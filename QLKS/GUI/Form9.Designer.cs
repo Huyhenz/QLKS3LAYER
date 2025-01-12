@@ -90,6 +90,8 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.txtLoc = new Guna.UI2.WinForms.Guna2TextBox();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).BeginInit();
@@ -812,7 +814,9 @@
             this.toolStripProgressBar2,
             this.toolStripButton4,
             this.toolStripSeparator4,
-            this.toolStripButton5});
+            this.toolStripButton5,
+            this.toolStripSeparator8,
+            this.toolStripButton11});
             this.toolStrip2.Location = new System.Drawing.Point(0, 47);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size(378, 1008);
@@ -849,6 +853,7 @@
             this.toolStripButton8.Name = "toolStripButton8";
             this.toolStripButton8.Size = new System.Drawing.Size(375, 39);
             this.toolStripButton8.Text = "ĐĂNG XUẤT";
+            this.toolStripButton8.Click += new System.EventHandler(this.toolStripButton8_Click);
             // 
             // toolStripProgressBar2
             // 
@@ -900,6 +905,22 @@
             this.txtLoc.SelectedText = "";
             this.txtLoc.Size = new System.Drawing.Size(274, 36);
             this.txtLoc.TabIndex = 56;
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(375, 6);
+            // 
+            // toolStripButton11
+            // 
+            this.toolStripButton11.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.toolStripButton11.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton11.Image")));
+            this.toolStripButton11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolStripButton11.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton11.Name = "toolStripButton11";
+            this.toolStripButton11.Size = new System.Drawing.Size(375, 39);
+            this.toolStripButton11.Text = "Thêm Nhân Viên";
+            this.toolStripButton11.Click += new System.EventHandler(this.toolStripButton11_Click);
             // 
             // Form9
             // 
@@ -993,5 +1014,7 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2TextBox txtLoc;
         private System.Windows.Forms.ToolStripButton toolStripButton12;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        private System.Windows.Forms.ToolStripButton toolStripButton11;
     }
 }
