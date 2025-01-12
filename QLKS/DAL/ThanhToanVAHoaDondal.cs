@@ -24,12 +24,11 @@ namespace DAL
             LEFT JOIN tb_DatPhong dp ON p.IDPHONG = dp.IDPHONG
             LEFT JOIN tb_KhachHang kh ON dp.IDKH = kh.IDKH
             LEFT JOIN tb_CTDV ct on p.IDPHONG = ct.IDPHONG
-            LEFT JOIN tb_Dichvu dv ON ct.IDDV = dv.IDDV 
-            ";
+            LEFT JOIN tb_Dichvu dv ON ct.IDDV = dv.IDDV";
             
                 if (maPhong.HasValue)
                 {
-                    truyVan += " and p.IDPHONG = @maPhong";
+                    truyVan += " WHERE p.IDPHONG = @maPhong";
                 }
 
                 using (SqlCommand cmd = new SqlCommand(truyVan, conn))

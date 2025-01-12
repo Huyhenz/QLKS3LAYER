@@ -29,14 +29,14 @@ namespace GUI
         {
             LoadData();
             List<Phong> roomDetails = bus.GetRoomDetails();
-            dataGridView1.DataSource = roomDetails;
+            dataGridView2.DataSource = roomDetails;
         }
         private void LoadData()
         {
             try
             {
                 List<Phong> roomDetails = bus.GetRoomDetails();
-                dataGridView2.DataSource = roomDetails;
+                dataGridView1.DataSource = roomDetails;
             }
             catch (Exception ex)
             {
@@ -58,7 +58,7 @@ namespace GUI
             if (int.TryParse(txtFullname.Text, out roomId))
             {
                 List<Phong> roomDetails = bus.GetRoomDetails(roomId);
-                dataGridView1.DataSource = roomDetails;
+                dataGridView2.DataSource = roomDetails;
             }
             else
             {

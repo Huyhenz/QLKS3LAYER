@@ -18,7 +18,8 @@ namespace DTO
             public int TONGSONGAYO { get; set; }
             public int TONGSODVDASUDUNG { get; set; }
             public int TONGSOTIENDV { get; set; }
-
+            
+            
         public ThanhToanDTO() { }
 
         public ThanhToanDTO(int IDPHONG, int IDKH, string HOTEN, string TENLOAIPHONG, int DONGIA, DateTime NGAYDEN, DateTime NGAYDI, int TONGSONGAYO, int TONGSODVDASUDUNG, int TONGSOTIENDV)
