@@ -856,12 +856,12 @@
             // 
             // gcDanhSach
             // 
-            this.gcDanhSach.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
-            this.gcDanhSach.Location = new System.Drawing.Point(7, 53);
+            this.gcDanhSach.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.gcDanhSach.Location = new System.Drawing.Point(9, 66);
             this.gcDanhSach.MainView = this.gvDanhSach;
-            this.gcDanhSach.Margin = new System.Windows.Forms.Padding(6);
+            this.gcDanhSach.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.gcDanhSach.Name = "gcDanhSach";
-            this.gcDanhSach.Size = new System.Drawing.Size(1917, 543);
+            this.gcDanhSach.Size = new System.Drawing.Size(2396, 528);
             this.gcDanhSach.TabIndex = 2;
             this.gcDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhSach,
@@ -870,17 +870,17 @@
             // 
             // gvDanhSach
             // 
-            this.gvDanhSach.DetailHeight = 682;
+            this.gvDanhSach.DetailHeight = 852;
             this.gvDanhSach.GridControl = this.gcDanhSach;
             this.gvDanhSach.Name = "gvDanhSach";
-            this.gvDanhSach.OptionsEditForm.PopupEditFormWidth = 1562;
+            this.gvDanhSach.OptionsEditForm.PopupEditFormWidth = 1952;
             // 
             // gridView1
             // 
-            this.gridView1.DetailHeight = 682;
+            this.gridView1.DetailHeight = 852;
             this.gridView1.GridControl = this.gcDanhSach;
             this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsEditForm.PopupEditFormWidth = 1562;
+            this.gridView1.OptionsEditForm.PopupEditFormWidth = 1952;
             // 
             // guna2Button1
             // 

@@ -1,20 +1,14 @@
 ﻿using DTO;
-using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace DAL
 {
     public class ThanhToanVAHoaDondal
     {
-        private string connectionString = "Data Source=HUYCATMOI;Initial Catalog=QLKS;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
+        private string connectionString = "Data Source=MSI;Initial Catalog=QLKS;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
 
-        public List<Phong> GetRoomDetails()
+        public List<Phong> GetRoomDetails(int? roomId = null)
         {
             List<Phong> roomDetails = new List<Phong>();
 
@@ -22,32 +16,76 @@ namespace DAL
             {
                 conn.Open();
                 string query = @"
-                    SELECT 
-                        *
-                    FROM  tb_Phong p
-                    ";
+            SELECT 
+                p.IDPHONG, p.TENPHONG, p.IDTANG, p.IDLOAIPHONG, p.TINHTRANG,
+                kh.IDKH, kh.HOTEN, kh.CCCD, kh.DIENTHOAI, kh.EMAIL, kh.DIACHI, kh.NGAYSINH, kh.LOAIKH, kh.GHICHU,
+                dv.IDDV, dv.TENDV, dv.GIADV, dv.SOLUONG, dv.TONGTIEN, dv.IDPHONG
+            FROM tb_Phong p
+            LEFT JOIN tb_KhachHang kh ON p.IDPHONG = kh.IDPHONG
+            LEFT JOIN tb_Dichvu dv ON p.IDPHONG = dv.IDPHONG
+        ";
+
+                if (roomId.HasValue)
+                {
+                    query += " WHERE p.IDPHONG = @roomId";
+                }
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
+                    if (roomId.HasValue)
+                    {
+                        cmd.Parameters.AddWithValue("@roomId", roomId.Value);
+                    }
+
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            Phong detail = new Phong
+                            // Khởi tạo đối tượng Phong
+                            Phong phong = new Phong
                             {
                                 IDPHONG = reader.GetInt32(reader.GetOrdinal("IDPHONG")),
-                                TINHTRANG = reader.GetString(reader.GetOrdinal("TINHTRANG")),
-                                //IDKH = reader.GetInt32(reader.GetOrdinal("IDKH")),
-                                //HOTEN = reader.GetString(reader.GetOrdinal("HOTEN")),
-                                //TENLOAIPHONG = reader.GetString(reader.GetOrdinal("TENLOAIPHONG")),
-                                //DONGIA = reader.GetInt32(reader.GetOrdinal("DONGIA")),
-                                //NGAYDEN = reader.GetDateTime(reader.GetOrdinal("NGAYDEN")),
-                                //NGAYDI = reader.GetDateTime(reader.GetOrdinal("NGAYDI")),
-                                //TONGSONGAYO = reader.GetInt32(reader.GetOrdinal("TONGSONGAYO")),
-                                //TONGSODVDASUDUNG = reader.GetInt32(reader.GetOrdinal("TONGSODVDASUDUNG")),
-                                //TONGSOTIENDV = reader.GetInt32(reader.GetOrdinal("TONGSOTIENDV"))
+                                TENPHONG = reader.GetString(reader.GetOrdinal("TENPHONG")),
+                                IDTANG = reader.GetInt32(reader.GetOrdinal("IDTANG")),
+                                IDLOAIPHONG = reader.GetInt32(reader.GetOrdinal("IDLOAIPHONG")),
+                                TINHTRANG = reader.GetString(reader.GetOrdinal("TINHTRANG"))
                             };
-                            roomDetails.Add(detail);
+
+                            // Khởi tạo đối tượng KhachHangDTO (nếu dữ liệu tồn tại)
+                            KhachHangDTO khachHang = null;
+                            if (!reader.IsDBNull(reader.GetOrdinal("IDKH")))
+                            {
+                                khachHang = new KhachHangDTO
+                                {
+                                    IDKH = reader.GetInt32(reader.GetOrdinal("IDKH")),
+                                    HOTEN = reader.GetString(reader.GetOrdinal("HOTEN")),
+                                    CCCD = reader.GetInt64(reader.GetOrdinal("CCCD")),
+                                    DIENTHOAI = reader.GetInt64(reader.GetOrdinal("DIENTHOAI")),
+                                    EMAIL = reader.GetString(reader.GetOrdinal("EMAIL")),
+                                    DIACHI = reader.GetString(reader.GetOrdinal("DIACHI")),
+                                    NGAYSINH = reader.GetDateTime(reader.GetOrdinal("NGAYSINH")).ToString("yyyy-MM-dd"),
+                                    LOAIKH = reader.GetString(reader.GetOrdinal("LOAIKH")),
+                                    GHICHU = reader.GetString(reader.GetOrdinal("GHICHU"))
+                                };
+                            }
+
+                            // Khởi tạo đối tượng DichvuDTO (nếu dữ liệu tồn tại)
+                            DichvuDTO dichVu = null;
+                            if (!reader.IsDBNull(reader.GetOrdinal("IDDV")))
+                            {
+                                dichVu = new DichvuDTO
+                                {
+                                    IDDV = reader.GetInt32(reader.GetOrdinal("IDDV")),
+                                    TENDV = reader.GetString(reader.GetOrdinal("TENDV")),
+                                    GIADV = reader.GetInt32(reader.GetOrdinal("GIADV")),
+                                    SOLUONG = reader.GetInt32(reader.GetOrdinal("SOLUONG")),
+                                    TONGTIEN = reader.GetInt32(reader.GetOrdinal("TONGTIEN")),
+                                    IDPHONG = reader.GetInt32(reader.GetOrdinal("IDPHONG"))
+                                };
+                            }
+
+                            // Thêm dữ liệu vào danh sách (tuỳ ý kết hợp KhachHangDTO và DichvuDTO vào Phong)
+                            roomDetails.Add(phong);
                         }
                     }
                 }
@@ -55,5 +93,6 @@ namespace DAL
 
             return roomDetails;
         }
+
     }
 }
