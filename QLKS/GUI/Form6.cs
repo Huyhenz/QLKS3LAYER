@@ -100,5 +100,10 @@ namespace GUI
             comboQH.Items.Add("User");
             comboQH.Items.Add("Manager");
         }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

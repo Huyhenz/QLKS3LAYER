@@ -13,7 +13,7 @@ namespace GUI
 {
     public partial class Form9 : Form
     {
-        private string connectionString = "Data Source=HUYCATMOI;Initial Catalog=QLKS;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        private string connectionString = "Data Source=MSI;Initial Catalog=QLKS;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
 
         private taikhoanbus taikhoanbus = new taikhoanbus();
         public static TaiKhoanDTO loggedInUser = null;
@@ -382,6 +382,20 @@ namespace GUI
         private void txtAccount_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void toolStripButton11_Click(object sender, EventArgs e)
+        {
+            Form6 f = new Form6();
+            f.Show();
+            Hide();
+        }
+
+        private void toolStripButton8_Click(object sender, EventArgs e)
+        {
+            DangNhap f = new DangNhap();
+            f.Show();
+            Hide();
         }
     }
 }

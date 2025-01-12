@@ -21,5 +21,12 @@ namespace GUI
         {
 
         }
+
+        private void toolStripButton8_Click(object sender, EventArgs e)
+        {
+            DangNhap f = new DangNhap();
+            f.Show();
+            Hide();
+        }
     }
 }

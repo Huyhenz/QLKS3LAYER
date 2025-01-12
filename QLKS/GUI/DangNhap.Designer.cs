@@ -35,7 +35,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txt_User = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_Pass = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnSingup = new Guna.UI2.WinForms.Guna2Button();
             this.btnExit = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnLogin = new Guna.UI2.WinForms.Guna2Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -127,23 +126,6 @@
             this.txt_Pass.Size = new System.Drawing.Size(415, 67);
             this.txt_Pass.TabIndex = 12;
             // 
-            // btnSingup
-            // 
-            this.btnSingup.BorderRadius = 18;
-            this.btnSingup.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSingup.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSingup.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSingup.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSingup.FillColor = System.Drawing.Color.Teal;
-            this.btnSingup.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSingup.ForeColor = System.Drawing.Color.White;
-            this.btnSingup.Location = new System.Drawing.Point(289, 331);
-            this.btnSingup.Name = "btnSingup";
-            this.btnSingup.Size = new System.Drawing.Size(142, 53);
-            this.btnSingup.TabIndex = 13;
-            this.btnSingup.Text = "Sign Up";
-            this.btnSingup.Click += new System.EventHandler(this.btnSingup_Click);
-            // 
             // btnExit
             // 
             this.btnExit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -172,7 +154,7 @@
             this.btnLogin.FillColor = System.Drawing.Color.Teal;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(88, 331);
+            this.btnLogin.Location = new System.Drawing.Point(176, 328);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(147, 53);
             this.btnLogin.TabIndex = 16;
@@ -204,7 +186,6 @@
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.btnSingup);
             this.Controls.Add(this.txt_Pass);
             this.Controls.Add(this.txt_User);
             this.Controls.Add(this.label3);
@@ -227,7 +208,6 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2TextBox txt_User;
         private Guna.UI2.WinForms.Guna2TextBox txt_Pass;
-        private Guna.UI2.WinForms.Guna2Button btnSingup;
         private Guna.UI2.WinForms.Guna2CircleButton btnExit;
         private Guna.UI2.WinForms.Guna2Button btnLogin;
         private System.Windows.Forms.ImageList imageList1;

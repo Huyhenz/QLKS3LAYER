@@ -99,6 +99,7 @@
             this.guna2Button319 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button314 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button309 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button304 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button318 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button313 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button308 = new Guna.UI2.WinForms.Guna2Button();
@@ -118,7 +119,6 @@
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.realTimeSource1 = new DevExpress.Data.RealTimeSource();
-            this.guna2Button304 = new Guna.UI2.WinForms.Guna2Button();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.guna2TabControl1.SuspendLayout();
@@ -189,7 +189,7 @@
             // toolStripProgressBar1
             // 
             this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(378, 15);
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(376, 15);
             // 
             // toolStripButton4
             // 
@@ -198,13 +198,13 @@
             this.toolStripButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(380, 39);
+            this.toolStripButton4.Size = new System.Drawing.Size(378, 39);
             this.toolStripButton4.Text = "SƠ ĐỒ KHÁCH SẠN";
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(380, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(378, 6);
             // 
             // toolStripButton5
             // 
@@ -213,7 +213,7 @@
             this.toolStripButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(380, 39);
+            this.toolStripButton5.Size = new System.Drawing.Size(378, 39);
             this.toolStripButton5.Text = "ĐẶT PHÒNG";
             this.toolStripButton5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
@@ -221,7 +221,7 @@
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(380, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(378, 6);
             // 
             // toolStripButton6
             // 
@@ -230,7 +230,7 @@
             this.toolStripButton6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(380, 39);
+            this.toolStripButton6.Size = new System.Drawing.Size(378, 39);
             this.toolStripButton6.Text = "DỊCH VỤ";
             this.toolStripButton6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
@@ -238,12 +238,12 @@
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(380, 6);
+            this.toolStripSeparator7.Size = new System.Drawing.Size(378, 6);
             // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(380, 6);
+            this.toolStripSeparator9.Size = new System.Drawing.Size(378, 6);
             // 
             // toolStrip2
             // 
@@ -264,7 +264,7 @@
             this.toolStripProgressBar2});
             this.toolStrip2.Location = new System.Drawing.Point(0, 47);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(383, 1008);
+            this.toolStrip2.Size = new System.Drawing.Size(381, 1008);
             this.toolStrip2.TabIndex = 3;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -277,7 +277,7 @@
             this.toolStripSplitButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripSplitButton1.Name = "toolStripSplitButton1";
-            this.toolStripSplitButton1.Size = new System.Drawing.Size(380, 39);
+            this.toolStripSplitButton1.Size = new System.Drawing.Size(378, 39);
             this.toolStripSplitButton1.Text = "THANH TOÁN";
             this.toolStripSplitButton1.ButtonClick += new System.EventHandler(this.toolStripSplitButton1_ButtonClick);
             // 
@@ -297,14 +297,15 @@
             this.toolStripButton8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton8.Name = "toolStripButton8";
-            this.toolStripButton8.Size = new System.Drawing.Size(380, 39);
+            this.toolStripButton8.Size = new System.Drawing.Size(378, 39);
             this.toolStripButton8.Text = "ĐĂNG XUẤT";
+            this.toolStripButton8.Click += new System.EventHandler(this.toolStripButton8_Click);
             // 
             // toolStripProgressBar2
             // 
             this.toolStripProgressBar2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripProgressBar2.Name = "toolStripProgressBar2";
-            this.toolStripProgressBar2.Size = new System.Drawing.Size(378, 15);
+            this.toolStripProgressBar2.Size = new System.Drawing.Size(376, 15);
             // 
             // guna2TabControl1
             // 
@@ -1179,6 +1180,22 @@
             this.guna2Button309.Text = "309";
             this.guna2Button309.Click += new System.EventHandler(this.guna2Button45_Click);
             // 
+            // guna2Button304
+            // 
+            this.guna2Button304.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button304.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button304.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button304.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button304.FillColor = System.Drawing.Color.DarkSeaGreen;
+            this.guna2Button304.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button304.ForeColor = System.Drawing.Color.White;
+            this.guna2Button304.Location = new System.Drawing.Point(834, 6);
+            this.guna2Button304.Name = "guna2Button304";
+            this.guna2Button304.Size = new System.Drawing.Size(170, 160);
+            this.guna2Button304.TabIndex = 46;
+            this.guna2Button304.Text = "304";
+            this.guna2Button304.Click += new System.EventHandler(this.guna2Button45_Click);
+            // 
             // guna2Button318
             // 
             this.guna2Button318.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -1428,22 +1445,6 @@
             // realTimeSource1
             // 
             this.realTimeSource1.DisplayableProperties = null;
-            // 
-            // guna2Button304
-            // 
-            this.guna2Button304.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button304.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button304.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button304.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button304.FillColor = System.Drawing.Color.DarkSeaGreen;
-            this.guna2Button304.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button304.ForeColor = System.Drawing.Color.White;
-            this.guna2Button304.Location = new System.Drawing.Point(834, 6);
-            this.guna2Button304.Name = "guna2Button304";
-            this.guna2Button304.Size = new System.Drawing.Size(170, 160);
-            this.guna2Button304.TabIndex = 46;
-            this.guna2Button304.Text = "304";
-            this.guna2Button304.Click += new System.EventHandler(this.guna2Button45_Click);
             // 
             // Form1
             // 
