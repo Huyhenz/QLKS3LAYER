@@ -6,93 +6,92 @@ namespace DAL
 {
     public class ThanhToanVAHoaDondal
     {
-        private string connectionString = "Data Source=MSI;Initial Catalog=QLKS;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
+        private string connectionString = "Data Source=HUYCATMOI;Initial Catalog=QLKS;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
 
-        public List<Phong> GetRoomDetails(int? roomId = null)
+        public List<Phong> GetRoomDetails(int? maPhong = null)
         {
-            List<Phong> roomDetails = new List<Phong>();
+            List<Phong> chiTietPhong = new List<Phong>();
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                string query = @"
+                string truyVan = @"
             SELECT 
                 p.IDPHONG, p.TENPHONG, p.IDTANG, p.IDLOAIPHONG, p.TINHTRANG,
                 kh.IDKH, kh.HOTEN, kh.CCCD, kh.DIENTHOAI, kh.EMAIL, kh.DIACHI, kh.NGAYSINH, kh.LOAIKH, kh.GHICHU,
-                dv.IDDV, dv.TENDV, dv.GIADV, dv.SOLUONG, dv.TONGTIEN, dv.IDPHONG
+                dv.IDDV, dv.TENDV, dv.GIADV
             FROM tb_Phong p
-            LEFT JOIN tb_KhachHang kh ON p.IDPHONG = kh.IDPHONG
-            LEFT JOIN tb_Dichvu dv ON p.IDPHONG = dv.IDPHONG
-        ";
-
-                if (roomId.HasValue)
+            LEFT JOIN tb_DatPhong dp ON p.IDPHONG = dp.IDPHONG
+            LEFT JOIN tb_KhachHang kh ON dp.IDKH = kh.IDKH
+            LEFT JOIN tb_CTDV ct on p.IDPHONG = ct.IDPHONG
+            LEFT JOIN tb_Dichvu dv ON ct.IDDV = dv.IDDV 
+            ";
+            
+                if (maPhong.HasValue)
                 {
-                    query += " WHERE p.IDPHONG = @roomId";
+                    truyVan += " and p.IDPHONG = @maPhong";
                 }
 
-                using (SqlCommand cmd = new SqlCommand(query, conn))
+                using (SqlCommand cmd = new SqlCommand(truyVan, conn))
                 {
-                    if (roomId.HasValue)
+                    if (maPhong.HasValue)
                     {
-                        cmd.Parameters.AddWithValue("@roomId", roomId.Value);
+                        cmd.Parameters.AddWithValue("@maPhong", maPhong.Value);
                     }
 
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    using (SqlDataReader docGia = cmd.ExecuteReader())
                     {
-                        while (reader.Read())
+                        while (docGia.Read())
                         {
-                            // Khởi tạo đối tượng Phong
                             Phong phong = new Phong
                             {
-                                IDPHONG = reader.GetInt32(reader.GetOrdinal("IDPHONG")),
-                                TENPHONG = reader.GetString(reader.GetOrdinal("TENPHONG")),
-                                IDTANG = reader.GetInt32(reader.GetOrdinal("IDTANG")),
-                                IDLOAIPHONG = reader.GetInt32(reader.GetOrdinal("IDLOAIPHONG")),
-                                TINHTRANG = reader.GetString(reader.GetOrdinal("TINHTRANG"))
+                                IDPHONG = docGia.GetInt32(docGia.GetOrdinal("IDPHONG")),
+                                TENPHONG = docGia.GetString(docGia.GetOrdinal("TENPHONG")),
+                                IDTANG = docGia.GetInt32(docGia.GetOrdinal("IDTANG")),
+                                IDLOAIPHONG = docGia.GetInt32(docGia.GetOrdinal("IDLOAIPHONG")),
+                                TINHTRANG = docGia.GetString(docGia.GetOrdinal("TINHTRANG"))
                             };
 
-                            // Khởi tạo đối tượng KhachHangDTO (nếu dữ liệu tồn tại)
                             KhachHangDTO khachHang = null;
-                            if (!reader.IsDBNull(reader.GetOrdinal("IDKH")))
+                            if (!docGia.IsDBNull(docGia.GetOrdinal("IDKH")))
                             {
                                 khachHang = new KhachHangDTO
                                 {
-                                    IDKH = reader.GetInt32(reader.GetOrdinal("IDKH")),
-                                    HOTEN = reader.GetString(reader.GetOrdinal("HOTEN")),
-                                    CCCD = reader.GetInt64(reader.GetOrdinal("CCCD")),
-                                    DIENTHOAI = reader.GetInt64(reader.GetOrdinal("DIENTHOAI")),
-                                    EMAIL = reader.GetString(reader.GetOrdinal("EMAIL")),
-                                    DIACHI = reader.GetString(reader.GetOrdinal("DIACHI")),
-                                    NGAYSINH = reader.GetDateTime(reader.GetOrdinal("NGAYSINH")).ToString("yyyy-MM-dd"),
-                                    LOAIKH = reader.GetString(reader.GetOrdinal("LOAIKH")),
-                                    GHICHU = reader.GetString(reader.GetOrdinal("GHICHU"))
+                                    IDKH = docGia.GetInt32(docGia.GetOrdinal("IDKH")),
+                                    HOTEN = docGia.GetString(docGia.GetOrdinal("HOTEN")),
+                                    CCCD = docGia.GetInt64(docGia.GetOrdinal("CCCD")),
+                                    DIENTHOAI = docGia.GetInt64(docGia.GetOrdinal("DIENTHOAI")),
+                                    EMAIL = docGia.GetString(docGia.GetOrdinal("EMAIL")),
+                                    //DIACHI = docGia.GetString(docGia.GetOrdinal("DIACHI")),
+                                    NGAYSINH = docGia.GetDateTime(docGia.GetOrdinal("NGAYSINH")).ToString("yyyy-MM-dd"),
+                                    LOAIKH = docGia.GetString(docGia.GetOrdinal("LOAIKH")),
+                                    GHICHU = docGia.GetString(docGia.GetOrdinal("GHICHU"))
                                 };
                             }
 
-                            // Khởi tạo đối tượng DichvuDTO (nếu dữ liệu tồn tại)
                             DichvuDTO dichVu = null;
-                            if (!reader.IsDBNull(reader.GetOrdinal("IDDV")))
+                            if (!docGia.IsDBNull(docGia.GetOrdinal("IDDV")))
                             {
                                 dichVu = new DichvuDTO
                                 {
-                                    IDDV = reader.GetInt32(reader.GetOrdinal("IDDV")),
-                                    TENDV = reader.GetString(reader.GetOrdinal("TENDV")),
-                                    GIADV = reader.GetInt32(reader.GetOrdinal("GIADV")),
-                                    SOLUONG = reader.GetInt32(reader.GetOrdinal("SOLUONG")),
-                                    TONGTIEN = reader.GetInt32(reader.GetOrdinal("TONGTIEN")),
-                                    IDPHONG = reader.GetInt32(reader.GetOrdinal("IDPHONG"))
+                                    IDDV = docGia.GetInt32(docGia.GetOrdinal("IDDV")),
+                                    TENDV = docGia.GetString(docGia.GetOrdinal("TENDV")),
+                                    GIADV = docGia.GetInt32(docGia.GetOrdinal("GIADV")),
+                                    SOLUONG = docGia.IsDBNull(docGia.GetOrdinal("SOLUONG")) ? 0 : docGia.GetInt32(docGia.GetOrdinal("SOLUONG")),
+                                    TONGTIEN = docGia.IsDBNull(docGia.GetOrdinal("TONGTIEN")) ? 0 : docGia.GetInt32(docGia.GetOrdinal("TONGTIEN")),
+                                    IDPHONG = docGia.IsDBNull(docGia.GetOrdinal("IDPHONG")) ? 0 : docGia.GetInt32(docGia.GetOrdinal("IDPHONG"))
                                 };
                             }
 
-                            // Thêm dữ liệu vào danh sách (tuỳ ý kết hợp KhachHangDTO và DichvuDTO vào Phong)
-                            roomDetails.Add(phong);
+                            chiTietPhong.Add(phong);
                         }
                     }
                 }
             }
 
-            return roomDetails;
+            return chiTietPhong;
         }
+
 
     }
 }

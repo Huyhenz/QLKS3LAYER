@@ -57,7 +57,7 @@ namespace GUI
             int roomId;
             if (int.TryParse(txtFullname.Text, out roomId))
             {
-                List<Phong> roomDetails = bus.SearchRoomDetails(roomId);
+                List<Phong> roomDetails = bus.GetRoomDetails(roomId);
                 dataGridView1.DataSource = roomDetails;
             }
             else
