@@ -33,7 +33,21 @@ namespace GUI
             LoadRooms();
         }
 
-        public void SetExchangeMode(ThongTinDP booking, KhachHangDTO customer)
+        public void UpdateButtonColor(int roomId)
+        {
+            // Giả sử bạn có danh sách các nút được tạo động
+            foreach (Control control in this.Controls)
+            {
+                if (control is Guna2Button button && button.Tag != null && int.TryParse(button.Tag.ToString(), out int id))
+                {
+                    if (id == roomId)
+                    {
+                        button.BackColor = Color.SeaGreen;
+                    }
+                }
+            }
+        }
+            public void SetExchangeMode(ThongTinDP booking, KhachHangDTO customer)
         {
             isExchangeMode = true;
             tempBooking = booking;

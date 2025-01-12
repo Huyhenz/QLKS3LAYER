@@ -102,8 +102,11 @@ namespace GUI
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
-        {
-
+        {   
+            DangNhap f = new DangNhap();
+            f.Show();
+            this.Hide();
+            
         }
     }
 }

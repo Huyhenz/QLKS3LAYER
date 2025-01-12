@@ -5,7 +5,10 @@ using System.Windows.Forms;
 using BLL;
 using DTO;
 using System.Linq;
+using System.Data.SqlClient;
+
 namespace GUI
+
 {
     public partial class Form3 : Form
     {
@@ -144,5 +147,101 @@ namespace GUI
                 txtTongTIen.Text = row.Cells["TONGSOTIENDV"].Value.ToString();
             }
         }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            int roomId;
+            if (int.TryParse(txtFullname.Text, out roomId))
+            {
+                try
+                {
+                    // Thiết lập chuỗi kết nối và khởi tạo SqlConnection
+                    string connectionString = "Data Source=HUYCATMOI;Initial Catalog=QLKS;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
+                    using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+                    {
+                        // Mở kết nối
+                        sqlConnection.Open();
+
+                        // Xóa các bản ghi trong bảng tb_CTDV
+                        string queryCTDV = "DELETE FROM tb_CTDV WHERE IDPHONG = @IDPHONG";
+                        using (SqlCommand cmd = new SqlCommand(queryCTDV, sqlConnection))
+                        {
+                            cmd.Parameters.AddWithValue("@IDPHONG", roomId);
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        // Xóa các bản ghi trong bảng tb_DatPhong và lưu lại IDKH
+                        int idKhachHang;
+                        string queryDatPhong = "DELETE FROM tb_DatPhong OUTPUT DELETED.IDKH WHERE IDPHONG = @IDPHONG";
+                        using (SqlCommand cmd = new SqlCommand(queryDatPhong, sqlConnection))
+                        {
+                            cmd.Parameters.AddWithValue("@IDPHONG", roomId);
+                            idKhachHang = (int)cmd.ExecuteScalar();
+                        }
+
+                        // Cập nhật cột TINHTRANG trong bảng tb_Phong
+                        string queryUpdatePhong = "UPDATE tb_Phong SET TINHTRANG = N'Trống' WHERE IDPHONG = @IDPHONG";
+                        using (SqlCommand cmd = new SqlCommand(queryUpdatePhong, sqlConnection))
+                        {
+                            cmd.Parameters.AddWithValue("@IDPHONG", roomId);
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        // Xóa các bản ghi trong bảng tb_KhachHang nếu không còn phòng nào khác của khách hàng này
+                        string queryCheckKhachHang = "SELECT COUNT(*) FROM tb_DatPhong WHERE IDKH = @IDKH";
+                        using (SqlCommand cmd = new SqlCommand(queryCheckKhachHang, sqlConnection))
+                        {
+                            cmd.Parameters.AddWithValue("@IDKH", idKhachHang);
+                            int count = (int)cmd.ExecuteScalar();
+                            if (count == 0)
+                            {
+                                string queryKhachHang = "DELETE FROM tb_KhachHang WHERE IDKH = @IDKH";
+                                using (SqlCommand cmdDeleteKH = new SqlCommand(queryKhachHang, sqlConnection))
+                                {
+                                    cmdDeleteKH.Parameters.AddWithValue("@IDKH", idKhachHang);
+                                    cmdDeleteKH.ExecuteNonQuery();
+                                }
+                            }
+                        }
+
+                        // Đóng kết nối
+                        sqlConnection.Close();
+                    }
+                    Form1 form1 = (Form1)Application.OpenForms["Form1"];
+                    if (form1 != null)
+                    {
+                        form1 = new Form1();
+                        form1.Show();
+                    }
+                    else
+                    {
+                        form1.BringToFront();
+                        form1.UpdateButtonColor(roomId);
+                    }
+                    this.Close();
+
+                    MessageBox.Show("Thanh toán thành công và dữ liệu đã bị xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Cập nhật lại dữ liệu trong DataGridView
+                    LoadDanhSachDatPhong();
+                    LoadDichVuData();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi trong quá trình thanh toán: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn phòng hợp lệ để thanh toán.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
+    
+        

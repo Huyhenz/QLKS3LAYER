@@ -83,21 +83,55 @@ namespace GUI
         private void dataGridView2_SelectionChanged(object sender, EventArgs e)
         {
 
+            //if (dataGridView2.SelectedRows.Count > 0)
+            //{
+            //    this.selectedRoomID = (int)dataGridView2.SelectedRows[0].Cells["IDPHONG"].Value;
+
+            //    // Thêm một hàng mới vào dataGridView1 nếu chưa tồn tại
+            //    if (!IsRoomIdAlreadyInGrid(selectedRoomID))
+            //    {
+            //        AddNewRoomRowToGrid(selectedRoomID);
+            //    }
+
+            //    // Reset trạng thái tất cả checkbox
+            //    ResetAllCheckboxes();
+            //    UpdateDataGridView1();
+            //}
             if (dataGridView2.SelectedRows.Count > 0)
             {
-                this.selectedRoomID = (int)dataGridView2.SelectedRows[0].Cells["IDPHONG"].Value;
-
-                // Thêm một hàng mới vào dataGridView1 nếu chưa tồn tại
-                if (!IsRoomIdAlreadyInGrid(selectedRoomID))
-                {
-                    AddNewRoomRowToGrid(selectedRoomID);
-                }
-
-                // Reset trạng thái tất cả checkbox
+                // Lấy IDPHONG từ hàng được chọn trong dataGridView2
+                selectedRoomID = (int)dataGridView2.SelectedRows[0].Cells["IDPHONG"].Value;
                 ResetAllCheckboxes();
-                UpdateDataGridView1();
+
+                // Hiển thị thông tin trong dataGridView1
+                DisplayRoomInGrid1(selectedRoomID);
             }
         }
+
+        private void DisplayRoomInGrid1(int roomId)
+        {
+            // Tạo mới DataTable nếu dataGridView1 chưa có DataSource
+            DataTable table = dataGridView1.DataSource as DataTable;
+            if (table == null)
+            {
+                table = new DataTable();
+                table.Columns.Add("IDPHONG", typeof(int));
+                table.Columns.Add("TONGSODVDASUDUNG", typeof(int));
+                table.Columns.Add("TONGSOTIENDV", typeof(int));
+                dataGridView1.DataSource = table;
+            }
+
+            // Xóa tất cả các hàng hiện tại
+            table.Rows.Clear();
+
+            // Thêm hàng mới với dữ liệu của roomId
+            DataRow row = table.NewRow();
+            row["IDPHONG"] = roomId;
+            row["TONGSODVDASUDUNG"] = 0; // Giá trị mặc định hoặc có thể thay đổi theo logic của bạn
+            row["TONGSOTIENDV"] = 0; // Giá trị mặc định hoặc có thể thay đổi theo logic của bạn
+            table.Rows.Add(row);
+        }
+
 
         private bool IsRoomIdAlreadyInGrid(int roomId)
         {
@@ -160,40 +194,48 @@ namespace GUI
 
         private void UpdateDataGridView1()
         {
+            //DataTable table = dataGridView1.DataSource as DataTable;
+
+            //// Nếu dataGridView2 chưa có DataSource, tạo mới DataTable
+            //if (table == null)
+            //{
+            //    table = new DataTable();
+            //    table.Columns.Add("IDPHONG", typeof(int));
+            //    table.Columns.Add("TONGSODVDASUDUNG", typeof(int));
+            //    table.Columns.Add("TONGSOTIENDV", typeof(int));
+            //    dataGridView1.DataSource = table;
+            //}
+            //else
+            //{
+            //    // Kiểm tra và thêm cột nếu chưa tồn tại
+            //    if (!table.Columns.Contains("IDPHONG"))
+            //    {
+            //        table.Columns.Add("IDPHONG", typeof(int));
+            //    }
+            //    if (!table.Columns.Contains("TONGSODVDASUDUNG"))
+            //    {
+            //        table.Columns.Add("TONGSODVDASUDUNG", typeof(int));
+            //    }
+            //    if (!table.Columns.Contains("TONGSOTIENDV"))
+            //    {
+            //        table.Columns.Add("TONGSOTIENDV", typeof(int));
+            //    }
+            //}
+
+            //// Tìm hàng tương ứng với selectedRoomID
+            //DataRow row = table.Rows.Cast<DataRow>().FirstOrDefault(r => (int)r["IDPHONG"] == selectedRoomID);
+
+            //if (row != null)
+            //{
+            //    // Cập nhật hàng hiện có
+            //    row["TONGSODVDASUDUNG"] = GetSelectedServicesCount();
+            //    row["TONGSOTIENDV"] = GetTotalCostOfSelectedServices();
+            //}
             DataTable table = dataGridView1.DataSource as DataTable;
 
-            // Nếu dataGridView2 chưa có DataSource, tạo mới DataTable
-            if (table == null)
+            if (table != null && table.Rows.Count > 0)
             {
-                table = new DataTable();
-                table.Columns.Add("IDPHONG", typeof(int));
-                table.Columns.Add("TONGSODVDASUDUNG", typeof(int));
-                table.Columns.Add("TONGSOTIENDV", typeof(int));
-                dataGridView1.DataSource = table;
-            }
-            else
-            {
-                // Kiểm tra và thêm cột nếu chưa tồn tại
-                if (!table.Columns.Contains("IDPHONG"))
-                {
-                    table.Columns.Add("IDPHONG", typeof(int));
-                }
-                if (!table.Columns.Contains("TONGSODVDASUDUNG"))
-                {
-                    table.Columns.Add("TONGSODVDASUDUNG", typeof(int));
-                }
-                if (!table.Columns.Contains("TONGSOTIENDV"))
-                {
-                    table.Columns.Add("TONGSOTIENDV", typeof(int));
-                }
-            }
-
-            // Tìm hàng tương ứng với selectedRoomID
-            DataRow row = table.Rows.Cast<DataRow>().FirstOrDefault(r => (int)r["IDPHONG"] == selectedRoomID);
-
-            if (row != null)
-            {
-                // Cập nhật hàng hiện có
+                DataRow row = table.Rows[0]; // Luôn chỉ có 1 hàng
                 row["TONGSODVDASUDUNG"] = GetSelectedServicesCount();
                 row["TONGSOTIENDV"] = GetTotalCostOfSelectedServices();
             }
@@ -376,5 +418,9 @@ namespace GUI
             }
         }
 
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

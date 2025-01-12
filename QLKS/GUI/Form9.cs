@@ -388,7 +388,6 @@ namespace GUI
         {
             Form6 f = new Form6();
             f.Show();
-            Hide();
         }
 
         private void toolStripButton8_Click(object sender, EventArgs e)

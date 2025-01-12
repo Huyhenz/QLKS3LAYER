@@ -36,8 +36,6 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.txtTK = new System.Windows.Forms.ToolStripTextBox();
@@ -105,8 +103,6 @@
             this.toolStripSeparator2,
             this.toolStripButton3,
             this.toolStripSeparator3,
-            this.toolStripButton4,
-            this.toolStripSeparator4,
             this.toolStripButton5,
             this.toolStripButton6,
             this.txtTK,
@@ -162,20 +158,6 @@
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 47);
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(37, 44);
-            this.toolStripButton4.Text = "Lưu";
-            this.toolStripButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 47);
             // 
             // toolStripButton5
             // 
@@ -856,12 +838,12 @@
             // 
             // gcDanhSach
             // 
-            this.gcDanhSach.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
-            this.gcDanhSach.Location = new System.Drawing.Point(9, 66);
+            this.gcDanhSach.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.gcDanhSach.Location = new System.Drawing.Point(11, 82);
             this.gcDanhSach.MainView = this.gvDanhSach;
-            this.gcDanhSach.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.gcDanhSach.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
             this.gcDanhSach.Name = "gcDanhSach";
-            this.gcDanhSach.Size = new System.Drawing.Size(2396, 528);
+            this.gcDanhSach.Size = new System.Drawing.Size(2995, 660);
             this.gcDanhSach.TabIndex = 2;
             this.gcDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhSach,
@@ -870,17 +852,17 @@
             // 
             // gvDanhSach
             // 
-            this.gvDanhSach.DetailHeight = 852;
+            this.gvDanhSach.DetailHeight = 1065;
             this.gvDanhSach.GridControl = this.gcDanhSach;
             this.gvDanhSach.Name = "gvDanhSach";
-            this.gvDanhSach.OptionsEditForm.PopupEditFormWidth = 1952;
+            this.gvDanhSach.OptionsEditForm.PopupEditFormWidth = 2440;
             // 
             // gridView1
             // 
-            this.gridView1.DetailHeight = 852;
+            this.gridView1.DetailHeight = 1065;
             this.gridView1.GridControl = this.gcDanhSach;
             this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsEditForm.PopupEditFormWidth = 1952;
+            this.gridView1.OptionsEditForm.PopupEditFormWidth = 2440;
             // 
             // guna2Button1
             // 
@@ -972,8 +954,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.ToolStripButton toolStripButton6;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
