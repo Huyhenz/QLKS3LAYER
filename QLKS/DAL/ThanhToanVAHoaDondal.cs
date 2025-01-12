@@ -7,7 +7,7 @@ namespace DAL
 {
     public class ThanhToanVAHoaDondal
     {
-        private string connectionString = "Data Source=MSI;Initial Catalog=QLKS;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
+        private string connectionString = "Data Source=HUYCATMOI;Initial Catalog=QLKS;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
 
         public List<ThongTinDP> GetDanhSachDatPhong()
         {
@@ -71,6 +71,37 @@ namespace DAL
             return danhSachDP;
         }
 
+        public List<CTDVDTO> GetAllDichVu()
+        {
+            List<CTDVDTO> dichVuList = new List<CTDVDTO>();
 
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "SELECT * FROM tb_CTDV";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            CTDVDTO dichVu = new CTDVDTO
+                            {
+                                IDCTDV = reader.GetInt32(reader.GetOrdinal("IDCTDV")),
+                                IDPHONG= reader.GetInt32(reader.GetOrdinal("IDPHONG")),
+                                TONGSODVDASUDUNG = reader.GetInt32(reader.GetOrdinal("TONGSODVDASUDUNG")),
+                                TONGSOTIENDV = reader.GetInt32(reader.GetOrdinal("TONGSOTIENDV")),
+
+                            };
+                            dichVuList.Add(dichVu);
+                        }
+                    }
+                }
+            }
+
+            return dichVuList;
+        }
     }
+
 }

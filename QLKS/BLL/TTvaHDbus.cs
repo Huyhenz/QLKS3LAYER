@@ -24,8 +24,13 @@ namespace BLL
             {
                 return dpDAL.TimKiemDatPhongTheoSoPhong(soPhong);
             }
+
+        public List<CTDVDTO> GetAllDichVu()
+        {
+            return dpDAL.GetAllDichVu();
         }
     }
+}
 
 
 
