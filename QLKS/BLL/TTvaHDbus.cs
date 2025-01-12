@@ -11,16 +11,22 @@ namespace BLL
 {
     public class TTvaHDbus
     {
-            private ThanhToanVAHoaDondal _dataAccess = new ThanhToanVAHoaDondal();
+            private ThanhToanVAHoaDondal dpDAL = new ThanhToanVAHoaDondal();
 
-            public List<Phong> GetRoomDetails(int? roomId = null)
+            // Lấy danh sách đặt phòng
+            public List<ThongTinDP> GetDanhSachDatPhong()
             {
-                return _dataAccess.GetRoomDetails(roomId);
+                return dpDAL.GetDanhSachDatPhong();
             }
 
-          
+            // Tìm kiếm danh sách đặt phòng theo số phòng
+            public List<ThongTinDP> TimKiemDatPhongTheoSoPhong(int soPhong)
+            {
+                return dpDAL.TimKiemDatPhongTheoSoPhong(soPhong);
+            }
         }
     }
+
 
 
 
