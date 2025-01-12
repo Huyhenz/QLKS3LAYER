@@ -12,7 +12,6 @@ namespace BLL
     public class DichVuBus
     {
         private DichVuDal dichvuDAL;
-
         public DichVuBus()
         {
             dichvuDAL = new DichVuDal();
@@ -44,6 +43,10 @@ namespace BLL
         public List<DichvuDTO> GetAllServices()
         {
             return dichvuDAL.GetAllServices();
+        }
+        public List<int> GetExistingRoomIDs()
+        {
+            return dichvuDAL.GetExistingRoomIDs();
         }
     }
 }

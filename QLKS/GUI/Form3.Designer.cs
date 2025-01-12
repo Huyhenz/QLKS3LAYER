@@ -43,13 +43,11 @@
             this.txtFullname = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.guna2TextBox11 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtTongTIen = new Guna.UI2.WinForms.Guna2TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.guna2CheckBox1 = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2TextBox9 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -62,8 +60,8 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.guna2TextBox10 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox7 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtSDV = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtIDPHONG = new Guna.UI2.WinForms.Guna2TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -116,6 +114,7 @@
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(1025, 164);
             this.dataGridView2.TabIndex = 39;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
             // guna2TextBox6
             // 
@@ -257,6 +256,7 @@
             this.guna2Button1.Size = new System.Drawing.Size(133, 40);
             this.guna2Button1.TabIndex = 15;
             this.guna2Button1.Text = "Tìm kiếm";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // txtFullname
             // 
@@ -289,18 +289,16 @@
             // 
             this.guna2GroupBox2.BorderColor = System.Drawing.Color.Teal;
             this.guna2GroupBox2.Controls.Add(this.dataGridView1);
-            this.guna2GroupBox2.Controls.Add(this.guna2TextBox11);
+            this.guna2GroupBox2.Controls.Add(this.txtTongTIen);
             this.guna2GroupBox2.Controls.Add(this.label12);
             this.guna2GroupBox2.Controls.Add(this.guna2CheckBox1);
-            this.guna2GroupBox2.Controls.Add(this.guna2TextBox10);
+            this.guna2GroupBox2.Controls.Add(this.txtSDV);
             this.guna2GroupBox2.Controls.Add(this.label11);
             this.guna2GroupBox2.Controls.Add(this.guna2Button3);
             this.guna2GroupBox2.Controls.Add(this.guna2Button5);
-            this.guna2GroupBox2.Controls.Add(this.guna2TextBox9);
-            this.guna2GroupBox2.Controls.Add(this.label10);
             this.guna2GroupBox2.Controls.Add(this.guna2Button4);
             this.guna2GroupBox2.Controls.Add(this.guna2TextBox1);
-            this.guna2GroupBox2.Controls.Add(this.guna2TextBox7);
+            this.guna2GroupBox2.Controls.Add(this.txtIDPHONG);
             this.guna2GroupBox2.Controls.Add(this.label1);
             this.guna2GroupBox2.Controls.Add(this.label8);
             this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.Teal;
@@ -321,33 +319,35 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1019, 163);
             this.dataGridView1.TabIndex = 38;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
-            // guna2TextBox11
+            // txtTongTIen
             // 
-            this.guna2TextBox11.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2TextBox11.BorderRadius = 18;
-            this.guna2TextBox11.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.guna2TextBox11.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox11.DefaultText = "";
-            this.guna2TextBox11.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox11.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox11.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox11.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox11.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox11.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
-            this.guna2TextBox11.ForeColor = System.Drawing.Color.Transparent;
-            this.guna2TextBox11.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox11.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.guna2TextBox11.Location = new System.Drawing.Point(412, 60);
-            this.guna2TextBox11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2TextBox11.Name = "guna2TextBox11";
-            this.guna2TextBox11.PasswordChar = '\0';
-            this.guna2TextBox11.PlaceholderForeColor = System.Drawing.Color.Transparent;
-            this.guna2TextBox11.PlaceholderText = "";
-            this.guna2TextBox11.SelectedText = "";
-            this.guna2TextBox11.Size = new System.Drawing.Size(167, 33);
-            this.guna2TextBox11.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.guna2TextBox11.TabIndex = 37;
+            this.txtTongTIen.BorderColor = System.Drawing.Color.Transparent;
+            this.txtTongTIen.BorderRadius = 18;
+            this.txtTongTIen.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.txtTongTIen.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTongTIen.DefaultText = "";
+            this.txtTongTIen.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTongTIen.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTongTIen.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTongTIen.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTongTIen.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTongTIen.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
+            this.txtTongTIen.ForeColor = System.Drawing.Color.Transparent;
+            this.txtTongTIen.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTongTIen.IconLeftSize = new System.Drawing.Size(30, 30);
+            this.txtTongTIen.Location = new System.Drawing.Point(412, 60);
+            this.txtTongTIen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTongTIen.Name = "txtTongTIen";
+            this.txtTongTIen.PasswordChar = '\0';
+            this.txtTongTIen.PlaceholderForeColor = System.Drawing.Color.Transparent;
+            this.txtTongTIen.PlaceholderText = "";
+            this.txtTongTIen.SelectedText = "";
+            this.txtTongTIen.Size = new System.Drawing.Size(167, 33);
+            this.txtTongTIen.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txtTongTIen.TabIndex = 37;
             // 
             // label12
             // 
@@ -356,9 +356,9 @@
             this.label12.ForeColor = System.Drawing.Color.Black;
             this.label12.Location = new System.Drawing.Point(278, 70);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(108, 23);
+            this.label12.Size = new System.Drawing.Size(134, 23);
             this.label12.TabIndex = 36;
-            this.label12.Text = "Tổng Tiền :";
+            this.label12.Text = "Tổng Tiền DV:";
             // 
             // guna2CheckBox1
             // 
@@ -410,44 +410,6 @@
             this.guna2Button5.Size = new System.Drawing.Size(124, 40);
             this.guna2Button5.TabIndex = 21;
             this.guna2Button5.Text = "Xem HĐ";
-            // 
-            // guna2TextBox9
-            // 
-            this.guna2TextBox9.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2TextBox9.BorderRadius = 18;
-            this.guna2TextBox9.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.guna2TextBox9.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox9.DefaultText = "";
-            this.guna2TextBox9.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox9.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox9.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox9.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox9.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox9.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
-            this.guna2TextBox9.ForeColor = System.Drawing.Color.Transparent;
-            this.guna2TextBox9.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox9.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.guna2TextBox9.Location = new System.Drawing.Point(472, 144);
-            this.guna2TextBox9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2TextBox9.Name = "guna2TextBox9";
-            this.guna2TextBox9.PasswordChar = '\0';
-            this.guna2TextBox9.PlaceholderForeColor = System.Drawing.Color.Transparent;
-            this.guna2TextBox9.PlaceholderText = "";
-            this.guna2TextBox9.SelectedText = "";
-            this.guna2TextBox9.Size = new System.Drawing.Size(167, 33);
-            this.guna2TextBox9.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.guna2TextBox9.TabIndex = 27;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(278, 154);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(125, 23);
-            this.label10.TabIndex = 26;
-            this.label10.Text = "Tiền Dịch Vụ:";
             // 
             // guna2Button4
             // 
@@ -605,59 +567,59 @@
             this.label11.TabIndex = 28;
             this.label11.Text = "Số Dịch Vụ:";
             // 
-            // guna2TextBox10
+            // txtSDV
             // 
-            this.guna2TextBox10.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2TextBox10.BorderRadius = 18;
-            this.guna2TextBox10.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.guna2TextBox10.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox10.DefaultText = "";
-            this.guna2TextBox10.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox10.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox10.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox10.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox10.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox10.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
-            this.guna2TextBox10.ForeColor = System.Drawing.Color.Transparent;
-            this.guna2TextBox10.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox10.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.guna2TextBox10.Location = new System.Drawing.Point(147, 144);
-            this.guna2TextBox10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2TextBox10.Name = "guna2TextBox10";
-            this.guna2TextBox10.PasswordChar = '\0';
-            this.guna2TextBox10.PlaceholderForeColor = System.Drawing.Color.Transparent;
-            this.guna2TextBox10.PlaceholderText = "";
-            this.guna2TextBox10.SelectedText = "";
-            this.guna2TextBox10.Size = new System.Drawing.Size(69, 33);
-            this.guna2TextBox10.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.guna2TextBox10.TabIndex = 29;
+            this.txtSDV.BorderColor = System.Drawing.Color.Transparent;
+            this.txtSDV.BorderRadius = 18;
+            this.txtSDV.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.txtSDV.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSDV.DefaultText = "";
+            this.txtSDV.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSDV.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSDV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSDV.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSDV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSDV.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
+            this.txtSDV.ForeColor = System.Drawing.Color.Transparent;
+            this.txtSDV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSDV.IconLeftSize = new System.Drawing.Size(30, 30);
+            this.txtSDV.Location = new System.Drawing.Point(147, 144);
+            this.txtSDV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtSDV.Name = "txtSDV";
+            this.txtSDV.PasswordChar = '\0';
+            this.txtSDV.PlaceholderForeColor = System.Drawing.Color.Transparent;
+            this.txtSDV.PlaceholderText = "";
+            this.txtSDV.SelectedText = "";
+            this.txtSDV.Size = new System.Drawing.Size(69, 33);
+            this.txtSDV.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txtSDV.TabIndex = 29;
             // 
-            // guna2TextBox7
+            // txtIDPHONG
             // 
-            this.guna2TextBox7.BorderColor = System.Drawing.Color.Black;
-            this.guna2TextBox7.BorderRadius = 18;
-            this.guna2TextBox7.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
-            this.guna2TextBox7.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox7.DefaultText = "";
-            this.guna2TextBox7.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox7.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox7.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox7.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox7.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox7.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
-            this.guna2TextBox7.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox7.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox7.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.guna2TextBox7.Location = new System.Drawing.Point(149, 51);
-            this.guna2TextBox7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2TextBox7.Name = "guna2TextBox7";
-            this.guna2TextBox7.PasswordChar = '\0';
-            this.guna2TextBox7.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox7.PlaceholderText = "";
-            this.guna2TextBox7.SelectedText = "";
-            this.guna2TextBox7.Size = new System.Drawing.Size(67, 42);
-            this.guna2TextBox7.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.guna2TextBox7.TabIndex = 23;
+            this.txtIDPHONG.BorderColor = System.Drawing.Color.Black;
+            this.txtIDPHONG.BorderRadius = 18;
+            this.txtIDPHONG.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.txtIDPHONG.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtIDPHONG.DefaultText = "";
+            this.txtIDPHONG.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtIDPHONG.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtIDPHONG.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtIDPHONG.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtIDPHONG.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtIDPHONG.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
+            this.txtIDPHONG.ForeColor = System.Drawing.Color.Black;
+            this.txtIDPHONG.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtIDPHONG.IconLeftSize = new System.Drawing.Size(30, 30);
+            this.txtIDPHONG.Location = new System.Drawing.Point(149, 51);
+            this.txtIDPHONG.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtIDPHONG.Name = "txtIDPHONG";
+            this.txtIDPHONG.PasswordChar = '\0';
+            this.txtIDPHONG.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.txtIDPHONG.PlaceholderText = "";
+            this.txtIDPHONG.SelectedText = "";
+            this.txtIDPHONG.Size = new System.Drawing.Size(67, 42);
+            this.txtIDPHONG.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txtIDPHONG.TabIndex = 23;
             // 
             // label8
             // 
@@ -719,18 +681,16 @@
         private System.Windows.Forms.Label label7;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox5;
         private System.Windows.Forms.Label label5;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox9;
-        private System.Windows.Forms.Label label10;
         private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox11;
+        private Guna.UI2.WinForms.Guna2TextBox txtTongTIen;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox10;
+        private Guna.UI2.WinForms.Guna2TextBox txtSDV;
         private System.Windows.Forms.Label label11;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox7;
+        private Guna.UI2.WinForms.Guna2TextBox txtIDPHONG;
         private System.Windows.Forms.Label label8;
     }
 }

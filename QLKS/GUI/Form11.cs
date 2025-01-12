@@ -325,22 +325,54 @@ namespace GUI
                     return;
                 }
 
+                // Danh sách các IDPHONG đã tồn tại trong cơ sở dữ liệu
+                List<int> existingRoomIDs = dichvubus.GetExistingRoomIDs();
+
+                // Lưu các hàng mới (chưa tồn tại trong SQL)
+                List<int> duplicateIDs = new List<int>();
+                List<int> savedIDs = new List<int>();
+
                 foreach (DataRow row in table.Rows)
                 {
-                    // Lấy dữ liệu từ mỗi hàng
                     int idPhong = Convert.ToInt32(row["IDPHONG"]);
                     int tongSoDVDaSuDung = Convert.ToInt32(row["TONGSODVDASUDUNG"]);
                     int tongSoTienDV = Convert.ToInt32(row["TONGSOTIENDV"]);
 
+                    // Kiểm tra xem IDPHONG đã tồn tại trong cơ sở dữ liệu hay chưa
+                    if (existingRoomIDs.Contains(idPhong))
+                    {
+                        duplicateIDs.Add(idPhong);
+                        continue; // Bỏ qua hàng này
+                    }
+
                     // Gửi dữ liệu đến cơ sở dữ liệu (thông qua BLL)
                     dichvubus.SaveRoomServiceData(idPhong, tongSoDVDaSuDung, tongSoTienDV);
+                    savedIDs.Add(idPhong);
                 }
 
-                MessageBox.Show("Dữ liệu đã được lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Thông báo kết quả
+                if (savedIDs.Count > 0)
+                {
+                    MessageBox.Show($"Đã lưu thành công các phòng: {string.Join(", ", savedIDs)}",
+                                    "Thông báo",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                }
+
+                if (duplicateIDs.Count > 0)
+                {
+                    MessageBox.Show($"Không thể lưu vì các phòng đã tồn tại: {string.Join(", ", duplicateIDs)}",
+                                    "Thông báo",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Đã xảy ra lỗi khi lưu dữ liệu: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Đã xảy ra lỗi khi lưu dữ liệu: {ex.Message}",
+                                "Lỗi",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
             }
         }
 

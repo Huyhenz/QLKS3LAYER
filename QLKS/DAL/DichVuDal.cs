@@ -136,7 +136,26 @@ namespace DAL
 
             return services;
         }
-
+        public List<int> GetExistingRoomIDs()
+        {
+            List<int> roomIDs = new List<int>();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "SELECT IDPHONG FROM tb_CTDV";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            roomIDs.Add(reader.GetInt32(0));
+                        }
+                    }
+                }
+            }
+            return roomIDs;
+        }
 
     }
 }
