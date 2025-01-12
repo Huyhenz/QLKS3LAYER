@@ -124,8 +124,8 @@ namespace GUI
             dgvNhanVien.MultiSelect = true;
             dgvNhanVien.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-            dateEdit1.Properties.ReadOnly = true;
-            dateEdit2.Properties.ReadOnly = true;
+            dateEdit1.Properties.ReadOnly = false;
+            dateEdit2.Properties.ReadOnly = false;
 
             if (dgvNhanVien.Columns["PHOTO"] != null)
             {

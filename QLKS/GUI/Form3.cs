@@ -6,6 +6,7 @@ using BLL;
 using DTO;
 using System.Linq;
 using System.Data.SqlClient;
+using System.Security.Principal;
 
 namespace GUI
 
@@ -57,6 +58,11 @@ namespace GUI
         }
         private void Form3_Load(object sender, EventArgs e)
         {
+            if (Session.Login != null)
+            {
+                txtAC.Text = Session.Login.FULLNAME;
+                //txtFullName.ReadOnly = true; // Đặt TextBox thành không thể chỉnh sửa
+            }
             dataGridView2.Columns[0].DefaultCellStyle.ForeColor = Color.Red;
             dataGridView2.Columns[1].DefaultCellStyle.ForeColor = Color.Red;
             dataGridView2.Columns[2].DefaultCellStyle.ForeColor = Color.Red;

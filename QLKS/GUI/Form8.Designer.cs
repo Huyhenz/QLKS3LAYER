@@ -575,6 +575,7 @@
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "Form8";
             this.Text = "Form8";
+            this.Load += new System.EventHandler(this.Form8_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.guna2GroupBox1.ResumeLayout(false);

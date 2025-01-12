@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,6 +26,11 @@ namespace GUI
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form8_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
